@@ -11,18 +11,54 @@ if sys.stdout.encoding != 'UTF-8':
 # Setup path to import our engine
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+import re
+
+def sanitize_filename(name):
+    # Only allow alphanumeric, spaces, hyphens, and Vietnamese unicode characters
+    clean = re.sub(r'[^\w\s-]', '', str(name), flags=re.UNICODE).strip()
+    clean = re.sub(r'[-\s]+', '_', clean)
+    return clean[:50] or "User"
+
 class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
+    def do_GET(self):
+        # Security Layer: Normalize path and prevent directory traversal
+        clean_path = urllib.parse.unquote(self.path.split('?')[0])
+        
+        # 1. Allowed main web interface assets
+        if clean_path in ('/', '/index.html', '/styles.css', '/script.js', '/favicon.ico'):
+            return super().do_GET()
+            
+        # 2. Allowed generated download files: only .pdf and .xlsx in local root
+        pure_name = clean_path.lstrip('/')
+        if (clean_path.endswith('.pdf') or clean_path.endswith('.xlsx')) and '/' not in pure_name and '\\' not in pure_name:
+            file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), pure_name)
+            if os.path.exists(file_path):
+                return super().do_GET()
+                
+        # 3. Block all other requests (.py, .bat, .exe, .json, .git, system files, etc.)
+        self.send_response(403)
+        self.send_header('Content-Type', 'text/plain; charset=utf-8')
+        self.end_headers()
+        self.wfile.write("403 Forbidden: Truy cập bị từ chối vì lý do an toàn bảo mật.".encode('utf-8'))
+
     def do_POST(self):
         if self.path == '/api/calculate':
-            content_length = int(self.headers['Content-Length'])
+            content_length = int(self.headers.get('Content-Length', 0))
+            if content_length > 1024 * 1024:  # Max 1MB payload
+                self.send_response(413)
+                self.end_headers()
+                return
             post_data = self.rfile.read(content_length)
             params = json.loads(post_data.decode('utf-8'))
             
             # Call engine to calculate
             try:
                 from tuvi_engine import calculate_tuvi
+                raw_name = params.get("name", "Vô danh")
+                safe_name = sanitize_filename(raw_name)
+                
                 chart_data = calculate_tuvi(
-                    name=params.get("name", "Vô danh"),
+                    name=raw_name,
                     gender=params.get("gender", "Nam"),
                     solar_day=int(params.get("solar_day", 18)),
                     solar_month=int(params.get("solar_month", 9)),
@@ -35,7 +71,7 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
                 # Regenerate Excel file for this user dynamically!
                 try:
                     from generate_excel_api import generate_excel_for_chart
-                    excel_filename = f"La_So_Tu_Vi_{params.get('name', 'User').replace(' ', '_')}.xlsx"
+                    excel_filename = f"La_So_Tu_Vi_{safe_name}.xlsx"
                     excel_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), excel_filename)
                     generate_excel_for_chart(chart_data, excel_path)
                     chart_data["personal_info"]["excel_download_url"] = excel_filename
@@ -45,7 +81,7 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
                 # Regenerate Comprehensive PDF Book for this user dynamically!
                 try:
                     from generate_pdf_book import generate_pdf_book
-                    pdf_filename = f"La_So_Tu_Vi_{params.get('name', 'User').replace(' ', '_')}_Toan_Thu.pdf"
+                    pdf_filename = f"La_So_Tu_Vi_{safe_name}_Toan_Thu.pdf"
                     pdf_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), pdf_filename)
                     generate_pdf_book(chart_data, pdf_path)
                     chart_data["personal_info"]["pdf_download_url"] = pdf_filename
@@ -63,14 +99,21 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
                 err_response = {"error": str(e)}
                 self.wfile.write(json.dumps(err_response, ensure_ascii=False).encode('utf-8'))
         elif self.path == '/api/generate_pdf':
-            content_length = int(self.headers['Content-Length'])
+            content_length = int(self.headers.get('Content-Length', 0))
+            if content_length > 1024 * 1024:
+                self.send_response(413)
+                self.end_headers()
+                return
             post_data = self.rfile.read(content_length)
             params = json.loads(post_data.decode('utf-8'))
             try:
                 from tuvi_engine import calculate_tuvi
                 from generate_pdf_book import generate_pdf_book
+                raw_name = params.get("name", "Vô danh")
+                safe_name = sanitize_filename(raw_name)
+                
                 chart_data = calculate_tuvi(
-                    name=params.get("name", "Vô danh"),
+                    name=raw_name,
                     gender=params.get("gender", "Nam"),
                     solar_day=int(params.get("solar_day", 18)),
                     solar_month=int(params.get("solar_month", 9)),
@@ -79,7 +122,7 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
                     analysis_year=int(params.get("analysis_year", 2026)),
                     birth_minute=int(params.get("birth_minute", 0))
                 )
-                pdf_filename = f"La_So_Tu_Vi_{params.get('name', 'User').replace(' ', '_')}_Toan_Thu.pdf"
+                pdf_filename = f"La_So_Tu_Vi_{safe_name}_Toan_Thu.pdf"
                 pdf_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), pdf_filename)
                 generate_pdf_book(chart_data, pdf_path)
                 self.send_response(200)
