@@ -1,0 +1,10 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.git
+.gitignore
+*.pdf
+*.xlsx
+tuvi_app_gcp.zip
+deploy_gcp

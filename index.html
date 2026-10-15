@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hệ Thống Tử Vi Đẩu Số Đông Phương & Bản Luận Giải Chi Tiết - Hoàng Tuấn Việt (Ất Hợi 1995)">
+  <meta name="author" content="Antigravity Coding Assistant">
+  <title>Lá Số Tử Vi & Bí Truyền Dịch Học - Hoàng Tuấn Việt (1995)</title>
+  <link rel="stylesheet" href="styles.css?v=26">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header Section with Spiritual Badges & Auspicious Ornaments -->
+    <header>
+      <div class="header-inner">
+        <div class="spiritual-badge">
+          <span>☸</span>
+          <span>ĐÔNG PHƯƠNG MẬT TRUYỀN • TỨ HÓA PHI TINH • ÂM DƯƠNG DỊCH LÝ</span>
+          <span>☯</span>
+        </div>
+        <h1>LÁ SỐ TỬ VI HOÀNG GIA</h1>
+        <div class="subtitle">Đương số: <strong>Hoàng Tuấn Việt</strong> (Ất Hợi 1995 - Sơn Đầu Hỏa) | Lưu niên: <strong>Bính Ngọ (2026)</strong></div>
+      </div>
+    </header>
+
+    <!-- Main Tab Bar -->
+    <div class="main-tabs-container">
+      <button class="main-tab-btn active" id="btn-main-tab-laso" onclick="switchMainTab('laso')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="9"></rect>
+          <rect x="14" y="3" width="7" height="5"></rect>
+          <rect x="14" y="12" width="7" height="9"></rect>
+          <rect x="3" y="16" width="7" height="5"></rect>
+        </svg>
+        LÁ SỐ TỬ VI & BÁT TRẬN
+      </button>
+      <button class="main-tab-btn" id="btn-main-tab-luangiai" onclick="switchMainTab('luangiai')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        BẢN LUẬN GIẢI CHI TIẾT
+      </button>
+      <button class="main-tab-btn" id="btn-main-tab-batu" onclick="switchMainTab('batu')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        TỨ TRỤ & BÁT TỰ MỆNH LÝ
+      </button>
+      <button class="main-tab-btn" id="btn-main-tab-triethoc" onclick="switchMainTab('triethoc')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 2a10 10 0 0 0 0 20 5 5 0 0 0 0-10 5 5 0 0 1 0-10z"></path>
+          <circle cx="12" cy="7" r="1.5" fill="currentColor"></circle>
+          <circle cx="12" cy="17" r="1.5" fill="currentColor"></circle>
+        </svg>
+        DỊCH LÝ ĐÔNG PHƯƠNG & BÍ TRUYỀN
+      </button>
+      <button class="main-tab-btn" id="btn-main-tab-thangam" onclick="switchMainTab('thangam')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        VẬN HẠN 12 THÁNG & LƯU NGUYỆT MỆNH CUNG
+      </button>
+    </div>
+
+    <!-- Tab 1: Lá Số & Cung Vị -->
+    <div id="main-tab-content-laso" class="main-tab-content active">
+      <main class="dashboard-layout">
+        <!-- Grid Column (Left) -->
+        <section class="grid-column">
+          <div class="tuvi-grid-wrapper">
+            <!-- SVG Overlay for drawing connecting lines & celestial energy -->
+            <svg class="svg-overlay" id="svg-connections">
+              <defs id="svg-defs">
+                <!-- Golden Glow Filter for Tam Hợp -->
+                <filter id="glow-gold" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur1"/>
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2"/>
+                  <feMerge>
+                    <feMergeNode in="blur2"/>
+                    <feMergeNode in="blur1"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+                <!-- Red Pulse Filter for Xung Chiếu -->
+                <filter id="glow-red" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+                  <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+                <!-- Jade Filter for Nhị Hợp -->
+                <filter id="glow-jade" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur"/>
+                  <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+            </svg>
+
+            <!-- 4x4 Grid Container -->
+            <div class="tuvi-grid" id="tuvi-chart-grid">
+              
+              <!-- Central Panel (Static inside Grid) -->
+              <div class="center-card" id="center-info-card">
+                <!-- Form state -->
+                <div class="tuvi-form-container" id="tuvi-form-box">
+                  <h3 class="center-title">☸ THIẾT LẬP LÁ SỐ ☯</h3>
+                  <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 8px;">
+                    <input type="text" id="inp-name" placeholder="Họ và tên" value="Hoàng Tuấn Việt" class="inp-field">
+                    <div style="display: flex; gap: 8px;">
+                      <select id="inp-gender" class="inp-field" style="flex: 1;">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                      </select>
+                      <input type="number" id="inp-analysis-year" placeholder="Năm xem" value="2026" class="inp-field" style="width: 80px;">
+                    </div>
+                    <input type="date" id="inp-birth-date" value="1995-09-18" class="inp-field">
+                    <div style="display: flex; gap: 8px; width: 100%;">
+                      <select id="inp-birth-hour" class="inp-field" style="flex: 1;">
+                        <option value="Tý">Giờ Tý (23h - 01h)</option>
+                        <option value="Sửu">Giờ Sửu (01h - 03h)</option>
+                        <option value="Dần">Giờ Dần (03h - 05h)</option>
+                        <option value="Mão">Giờ Mão (05h - 07h)</option>
+                        <option value="Thìn">Giờ Thìn (07h - 09h)</option>
+                        <option value="Tỵ">Giờ Tỵ (09h - 11h)</option>
+                        <option value="Ngọ">Giờ Ngọ (11h - 13h)</option>
+                        <option value="Mùi" selected>Giờ Mùi (13h - 15h)</option>
+                        <option value="Thân">Giờ Thân (15h - 17h)</option>
+                        <option value="Dậu">Giờ Dậu (17h - 19h)</option>
+                        <option value="Tuất">Giờ Tuất (19h - 21h)</option>
+                        <option value="Hợi">Giờ Hợi (21h - 23h)</option>
+                      </select>
+                      <input type="number" id="inp-birth-minute" class="inp-field" placeholder="Phút" min="0" max="59" value="0" style="width: 80px;">
+                    </div>
+                    <button class="btn-submit" onclick="submitTuViForm()">LẬP THÀNH LÁ SỐ</button>
+                  </div>
+                </div>
+
+                <!-- Result state (Hidden by default, shown by script) -->
+                <div class="tuvi-result-container" id="tuvi-result-box" style="display: none; width: 100%;">
+                  <h3 class="center-title">☸ BẢN MỆNH THIÊN BÀN ☯</h3>
+                  <div class="center-name" id="result-name">Hoàng Tuấn Việt</div>
+                  
+                  <!-- Tab Headers -->
+                  <div class="center-tabs">
+                    <button class="center-tab-btn active" id="btn-tab-tuvi" onclick="switchCenterTab('tuvi')">Tử Vi Đẩu Số</button>
+                    <button class="center-tab-btn" id="btn-tab-batu" onclick="switchCenterTab('batu')">Tứ Trụ - Bát Tự</button>
+                  </div>
+                  
+                  <!-- Tab Content: Tử Vi -->
+                  <div class="center-tab-content active" id="tab-content-tuvi">
+                    <div class="center-grid-info" id="result-info-grid">
+                      <!-- Filled by script -->
+                    </div>
+                  </div>
+                  
+                  <!-- Tab Content: Bát Tự -->
+                  <div class="center-tab-content" id="tab-content-batu">
+                    <div id="result-bazi-box">
+                      <!-- Filled dynamically by script -->
+                    </div>
+                  </div>
+                  
+                  <button class="btn-change-date" onclick="showInputForm()">Nhập ngày sinh khác</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Details Column (Right) -->
+        <aside class="details-column" id="details-panel">
+          <!-- Rendered dynamically by script.js -->
+        </aside>
+      </main>
+    </div>
+
+    <!-- Tab 2: Bản Luận Giải Chi Tiết -->
+    <div id="main-tab-content-luangiai" class="main-tab-content" style="display: none; padding-top: 10px;">
+      <div class="luangiai-container">
+        
+        <!-- Bình giải tổng quan -->
+        <div class="readings-section">
+          <div class="readings-header">
+            Bình Giải Tổng Quan Bản Mệnh
+          </div>
+          <div class="readings-body" id="general-readings-body">
+            <p style="text-align: center; color: var(--color-text-secondary); font-style: italic;">Vui lòng nhập thông tin lập lá số để xem luận giải tổng quan.</p>
+          </div>
+        </div>
+
+        <!-- Bình giải 12 cung -->
+        <div class="readings-section">
+          <div class="readings-header">
+            Bình Giải Chi Tiết 12 Cung Vị
+          </div>
+          <div class="readings-body" id="chambers-readings-body">
+            <p style="text-align: center; color: var(--color-text-secondary); font-style: italic;">Vui lòng nhập thông tin lập lá số để xem chi tiết bình giải 12 cung vị.</p>
+          </div>
+        </div>
+
+        <!-- Chuyên Khảo Tuần Trung & Triệt Lộ Không Vong Toàn Thư -->
+        <div class="readings-section">
+          <div class="readings-header" style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.08), rgba(180, 140, 50, 0.08)); color: #991b1b; display: flex; align-items: center; justify-content: space-between;">
+            <span>🛡️ CHUYÊN ĐỀ KINH ĐIỂN: LUẬN ĐOÁN TOÀN DIỆN TUẦN TRUNG & TRIỆT LỘ KHÔNG VONG</span>
+            <span style="font-size: 0.8rem; font-weight: normal; color: #78350f;">Thái Thứ Lang • Bửu Đình • Thiên Lương • Vương Đình Chi</span>
+          </div>
+          <div class="readings-body" id="tuantriet-readings-body">
+            <p style="text-align: center; color: var(--color-text-secondary); font-style: italic;">Vui lòng nhập thông tin lập lá số để xem chuyên đề Tuần - Triệt.</p>
+          </div>
+        </div>
+
+        <!-- Bình giải Đại vận -->
+        <div class="readings-section">
+          <div class="readings-header">
+            Bình Giải Thập Niên Đại Vận
+          </div>
+          <div style="padding: 24px;">
+            <div class="limit-grid" id="daivan-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px;">
+              <!-- Dynamic buttons -->
+            </div>
+            <div class="limit-display" id="daivan-display">
+              <p style="text-align: center; color: var(--color-text-secondary); font-style: italic;">Chọn một Đại vận ở trên để xem bình giải.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bình giải Tiểu vận -->
+        <div class="readings-section">
+          <div class="readings-header">
+            Bình Giải Lưu Niên Tiểu Hạn
+          </div>
+          <div style="padding: 24px;">
+            <div class="limit-grid" id="tieuvan-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; max-height: 250px; overflow-y: auto; padding-right: 5px;">
+              <!-- Dynamic buttons -->
+            </div>
+            <div class="limit-display" id="tieuvan-display">
+              <p style="text-align: center; color: var(--color-text-secondary); font-style: italic;">Chọn một tuổi ở trên để xem bình giải Tiểu vận chi tiết.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Tab 3: Tứ Trụ & Bát Tự Mệnh Lý -->
+    <div id="main-tab-content-batu" class="main-tab-content" style="display: none; padding-top: 10px;">
+      <div class="luangiai-container">
+        
+        <!-- Bát Tự Section 1: Bảng Tứ Trụ Càn Khôn -->
+        <article class="essay-card">
+          <div class="essay-header">
+            <div class="essay-icon">📜☯</div>
+            <div>
+              <h2 class="essay-title">1. BẢNG TỨ TRỤ CÀN KHÔN & TÀNG CAN THẬP THẦN</h2>
+              <div style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;">Trụ Năm • Trụ Tháng • Trụ Ngày • Trụ Giờ • Nạp Âm Ngũ Hành</div>
+            </div>
+          </div>
+          <div class="essay-content">
+            <p>
+              Bát Tự Tử Bình lấy <strong>Can Ngày (Nhật Chủ / Nhật Nguyên)</strong> làm đại diện cốt lõi cho Bản Thể của con người, xem xét sự tương tác của Nhật Chủ với Lệnh Tháng (môi trường thời gian sinh trưởng) và ba trụ còn lại để định rõ độ cường nhược và khí số thăng trầm.
+            </p>
+            <div id="batu-dedicated-table-container">
+              <!-- Rendered dynamically by script.js -->
+            </div>
+          </div>
+        </article>
+
+        <!-- Bát Tự Section 2: Luận Giải Nhật Chủ & Vượng Suy -->
+        <div id="batu-section-nhat-chu">
+          <article class="essay-card">
+            <div class="essay-header">
+              <div class="essay-icon">🌊⚡</div>
+              <div>
+                <h2 class="essay-title">2. LUẬN GIẢI NHẬT CHỦ (NHẬT NGUYÊN) & NGŨ HÀNH CỤC DIỆN</h2>
+                <div style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;">Nhật Chủ: Nhâm Thủy (Đại Hải Thủy) • Khí Thế Mênh Mông Đại Dương</div>
+              </div>
+            </div>
+            <div class="essay-content">
+              <p>
+                • <strong>Bản Tính Nhật Chủ Nhâm Thủy:</strong> Nhâm là dương Thủy, tượng trưng cho nước của biển cả bao la, sông dài cuồn cuộn. Người mạng Nhâm Thủy có tính cách khoáng đạt, thông tuệ tuyệt luân, tư duy phản biện nhạy bén, dám nghĩ dám làm và không thích sự gò bó tầm thường.
+              </p>
+              <p>
+                • <strong>Đắc Lệnh:</strong> Sinh vào tháng Dậu (Trọng Thu). Mùa thu Kim vượng cực điểm, Kim sinh Thủy dồi dào, bản mệnh được mùa sinh gọi là <em>Đắc Lệnh</em> (nguồn nước dồi dào bất tận).
+              </p>
+              <p>
+                • <strong>Đắc Địa:</strong> Tọa chi Tý là đất Đế Vượng của Thủy, gọi là <em>Đắc Địa</em>. Nội lực và ý chí sinh tồn cực kỳ kiên cường, gặp khó khăn hiểm trở không bao giờ nao núng.
+              </p>
+              <p>
+                • <strong>Kết Luận Thân Vượng:</strong> Mệnh Thân cực vượng, Thủy thế mênh mông cuồn cuộn. Theo quy luật tự nhiên, nước lớn cần phải có bờ đê ngăn giữ (Thổ - Chính Quan) và có kênh rạch khai thông dẫn dòng sinh hoa trái (Mộc - Thương Quan / Hỏa - Tài Tinh) để tạo nên đại nghiệp.
+              </p>
+              <div class="essay-quote">
+                "Trích Thiên Tủy (Lưu Bá Ôn): 'Nhâm Thủy thông hà, năng tiết Kim khí. Cương trung chi đức, chu lưu bất trệ. Hóa tắc hữu tình, tòng tắc tương tế.' — Nước Nhâm Thủy chảy khắp sông ngòi, vừa tiết khí Kim vừa nuôi dưỡng vạn vật!"
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Bát Tự Section 3: Thập Thần Bát Tự -->
+        <div id="batu-section-thap-than">
+          <article class="essay-card">
+            <div class="essay-header">
+              <div class="essay-icon">👑💡</div>
+              <div>
+                <h2 class="essay-title">3. THẬP THẦN BÁT TỰ & CĂN KHÍ TÂM TÍNH</h2>
+                <div style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;">Thương Quan Kép • Chính Tài Hợp Thân • Chính Ấn Âm Đức</div>
+              </div>
+            </div>
+            <div class="essay-content">
+              <p>
+                • <strong>Thương Quan Kép (Ất Mộc lộ ở Trụ Năm và Trụ Tháng):</strong> Thương Quan là ngôi sao của tài năng, sự sáng tạo đột phá, tính độc lập tự chủ và tài ăn nói hùng biện. Hai chữ Thương Quan biểu hiện đương số là chuyên gia xuất sắc trong lĩnh vực của mình, có tư duy cải cách, ghét lối mòn bảo thủ.
+              </p>
+              <p>
+                • <strong>Chính Tài (Đinh Hỏa lộ ở Trụ Giờ):</strong> Đinh Hỏa là ngọn lửa ấm áp, là tài sản tích lũy chính đáng do trí tuệ tạo ra, đồng thời là ngôi sao đại diện cho người vợ hiền thục chu toàn.
+              </p>
+              <p>
+                • <strong>Chính Ấn (Tân Kim tàng trong Dậu):</strong> Nền tảng giáo dục, đạo đức trong sáng, có phúc ấm quý nhân che chở khi gặp nghịch cảnh.
+              </p>
+              <p>
+                • <strong>Kiếp Tài (Quý Thủy tàng trong Tý):</strong> Nghị lực phi thường, dũng cảm tiến bước, nhưng cần giữ đức khiêm nhường để tránh nóng vội.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Bát Tự Section 4: Tương Tác Hình Xung Hợp Hại -->
+        <div id="batu-section-tuong-tac">
+          <article class="essay-card">
+            <div class="essay-header">
+              <div class="essay-icon">🔗⚡</div>
+              <div>
+                <h2 class="essay-title">4. CÁC MỐI LIÊN KẾT TƯƠNG TÁC GIỮA CÁC TRỤ (HÌNH - XUNG - HỢP - HẠI)</h2>
+                <div style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;">Đinh Nhâm Hóa Mộc • Hợi Mùi Bán Hợp • Tý Mùi Lục Hại</div>
+              </div>
+            </div>
+            <div class="essay-content">
+              <p>
+                • <strong>Đinh - Nhâm Hợp Mộc (Thiên Can Hợp Hữu Tình):</strong> Can Ngày Nhâm hợp Can Giờ Đinh. Đây là thế \"Thiên Can Ngũ Hợp\" chủ về tình cảm vợ chồng thắm thiết, có sức hút tự nhiên, gia đình ấm áp, luôn hướng về con cái và người phối ngẫu.
+              </p>
+              <p>
+                • <strong>Địa Chi Hợi - Mùi Bán Hợp Mộc Cục:</strong> Chi Năm Hợi liên kết Chi Giờ Mùi tạo thành bán hợp Tam Hợp Mộc. Âm đức tổ tiên tương trợ trực tiếp cho thế hệ con cháu tương lai phát triển hanh thông.
+              </p>
+              <p>
+                • <strong>Chi Tý - Mùi Lục Hại:</strong> Lục Hại giữa Trụ Ngày và Trụ Giờ nhắc nhở đương số cần dành nhiều sự kiên nhẫn khi nuôi dạy con cái lúc nhỏ, chú ý chăm sóc hệ tiêu hóa và thận khí để thân tâm luôn thư thái.
+              </p>
+              <p>
+                • <strong>Chi Dậu - Tý Tương Phá:</strong> Lời nhắc nhở về việc giữ tâm trí thanh tịnh, không suy nghĩ quá nhiều làm hao tổn tâm lực.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Bát Tự Section 5: Mối Tương Quan Bát Tự & Tử Vi -->
+        <div id="batu-section-tuvi-tu-tru">
+          <article class="essay-card">
+            <div class="essay-header">
+              <div class="essay-icon">☯☸</div>
+              <div>
+                <h2 class="essay-title">5. MỐI LIÊN KẾT TƯƠNG HỖ MẬT THIẾT GIỮA BÁT TỰ VÀ LÁ SỐ TỬ VI</h2>
+                <div style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;">Sự Trùng Khớp Kỳ Diệu Giữa Tiên Thiên Cốt Cách & Hậu Thiên Tinh Bàn</div>
+              </div>
+            </div>
+            <div class="essay-content">
+              <div class="essay-quote">
+                "Bát Tự là Cốt Cách Tiên Thiên do Trời phú — Tử Vi là Bàn Cờ Hậu Thiên ứng biến theo Thời Gian. Cả hai cùng hội tụ về một bản thể hoàn toàn thống nhất!"
+              </div>
+              <p>
+                • <strong>Trụ Năm <---> Cung Phụ Mẫu & Phúc Đức:</strong> Trụ năm đại diện cho cội nguồn tổ tiên, kết hợp hoàn hảo với cung Phúc Đức và Phụ Mẫu trên tinh bàn Tử Vi.
+              </p>
+              <p>
+                • <strong>Trụ Tháng <---> Cung Quan Lộc:</strong> Tháng lệnh đại diện cho con đường công danh sự nghiệp, định hướng chuyên môn và phong cách làm việc ngoài xã hội.
+              </p>
+              <p>
+                • <strong>Trụ Ngày <---> Cung Mệnh & Cung Phu Thê:</strong> Can Ngày tương hợp tương sinh với tinh đẩu cung Mệnh và Phu Thê, kiến tạo nên nền tảng gia đạo và bản lĩnh đương số.
+              </p>
+              <p>
+                • <strong>Trụ Giờ <---> Cung Tử Tức & Điền Trạch:</strong> Trụ giờ là hậu vận, tượng cho con cái và sản nghiệp truyền thừa đời sau.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Bát Tự Section 6: Dụng Thần & Lời Khuyên Hành Mệnh -->
+        <div id="batu-section-dung-than">
+          <article class="essay-card">
+            <div class="essay-header">
+              <div class="essay-icon">🧭✨</div>
+              <div>
+                <h2 class="essay-title">6. DỤNG THẦN, HỶ THẦN & ĐỊNH HƯỚNG HÀNH MỆNH</h2>
+                <div style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;">Phong Thủy Điều Hầu • Hướng Đi Tối Ưu • Kích Hoạt Tài Lộc</div>
+              </div>
+            </div>
+            <div class="essay-content">
+              <p>
+                • <strong>Dụng Thần:</strong> <span class="badge-hoa">HỎA (Tài Tinh)</span> — Giúp sưởi ấm nước lạnh mùa thu (điều hầu sinh thái) và kích hoạt dòng chảy tài lộc dồi dào.
+              </p>
+              <p>
+                • <strong>Hỷ Thần:</strong> <span class="badge-moc">MỘC (Thực Thần / Thương Quan)</span> — Giúp khai thông dòng nước lũ Nhâm Thủy, biến trí tuệu bên trong thành sản phẩm, dự án thực tế có giá trị cao cho xã hội.
+              </p>
+              <p>
+                • <strong>Màu sắc & Phương vị hành mệnh:</strong> Ưu tiên gam màu Đỏ, Cam, Hồng, Tím (Hỏa) và Xanh Lá Cây, Xanh Ngọc Bích (Mộc). Phương vị cát lợi: Phương Nam (Hỏa) và Phương Đông/Đông Nam (Mộc).
+              </p>
+              <p>
+                • <strong>Ngành nghề tương hợp:</strong> Công nghệ thông tin, trí tuệ nhân tạo, truyền thông, thiết kế sáng tạo, ngoại giao, nghiên cứu chiến lược và tài chính.
+              </p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Tab 4: Dịch Lý Đông Phương & Bí Truyền Tử Vi -->
+    <div id="main-tab-content-triethoc" class="main-tab-content" style="display: none; padding-top: 10px;">
+      <div class="luangiai-container">
+        
+        <!-- Essay 1: Đạo Âm Dương Ly Khảm & Đàn Ông - Đàn Bà -->
+        <article class="essay-card">
+          <div class="essay-header">
+            <div class="essay-icon">☀️🌙</div>
+            <div>
+              <h2 class="essay-title">1. ĐẠO ÂM DƯƠNG: ĐÀN ÔNG NHƯ CÁI LY, ĐÀN BÀ NHƯ CÁI ĐĨA</h2>
+              <div style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;">Dịch Lý: Quẻ Ly (Hỏa) & Quẻ Khảm (Thủy) • Mặt Trời & Mặt Trăng</div>
+            </div>
+          </div>
+          <div class="essay-content">
+            <p>
+              Trong đồ hình Dịch học và biểu tượng Đông phương cổ đại:
+              <strong>Đàn ông như Cái Ly</strong> (Quẻ Ly ☲, tượng của Lửa, Mặt Trời, sự quang minh, chính trực, đứng thẳng và tỏa sáng).
+              <strong>Đàn bà như Cái Đĩa</strong> (Quẻ Khảm ☵, tượng của Nước, Mặt Trăng to tròn trắng ngần, tĩnh tại, nhu thuận và bao bọc).
+            </p>
+            <div class="essay-quote">
+              "Đàn ông cần có NGHĨA — Đàn bà cần có TÌNH. Chiếc đĩa nâng đỡ cái ly, Đất nâng đỡ Trời. Nhu thắng Cương, Tình cảm gìn giữ cội rễ bình yên của gia đạo."
+            </div>
+            <p>
+              Người đời thường lầm tưởng Mặt Trời to hơn Mặt Trăng theo khoa học vật lý phương Tây thế kỷ 17, nhưng theo nhãn quan huyền học Đông phương:
+              về phương diện nuôi dưỡng linh hồn và cảm xúc con người, năng lượng Mặt Trăng (Thái Âm) bao bọc vạn vật trong đêm tối, tựa như lòng dạ người mẹ, người vợ dung nạp tất cả những mỏi mệt bôn ba của người đàn ông trở về.
+            </p>
+            <p style="margin-top: 10px;">
+              <strong>Ý nghĩa Nam Tôn - Nữ Ti trong Kinh Dịch:</strong>
+              "Tôn" không phải là kiêu ngạo lấn lướt, mà là <em>trách nhiệm tôn quý, gánh vác việc lớn, che chở trước gió bão cuộc đời</em>.
+              "Ti" không phải là thấp kém hèn mọn, mà là <em>sự khiêm hạ, nhu thuận, tàng trữ phúc lộc gia phong</em>. Khi người đàn ông giữ trọn Nghĩa khí và người đàn bà giữ trọn Tình thương thì gia đình vững như bàn thạch.
+            </p>
+          </div>
+        </article>
+
+        <!-- Essay 2: Đạo Vợ Chồng & Giải Đoán Đi Xa -->
+        <article class="essay-card">
+          <div class="essay-header">
+            <div class="essay-icon">💍🕊️</div>
+            <div>
+              <h2 class="essay-title">2. TÌNH DUYÊN, HÔN NHÂN & GIẢI ĐOÁN KHI ĐI XA</h2>
+              <div style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;">Cung Phu Thê • Thiên Cơ, Cự Môn, Hóa Kỵ • Thân cư Thiên Di</div>
+            </div>
+          </div>
+          <div class="essay-content">
+            <p>
+              Đối với câu hỏi thường trực: <em>"Khi đi xa thì liệu đi về có chia tay người yêu/vợ chồng không?"</em>:
+            </p>
+            <p>
+              Trong Tử Vi, cung Phu Thê khi có các sao nhạy cảm như Hóa Kỵ, Thiên Không hay Đào Hồng thì khi ở quá gần nhau, va chạm cơm áo gạo tiền hằng ngày rất dễ làm nảy sinh tâm lý soi xét, nghi kỵ vụn vặt (bản chất của Cự Môn và Hóa Kỵ).
+            </p>
+            <div class="essay-quote">
+              "Khoảng cách địa lý tạo ra sự nâng niu trân trọng. Khi người đàn ông đi xa hành đạo, giữ trọn chữ NGHĨA thì xa cách vạn dặm chỉ làm tăng thêm tình cảm sắt son chứ không hề chia cắt."
+            </div>
+            <p>
+              Việc đi xa chính là một hình thức <strong>"động cách"</strong> để giải tỏa áp lực của cung Phu Thê. Người ở nhà chăm lo tổ ấm, người đi xa gánh vác sự nghiệp. Khi trở về mang theo sự thấu hiểu và lòng bao dung thì tình duyên càng thêm bền chặt.
+            </p>
+          </div>
+        </article>
+
+        <!-- Essay 3: Cung Tử Tức & Quý Tử -->
+        <article class="essay-card">
+          <div class="essay-header">
+            <div class="essay-icon">🌿🪷</div>
+            <div>
+              <h2 class="essay-title">3. CUNG TỬ TỨC & Ý NGHĨA SINH QUÝ TỬ TRONG TỰ NHIÊN</h2>
+              <div style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;">Lá Mầm (Con Gái) & Đọt (Con Trai) • Đức Hạnh Cây Cau (Đại Bảo Tháp Kinh Luân)</div>
+            </div>
+          </div>
+          <div class="essay-content">
+            <p>
+              Trong tạo hóa tự nhiên, cây cối nảy sinh: <strong>Đọt</strong> tượng cho Con Trai (vươn thẳng lên trời, khai hoa nở nhụy), <strong>Lá mầm</strong> tượng cho Con Gái (mềm mại, nâng đỡ diệp lục, nuôi dưỡng thân cành). Cây cau mọc thẳng đứng giữa trời, tán lá xoay tròn theo gió tựa như một Đại Bảo Tháp Kinh Luân xoay chuyển phúc đức giữa trời và đất.
+            </p>
+            <p>
+              Về băn khoăn: <em>"Từ năm 2025 đến nay dường như công danh dẫm chân tại chỗ, chỉ có thêm 1 đứa con?"</em>:
+            </p>
+            <div class="essay-quote">
+              "Trời sinh - Đất dưỡng. Sinh được một mụn con (Quý Tử) là tích tụ tinh hoa phước đức ngàn đời của tiên tổ. Đó không phải là dẫm chân tại chỗ, mà là đang gieo mầm đại phúc cho hậu vận gia tộc!"
+            </div>
+            <p>
+              Năm 2026 Bính Ngọ, <strong>Lưu Tang Môn</strong> đáo cung Tử Tức (tại Thân) và <strong>Lưu Bạch Hổ</strong> tại Dần: Đây là dấu hiệu tự nhiên của cha mẹ phải thức khuya dậy sớm, bận rộn chăm lo sức khỏe cho con thơ. Chính đức hy sinh và tình yêu thương vô điều kiện của phụ mẫu là ngọn đuốc quang minh hóa giải toàn bộ tính chất u buồn của Tang Môn.
+            </p>
+          </div>
+        </article>
+
+        <!-- Essay 4: Tứ Hóa Can Bính 2026 & Pháp Ẩn Hiện -->
+        <article class="essay-card">
+          <div class="essay-header">
+            <div class="essay-icon">☸✨</div>
+            <div>
+              <h2 class="essay-title">4. TỨ HÓA BÍNH NGỌ (2026) & BÍ QUYẾT TU THỜI VẬN</h2>
+              <div style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;">Thiên Đồng Hóa Lộc • Thiên Cơ Hóa Quyền • Văn Xương Hóa Khoa • Liêm Trinh Hóa Kỵ</div>
+            </div>
+          </div>
+          <div class="essay-content">
+            <p>
+              Năm 2026 Bính Ngọ vận khí xoay chuyển:
+            </p>
+            <ul style="margin-left: 20px; line-height: 1.8; color: #334155;">
+              <li><strong>Thiên Đồng Hóa Lộc:</strong> Phúc tinh gặp cát hóa, mang lại niềm vui con cái, tình cảm gia đạo hòa hợp, lộc ăn lộc mặc dồi dào.</li>
+              <li><strong>Thiên Cơ Hóa Quyền:</strong> Bộ não, tư duy trí tuệ, mưu lược công nghệ thăng hoa. Đương số nắm quyền quyết đoán trong các chiến lược đổi mới.</li>
+              <li><strong>Văn Xương Hóa Khoa:</strong> Bằng cấp, hợp đồng pháp lý, tri thức chuyên môn được ghi nhận và tôn vinh.</li>
+              <li><strong>Liêm Trinh Hóa Kỵ:</strong> Lời nhắc nhở về kỷ cương nội tâm. Cần tránh nóng vội, thị phi trong tổ chức và giữ gìn sự trong sạch tuyệt đối trong giấy tờ.</li>
+            </ul>
+            <div class="essay-quote">
+              "Tuỳ Thời mà ẩn - hiện. Như rồng lúc nằm dưới đáy vực (Tiềm long vật dụng), lúc bay lượn trên trời chín tầng (Phi long tại thiên). Giữ tâm trung chính, bồi đắp Hào quang phước đức thì thời vận tự nhiên khai thông!"
+            </div>
+          </div>
+        </article>
+        
+      </div>
+    </div>
+
+    <!-- Tab 5: Vận Hạn 12 Tháng & Lưu Nguyệt Mệnh Cung -->
+    <div id="main-tab-content-thangam" class="main-tab-content" style="display: none; padding-top: 10px;">
+      <div class="luangiai-container">
+        
+        <!-- Header Card -->
+        <article class="essay-card" style="border-left: 5px solid var(--color-gold);">
+          <div class="essay-header">
+            <div class="essay-icon">🌕🗓️</div>
+            <div>
+              <h2 class="essay-title" id="thangam-header-title">VẬN HẠN 12 THÁNG ÂM LỊCH & LƯU NGUYỆT MỆNH CUNG</h2>
+              <div style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;" id="thangam-header-subtitle">
+                Lưu Niên Năm 2026 (Bính Ngọ) • Khởi Nguyệt Hạn Cổ Pháp Nam Phái
+              </div>
+            </div>
+          </div>
+          <div class="essay-content">
+            <p>
+              Theo quy chuẩn an hạn <strong>Tử Vi Đẩu Số Cổ Điển Nam Phái</strong> (Tử Vi Đẩu Số Toàn Thư / Tử Vi Áo Bí):
+              <strong>Lưu Nguyệt (Nguyệt Hạn)</strong> khởi <em>Tháng Giêng</em> tại cung <em>Tiểu Hạn</em> của năm xem, đếm thuận mỗi tháng đi qua một cung vị.
+              Cung vị mà tháng đó ngự trị chính là <strong>LƯU NGUYỆT MỆNH CUNG</strong> của đương số trong suốt 30 ngày Âm lịch, chi phối trực tiếp tâm trạng, khí sắc, sức khỏe và đón nhận toàn bộ tác động của hệ thống Tinh Đẩu cùng các Sao Lưu kích hoạt.
+            </p>
+            
+            <!-- 12-Month Selector Buttons -->
+            <div class="month-selector-bar" id="thangam-month-selector">
+              <!-- Rendered dynamically by script.js -->
+            </div>
+          </div>
+        </article>
+
+        <!-- Detailed Month View (Dynamic) -->
+        <div id="thangam-detail-container">
+          <!-- Rendered dynamically by renderDedicatedMonthlyTab(month) -->
+        </div>
+
+        <!-- 12-Month Comparative Matrix Table -->
+        <article class="essay-card">
+          <div class="essay-header">
+            <div class="essay-icon">📊✨</div>
+            <div>
+              <h2 class="essay-title">MA TRẬN TỔNG QUAN SO SÁNH 12 THÁNG ÂM LỊCH TRONG NĂM</h2>
+              <div style="font-size: 0.85rem; color: var(--color-gold); font-weight: 600;">
+                Bảng Đối Chiếu Cung Mệnh Tháng • Chính Tinh • Sao Lưu • Điểm Số & Đánh Giá Vận Thế
+              </div>
+            </div>
+          </div>
+          <div class="essay-content">
+            <div style="overflow-x: auto;">
+              <table class="han-matrix-table" id="thangam-matrix-table">
+                <!-- Rendered dynamically by script.js -->
+              </table>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Legend and Downloads -->
+    <section class="download-section" style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+      <a href="La_So_Tu_Vi_Hoang_Tuan_Viet_Toan_Thu.pdf" class="btn-download btn-pdf" download id="download-pdf-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:4px;">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="12" y1="18" x2="12" y2="12"></line>
+          <line x1="9" y1="15" x2="15" y2="15"></line>
+        </svg>
+        XUẤT BẢN SÁCH TỔNG QUAN PDF (QUYỂN TỬ VI HOÀNG GIA)
+      </a>
+      <a href="La_So_Tu_Vi_Hoang_Tuan_Viet.xlsx" class="btn-download" download id="download-excel-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:4px;">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        TẢI BẢN EXCEL (.XLSX)
+      </a>
+    </section>
+
+    <!-- Legend -->
+    <footer class="legend-panel">
+      <div class="legend-item">
+        <span class="legend-dot moc"></span>
+        <span>Hành Mộc</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot hoa"></span>
+        <span>Hành Hỏa</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot tho"></span>
+        <span>Hành Thổ</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot kim"></span>
+        <span>Hành Kim</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot thuy"></span>
+        <span>Hành Thủy</span>
+      </div>
+      <div style="color: var(--color-gold); margin-left: 10px; font-weight: 600;">
+        ☸ Năng Lượng Liên Kết: Kim Quang (Tam Hợp) • Xích Lôi (Xung Chiếu) • Bích Ngọc (Nhị Hợp) • Tứ Hóa Phi Tinh.
+      </div>
+    </footer>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js?v=26"></script>
+</body>
+</html>

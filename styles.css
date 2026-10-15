@@ -1,0 +1,1711 @@
+/* ==========================================================================
+   TỬ VI ĐẨU SỐ ĐÔNG PHƯƠNG - IMPERIAL CELESTIAL LIGHT THEME (GIAO DIỆN SÁNG)
+   Bản nâng cấp Tâm Linh & Mỹ Thuật Hoàng Gia: Thái Cực, Bát Quái, Hoa Sen,
+   và Hiệu ứng Luân Chuyển Năng Lượng Huyền Vi giữa các Cung Vị.
+   ========================================================================== */
+
+:root {
+  /* Imperial Bright Palette */
+  --color-bg: #f9f7f2;
+  --color-bg-secondary: #f2ede1;
+  --color-surface: rgba(255, 255, 255, 0.97);
+  --color-surface-hover: #ffffff;
+  --color-surface-trans: rgba(255, 255, 255, 0.85);
+  
+  --color-border: rgba(180, 140, 50, 0.28);
+  --color-border-hover: rgba(180, 140, 50, 0.6);
+  --color-border-strong: #b38728;
+  
+  --color-text-primary: #1a202c;
+  --color-text-secondary: #4a5568;
+  --color-text-muted: #718096;
+  
+  /* Imperial Accent Colors */
+  --color-gold: #b38728;
+  --color-gold-light: #fef3c7;
+  --color-gold-glow: rgba(179, 135, 40, 0.45);
+  --color-cinnabar: #991b1b;
+  --color-cinnabar-light: #fee2e2;
+  --color-cinnabar-glow: rgba(153, 27, 27, 0.35);
+  
+  /* Five Elements (Ngũ Hành) - High Contrast on Bright Background */
+  --color-moc: #059669;   /* Mộc - Ngọc bích thanh tú */
+  --color-hoa: #dc2626;   /* Hỏa - Xích diễm quang minh */
+  --color-tho: #d97706;   /* Thổ - Hoàng thổ kim sa */
+  --color-kim: #475569;   /* Kim - Bạch kim trầm tĩnh */
+  --color-thuy: #0284c7;  /* Thủy - Lam thủy sâu thẳm */
+  
+  /* Mystical Energy Colors */
+  --glow-tamhop: #b38728;
+  --glow-xungchieu: #dc2626;
+  --glow-nhihop: #059669;
+  --glow-phitinh: #7c3aed;
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, Cambria, serif;
+  --transition-speed: 0.28s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  background-image: 
+    radial-gradient(circle at 10% 15%, rgba(212, 175, 55, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 90% 85%, rgba(153, 27, 27, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #ffffff 0%, #f6f1e5 100%);
+  background-attachment: fixed;
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  line-height: 1.55;
+  padding: 20px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle sacred geometry background watermark */
+body::before {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translate(-50%, -50%);
+  background-image: radial-gradient(circle, rgba(179, 135, 40, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================================================
+   APP CONTAINER & HEADER
+   ========================================================================== */
+.app-container {
+  max-width: 1720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  text-align: center;
+  padding: 24px 20px;
+  border-bottom: 2px solid var(--color-gold);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(180, 140, 50, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Spiritual Header Ornaments */
+header::before,
+header::after {
+  content: '☸';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.2rem;
+  color: var(--color-gold);
+  opacity: 0.28;
+  animation: spinMysticSlow 60s linear infinite;
+  pointer-events: none;
+}
+header::before { left: 24px; }
+header::after { right: 24px; animation-direction: reverse; }
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.spiritual-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 14px;
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.8), rgba(254, 226, 226, 0.6));
+  border: 1px solid rgba(180, 140, 50, 0.4);
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-cinnabar);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(180, 140, 50, 0.1);
+}
+
+h1 {
+  font-family: var(--font-serif);
+  font-size: 2.35rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-cinnabar);
+  text-shadow: 0 1px 2px rgba(180, 140, 50, 0.25);
+  margin-bottom: 2px;
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   MAIN TAB NAVIGATION
+   ========================================================================== */
+.main-tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 15px rgba(180, 140, 50, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.main-tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.8px;
+}
+
+.main-tab-btn:hover {
+  color: var(--color-cinnabar);
+  background: var(--color-gold-light);
+  border-color: rgba(180, 140, 50, 0.3);
+}
+
+.main-tab-btn.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #8b1c1c 0%, #681111 100%);
+  box-shadow: 0 4px 14px rgba(139, 28, 28, 0.35);
+  border-color: var(--color-gold);
+}
+
+/* ==========================================================================
+   DASHBOARD LAYOUT & 4x4 TỬ VI GRID
+   ========================================================================== */
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+  width: 100%;
+}
+
+.grid-column {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.tuvi-grid-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 920px;
+  max-width: 980px;
+  margin: 0 auto;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 12px 35px rgba(180, 140, 50, 0.12);
+  padding: 10px;
+  border: 2px solid rgba(180, 140, 50, 0.3);
+}
+
+/* Sacred Corner Lotus / Emblems */
+.tuvi-grid-wrapper::before,
+.tuvi-grid-wrapper::after {
+  position: absolute;
+  font-size: 1.3rem;
+  color: var(--color-gold);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 4;
+}
+.tuvi-grid-wrapper::before { content: '✥'; top: 6px; left: 8px; }
+.tuvi-grid-wrapper::after { content: '✥'; top: 6px; right: 8px; }
+
+.tuvi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   SVG OVERLAY & MYSTICAL ENERGY CONNECTIONS
+   ========================================================================== */
+.svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Sacred Golden Beam: Tam Hợp */
+.svg-line.tam-hop {
+  stroke: var(--glow-tamhop);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px rgba(179, 135, 40, 0.8)) drop-shadow(0 0 2px #fff);
+  animation: beamGlowGold 2.2s ease-in-out infinite alternate;
+}
+
+/* Crimson Laser of Polar Opposition: Xung Chiếu */
+.svg-line.xung-chieu {
+  stroke: var(--glow-xungchieu);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 8 6;
+  filter: drop-shadow(0 0 8px rgba(220, 38, 38, 0.85)) drop-shadow(0 0 2px #ffedd5);
+  animation: pulseLaserRed 1.6s ease-in-out infinite alternate, dashAnim 25s linear infinite;
+}
+
+/* Jade Harmonic Bridge: Nhị Hợp */
+.svg-line.nhi-hop {
+  stroke: var(--glow-nhihop);
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-dasharray: 4 4;
+  filter: drop-shadow(0 0 6px rgba(5, 150, 105, 0.75));
+  animation: dashAnim 20s linear infinite;
+}
+
+/* Phi Tinh Lines */
+.phi-tinh-line {
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 4px currentColor);
+  animation: dashAnim 15s linear infinite;
+}
+
+@keyframes dashAnim {
+  to { stroke-dashoffset: -1000; }
+}
+
+@keyframes beamGlowGold {
+  0% { stroke-width: 2.8; opacity: 0.8; filter: drop-shadow(0 0 4px rgba(179, 135, 40, 0.5)); }
+  100% { stroke-width: 4.2; opacity: 1; filter: drop-shadow(0 0 12px rgba(179, 135, 40, 0.95)) drop-shadow(0 0 3px #ffffff); }
+}
+
+@keyframes pulseLaserRed {
+  0% { stroke-width: 2.5; opacity: 0.75; }
+  100% { stroke-width: 3.8; opacity: 1; filter: drop-shadow(0 0 12px rgba(220, 38, 38, 0.95)); }
+}
+
+/* Pulsating Energy Nodes at Chamber Centers */
+.mystic-node {
+  fill: #ffffff;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 8px currentColor);
+  animation: nodeBreathe 2s ease-in-out infinite alternate;
+}
+
+@keyframes nodeBreathe {
+  0% { r: 5px; opacity: 0.85; }
+  100% { r: 8px; opacity: 1; }
+}
+
+/* ==========================================================================
+   CHAMBER CARDS (CUNG VỊ) - WHITE PORCELAIN & GOLD FINISH
+   ========================================================================== */
+.chamber-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  padding: 7px 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  box-shadow: 0 4px 10px rgba(140, 100, 30, 0.07), 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+/* Top Elemental Accent Bar */
+.chamber-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  background: var(--element-color, var(--color-border));
+  transition: height 0.2s ease;
+}
+
+/* Element color variants */
+.chamber-card.element-moc { --element-color: var(--color-moc); }
+.chamber-card.element-hoa { --element-color: var(--color-hoa); }
+.chamber-card.element-tho { --element-color: var(--color-tho); }
+.chamber-card.element-kim { --element-color: var(--color-kim); }
+.chamber-card.element-thuy { --element-color: var(--color-thuy); }
+
+.chamber-card:hover {
+  background: var(--color-surface-hover);
+  transform: translateY(-2.5px);
+  box-shadow: 0 10px 22px rgba(140, 100, 30, 0.16);
+  border-color: var(--color-gold);
+}
+
+/* Active Chamber (Selected) */
+.chamber-card.active {
+  background: #fffdf8;
+  border-color: var(--color-gold);
+  border-width: 2px;
+  box-shadow: 0 0 20px var(--color-gold-glow), 0 8px 20px rgba(140, 100, 30, 0.12);
+  transform: scale(1.02);
+  z-index: 5;
+}
+
+.chamber-card.active::before {
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-gold), #eab308);
+}
+
+/* Active Spiritual Pulses on Connected Cards */
+.chamber-card.connected-tam-hop {
+  border-color: var(--color-gold);
+  border-width: 2px;
+  animation: auraGoldPulse 2s ease-in-out infinite alternate;
+}
+
+.chamber-card.connected-xung-chieu {
+  border-color: var(--color-hoa);
+  border-width: 2px;
+  animation: auraRedPulse 1.8s ease-in-out infinite alternate;
+}
+
+.chamber-card.connected-nhi-hop {
+  border-color: var(--color-moc);
+  border-width: 2px;
+  animation: auraJadePulse 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes auraGoldPulse {
+  0% { box-shadow: 0 0 8px rgba(179, 135, 40, 0.25); }
+  100% { box-shadow: 0 0 18px rgba(179, 135, 40, 0.65), inset 0 0 10px rgba(254, 243, 199, 0.5); }
+}
+
+@keyframes auraRedPulse {
+  0% { box-shadow: 0 0 8px rgba(220, 38, 38, 0.25); }
+  100% { box-shadow: 0 0 18px rgba(220, 38, 38, 0.65), inset 0 0 10px rgba(254, 226, 226, 0.5); }
+}
+
+@keyframes auraJadePulse {
+  0% { box-shadow: 0 0 8px rgba(5, 150, 105, 0.25); }
+  100% { box-shadow: 0 0 18px rgba(5, 150, 105, 0.65), inset 0 0 10px rgba(209, 250, 229, 0.5); }
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+  border-bottom: 1px solid rgba(180, 140, 50, 0.18);
+  padding-bottom: 3px;
+}
+
+.card-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-cinnabar);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-title.is-than {
+  color: #854d0e;
+  background: var(--color-gold-light);
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(180, 140, 50, 0.35);
+}
+
+.card-meta {
+  font-size: 0.68rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.card-chi-info {
+  font-size: 0.72rem;
+  color: var(--element-color);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Card Content: Stars */
+.card-content {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  font-size: 0.71rem;
+  line-height: 1.28;
+  margin-bottom: 4px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(180, 140, 50, 0.4) transparent;
+  max-height: 168px;
+}
+
+.card-content::-webkit-scrollbar {
+  width: 3px;
+}
+.card-content::-webkit-scrollbar-thumb {
+  background: rgba(180, 140, 50, 0.35);
+  border-radius: 2px;
+}
+
+.stars-left {
+  border-right: 1px solid rgba(180, 140, 50, 0.12);
+  padding-right: 3px;
+}
+
+.stars-right {
+  padding-left: 2px;
+}
+
+.star-item {
+  margin-bottom: 1.5px;
+  line-height: 1.24;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.70rem;
+}
+
+.chinh-tinh-item {
+  font-weight: 800;
+  color: #7f1d1d; /* Imperial deep ruby */
+  font-size: 0.76rem;
+  letter-spacing: 0.2px;
+}
+
+.cat-tinh-item {
+  color: #047857; /* Deep emerald green */
+  font-weight: 600;
+}
+
+.hung-tinh-item {
+  color: #b91c1c; /* Sharp cinnabar red */
+  font-weight: 600;
+}
+
+.luu-star {
+  color: #6d28d9; /* Deep violet */
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  font-weight: 600;
+}
+
+/* Card Header Right & Month Badge */
+.card-header-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-month-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #78350f;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1px solid rgba(180, 140, 50, 0.45);
+  border-radius: 4px;
+  padding: 1px 5px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(180, 140, 50, 0.12);
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.69rem;
+  color: var(--color-text-secondary);
+  border-top: 1px solid rgba(180, 140, 50, 0.15);
+  padding-top: 3px;
+  margin-top: 2px;
+}
+
+.card-trangsinh {
+  font-weight: 600;
+  color: #334155;
+}
+
+.card-month-tag {
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: #854d0e;
+  background: rgba(254, 243, 199, 0.7);
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid rgba(180, 140, 50, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.card-month-tag .moon-icon {
+  font-size: 0.60rem;
+}
+
+.card-tuan-triet {
+  font-weight: 800;
+  color: #ffffff;
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  padding: 1px 6px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(220, 38, 38, 0.3);
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   SAO LƯU TRANSFORMATION & TUẦN TRIỆT HAN STYLES
+   ========================================================================== */
+.han-transformation-box {
+  margin-top: 12px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(180, 140, 50, 0.25);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(140, 100, 30, 0.06);
+}
+
+.han-trans-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-cinnabar);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(180, 140, 50, 0.2);
+  padding-bottom: 4px;
+}
+
+.han-baseline-box {
+  background: #fafafa;
+  border-left: 3px solid #64748b;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 0.81rem;
+  line-height: 1.5;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.han-change-box {
+  background: #fffbeb;
+  border-left: 3px solid #f59e0b;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 0.81rem;
+  line-height: 1.5;
+  color: #78350f;
+  margin-bottom: 8px;
+}
+
+.han-aspect-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.han-aspect-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.80rem;
+  line-height: 1.45;
+}
+
+.han-aspect-card strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #1e293b;
+  font-size: 0.82rem;
+}
+
+.tuan-triet-han-card {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, #fff7ed, #ffedd5);
+  border: 1px solid #fdba74;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #9a3412;
+}
+
+.tuan-triet-badge-large {
+  display: inline-block;
+  font-weight: 800;
+  color: #fff;
+  background: #ea580c;
+  padding: 1px 7px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  margin-right: 4px;
+}
+
+/* ==========================================================================
+   CENTER CARD (BẢN MỆNH / TỨ TRỤ / NHẬP LIỆU) - THÁI CỰ ĐỒ TRẬN
+   ========================================================================== */
+.center-card {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+  background: rgba(255, 253, 248, 0.98);
+  border: 2px solid var(--color-gold);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: inset 0 0 25px rgba(254, 243, 199, 0.6), 0 8px 30px rgba(180, 140, 50, 0.16);
+  position: relative;
+  z-index: 4;
+  overflow: hidden;
+}
+
+/* Rotating Bát Quái - Thái Cực Watermark in Center Card */
+.center-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  height: 280px;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='none' stroke='%23b38728' stroke-width='2' stroke-dasharray='4,2'/><circle cx='50' cy='50' r='38' fill='none' stroke='%23b38728' stroke-width='1'/><path d='M50 12 A38 38 0 0 1 50 88 A19 19 0 0 1 50 50 A19 19 0 0 0 50 12' fill='%23b38728' fill-opacity='0.08'/><circle cx='50' cy='31' r='5' fill='%23b38728' fill-opacity='0.15'/><circle cx='50' cy='69' r='5' fill='%23ffffff' stroke='%23b38728' stroke-width='1'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.6;
+  animation: spinMysticSlow 90s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.center-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes spinMysticSlow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.center-title {
+  font-family: var(--font-serif);
+  font-size: 1.28rem;
+  color: var(--color-cinnabar);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+  border-bottom: 2px double var(--color-gold);
+  padding-bottom: 3px;
+}
+
+.center-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.center-grid-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  width: 100%;
+  font-size: 0.77rem;
+  text-align: left;
+}
+
+.center-info-item {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 8px;
+  border-radius: 5px;
+  border-left: 3px solid var(--color-gold);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.center-info-item span {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.center-info-item strong {
+  color: #0f172a;
+}
+
+.center-hint {
+  font-size: 0.72rem;
+  color: var(--color-gold);
+  margin-top: 8px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   INPUT FORM INSIDE CENTER CARD
+   ========================================================================== */
+.inp-field {
+  width: 100%;
+  padding: 8px 12px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #0f172a;
+  font-family: var(--font-family);
+  font-size: 0.82rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.inp-field:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(179, 135, 40, 0.2);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #b38728 0%, #855f10 100%);
+  border: 1px solid #73510c;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(179, 135, 40, 0.3);
+}
+
+.btn-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(179, 135, 40, 0.45);
+  background: linear-gradient(135deg, #c7972f 0%, #946b14 100%);
+}
+
+.btn-change-date {
+  margin-top: 10px;
+  padding: 6px 14px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text-secondary);
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-change-date:hover {
+  background: var(--color-gold-light);
+  color: var(--color-cinnabar);
+  border-color: var(--color-gold);
+}
+
+/* ==========================================================================
+   CENTER CARD TABS (TỬ VI / BÁT TỰ)
+   ========================================================================== */
+.center-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  border-bottom: 1px solid rgba(180, 140, 50, 0.2);
+  justify-content: center;
+}
+
+.center-tab-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.center-tab-btn:hover {
+  color: var(--color-cinnabar);
+}
+
+.center-tab-btn.active {
+  color: var(--color-cinnabar);
+  border-bottom-color: var(--color-cinnabar);
+  font-weight: 700;
+}
+
+.center-tab-content {
+  display: none;
+  width: 100%;
+}
+
+.center-tab-content.active {
+  display: block;
+}
+
+/* Bazi Table Styling */
+.bazi-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4px;
+  font-size: 0.72rem;
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.bazi-table th, .bazi-table td {
+  border: 1px solid #e2e8f0;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.bazi-table th {
+  background: var(--color-gold-light);
+  color: #854d0e;
+  font-weight: 700;
+}
+
+.bazi-table td.pillar-name {
+  font-weight: 700;
+  color: #1e293b;
+  background: #f8fafc;
+}
+
+.bazi-table td.can-cell {
+  font-weight: 800;
+}
+
+.bazi-table td.chi-cell {
+  font-weight: 800;
+}
+
+.bazi-summary {
+  font-size: 0.73rem;
+  margin-top: 8px;
+  text-align: left;
+  line-height: 1.45;
+  color: #334155;
+  background: #f8fafc;
+  padding: 6px 8px;
+  border-radius: 5px;
+  border-left: 2px solid var(--color-gold);
+}
+
+.bazi-summary span {
+  font-weight: 700;
+  color: var(--color-cinnabar);
+}
+
+/* ==========================================================================
+   DETAILS PANEL (LUẬN GIẢI CHI TIẾT CUNG VỊ NẰM NGAY DƯỚI BÀN CỜ LÁ SỐ)
+   ========================================================================== */
+.details-column {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border: 2px solid rgba(180, 140, 50, 0.35);
+  border-top: 4px solid var(--color-gold);
+  border-radius: 14px;
+  padding: 24px 28px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 12px 35px rgba(180, 140, 50, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.panel-header {
+  border-bottom: 2px solid var(--color-gold);
+  padding-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-title {
+  font-family: var(--font-serif);
+  font-size: 1.42rem;
+  font-weight: 700;
+  color: var(--color-cinnabar);
+}
+
+.panel-subtitle {
+  font-size: 0.86rem;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.btn-reset {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: var(--color-text-secondary);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-reset:hover {
+  background: var(--color-cinnabar);
+  color: #ffffff;
+  border-color: var(--color-cinnabar);
+}
+
+.panel-section {
+  background: #fbf9f4;
+  border-radius: 8px;
+  padding: 14px;
+  border: 1px solid rgba(180, 140, 50, 0.2);
+  border-left: 4px solid var(--section-color, var(--color-border));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.panel-section.sec-moc { --section-color: var(--color-moc); }
+.panel-section.sec-hoa { --section-color: var(--color-hoa); }
+.panel-section.sec-tho { --section-color: var(--color-tho); }
+.panel-section.sec-kim { --section-color: var(--color-kim); }
+.panel-section.sec-thuy { --section-color: var(--color-thuy); }
+.panel-section.sec-gold { --section-color: var(--color-gold); }
+
+.section-title {
+  font-size: 0.94rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--section-color, var(--color-text-primary));
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.star-interpretation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.star-interpret-item {
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.star-interpret-name {
+  font-weight: 700;
+  color: #1e293b;
+  margin-right: 6px;
+}
+
+.star-interpret-desc {
+  color: #475569;
+}
+
+/* ==========================================================================
+   TAB 2 & TAB 3: LUẬN GIẢI CHI TIẾT & TRIẾT HỌC DỊCH LÝ
+   ========================================================================== */
+.luangiai-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.readings-section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(180, 140, 50, 0.08);
+}
+
+.readings-header {
+  background: linear-gradient(135deg, #8b1c1c 0%, #681111 100%);
+  color: #ffffff;
+  padding: 16px 24px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid var(--color-gold);
+  font-family: var(--font-serif);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.readings-body {
+  padding: 24px;
+  color: var(--color-text-primary);
+}
+
+.accordion-item {
+  border: 1px solid rgba(180, 140, 50, 0.25);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(180, 140, 50, 0.05);
+  transition: all var(--transition-speed);
+}
+
+.accordion-item:hover {
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 15px rgba(180, 140, 50, 0.12);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  cursor: pointer;
+  background: #fbf9f4;
+  font-weight: 700;
+  color: #1e293b;
+  transition: all var(--transition-speed);
+  font-size: 0.95rem;
+}
+
+.accordion-header:hover {
+  background: var(--color-gold-light);
+  color: var(--color-cinnabar);
+}
+
+.accordion-header span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.accordion-content {
+  display: none;
+  padding: 22px;
+  border-top: 1px solid rgba(180, 140, 50, 0.15);
+  background: #ffffff;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.accordion-arrow {
+  color: var(--color-gold);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reading-block {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed rgba(180, 140, 50, 0.2);
+}
+
+.reading-block:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.reading-title {
+  color: #0369a1; /* Deep ocean */
+  font-size: 0.96rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.reading-text {
+  font-size: 0.90rem;
+  color: #1e293b;
+  line-height: 1.65;
+  text-align: justify;
+  margin-bottom: 8px;
+}
+
+.reading-source {
+  font-size: 0.80rem;
+  color: #64748b;
+  font-style: italic;
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   LIMIT GRIDS & BUTTONS (ĐẠI VẬN / TIỂU VẬN)
+   ========================================================================== */
+.limit-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  font-family: var(--font-family);
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 10px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.limit-btn:hover {
+  background: var(--color-gold-light);
+  border-color: var(--color-gold);
+  color: var(--color-cinnabar);
+}
+
+.limit-btn.active {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #ffffff !important;
+  font-weight: 700;
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.35);
+}
+
+.limit-display {
+  padding: 20px;
+  background: #fbf9f4;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+}
+
+/* ==========================================================================
+   LEGEND & DOWNLOADS
+   ========================================================================== */
+.download-section {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+  border: 1px solid rgba(15, 118, 110, 0.4);
+  color: #ffffff;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(15, 118, 110, 0.25);
+}
+
+.btn-download:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 20px rgba(15, 118, 110, 0.4);
+  background: linear-gradient(135deg, #14b8a6 0%, #0f766e 100%);
+}
+
+.btn-pdf {
+  background: linear-gradient(135deg, #8b1c1c 0%, #681111 100%) !important;
+  border: 1px solid #b38728 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(139, 28, 28, 0.35) !important;
+}
+
+.btn-pdf:hover {
+  background: linear-gradient(135deg, #a82323 0%, #851c1c 100%) !important;
+  box-shadow: 0 6px 20px rgba(139, 28, 28, 0.5) !important;
+  transform: translateY(-1.5px);
+}
+
+.legend-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.80rem;
+  color: #475569;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 10px rgba(180, 140, 50, 0.08);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.legend-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+}
+
+.legend-dot.moc { background: var(--color-moc); }
+.legend-dot.hoa { background: var(--color-hoa); }
+.legend-dot.tho { background: var(--color-tho); }
+.legend-dot.kim { background: var(--color-kim); }
+.legend-dot.thuy { background: var(--color-thuy); }
+
+/* ==========================================================================
+   PHILOSOPHICAL ESSAYS TAB (DỊCH HỌC & BÍ TRUYỀN)
+   ========================================================================== */
+.essay-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 22px 26px;
+  box-shadow: 0 4px 14px rgba(180, 140, 50, 0.06);
+  margin-bottom: 20px;
+}
+
+.essay-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid var(--color-gold-light);
+  padding-bottom: 8px;
+}
+
+.essay-icon {
+  font-size: 1.8rem;
+  color: var(--color-gold);
+}
+
+.essay-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-cinnabar);
+  font-weight: 700;
+}
+
+.essay-content {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #1e293b;
+  text-align: justify;
+}
+
+.essay-quote {
+  background: var(--color-gold-light);
+  border-left: 4px solid var(--color-gold);
+  padding: 10px 16px;
+  margin: 12px 0;
+  font-style: italic;
+  color: #78350f;
+  border-radius: 0 6px 6px 0;
+}
+
+/* ==========================================================================
+   TAB 5: VẬN HẠN 12 THÁNG & LƯU NGUYỆT MỆNH CUNG
+   ========================================================================== */
+.month-selector-bar {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin: 18px 0;
+}
+
+@media (max-width: 900px) {
+  .month-selector-bar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.month-pill {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.month-pill:hover {
+  border-color: var(--color-gold);
+  background: #fffdfa;
+  transform: translateY(-2px);
+}
+
+.month-pill.active {
+  background: linear-gradient(135deg, #b45309, #d97706);
+  color: #ffffff;
+  border-color: #b45309;
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.25);
+}
+
+.month-pill .pill-month-num {
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.month-pill .pill-chamber-tag {
+  font-size: 0.72rem;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.month-pill.active .pill-chamber-tag {
+  color: #fef3c7;
+}
+
+/* Monthly Mệnh Cung Master Card */
+.month-menh-banner {
+  background: linear-gradient(135deg, #fffdfa 0%, #fef8ee 100%);
+  border: 2px solid var(--color-gold);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(180, 140, 50, 0.1);
+}
+
+.month-menh-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 1px dashed rgba(180, 140, 50, 0.3);
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.month-menh-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #8b0000;
+}
+
+.month-stars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  font-size: 0.88rem;
+  margin-top: 10px;
+}
+
+.month-star-cell {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+/* 5 Axes Deep Analysis */
+.five-axes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.axis-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.axis-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(180, 140, 50, 0.1);
+}
+
+.axis-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.axis-card-title {
+  font-size: 0.98rem;
+  font-weight: bold;
+  color: #78350f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.axis-score-badge {
+  font-size: 0.82rem;
+  color: #d97706;
+  font-weight: bold;
+}
+
+.axis-card-body {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: #334155;
+  text-align: justify;
+}
+
+/* Daily Selector inside Month */
+.daily-transit-box {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+/* 12-Month Matrix Table */
+.han-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background: #ffffff;
+}
+
+.han-matrix-table th {
+  background: var(--color-gold-light);
+  color: #78350f;
+  padding: 10px 8px;
+  border: 1px solid #cbd5e1;
+  text-align: center;
+  font-weight: bold;
+}
+
+.han-matrix-table td {
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  vertical-align: middle;
+}
+
+.han-matrix-table tr:hover {
+  background: #fffdf7;
+}
+
+.star-rating-pill {
+  display: inline-flex;
+  gap: 2px;
+  color: #f59e0b;
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   4-WAY ASPECT & FLYING STARS ANALYSIS (TỌA THỦ, XUNG CHIẾU, TAM HỢP, NHỊ HỢP)
+   ========================================================================== */
+.aspect-analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 900px) {
+  .aspect-analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aspect-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.aspect-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(180, 140, 50, 0.12);
+}
+
+.aspect-box-toathu {
+  border: 1.5px solid #7c3aed;
+  background: linear-gradient(180deg, #faf5ff 0%, #ffffff 40%);
+}
+
+.aspect-box-xungchieu {
+  border: 1.5px solid #dc2626;
+  background: linear-gradient(180deg, #fef2f2 0%, #ffffff 40%);
+}
+
+.aspect-box-tamhop {
+  border: 1.5px solid #d97706;
+  background: linear-gradient(180deg, #fffbeb 0%, #ffffff 40%);
+}
+
+.aspect-box-nhihop {
+  border: 1.5px solid #2563eb;
+  background: linear-gradient(180deg, #eff6ff 0%, #ffffff 40%);
+}
+
+.aspect-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.aspect-box-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aspect-box-toathu .aspect-box-title { color: #6d28d9; }
+.aspect-box-xungchieu .aspect-box-title { color: #b91c1c; }
+.aspect-box-tamhop .aspect-box-title { color: #b45309; }
+.aspect-box-nhihop .aspect-box-title { color: #1d4ed8; }
+
+.aspect-chamber-badge {
+  font-size: 0.76rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.05);
+  color: #475569;
+}
+
+.aspect-stars-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.aspect-pill {
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.aspect-pill-chinh {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.aspect-pill-cat {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.aspect-pill-hung {
+  background: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+}
+
+.aspect-pill-luu {
+  background: #f5f3ff;
+  color: #5b21b6;
+  border: 1px solid #ddd6fe;
+  font-weight: bold;
+}
+
+.aspect-combo-callout {
+  background: #fefce8;
+  border-left: 4px solid #f59e0b;
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 10px;
+  font-size: 0.84rem;
+  color: #78350f;
+  line-height: 1.5;
+}
+
+.aspect-body-text {
+  font-size: 0.86rem;
+  line-height: 1.65;
+  color: #334155;
+  text-align: justify;
+}
+
+.aspect-body-text strong {
+  color: #0f172a;
+}

@@ -1,0 +1,3204 @@
+{
+  "weightPoems": {
+    "2 lượng 2 chỉ": {
+      "poem": "Thân hàn cốt lãnh khổ linh đinh\r\nThử mạng chung thân bạch thủ thành\r\nY thực bất chu đa tấu khiết\r\nSinh nhai lưu lạc xứ tha hương.",
+      "meaning": "Số nghèo khổ, tự mình làm lấy chứ không được nhờ vả ai, cơm áo không đủ dùng, phải tha hương cầu thực."
+    },
+    "2 lượng 3 chỉ": {
+      "poem": "Mưu sinh vất vả chẳng hề ngơi\r\nTự lực bôn ba khắp phương trời\r\nTiền của tụ tán như bọt nước\r\nCuộc sống đành chịu kiếp nổi trôi.",
+      "meaning": "Số vất vả, bôn ba ngược xuôi kiếm sống, tiền bạc tích lũy khó khăn, cuộc sống nhiều trăn trở."
+    },
+    "2 lượng 4 chỉ": {
+      "poem": "Số này mệnh vận vốn thanh bần\r\nMưu sự khó thành chớ phí công\r\nTha hương cầu thực qua ngày tháng\r\nHậu vận bình hòa tạm đủ dùng.",
+      "meaning": "Vận số thanh bần, mưu sự ban đầu khó thành công, cần kiên trì an phận thủ thường, hậu vận bình hòa."
+    },
+    "2 lượng 5 chỉ": {
+      "poem": "Nhân sinh lưu lạc kiếp long đong\r\nTự lực cánh sinh chẳng cậy trông\r\nTrọng nghĩa khinh tài nhân đức tốt\r\nHậu vận an nhàn ấm gia phong.",
+      "meaning": "Số tự lập, nhân hậu trọng nghĩa, tiền vận long đong nhưng hậu vận được an nhàn ấm cúng."
+    },
+    "2 lượng 6 chỉ": {
+      "poem": "Bôn ba vất vả thuở thiếu thời\r\nTự lực bôn ba khắp muôn nơi\r\nTrung vận tích lũy tài sản tốt\r\nHậu vận no ấm hưởng thảnh thơi.",
+      "meaning": "Tiền vận vất vả bôn ba, tự lập nghiệp. Đến trung hậu vận gia sản dần ổn định, hưởng cuộc sống ấm no."
+    },
+    "2 lượng 7 chỉ": {
+      "poem": "Trời ban phúc lộc dẫu muộn màng\r\nMưu sự hanh thông bước cao sang\r\nTrung niên lập nghiệp danh tài vượng\r\nHậu vận an nhàn hưởng thọ khang.",
+      "meaning": "Lập nghiệp muộn nhưng chắc chắn. Trung niên và hậu vận phát triển mạnh mẽ về tiền của và sức khỏe."
+    },
+    "2 lượng 8 chỉ": {
+      "poem": "Tích đức hành thiện có tổ tông\r\nMưu sinh vất vả hóa thành không\r\nCông danh tài lộc dần hưng thịnh\r\nGia đạo bình an phúc lộc nồng.",
+      "meaning": "Nhờ phúc đức tổ tiên che chở, khó khăn thời trẻ được hóa giải, công danh sự nghiệp hậu vận thịnh vượng."
+    },
+    "2 lượng 9 chỉ": {
+      "poem": "Thông minh sắc sảo trí tuệ cao\r\nThiếu thời gian nan vận chưa vào\r\nTrung niên bộc phát tài lộc vượng\r\nHậu vận phong lưu hưởng lộc dào.",
+      "meaning": "Người thông minh nhạy bén nhưng thời trẻ chưa gặp vận. Từ trung vận phát tài vượng lộc rất mạnh."
+    },
+    "3 lượng 0 chỉ": {
+      "poem": "Số này tiền vận lắm thăng trầm\r\nTự lập bôn ba chẳng ngại ngần\r\nTrung vận hanh thông tài sản tích\r\nHậu vận an nhàn hưởng ấm thân.",
+      "meaning": "Vận trình tiền vận thăng trầm vất vả, trung hậu vận gặp thời vận tốt tích lũy của cải dồi dào."
+    },
+    "3 lượng 1 chỉ": {
+      "poem": "Mưu sự khó thành thuở trẻ trung\r\nTự lập bôn ba khắp muôn trung\r\nTrung niên lập nghiệp công danh vững\r\nHậu vận phong lưu hưởng cát chung.",
+      "meaning": "Tuổi trẻ mưu sự trắc trở, tự lực gánh vác. Từ trung niên sự nghiệp vững vàng, hậu vận sung túc."
+    },
+    "3 lượng 2 chỉ": {
+      "poem": "Thời vận tiền vận chưa hanh thông\r\nMưu cầu danh lợi chớ vội mong\r\nTrung vận gặp quý nhân nâng đỡ\r\nHậu vận an nhàn ấm gia phong.",
+      "meaning": "Công danh thời trẻ chưa gặp vận tốt. Trung vận có quý nhân giúp sức, sự nghiệp vững chãi, hậu vận an nhàn."
+    },
+    "3 lượng 3 chỉ": {
+      "poem": "Phúc lộc trời ban tự nhiên thành\r\nMưu sự hanh thông bước tiến nhanh\r\nCông danh tài lộc đều vượng phát\r\nGia đạo ấm êm hưởng phúc lành.",
+      "meaning": "Số cực tốt, mưu sự hanh thông, công danh sự nghiệp phát đạt nhanh chóng, gia đình êm ấm."
+    },
+    "3 lượng 4 chỉ": {
+      "poem": "Tự lực cánh sinh lập nghiệp lâu\r\nTiền vận vất vả chẳng quản sầu\r\nTrung niên tài sản dần tích luỹ\r\nHậu vận phú quý thọ sống lâu.",
+      "meaning": "Số tự lập nghiệp từ hai bàn tay trắng, tiền vận vất vả gian nan, hậu vận phú quý thọ khang."
+    },
+    "3 lượng 5 chỉ": {
+      "poem": "Số này mệnh vận vốn bình hòa\r\nMưu sinh vất vả đã trôi qua\r\nTrung vận công thành tài lộc vượng\r\nHậu vận an nhàn hưởng phúc gia.",
+      "meaning": "Đương số có mệnh bình hòa, khó khăn ban đầu qua đi nhường chỗ cho sự phát đạt về tiền tài ở trung hậu vận."
+    },
+    "3 lượng 6 chỉ": {
+      "poem": "Trời ban phúc lộc tự nhiên thành\r\nCông danh sự nghiệp thăng tiến nhanh\r\nCả đời no ấm an vui sống\r\nGia đạo thuận hòa phúc an lành.",
+      "meaning": "Mệnh cát tường, gặp nhiều may mắn tự nhiên, danh tài song toàn, cả đời no ấm an vui."
+    },
+    "3 lượng 7 chỉ": {
+      "poem": "Mưu sự gian nan thuở thiếu thời\r\nTự thân vận động khắp phương trời\r\nTrung niên tích lũy tài sản tốt\r\nHậu vận an nhàn sống thảnh thơi.",
+      "meaning": "Tiền vận vất vả tự thân vận động lập nghiệp xa xứ. Trung niên bộc phát điền tài, hậu vận an nhàn tự tại."
+    },
+    "3 lượng 8 chỉ": {
+      "poem": "Thân thanh cao quý tính thông minh\r\nĐộc lập tự thân lập nghiệp mình\r\nMưu sự hanh thông tài lộc vượng\r\nCả đời no ấm hưởng khang ninh.",
+      "meaning": "Tính cách thanh cao, thông minh nhạy bén, tự lực lập nghiệp dễ thành công lớn, cuộc sống no ấm sung túc."
+    },
+    "3 lượng 9 chỉ": {
+      "poem": "Trẻ tuổi bôn ba khắp muôn phương\r\nGian nan vất vả dặm trường đường\r\nTrung niên đắc vận tài lộc vượng\r\nHậu vận an nhàn hưởng thọ khương.",
+      "meaning": "Tiền vận chịu nhiều thử thách bôn ba bận rộn. Từ trung vận gặp thời cơ tốt tích lũy tài sản lớn."
+    },
+    "4 lượng 0 chỉ": {
+      "poem": "Số này tài lộc tự nhiên lai\r\nMưu sự hanh thông đắc quý tài\r\nSự nghiệp trung niên thăng tiến mạnh\r\nHậu vận an nhàn hưởng tương lai.",
+      "meaning": "Vận số may mắn, mưu sự dễ thành đắc lộc tự nhiên, sự nghiệp trung vận thăng tiến cao, hậu vận bình an."
+    },
+    "4 lượng 1 chỉ": {
+      "poem": "Số này suy thạnh vận không đồng\r\nCó sẵn kỳ tài lập dị công\r\nTrung niên thời vận hay thay đổi\r\nTừ đó tới già mạng được thông.",
+      "meaning": "Đương số cuộc đời tiền vận có biến động thăng trầm lớn. Sở hữu tài năng đặc biệt tự lập nghiệp độc đáo, trung hậu vận hanh thông rực rỡ."
+    },
+    "4 lượng 2 chỉ": {
+      "poem": "Số này đi xa lập nghiệp hay\r\nMưu sự dễ thành đắc lộc tay\r\nTiền vận vất vả trung vận phát\r\nHậu vận an nhàn hưởng phúc dày.",
+      "meaning": "Thích hợp đi xa lập nghiệp, mưu sự thuận lợi đắc tài tay trắng làm nên, hậu vận bình an hưởng phúc đức."
+    },
+    "4 lượng 3 chỉ": {
+      "poem": "Thông minh sắc sảo trí tuệ cao\r\nMưu sự dễ thành đắc tài trao\r\nCả đời no ấm không lo nghĩ\r\nGia quy yên ấm phúc dạt dào.",
+      "meaning": "Trí tuệ vượt trội, mưu sự hanh thông dễ dàng đắc tài đắc danh, cuộc đời sung túc dồi dào phúc đức."
+    },
+    "4 lượng 4 chỉ": {
+      "poem": "Vận trình tiền vận có gian nan\r\nTự lực cánh sinh lập nghiệp bàn\r\nHậu vận điền tài gia sản vượng\r\nGia đạo thuận hòa hưởng bình an.",
+      "meaning": "Tiền vận có vất vả cọ xát nhưng tự lực vượt qua. Hậu vận của cải đất đai vô cùng dồi dào, gia đình hòa thuận."
+    },
+    "4 lượng 5 chỉ": {
+      "poem": "Mệnh vận phúc lộc tựa mây trời\r\nCả đời no ấm sống thảnh thơi\r\nMưu sự thuận lợi đường công đức\r\nHậu vận gia đạo thịnh vui tươi.",
+      "meaning": "Số hưởng phúc khí trời ban, cả đời ít ưu phiền, gia sản sung túc và gia đạo hưng thịnh dài lâu."
+    },
+    "4 lượng 6 chỉ": {
+      "poem": "Thiếu thời vất vả chớ lo phiền\r\nTích lũy hành thiện đức tự nhiên\r\nTrung vận đắc tài công danh vững\r\nHậu vận phú quý hưởng bình yên.",
+      "meaning": "Thời trẻ vất vả nhưng nhờ siêng năng tích đức nên trung vận sự nghiệp thăng tiến vững vàng, hậu vận giàu sang phú quý."
+    },
+    "4 lượng 7 chỉ": {
+      "poem": "Số này phú quý tự tổ tông\r\nMưu sự hanh thông bước thênh thang\r\nCông danh tài lộc đều vượng phát\r\nCả đời hiển hách hưởng thọ khang.",
+      "meaning": "Được hưởng phúc ấm lớn từ tổ tiên, mưu sự đại cát đại lợi, danh tài song toàn hiển hách cả đời."
+    },
+    "4 lượng 8 chỉ": {
+      "poem": "Mưu sự hanh thông đắc quý tài\r\nSự nghiệp thăng tiến rộng tương lai\r\nCả đời phú quý an vui sống\r\nHậu vận viên mãn lộc dài dài.",
+      "meaning": "Số cực kỳ hanh thông vượng lộc, công danh hiển đạt quyền quý, hậu vận viên mãn sung túc vô lo."
+    },
+    "4 lượng 9 chỉ": {
+      "poem": "Tính tình hào hiệp chí khí cao\r\nTự lực cánh sinh lập nghiệp hào\r\nTrung vận đắc thời công danh vượng\r\nHậu vận điền sản chất như cao.",
+      "meaning": "Chí khí hào hiệp, độc lập tự cường lập nghiệp lớn. Hậu vận bất động sản dồi dào gia sản vương giả."
+    },
+    "5 lượng 0 chỉ": {
+      "poem": "Trời ban phúc lộc tự nhiên thành\r\nMưu sự hanh thông bước tiến nhanh\r\nCả đời phú quý gia đạo vượng\r\nDanh tài hiển hách hưởng an lành.",
+      "meaning": "Số quý nhân vượng phát tự nhiên, danh tài song toàn hiển quý, gia đình ấm êm hạnh phúc viên mãn."
+    },
+    "5 lượng 1 chỉ": {
+      "poem": "Tiền vận vất vả lập nghiệp xa\r\nTự lực cánh sinh giữ nếp nhà\r\nTrung vận hanh thông tài sản phát\r\nHậu vận an nhàn phúc ấm gia.",
+      "meaning": "Khởi đầu vất vả tự lập nghiệp xa quê hương. Trung hậu vận đắc lộc phát đạt mạnh mẽ, gia quy vượng phát."
+    },
+    "5 lượng 2 chỉ": {
+      "poem": "Mệnh vận vượng cát đức tự nhiên\r\nMưu sự hanh thông ít ưu phiền\r\nCông danh sự nghiệp hiển đạt lớn\r\nCả đời no ấm hưởng bình yên.",
+      "meaning": "Mệnh cát vượng phú quý, mưu sự hanh thông quyền uy lớn, sự nghiệp hiển hách cả đời an nhàn tự tại."
+    },
+    "5 lượng 3 chỉ": {
+      "poem": "Thông minh kiệt xuất trí tuệ thông\r\nMưu sự đại cát lập dị công\r\nSự nghiệp trung niên thăng tiến mạnh\r\nHậu vận phú quý hưởng cát chung.",
+      "meaning": "Trí tuệ kiệt xuất tự tay lập nên kỳ công lớn, sự nghiệp thăng tiến mạnh mẽ ở trung vận, hậu vận giàu sang quyền quý."
+    },
+    "5 lượng 4 chỉ": {
+      "poem": "Số này tiền vận có gian nan\r\nTự lực kiên cường lập nghiệp bàn\r\nHậu vận điền tài hưng vượng cát\r\nGia quy thịnh vượng ấm bình an.",
+      "meaning": "Thời trẻ chịu nhiều cọ xát vượt khó tự lập nghiệp. Hậu vận gia sản đất đai dồi dào thịnh vượng viên mãn."
+    },
+    "5 lượng 5 chỉ": {
+      "poem": "Số này cát tinh chiếu mệnh cao\r\nCả đời phú quý phúc dạt dào\r\nMưu sự hanh thông tài lộc vượng\r\nHậu vận an nhàn hưởng lộc trao.",
+      "meaning": "Được cát tinh cao chiếu, cả đời phú quý may mắn ngập tràn, mưu sự đắc tài vượng lộc bền vững."
+    },
+    "5 lượng 6 chỉ": {
+      "poem": "Nhân hậu ôn hòa chí khí cao\r\nMưu sự hanh thông đắc tài trao\r\nCông danh hiển đạt quyền uy vững\r\nHậu vận viên mãn phúc dạt dào.",
+      "meaning": "Tính cách đức độ hiền hậu chí hướng lớn, công danh thăng tiến vững vàng quyền uy lớn, hậu vận viên mãn gia đạo ấm êm."
+    },
+    "5 lượng 7 chỉ": {
+      "poem": "Số này phúc đức tự gia tiên\r\nMưu sự dễ thành ít ưu phiền\r\nTài lộc điền sản đều hưng thịnh\r\nCả đời an hưởng phúc bình yên.",
+      "meaning": "Được hưởng phúc báu tổ tiên sâu dày, mưu sự dễ dàng hanh thông cát lợi, tiền của điền sản hưng thịnh lâu bền."
+    },
+    "5 lượng 8 chỉ": {
+      "poem": "Mệnh vận quyền quý đắc quý nhân\r\nSự nghiệp thăng tiến rộng mười phân\r\nCả đời vinh hiển tài lộc cát\r\nHậu vận viên mãn lộc thọ gần.",
+      "meaning": "Vận số quyền quý cao sang được quý nhân phò tá, sự nghiệp hiển đạt vang dội, hậu vận đại phú đại quý thọ khang."
+    },
+    "5 lượng 9 chỉ": {
+      "poem": "Thông minh hào hiệp chí khí hùng\r\nTự lực cánh sinh lập vạn trùng\r\nTrung vận đắc thời điền sản vượng\r\nHậu vận an nhàn hưởng phúc chung.",
+      "meaning": "Ý chí hào hiệp, thông minh nhạy bén tự lập sự nghiệp lớn, trung vận phát đạt mạnh mẽ điền sản dồi dào, hậu vận tự tại."
+    },
+    "6 lượng 0 chỉ": {
+      "poem": "Mệnh đắc tài lộc đới thiên nhiên\r\nCả đời phú quý ít ưu phiền\r\nMưu sự hanh thông quyền uy vượng\r\nGia đạo bình an hưởng cát yên.",
+      "meaning": "Mệnh đắc phú quý tự nhiên cát tường, sự nghiệp hiển hách quyền uy lớn, cuộc sống sung túc an nhàn viên mãn."
+    },
+    "6 lượng 1 chỉ": {
+      "poem": "Thông minh trí tuệ vượt người thường\r\nMưu sự hanh thông khắp muôn phương\r\nCông danh tài lộc đều hiển đạt\r\nCả đời phú quý lộc vô cương.",
+      "meaning": "Trí tuệ thông suốt kiệt xuất, mưu sự đại cát dồi dào tài lộc danh tiếng vang xa, cả đời phú quý hiển hách."
+    },
+    "6 lượng 2 chỉ": {
+      "poem": "Số này phú quý phúc đức dày\r\nMưu sự đại cát thuận lộc tay\r\nSự nghiệp thăng thăng quyền uy lớn\r\nHậu vận an nhàn hưởng phúc dày.",
+      "meaning": "Được phúc báu vây quanh cát lợi dồi dào, sự nghiệp thăng tiến giữ vị trí cao thực quyền lớn, hậu vận an lành hưng thịnh."
+    },
+    "6 lượng 3 chỉ": {
+      "poem": "Mệnh vận hanh thông đắc cát tinh\r\nCả đời vinh hiển lộc tài vinh\r\nSự nghiệp trung niên bộc phát mạnh\r\nHậu vận phú quý thọ an bình.",
+      "meaning": "Được cát tinh chiếu rọi vinh hiển vô cùng, trung vận bộc phát công danh quyền lực lớn, hậu vận giàu sang thọ mạng dài lâu."
+    },
+    "6 lượng 4 chỉ": {
+      "poem": "Chí hướng cao xa đức tính hiền\r\nMưu sự dễ thành đắc lộc yên\r\nĐiền tài gia sản hưng vượng phát\r\nCả đời phú quý hưởng bình yên.",
+      "meaning": "Chí hướng rộng mở đức tính hiền lành nhẫn nại, mưu sự đắc lộc điền sản dồi dào gia sản bền vững suốt đời bình an."
+    },
+    "6 lượng 5 chỉ": {
+      "poem": "Mệnh đắc đế tinh chiếu mệnh cao\r\nCả đời phú quý phúc dạt dào\r\nCông danh sự nghiệp thăng tiến mạnh\r\nHậu vận viên mãn lộc trời trao.",
+      "meaning": "Đắc cát tinh đế tinh vây quanh vượng phát cát tường, danh tài hiển đạt vượt bậc, hậu vận sung túc an nhàn."
+    },
+    "6 lượng 6 chỉ": {
+      "poem": "Nhân hậu ôn hòa đức tự nhiên\r\nMưu sự hanh thông đắc lộc yên\r\nCông danh gia đạo đều viên mãn\r\nCả đời an hưởng phúc bình yên.",
+      "meaning": "Tính tình nhân hậu hiền lành gặp nhiều may mắn tốt lành, sự nghiệp gia đạo viên mãn an lành cả đời vô lo nghĩ."
+    },
+    "6 lượng 7 chỉ": {
+      "poem": "Số này phú quý đắc quý nhân\r\nSự nghiệp thăng tiến rộng mười phân\r\nCả đời no ấm an vui sống\r\nHậu vận hiển đạt hưởng thọ gần.",
+      "meaning": "Mệnh số giàu sang có quý nhân nâng đỡ, công danh thăng tiến vững vàng hiển đạt lớn, hậu vận thọ mạng sung túc."
+    },
+    "6 lượng 8 chỉ": {
+      "poem": "Mưu sự đại cát lộc tự nhiên\r\nCả đời sung túc ít ưu phiền\r\nTài lộc điền sản đều hưng thịnh\r\nHậu vận phú quý hưởng bình yên.",
+      "meaning": "Mưu sự đại cát vượng lộc trời ban, tài sản điền sản tích lũy dồi dào thịnh vượng, hậu vận phú quý bình an."
+    },
+    "6 lượng 9 chỉ": {
+      "poem": "Thông minh trí tuệ chí hướng hùng\r\nTự lực cánh sinh lập vạn trùng\r\nTrung vận đắc thời tài sản vượng\r\nHậu vận phú quý hưởng cát chung.",
+      "meaning": "Trí tuệ kiệt xuất độc lập tháo vát, trung vận đắc thời gặt hái tài sản khổng lồ, hậu vận phú quý hiển quý lâu dài."
+    },
+    "7 lượng 0 chỉ": {
+      "poem": "Mệnh đắc vương giả phúc đức dày\r\nCả đời vinh hiển lộc tài vinh\r\nQuyền uy danh tiếng vang thế giới\r\nHậu vận trường thọ hưởng an bình.",
+      "meaning": "Mệnh vương giả quyền quý tối thượng, danh tài hiển hách vang dội khắp nơi, thọ mạng lâu dài phúc ấm bền vững."
+    },
+    "7 lượng 1 chỉ": {
+      "poem": "Mệnh số kỳ tài trí tuệ cao\r\nMưu sự dễ thành đắc tài trao\r\nCả đời no ấm không lo nghĩ\r\nGia đạo hưng thịnh phúc dạt dào.",
+      "meaning": "Số kỳ tài kiệt xuất mưu sự dễ như trở bàn tay, cuộc sống vương giả giàu sang tột đỉnh gia đạo thịnh vượng truyền đời."
+    }
+  },
+  "classicalReadingsDatabase": {
+    "menh": [
+      {
+        "stars": [
+          "TỬ VI"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao tử vi tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Tử Vi là vị vua của các chòm sao, mang khí chất tôn quý, chính trực, đĩnh đạc và giàu lòng bao dung nhân từ. Đương số có Tử Vi tọa Mệnh thường sở hữu phong thái sang trọng, đĩnh đạc, mưu sự sâu sắc và có khả năng thu phục lòng người.<br><b>Sự nghiệp & Tài lộc:</b> Bản mệnh vượng tài lộc danh tiếng, phù hợp gánh vác các vị trí quản lý cấp cao, giám đốc điều hành hành chính hoặc tự chủ làm chủ doanh nghiệp lớn có tiếng nói xã hội rộng.<br><b>Sức khỏe & Tình cảm:</b> Đời sống gia đạo nghiêm cẩn, bạn đời tôn trọng. Sức khỏe dồi dào dẻo dai, có năng lực tự hóa giải tai ương rất mạnh.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN PHỦ"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao thiên phủ tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Thiên Phủ là đệ nhất tài khố chủ về ôn hòa nhân hậu, bao dung độ lượng, thận trọng cẩn mật giữ của giỏi.<br><b>Sự nghiệp & Tài sản:</b> Cuộc đời bình yên phú quý, có khiếu kinh doanh quản lý tài chính và giỏi tích lũy bất động sản vững bền.<br><b>Tính cách:</b> Đương số đĩnh đạc điềm đạm, xử sự thấu đáo và luôn giữ nếp sống nề nếp gia đình.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VŨ KHÚC"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao vũ khúc tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Vũ Khúc là tài tinh cương trực dứt khoát quyết đoán độc lập, chí khí sắt đá kiên cường lập nghiệp bằng thực lực.<br><b>Tài chính:</b> Có tư duy kinh tế nhạy bén, quyết liệt chinh phục mục tiêu tài sản và thích tự tay làm chủ cuộc đời.<br><b>Tính cách:</b> Đương số thực tế cá tính mạnh, đôi lúc có nét cô độc nội tâm ít chia sẻ tâm tư sâu kín.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN TƯỚNG"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao thiên tướng tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Thiên Tướng là ấn tinh chủ về công danh chức quyền và lòng tự trọng cao, tính cách chính trực trung thành phân minh.<br><b>Công việc:</b> Hành sự cẩn thận ngăn nắp, trọng danh dự và uy tín cá nhân, là người phò tá đắc lực có năng lực gánh vác lớn.<br><b>Giao tế:</b> Xử lý quan hệ xã hội khéo léo chừng mực được mọi người nể trọng.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI DƯƠNG"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao thái dương tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Thái Dương là đế tinh chủ về quan lộc quang minh danh vọng hào sảng nhiệt tình chính đại quang minh.<br><b>Trí tuệ & Học vấn:</b> Tư duy rộng mở nhạy bén danh tiếng tốt thích hoạt động xã hội gánh vác trách nhiệm lớn.<br><b>Tính cách:</b> Đương số bộc trực kiên cường ưa giúp đỡ mọi người nhưng dễ nóng nảy sĩ diện cao.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI ÂM"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao thái âm tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Thái Âm chủ về điền trạch tài lộc ôn nhu nhã nhặn tinh tế nhạy cảm lãng mạn thích cuộc sống an lành cát cát.<br><b>Nội tâm:</b> Trực giác nhạy bén yêu cái đẹp thích sự bình yên tĩnh lặng tư duy logic sâu sắc khéo léo ứng xử.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "CỰ MÔN"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao cự môn tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Cự Môn chủ về ăn nói ngôn từ hùng biện nghiên cứu sâu rộng tỉ mỉ nhạy bén tư duy độc lập sắc sảo.<br><b>Tính cách:</b> Đương số thông minh hiếu học ưa đàm luận nghiên cứu sự lý rõ ràng nhưng cá tính tự tôn đôi lúc thẳng thắn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN CƠ"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao thiên cơ tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Thiên Cơ là mưu tinh trí tuệ thông tuệ nhạy bén giỏi lập kế hoạch dự án chiến lược linh hoạt sáng tạo.<br><b>Tính cách:</b> Đương số nhạy tin tâm linh tôn giáo ham học hỏi xoay xở giỏi nhiều ý tưởng độc đáo.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN LƯƠNG"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao thiên lương tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Thiên Lương là ấm tinh thọ mạng che chở nhân hậu đức độ từ tâm hay giúp đỡ mọi người gặp dữ hóa cát.<br><b>Tính cách:</b> Đương số hiền hòa điềm đạm trọng đạo đức dòng họ phúc lớn được xã hội kính nể yêu quý.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN ĐỒNG"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao thiên đồng tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Thiên Đồng là phúc tinh chủ về thiện lương vui vẻ tự tại thích bình yên tĩnh lặng gặp dữ hóa lành.<br><b>Tính cách:</b> Đương số vui vẻ hoạt bát nhân hậu dễ gần thích dịch chuyển du lịch tâm hồn phong phú an lành.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "LIÊM TRINH"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao liêm trinh tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Liêm Trinh là quan lộc đào hoa thứ tinh chủ về chí khí quyết liệt liêm khiết phân minh quyết đoán dứt khoát.<br><b>Tính cách:</b> Đương số đĩnh đạc tự trọng cao có năng lực chỉ huy nhưng đôi lúc cá tính nóng nảy bộc trực.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THAM LANG"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao tham lang tọa thủ",
+        "text": "<b>Đặc tính Tổng quan: Dẫn đầu đào hoa tinh chủ về giao tế xã hội nhạy bén nghệ thuật tài lộc ẩn chí tiến thủ lớn.<br><b>Tính cách:</b> Đương số hoạt bát thông minh nhạy bén kinh doanh thích hưởng thụ cuộc sống phong phú tài hoa xuất chúng.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THẤT SÁT"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao thất sát tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Quyền tinh dũng mãnh dứt khoát quyết liệt chí khí kiên cường tự thân lập đại nghiệp vượt khó.<br><b>Tính cách:</b> Đương số mạnh mẽ độc lập kiên nghị dám đương đầu nghịch cảnh lập công trạng to lớn bằng thực lực thép.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "PHÁ QUÂN"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao phá quân tọa thủ",
+        "text": "<b>Đặc tính Tổng quan:</b> Hao tinh dũng mãnh tiên phong dám đổi mới phá bỏ cách làm cũ khai phá đột phá vượt nghịch cảnh.<br><b>Tính cách:</b> Đương số kiên cường mạo hiểm không ngại gian nan thích đổi mới sáng tạo không đi theo lối mòn cũ.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VĂN XƯƠNG"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao Văn xương",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Xương chủ về học thuật tri thức khoa bảng.<br><b>Luận giải:</b> Sự hiện diện của Văn Xương mang lại luồng cát khí tri thức, học hỏi nhạy bén nhạy cảm, giúp đương số đỗ đạt cao khoa bảng hanh thông và có uy tín học vấn tốt lành tại khía cạnh Cung Mệnh.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "VĂN KHÚC"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao Văn khúc",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Khúc chủ về năng khiếu nghệ thuật giao tế khéo léo.<br><b>Luận giải:</b> Tăng tiến duyên giao tiếp hùng biện, khiếu thẩm mỹ tinh tế và tài hoa nghệ thuật nổi bật chi phối hoạt động của đương số tại phương diện Cung Mệnh.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "THIÊN KHÔI"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao Thiên khôi",
+        "text": "<b>Đặc tính Cát Tinh:</b> Đệ nhất Quý Nhân cát tinh chủ về người dẫn đầu.<br><b>Luận giải:</b> Mang lại lộc may mắn đi đầu dẫn dắt, được các bậc đi trước tin cậy đề bạt nâng đỡ vượt bậc trong mưu sự tại Cung Mệnh.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "THIÊN VIỆT"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao Thiên việt",
+        "text": "<b>Đặc tính Cát Tinh:</b> Quý nhân phò tá cát tinh tối thượng.<br><b>Luận giải:</b> Đương số luôn tìm thấy cơ hội bứt phá mở đường khi mưu sự, có quý nhân âm thầm giúp sức tháo gỡ mọi cản trở khó khăn tại Cung Mệnh.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀO HOA"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao Đào hoa",
+        "text": "<b>Đặc tính Đào Hoa:</b> Duyên phận, sức hút cá nhân nổi bật.<br><b>Luận giải:</b> Mang lại cát duyên tốt lành, sức quyến rũ giao tế khéo léo giúp đương số rất được mọi người xung quanh yêu mến trợ giúp tại khía cạnh Cung Mệnh.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "HỒNG LOAN"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao Hồng loan",
+        "text": "<b>Đặc tính Cát Tinh:</b> Nhân duyên hòa hợp cát sự hỷ sự tốt lành.<br><b>Luận giải:</b> Mang đến sự dịu dàng thanh tao đoan trang trong giao thiệp xã hội và cuộc sống gia đình ấm áp tại Cung Mệnh.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "ĐỊA KHÔNG"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao Địa không",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở cản trở, hao hụt bất ngờ.<br><b>Luận giải:</b> Hạn chế hoặc thử thách bản lĩnh ý chí đương số tại Cung Mệnh. Cần hành sự bình tĩnh kiên trì tuyệt đối không mạo hiểm đầu cơ trục lợi.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐỊA KIẾP"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao Địa kiếp",
+        "text": "<b>Đặc tính Sát Tinh:</b> Tổn thất phá hoại, thăng trầm dốc đứng.<br><b>Luận giải:</b> Tạo áp lực biến động đột ngột hoặc rủi ro hao tài phá của lớn tại cung Cung Mệnh. Khuyên đương số quản lý chặt chẽ hành sự cẩn mật.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "HÓA KỴ"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao Hóa kỵ",
+        "text": "<b>Đặc tính Sát Tinh:</b> Nghi kỵ hiểu lầm, thị phi gièm pha dèm pha lời nói.<br><b>Luận giải:</b> Bản cung dễ xảy ra cọ xát nhỏ trong giao tế đối thoại, đương số cần học cách lắng nghe khiêm nhường gác bất đồng tại Cung Mệnh.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "TANG MÔN"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao Tang môn",
+        "text": "<b>Đặc tính Sát Tinh:</b> Lo nghĩ buồn phiền ảo tinh thần mỏi mệt.<br><b>Luận giải:</b> Đương số dễ chịu áp lực tâm lý lo lắng xa vời cản trở hành sự tại Cung Mệnh, khuyên rèn chí khí sảng khoái năng lượng tích cực.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "KÌNH DƯƠNG"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao Kình dương",
+        "text": "<b>Đặc tính Sát Tinh:</b> Va chạm trực diện, cạnh tranh gay gắt.<br><b>Luận giải:</b> Mang năng lượng xung khắc bộc trực mạnh mẽ, đề phòng tranh chấp lời nói pháp lý cọ xát chi thể tại cung Cung Mệnh.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀ LA"
+        ],
+        "title": "Cung Cung Mệnh an tại [Chi] có sao Đà la",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Mệnh tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      }
+    ],
+    "phu_mau": [
+      {
+        "stars": [
+          "TỬ VI"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao tử vi tọa thủ",
+        "text": "<b>Tổng quan:</b> Cha mẹ là người danh giá, quyền quý có địa vị hoặc tiếng tăm tốt lành trong xã hội.<br><b>Giáo dục & Nâng đỡ:</b> Đương số được hưởng nền giáo dục nghiêm cẩn nề nếp gia giáo, được cha mẹ nâng đỡ định hướng đắc lực thời trẻ.<br><b>Gia đạo:</b> Gia đình nề nếp kỷ cương, tình cảm gia đình vững chắc cát lợi.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN PHỦ"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao thiên phủ tọa thủ",
+        "text": "<b>Tổng quan:</b> Cha mẹ hiền hậu khá giả, để lại phúc đức sâu dày làm bệ phóng vững chắc cho cuộc sống đương số thời trẻ.<br><b>Hỗ trợ tài sản:</b> Được thừa hưởng gia sản hoặc nhận sự nâng đỡ chu đáo từ đấng sinh thành.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VŨ KHÚC"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao vũ khúc tọa thủ",
+        "text": "<b>Tổng quan:</b> Cha mẹ tự lập nghiệp kiên cường dứt khoát, cá tính mạnh mẽ rèn luyện tính tự lập sớm cho đương số.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN TƯỚNG"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao thiên tướng tọa thủ",
+        "text": "<b>Tổng quan:</b> Cha mẹ danh giá nề nếp kỷ cương tốt lành, để lại tiếng tăm tốt che chở nâng đỡ đương số thời trẻ.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI DƯƠNG"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao thái dương tọa thủ",
+        "text": "<b>Tổng quan:</b> Cha mẹ (đặc biệt là cha) có sự nghiệp hiển đạt danh vọng cao nâng đỡ đắc lực cho đương số thời trẻ.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI ÂM"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao thái âm tọa thủ",
+        "text": "<b>Tổng quan:</b> Cha mẹ (đặc biệt là mẹ) dịu dàng đức hạnh yêu thương chăm sóc che chở đương số hết lòng thời trẻ.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "CỰ MÔN"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao cự môn tọa thủ",
+        "text": "<b>Tổng quan: Cha mẹ tri thức có tài hùng biện thuyết phục hướng dẫn tri thức kỹ năng sớm cho đương số.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN CƠ"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao thiên cơ tọa thủ",
+        "text": "<b>Tổng quan:</b> Cha mẹ trí thức giáo dục tốt lành chỉ dạy phương pháp học tập lập nghiệp sớm cho đương số.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN LƯƠNG"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao thiên lương tọa thủ",
+        "text": "<b>Tổng quan: Cha mẹ hiền từ đức hạnh che chở nâng đỡ gieo nhân đức tốt lành suốt cuộc đời đương số.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN ĐỒNG"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao thiên đồng tọa thủ",
+        "text": "<b>Tổng quan:</b> Cha mẹ hiền từ bao dung nếp sống vui tươi đầm ấm đương số hưởng trọn tình thương yêu gia đình.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "LIÊM TRINH"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao liêm trinh tọa thủ",
+        "text": "<b>Tổng quan:</b> Cha mẹ cương nghị dứt khoát nề nếp kỷ luật cẩn thận rèn luyện chí hướng tự lập cho con từ sớm.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THAM LANG"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao tham lang tọa thủ",
+        "text": "<b>Tổng quan:</b> Cha mẹ tháo vát giao thiệp rộng xã giao tốt đương số sớm có tính cách cởi mở năng động.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THẤT SÁT"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao thất sát tọa thủ",
+        "text": "<b>Tổng quan:</b> Cha mẹ nghiêm khắc dứt khoát rèn luyện chí hướng lập nghiệp tự lập sớm từ nhỏ cho con.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "PHÁ QUÂN"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao phá quân tọa thủ",
+        "text": "<b>Tổng quan:</b> Cha mẹ tự lập nghiệp chịu thử thách vươn lên thành đạt gieo chí tự cường tự lập sớm cho con.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VĂN XƯƠNG"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao Văn xương",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Xương chủ về học thuật tri thức khoa bảng.<br><b>Luận giải:</b> Sự hiện diện của Văn Xương mang lại luồng cát khí tri thức, học hỏi nhạy bén nhạy cảm, giúp đương số đỗ đạt cao khoa bảng hanh thông và có uy tín học vấn tốt lành tại khía cạnh Cung Phụ Mẫu.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "VĂN KHÚC"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao Văn khúc",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Khúc chủ về năng khiếu nghệ thuật giao tế khéo léo.<br><b>Luận giải:</b> Tăng tiến duyên giao tiếp hùng biện, khiếu thẩm mỹ tinh tế và tài hoa nghệ thuật nổi bật chi phối hoạt động của đương số tại phương diện Cung Phụ Mẫu.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "THIÊN KHÔI"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao Thiên khôi",
+        "text": "<b>Đặc tính Cát Tinh:</b> Đệ nhất Quý Nhân cát tinh chủ về người dẫn đầu.<br><b>Luận giải:</b> Mang lại lộc may mắn đi đầu dẫn dắt, được các bậc đi trước tin cậy đề bạt nâng đỡ vượt bậc trong mưu sự tại Cung Phụ Mẫu.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "THIÊN VIỆT"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao Thiên việt",
+        "text": "<b>Đặc tính Cát Tinh:</b> Quý nhân phò tá cát tinh tối thượng.<br><b>Luận giải:</b> Đương số luôn tìm thấy cơ hội bứt phá mở đường khi mưu sự, có quý nhân âm thầm giúp sức tháo gỡ mọi cản trở khó khăn tại Cung Phụ Mẫu.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀO HOA"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao Đào hoa",
+        "text": "<b>Đặc tính Đào Hoa:</b> Duyên phận, sức hút cá nhân nổi bật.<br><b>Luận giải:</b> Mang lại cát duyên tốt lành, sức quyến rũ giao tế khéo léo giúp đương số rất được mọi người xung quanh yêu mến trợ giúp tại khía cạnh Cung Phụ Mẫu.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "HỒNG LOAN"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao Hồng loan",
+        "text": "<b>Đặc tính Cát Tinh:</b> Nhân duyên hòa hợp cát sự hỷ sự tốt lành.<br><b>Luận giải:</b> Mang đến sự dịu dàng thanh tao đoan trang trong giao thiệp xã hội và cuộc sống gia đình ấm áp tại Cung Phụ Mẫu.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "ĐỊA KHÔNG"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao Địa không",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở cản trở, hao hụt bất ngờ.<br><b>Luận giải:</b> Hạn chế hoặc thử thách bản lĩnh ý chí đương số tại Cung Phụ Mẫu. Cần hành sự bình tĩnh kiên trì tuyệt đối không mạo hiểm đầu cơ trục lợi.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐỊA KIẾP"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao Địa kiếp",
+        "text": "<b>Đặc tính Sát Tinh:</b> Tổn thất phá hoại, thăng trầm dốc đứng.<br><b>Luận giải:</b> Tạo áp lực biến động đột ngột hoặc rủi ro hao tài phá của lớn tại cung Cung Phụ Mẫu. Khuyên đương số quản lý chặt chẽ hành sự cẩn mật.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "HÓA KỴ"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao Hóa kỵ",
+        "text": "<b>Đặc tính Sát Tinh:</b> Nghi kỵ hiểu lầm, thị phi gièm pha dèm pha lời nói.<br><b>Luận giải:</b> Bản cung dễ xảy ra cọ xát nhỏ trong giao tế đối thoại, đương số cần học cách lắng nghe khiêm nhường gác bất đồng tại Cung Phụ Mẫu.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "TANG MÔN"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao Tang môn",
+        "text": "<b>Đặc tính Sát Tinh:</b> Lo nghĩ buồn phiền ảo tinh thần mỏi mệt.<br><b>Luận giải:</b> Đương số dễ chịu áp lực tâm lý lo lắng xa vời cản trở hành sự tại Cung Phụ Mẫu, khuyên rèn chí khí sảng khoái năng lượng tích cực.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "KÌNH DƯƠNG"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao Kình dương",
+        "text": "<b>Đặc tính Sát Tinh:</b> Va chạm trực diện, cạnh tranh gay gắt.<br><b>Luận giải:</b> Mang năng lượng xung khắc bộc trực mạnh mẽ, đề phòng tranh chấp lời nói pháp lý cọ xát chi thể tại cung Cung Phụ Mẫu.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀ LA"
+        ],
+        "title": "Cung Cung Phụ Mẫu an tại [Chi] có sao Đà la",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Phụ Mẫu tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      }
+    ],
+    "phuc_duc": [
+      {
+        "stars": [
+          "TỬ VI"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao tử vi tọa thủ",
+        "text": "<b>Phúc đức & Thọ mạng:</b> Phúc đức tổ tông vô cùng sâu dày, dòng họ danh gia vọng tộc hiển hách giàu sang.<br><b>Tinh thần & Hậu vận:</b> Bản mệnh đắc thọ mạng dài lâu, tâm tư luôn bình an sáng suốt, hậu vận được an nhàn phú quý tôn vinh.<br><b>Âm phần:</b> Gia tiên đắc thế đất cát tường, che chở đắc lực cho con cháu đời sau.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN PHỦ"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao thiên phủ tọa thủ",
+        "text": "<b>Phúc báu tự nhiên:</b> Mệnh vượng phúc báu tự nhiên che chở, dòng họ hiền đức thịnh vượng ấm no, ít biến động lớn.<br><b>Tâm tư:</b> Nội tâm thanh thản bình an biết tri túc, cuộc đời an lành gặp cát tránh hung hiệu quả.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VŨ KHÚC"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao vũ khúc tọa thủ",
+        "text": "<b>Phúc đức dòng họ:</b> Dòng họ có người thành đạt giàu sang lớn về tiền của, tinh thần đương số quyết liệt cứng cỏi vượt nghịch cảnh.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN TƯỚNG"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao thiên tướng tọa thủ",
+        "text": "<b>Phúc báu tinh thần:</b> Phúc đức ổn định dòng họ hiền hậu ôn hòa, tâm tư đương số thanh thản biết tri túc hướng thiện cát sự.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI DƯƠNG"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao thái dương tọa thủ",
+        "text": "<b>Phúc đức dòng họ:</b> Dòng họ danh gia vọng tộc khoa bảng rực rỡ tổ tông tích đức lớn che chở con cháu phát tài danh.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI ÂM"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao thái âm tọa thủ",
+        "text": "<b>Tâm tư tinh thần:</b> Đời sống nội tâm phong phú thanh nhã phúc đức tổ tông sâu dày mang lại an bình suốt chặng đường đời.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "CỰ MÔN"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao cự môn tọa thủ",
+        "text": "<b>Tư tưởng nội tâm:</b> Dòng họ hiếu học giỏi văn thơ chữ nghĩa biện thuyết đương số tư duy thấu đáo sự lý đời.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN CƠ"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao thiên cơ tọa thủ",
+        "text": "<b>Tư tưởng tinh thần:</b> Tâm trí linh hoạt nhạy cảm sáng suốt phúc đức dòng họ nho nhã hiển vinh tài hoa.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN LƯƠNG"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao thiên lương tọa thủ",
+        "text": "<b>Phúc đức thọ mạng:</b> Phúc báu gia tiên vô cùng sâu dày dòng họ đức độ đương số sống thọ mệnh an lành trọn đời.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN ĐỒNG"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao thiên đồng tọa thủ",
+        "text": "<b>Phúc báu gia đạo: Dòng họ yên bình hạnh phúc cát tường tự tại vui vẻ cuộc đời bình lặng hanh thông.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "LIÊM TRINH"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao liêm trinh tọa thủ",
+        "text": "<b>Tư tưởng tinh thần: Dòng họ chí khí cứng cỏi lập nghiệp hiển đạt đương số tư duy quyết liệt kiên cường vượt khó.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THAM LANG"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao tham lang tọa thủ",
+        "text": "<b>Tâm tư tinh thần:</b> Trực giác bén nhạy dòng họ năng động bộc phát tài lộc nhanh chóng đương số thích hưởng thụ văn hóa nghệ thuật.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THẤT SÁT"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao thất sát tọa thủ",
+        "text": "<b>Tư tưởng chí hướng:</b> Dòng họ kiên cường vượt khó lập nghiệp hiển đạt lớn đương số có ý chí sắt đá vượt mọi thử thách.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "PHÁ QUÂN"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao phá quân tọa thủ",
+        "text": "<b>Chí hướng nội tâm: Dòng họ bôn ba khắp nơi lập nghiệp hiển đạt nhanh đương số tư duy đổi mới liên tục vượt bậc.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VĂN XƯƠNG"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao Văn xương",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Xương chủ về học thuật tri thức khoa bảng.<br><b>Luận giải:</b> Sự hiện diện của Văn Xương mang lại luồng cát khí tri thức, học hỏi nhạy bén nhạy cảm, giúp đương số đỗ đạt cao khoa bảng hanh thông và có uy tín học vấn tốt lành tại khía cạnh Cung Phúc Đức.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "VĂN KHÚC"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao Văn khúc",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Khúc chủ về năng khiếu nghệ thuật giao tế khéo léo.<br><b>Luận giải:</b> Tăng tiến duyên giao tiếp hùng biện, khiếu thẩm mỹ tinh tế và tài hoa nghệ thuật nổi bật chi phối hoạt động của đương số tại phương diện Cung Phúc Đức.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "THIÊN KHÔI"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao Thiên khôi",
+        "text": "<b>Đặc tính Cát Tinh:</b> Đệ nhất Quý Nhân cát tinh chủ về người dẫn đầu.<br><b>Luận giải:</b> Mang lại lộc may mắn đi đầu dẫn dắt, được các bậc đi trước tin cậy đề bạt nâng đỡ vượt bậc trong mưu sự tại Cung Phúc Đức.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "THIÊN VIỆT"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao Thiên việt",
+        "text": "<b>Đặc tính Cát Tinh:</b> Quý nhân phò tá cát tinh tối thượng.<br><b>Luận giải:</b> Đương số luôn tìm thấy cơ hội bứt phá mở đường khi mưu sự, có quý nhân âm thầm giúp sức tháo gỡ mọi cản trở khó khăn tại Cung Phúc Đức.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀO HOA"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao Đào hoa",
+        "text": "<b>Đặc tính Đào Hoa:</b> Duyên phận, sức hút cá nhân nổi bật.<br><b>Luận giải:</b> Mang lại cát duyên tốt lành, sức quyến rũ giao tế khéo léo giúp đương số rất được mọi người xung quanh yêu mến trợ giúp tại khía cạnh Cung Phúc Đức.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "HỒNG LOAN"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao Hồng loan",
+        "text": "<b>Đặc tính Cát Tinh:</b> Nhân duyên hòa hợp cát sự hỷ sự tốt lành.<br><b>Luận giải:</b> Mang đến sự dịu dàng thanh tao đoan trang trong giao thiệp xã hội và cuộc sống gia đình ấm áp tại Cung Phúc Đức.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "ĐỊA KHÔNG"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao Địa không",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở cản trở, hao hụt bất ngờ.<br><b>Luận giải:</b> Hạn chế hoặc thử thách bản lĩnh ý chí đương số tại Cung Phúc Đức. Cần hành sự bình tĩnh kiên trì tuyệt đối không mạo hiểm đầu cơ trục lợi.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐỊA KIẾP"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao Địa kiếp",
+        "text": "<b>Đặc tính Sát Tinh:</b> Tổn thất phá hoại, thăng trầm dốc đứng.<br><b>Luận giải:</b> Tạo áp lực biến động đột ngột hoặc rủi ro hao tài phá của lớn tại cung Cung Phúc Đức. Khuyên đương số quản lý chặt chẽ hành sự cẩn mật.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "HÓA KỴ"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao Hóa kỵ",
+        "text": "<b>Đặc tính Sát Tinh:</b> Nghi kỵ hiểu lầm, thị phi gièm pha dèm pha lời nói.<br><b>Luận giải:</b> Bản cung dễ xảy ra cọ xát nhỏ trong giao tế đối thoại, đương số cần học cách lắng nghe khiêm nhường gác bất đồng tại Cung Phúc Đức.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "TANG MÔN"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao Tang môn",
+        "text": "<b>Đặc tính Sát Tinh:</b> Lo nghĩ buồn phiền ảo tinh thần mỏi mệt.<br><b>Luận giải:</b> Đương số dễ chịu áp lực tâm lý lo lắng xa vời cản trở hành sự tại Cung Phúc Đức, khuyên rèn chí khí sảng khoái năng lượng tích cực.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "KÌNH DƯƠNG"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao Kình dương",
+        "text": "<b>Đặc tính Sát Tinh:</b> Va chạm trực diện, cạnh tranh gay gắt.<br><b>Luận giải:</b> Mang năng lượng xung khắc bộc trực mạnh mẽ, đề phòng tranh chấp lời nói pháp lý cọ xát chi thể tại cung Cung Phúc Đức.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀ LA"
+        ],
+        "title": "Cung Cung Phúc Đức an tại [Chi] có sao Đà la",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Phúc Đức tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      }
+    ],
+    "dien_trach": [
+      {
+        "stars": [
+          "TỬ VI"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao tử vi tọa thủ",
+        "text": "<b>Sản nghiệp điền sản:</b> Bất động sản vô cùng dồi dào, sở hữu nhà cửa đất đai khang trang lộng lẫy nguy nga.<br><b>Tích lũy & Thừa kế:</b> Đương số có số thừa hưởng điền sản gia tiên hoặc tự tay gầy dựng sản nghiệp to lớn bền vững truyền đời.<br><b>Môi trường sống:</b> Nơi ở sang trọng, khu dân cư văn minh và có duyên sở hữu nhiều bất động sản giá trị.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN PHỦ"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao thiên phủ tọa thủ",
+        "text": "<b>Sản nghiệp đất đai:</b> Điền sản vô cùng dồi dào hưng thịnh đắc vị tối thượng, có số mua bán nhà cửa khang trang lộng lẫy.<br><b>Tích lũy sản nghiệp:</b> Bất động sản gia tăng giá trị bền vững đường dài, giữ của đất đai xuất sắc.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VŨ KHÚC"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao vũ khúc tọa thủ",
+        "text": "<b>Sản nghiệp điền tài:</b> Tự tay mua sắm tích lũy điền sản bất động sản giá trị lớn, gia sản hưng vượng vững chắc hậu vận.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN TƯỚNG"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao thiên tướng tọa thủ",
+        "text": "<b>Sản nghiệp điền sản:</b> Điền sản ổn định lâu bền nhà cửa ngăn nắp khang trang sạch đẹp lâu bền vững chãi.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI DƯƠNG"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao thái dương tọa thủ",
+        "text": "<b>Sản nghiệp nhà đất:</b> Sở hữu điền sản bất động sản khang trang cao ráo rộng lớn tích lũy điền sản hanh thông.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI ÂM"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao thái âm tọa thủ",
+        "text": "<b>Đệ nhị điền tài tinh:</b> Điền sản vô cùng dồi dào nhà cửa khang trang lộng lẫy có duyên sở hữu nhiều đất đai giá trị lớn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "CỰ MÔN"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao cự môn tọa thủ",
+        "text": "<b>Sản nghiệp nhà đất:</b> Điền sản ổn định tự tay mua bán tạo lập nhà cửa đầy đủ tiện nghi thiết thực vững chãi.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN CƠ"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao thiên cơ tọa thủ",
+        "text": "<b>Sản nghiệp điền sản:</b> Nhà cửa khang trang sạch sẽ có số hay sửa sang dịch chuyển thay đổi bất động sản cát vượng.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN LƯƠNG"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao thiên lương tọa thủ",
+        "text": "<b>Sản nghiệp điền sản: Nhận thừa kế đất đai gia sản ông bà nhà cửa an toàn khang trang bình yên.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN ĐỒNG"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao thiên đồng tọa thủ",
+        "text": "<b>Sản nghiệp nhà đất: Tự mua sắm trang trí nhà cửa ấm cúng đầy nghệ thuật tiện nghi sửa sang điền sản thuận lợi.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "LIÊM TRINH"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao liêm trinh tọa thủ",
+        "text": "<b>Sản nghiệp nhà đất: Tự tay mua sắm thiết lập sản nghiệp bất động sản khang trang vững chắc bằng năng lực cá nhân.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THAM LANG"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao tham lang tọa thủ",
+        "text": "<b>Sản nghiệp nhà đất: Thích hợp mua bán đầu tư bất động sản khang trang thiết kế nghệ thuật bắt mắt cát lộc.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THẤT SÁT"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao thất sát tọa thủ",
+        "text": "<b>Sản nghiệp nhà đất: Tự lập gầy dựng điền sản cơ ngơi to lớn vững chắc từ bàn tay trắng vượt gian nan vất vả.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "PHÁ QUÂN"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao phá quân tọa thủ",
+        "text": "<b>Sản nghiệp điền trạch:</b> Nhà đất điền sản thay đổi cải tạo khang trang sửa sang lớn đắc lộc bất động sản về sau.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VĂN XƯƠNG"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao Văn xương",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Xương chủ về học thuật tri thức khoa bảng.<br><b>Luận giải:</b> Sự hiện diện của Văn Xương mang lại luồng cát khí tri thức, học hỏi nhạy bén nhạy cảm, giúp đương số đỗ đạt cao khoa bảng hanh thông và có uy tín học vấn tốt lành tại khía cạnh Cung Điền Trạch.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "VĂN KHÚC"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao Văn khúc",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Khúc chủ về năng khiếu nghệ thuật giao tế khéo léo.<br><b>Luận giải:</b> Tăng tiến duyên giao tiếp hùng biện, khiếu thẩm mỹ tinh tế và tài hoa nghệ thuật nổi bật chi phối hoạt động của đương số tại phương diện Cung Điền Trạch.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "THIÊN KHÔI"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao Thiên khôi",
+        "text": "<b>Đặc tính Cát Tinh:</b> Đệ nhất Quý Nhân cát tinh chủ về người dẫn đầu.<br><b>Luận giải:</b> Mang lại lộc may mắn đi đầu dẫn dắt, được các bậc đi trước tin cậy đề bạt nâng đỡ vượt bậc trong mưu sự tại Cung Điền Trạch.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "THIÊN VIỆT"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao Thiên việt",
+        "text": "<b>Đặc tính Cát Tinh:</b> Quý nhân phò tá cát tinh tối thượng.<br><b>Luận giải:</b> Đương số luôn tìm thấy cơ hội bứt phá mở đường khi mưu sự, có quý nhân âm thầm giúp sức tháo gỡ mọi cản trở khó khăn tại Cung Điền Trạch.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀO HOA"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao Đào hoa",
+        "text": "<b>Đặc tính Đào Hoa:</b> Duyên phận, sức hút cá nhân nổi bật.<br><b>Luận giải:</b> Mang lại cát duyên tốt lành, sức quyến rũ giao tế khéo léo giúp đương số rất được mọi người xung quanh yêu mến trợ giúp tại khía cạnh Cung Điền Trạch.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "HỒNG LOAN"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao Hồng loan",
+        "text": "<b>Đặc tính Cát Tinh:</b> Nhân duyên hòa hợp cát sự hỷ sự tốt lành.<br><b>Luận giải:</b> Mang đến sự dịu dàng thanh tao đoan trang trong giao thiệp xã hội và cuộc sống gia đình ấm áp tại Cung Điền Trạch.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "ĐỊA KHÔNG"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao Địa không",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở cản trở, hao hụt bất ngờ.<br><b>Luận giải:</b> Hạn chế hoặc thử thách bản lĩnh ý chí đương số tại Cung Điền Trạch. Cần hành sự bình tĩnh kiên trì tuyệt đối không mạo hiểm đầu cơ trục lợi.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐỊA KIẾP"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao Địa kiếp",
+        "text": "<b>Đặc tính Sát Tinh:</b> Tổn thất phá hoại, thăng trầm dốc đứng.<br><b>Luận giải:</b> Tạo áp lực biến động đột ngột hoặc rủi ro hao tài phá của lớn tại cung Cung Điền Trạch. Khuyên đương số quản lý chặt chẽ hành sự cẩn mật.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "HÓA KỴ"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao Hóa kỵ",
+        "text": "<b>Đặc tính Sát Tinh:</b> Nghi kỵ hiểu lầm, thị phi gièm pha dèm pha lời nói.<br><b>Luận giải:</b> Bản cung dễ xảy ra cọ xát nhỏ trong giao tế đối thoại, đương số cần học cách lắng nghe khiêm nhường gác bất đồng tại Cung Điền Trạch.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "TANG MÔN"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao Tang môn",
+        "text": "<b>Đặc tính Sát Tinh:</b> Lo nghĩ buồn phiền ảo tinh thần mỏi mệt.<br><b>Luận giải:</b> Đương số dễ chịu áp lực tâm lý lo lắng xa vời cản trở hành sự tại Cung Điền Trạch, khuyên rèn chí khí sảng khoái năng lượng tích cực.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "KÌNH DƯƠNG"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao Kình dương",
+        "text": "<b>Đặc tính Sát Tinh:</b> Va chạm trực diện, cạnh tranh gay gắt.<br><b>Luận giải:</b> Mang năng lượng xung khắc bộc trực mạnh mẽ, đề phòng tranh chấp lời nói pháp lý cọ xát chi thể tại cung Cung Điền Trạch.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀ LA"
+        ],
+        "title": "Cung Cung Điền Trạch an tại [Chi] có sao Đà la",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Điền Trạch tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      }
+    ],
+    "quan_loc": [
+      {
+        "stars": [
+          "TỬ VI"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao tử vi tọa thủ",
+        "text": "<b>Công danh sự nghiệp:</b> Sự nghiệp thăng tiến vĩ đại vững bền, giữ các chức vị chỉ huy, lãnh đạo điều hành tổ chức lớn.<br><b>Thực quyền:</b> Tiếng nói có thực quyền lực và sức ảnh hưởng cao trong cơ quan, được cấp dưới kính nể, cấp trên tin cậy.<br><b>Phát triển:</b> Con đường công danh hanh thông rực rỡ, khẳng định uy tín vang dội.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN PHỦ"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao thiên phủ tọa thủ",
+        "text": "<b>Định hướng công danh:</b> Sự nghiệp ổn định thăng tiến cao trong các ngành kinh tế, tài chính ngân hàng, hành chính quản trị công sở.<br><b>Vị thế:</b> Nắm giữ vị trí quản lý tài sản, thủ kho tài chính ngân hàng lớn uy tín.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VŨ KHÚC"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao vũ khúc tọa thủ",
+        "text": "<b>Sự nghiệp:</b> Thích hợp công tác quản lý tài chính thương mại, kinh doanh tự do, kỹ thuật nặng đòi hỏi tính quyết định sắc bén cao.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN TƯỚNG"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao thiên tướng tọa thủ",
+        "text": "<b>Ấn tinh quyền quý:</b> Thăng tiến sự nghiệp vững vàng nắm giữ thực quyền hành chính quản trị quản lý điều hành cơ quan lớn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI DƯƠNG"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao thái dương tọa thủ",
+        "text": "<b>Tiếng tăm danh vị:</b> Thái Dương cư Quan sự nghiệp thăng tiến rực rỡ phù hợp giảng dạy đàm phán chính trị truyền thông ngoại giao.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI ÂM"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao thái âm tọa thủ",
+        "text": "<b>Sự nghiệp:</b> Sự nghiệp thăng tiến bình ổn hanh thông thích hợp nghệ thuật nghiên cứu khoa học tài chính kế toán dịch vụ công.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "CỰ MÔN"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao cự môn tọa thủ",
+        "text": "<b>Công danh sự nghiệp: Thích hợp ngành luật sư giảng viên truyền thông đàm phán đối thoại ngoại giao đối ngoại đắc lợi.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN CƠ"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao thiên cơ tọa thủ",
+        "text": "<b>Công danh sự nghiệp:</b> Hợp kỹ thuật công nghệ thông tin thiết kế lập kế hoạch hoạch định dự án mưu lược chiến lược lớn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN LƯƠNG"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao thiên lương tọa thủ",
+        "text": "<b>Sự nghiệp định hướng:</b> Hợp ngành y dược y khoa giáo dục học thuật xã hội hành chính nhân đức cát vượng hiển đạt.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN ĐỒNG"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao thiên đồng tọa thủ",
+        "text": "<b>Sự nghiệp: Hợp ngành dịch vụ quan hệ công chúng du lịch đàm phán quan hệ ngoại giao đối ngoại dịch chuyển tự do.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "LIÊM TRINH"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao liêm trinh tọa thủ",
+        "text": "<b>Công danh uy quyền: Sự nghiệp thăng tiến giữ chức vị quản lý chỉ huy đắc lực ngành kỹ thuật hành chính pháp luật.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THAM LANG"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao tham lang tọa thủ",
+        "text": "<b>Công danh sự nghiệp: Phù hợp ngành thương mại ngoại giao đàm phán quan hệ công chúng nghệ thuật đối ngoại đắc lợi.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THẤT SÁT"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao thất sát tọa thủ",
+        "text": "<b>Sự nghiệp chỉ huy: Hợp ngành vũ trang quân cảnh chỉ huy quản lý điều hành sản xuất kỹ thuật nặng quyết liệt.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "PHÁ QUÂN"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao phá quân tọa thủ",
+        "text": "<b>Định hướng sự nghiệp: Hợp công tác tiên phong đổi mới công nghệ khai phá dự án lớn kinh doanh cơ hội mạo hiểm đột phá.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VĂN XƯƠNG"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao Văn xương",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Xương chủ về học thuật tri thức khoa bảng.<br><b>Luận giải:</b> Sự hiện diện của Văn Xương mang lại luồng cát khí tri thức, học hỏi nhạy bén nhạy cảm, giúp đương số đỗ đạt cao khoa bảng hanh thông và có uy tín học vấn tốt lành tại khía cạnh Cung Quan Lộc.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "VĂN KHÚC"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao Văn khúc",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Khúc chủ về năng khiếu nghệ thuật giao tế khéo léo.<br><b>Luận giải:</b> Tăng tiến duyên giao tiếp hùng biện, khiếu thẩm mỹ tinh tế và tài hoa nghệ thuật nổi bật chi phối hoạt động của đương số tại phương diện Cung Quan Lộc.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "THIÊN KHÔI"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao Thiên khôi",
+        "text": "<b>Đặc tính Cát Tinh:</b> Đệ nhất Quý Nhân cát tinh chủ về người dẫn đầu.<br><b>Luận giải:</b> Mang lại lộc may mắn đi đầu dẫn dắt, được các bậc đi trước tin cậy đề bạt nâng đỡ vượt bậc trong mưu sự tại Cung Quan Lộc.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "THIÊN VIỆT"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao Thiên việt",
+        "text": "<b>Đặc tính Cát Tinh:</b> Quý nhân phò tá cát tinh tối thượng.<br><b>Luận giải:</b> Đương số luôn tìm thấy cơ hội bứt phá mở đường khi mưu sự, có quý nhân âm thầm giúp sức tháo gỡ mọi cản trở khó khăn tại Cung Quan Lộc.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀO HOA"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao Đào hoa",
+        "text": "<b>Đặc tính Đào Hoa:</b> Duyên phận, sức hút cá nhân nổi bật.<br><b>Luận giải:</b> Mang lại cát duyên tốt lành, sức quyến rũ giao tế khéo léo giúp đương số rất được mọi người xung quanh yêu mến trợ giúp tại khía cạnh Cung Quan Lộc.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "HỒNG LOAN"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao Hồng loan",
+        "text": "<b>Đặc tính Cát Tinh:</b> Nhân duyên hòa hợp cát sự hỷ sự tốt lành.<br><b>Luận giải:</b> Mang đến sự dịu dàng thanh tao đoan trang trong giao thiệp xã hội và cuộc sống gia đình ấm áp tại Cung Quan Lộc.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "ĐỊA KHÔNG"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao Địa không",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở cản trở, hao hụt bất ngờ.<br><b>Luận giải:</b> Hạn chế hoặc thử thách bản lĩnh ý chí đương số tại Cung Quan Lộc. Cần hành sự bình tĩnh kiên trì tuyệt đối không mạo hiểm đầu cơ trục lợi.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐỊA KIẾP"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao Địa kiếp",
+        "text": "<b>Đặc tính Sát Tinh:</b> Tổn thất phá hoại, thăng trầm dốc đứng.<br><b>Luận giải:</b> Tạo áp lực biến động đột ngột hoặc rủi ro hao tài phá của lớn tại cung Cung Quan Lộc. Khuyên đương số quản lý chặt chẽ hành sự cẩn mật.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "HÓA KỴ"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao Hóa kỵ",
+        "text": "<b>Đặc tính Sát Tinh:</b> Nghi kỵ hiểu lầm, thị phi gièm pha dèm pha lời nói.<br><b>Luận giải:</b> Bản cung dễ xảy ra cọ xát nhỏ trong giao tế đối thoại, đương số cần học cách lắng nghe khiêm nhường gác bất đồng tại Cung Quan Lộc.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "TANG MÔN"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao Tang môn",
+        "text": "<b>Đặc tính Sát Tinh:</b> Lo nghĩ buồn phiền ảo tinh thần mỏi mệt.<br><b>Luận giải:</b> Đương số dễ chịu áp lực tâm lý lo lắng xa vời cản trở hành sự tại Cung Quan Lộc, khuyên rèn chí khí sảng khoái năng lượng tích cực.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "KÌNH DƯƠNG"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao Kình dương",
+        "text": "<b>Đặc tính Sát Tinh:</b> Va chạm trực diện, cạnh tranh gay gắt.<br><b>Luận giải:</b> Mang năng lượng xung khắc bộc trực mạnh mẽ, đề phòng tranh chấp lời nói pháp lý cọ xát chi thể tại cung Cung Quan Lộc.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀ LA"
+        ],
+        "title": "Cung Cung Quan Lộc an tại [Chi] có sao Đà la",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Quan Lộc tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      }
+    ],
+    "no_boc": [
+      {
+        "stars": [
+          "TỬ VI"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao tử vi tọa thủ",
+        "text": "<b>Quan hệ xã giao:</b> Bạn bè đồng nghiệp gồm nhiều người quyền quý địa vị xã hội, hỗ trợ tốt công việc ngoại giao.<br><b>Lưu ý:</b> Bản thân dễ có khoảng cách tự tôn với bạn bè hoặc cấp dưới, cần ứng xử khôn khéo ôn hòa để giữ vững trợ lực.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN PHỦ"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao thiên phủ tọa thủ",
+        "text": "<b>Mối quan hệ bạn bè:</b> Bạn bè đàng hoàng khá giả giỏi làm ăn, đối tác làm ăn đáng tin cậy hỗ trợ đắc lực.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VŨ KHÚC"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao vũ khúc tọa thủ",
+        "text": "<b>Bè bạn đồng nghiệp:</b> Quan hệ sòng phẳng thực tế phân minh tiền bạc rõ ràng, hợp tác ngắn hạn mang lại lợi ích tốt.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN TƯỚNG"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao thiên tướng tọa thủ",
+        "text": "<b>Bè bạn đối tác:</b> Đắc lực tri kỷ đối tác tin cậy giúp đỡ tương hỗ đắc lực hết mình lúc hoạn nạn khó khăn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI DƯƠNG"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao thái dương tọa thủ",
+        "text": "<b>Quan hệ xã hội: Bạn bè đông đảo hào sảng giúp ích tốt lành cho các hoạt động đối ngoại của đương số.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI ÂM"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao thái âm tọa thủ",
+        "text": "<b>Bè bạn đối tác: Có nhiều đồng nghiệp bạn bè nữ hiền hậu giúp đỡ tương trợ âm thầm cát lợi.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "CỰ MÔN"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao cự môn tọa thủ",
+        "text": "<b>Giao tế xã hội: Quan hệ rộng rãi đàm thoại nhiều đề phòng khẩu thiệt thị phi gièm pha nhỏ ứng xử khôn khéo.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN CƠ"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao thiên cơ tọa thủ",
+        "text": "<b>Bè bạn đồng nghiệp:</b> Có nhiều bạn bè trí thức năng động sáng tạo cùng chia sẻ hỗ trợ ý tưởng công việc đắc lực.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN LƯƠNG"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao thiên lương tọa thủ",
+        "text": "<b>Bè bạn tri kỷ:</b> Có nhiều bạn bè lương thiện đức độ giúp đỡ bảo bọc tương hỗ tận tình lúc khó khăn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN ĐỒNG"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao thiên đồng tọa thủ",
+        "text": "<b>Bè bạn đối tác: Bạn bè đông vui hòa đồng giao thiệp thoải mái mang lại tinh thần phấn chấn cát duyên.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "LIÊM TRINH"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao liêm trinh tọa thủ",
+        "text": "<b>Giao tế bạn bè: Quan hệ giao thiệp rộng lớn đối tác nhiều cần khéo léo phân minh lợi ích tránh cọ xát thị phi.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THAM LANG"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao tham lang tọa thủ",
+        "text": "<b>Giao tế bạn bè: Bạn bè đối tác đông đảo giao thiệp rộng đem lại nhiều thời cơ dự án làm ăn phát đạt.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THẤT SÁT"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao thất sát tọa thủ",
+        "text": "<b>Bè bạn đồng nghiệp: Đồng nghiệp bè bạn sòng phẳng dứt khoát cạnh tranh năng lực công việc lành mạnh phát triển.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "PHÁ QUÂN"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao phá quân tọa thủ",
+        "text": "<b>Quan hệ xã hội: Bạn bè đồng nghiệp thay đổi linh hoạt theo chặng đường công việc hợp tác ngắn hạn cát lợi.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VĂN XƯƠNG"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao Văn xương",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Xương chủ về học thuật tri thức khoa bảng.<br><b>Luận giải:</b> Sự hiện diện của Văn Xương mang lại luồng cát khí tri thức, học hỏi nhạy bén nhạy cảm, giúp đương số đỗ đạt cao khoa bảng hanh thông và có uy tín học vấn tốt lành tại khía cạnh Cung Nô Bộc.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "VĂN KHÚC"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao Văn khúc",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Khúc chủ về năng khiếu nghệ thuật giao tế khéo léo.<br><b>Luận giải:</b> Tăng tiến duyên giao tiếp hùng biện, khiếu thẩm mỹ tinh tế và tài hoa nghệ thuật nổi bật chi phối hoạt động của đương số tại phương diện Cung Nô Bộc.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "THIÊN KHÔI"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao Thiên khôi",
+        "text": "<b>Đặc tính Cát Tinh:</b> Đệ nhất Quý Nhân cát tinh chủ về người dẫn đầu.<br><b>Luận giải:</b> Mang lại lộc may mắn đi đầu dẫn dắt, được các bậc đi trước tin cậy đề bạt nâng đỡ vượt bậc trong mưu sự tại Cung Nô Bộc.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "THIÊN VIỆT"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao Thiên việt",
+        "text": "<b>Đặc tính Cát Tinh:</b> Quý nhân phò tá cát tinh tối thượng.<br><b>Luận giải:</b> Đương số luôn tìm thấy cơ hội bứt phá mở đường khi mưu sự, có quý nhân âm thầm giúp sức tháo gỡ mọi cản trở khó khăn tại Cung Nô Bộc.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀO HOA"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao Đào hoa",
+        "text": "<b>Đặc tính Đào Hoa:</b> Duyên phận, sức hút cá nhân nổi bật.<br><b>Luận giải:</b> Mang lại cát duyên tốt lành, sức quyến rũ giao tế khéo léo giúp đương số rất được mọi người xung quanh yêu mến trợ giúp tại khía cạnh Cung Nô Bộc.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "HỒNG LOAN"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao Hồng loan",
+        "text": "<b>Đặc tính Cát Tinh:</b> Nhân duyên hòa hợp cát sự hỷ sự tốt lành.<br><b>Luận giải:</b> Mang đến sự dịu dàng thanh tao đoan trang trong giao thiệp xã hội và cuộc sống gia đình ấm áp tại Cung Nô Bộc.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "ĐỊA KHÔNG"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao Địa không",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở cản trở, hao hụt bất ngờ.<br><b>Luận giải:</b> Hạn chế hoặc thử thách bản lĩnh ý chí đương số tại Cung Nô Bộc. Cần hành sự bình tĩnh kiên trì tuyệt đối không mạo hiểm đầu cơ trục lợi.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐỊA KIẾP"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao Địa kiếp",
+        "text": "<b>Đặc tính Sát Tinh:</b> Tổn thất phá hoại, thăng trầm dốc đứng.<br><b>Luận giải:</b> Tạo áp lực biến động đột ngột hoặc rủi ro hao tài phá của lớn tại cung Cung Nô Bộc. Khuyên đương số quản lý chặt chẽ hành sự cẩn mật.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "HÓA KỴ"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao Hóa kỵ",
+        "text": "<b>Đặc tính Sát Tinh:</b> Nghi kỵ hiểu lầm, thị phi gièm pha dèm pha lời nói.<br><b>Luận giải:</b> Bản cung dễ xảy ra cọ xát nhỏ trong giao tế đối thoại, đương số cần học cách lắng nghe khiêm nhường gác bất đồng tại Cung Nô Bộc.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "TANG MÔN"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao Tang môn",
+        "text": "<b>Đặc tính Sát Tinh:</b> Lo nghĩ buồn phiền ảo tinh thần mỏi mệt.<br><b>Luận giải:</b> Đương số dễ chịu áp lực tâm lý lo lắng xa vời cản trở hành sự tại Cung Nô Bộc, khuyên rèn chí khí sảng khoái năng lượng tích cực.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "KÌNH DƯƠNG"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao Kình dương",
+        "text": "<b>Đặc tính Sát Tinh:</b> Va chạm trực diện, cạnh tranh gay gắt.<br><b>Luận giải:</b> Mang năng lượng xung khắc bộc trực mạnh mẽ, đề phòng tranh chấp lời nói pháp lý cọ xát chi thể tại cung Cung Nô Bộc.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀ LA"
+        ],
+        "title": "Cung Cung Nô Bộc an tại [Chi] có sao Đà la",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Nô Bộc tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      }
+    ],
+    "thien_di": [
+      {
+        "stars": [
+          "TỬ VI"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao tử vi tọa thủ",
+        "text": "<b>Ngoại giao đối ngoại:</b> Ra ngoài đắc thế gặp nhiều cát lợi quý nhân quyền quý nâng đỡ đắc lực.<br><b>Lập nghiệp phương xa:</b> Thích hợp đi xa lập nghiệp xuất ngoại ngoại giao khẳng định uy tín danh tiếng vang dội và thu tài lộc to lớn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN PHỦ"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao thiên phủ tọa thủ",
+        "text": "<b>Hoạt động đối ngoại:</b> Ra ngoài gặp may mắn vượng tài vượng lộc, ngoại giao làm ăn phương xa đắc lộc tự nhiên dồi dào.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VŨ KHÚC"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao vũ khúc tọa thủ",
+        "text": "<b>Ngoại giao phương xa:</b> Ra ngoài năng động tháo vát bôn ba kiếm tiền đắc lộc, thích hợp đi xa ngoại giao mở rộng kinh doanh.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN TƯỚNG"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao thiên tướng tọa thủ",
+        "text": "<b>Ngoại giao đối ngoại:</b> Ra ngoài khẳng định uy tín lớn được xã hội kính nể đón nhận vượng danh vượng tài phương xa.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI DƯƠNG"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao thái dương tọa thủ",
+        "text": "<b>Ngoại giao phương xa:</b> Đi xa xuất ngoại mưu sự hanh thông danh tài hiển đạt được xã hội đón nhận kính trọng vô cùng.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI ÂM"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao thái âm tọa thủ",
+        "text": "<b>Ngoại giao đối ngoại:</b> Ra ngoài đắc nhân tâm được nhiều người mến mộ giúp đỡ đắc duyên đắc tài phương xa.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "CỰ MÔN"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao cự môn tọa thủ",
+        "text": "<b>Ngoại giao phương xa:</b> Khẳng định vị thế uy tín bằng tài ngôn từ hùng biện đắc lộc đối ngoại phương xa cát sự.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN CƠ"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao thiên cơ tọa thủ",
+        "text": "<b>Hoạt động đối ngoại:</b> Ra ngoài gặp nhiều may mắn đi xa đi công tác đối ngoại ngoại giao lập nghiệp lớn cát lành.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN LƯƠNG"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao thiên lương tọa thủ",
+        "text": "<b>Ngoại giao đối ngoại: Ra ngoài gặp may mắn quý nhân cao tuổi che chở giúp sức cát sự hanh thông thảnh thơi.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN ĐỒNG"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao thiên đồng tọa thủ",
+        "text": "<b>Ngoại giao đối ngoại:</b> Ra ngoài gặp nhiều may mắn được quý nhân hỗ trợ giao tế tiệc tùng vui vẻ cát sự.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "LIÊM TRINH"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao liêm trinh tọa thủ",
+        "text": "<b>Ngoại giao đối ngoại: Ra ngoài bận rộn năng động đối ngoại rộng lớn khẳng định uy thế sự nghiệp hiển đạt vượng danh.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THAM LANG"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao tham lang tọa thủ",
+        "text": "<b>Ngoại giao đối ngoại: Vượng nhân duyên được nhiều người yêu mến giúp sức đắc duyên đắc tài lộc phương xa.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THẤT SÁT"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao thất sát tọa thủ",
+        "text": "<b>Ngoại giao đối ngoại: Ra ngoài tháo vát năng động xông pha đối ngoại đắc vị khẳng định vị thế uy tín cá nhân vượt trội.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "PHÁ QUÂN"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao phá quân tọa thủ",
+        "text": "<b>Ngoại giao đối ngoại: Ra ngoài bận rộn năng động đối ngoại quyết liệt thích khám phá dịch chuyển phát đạt phương xa.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VĂN XƯƠNG"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao Văn xương",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Xương chủ về học thuật tri thức khoa bảng.<br><b>Luận giải:</b> Sự hiện diện của Văn Xương mang lại luồng cát khí tri thức, học hỏi nhạy bén nhạy cảm, giúp đương số đỗ đạt cao khoa bảng hanh thông và có uy tín học vấn tốt lành tại khía cạnh Cung Thiên Di.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "VĂN KHÚC"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao Văn khúc",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Khúc chủ về năng khiếu nghệ thuật giao tế khéo léo.<br><b>Luận giải:</b> Tăng tiến duyên giao tiếp hùng biện, khiếu thẩm mỹ tinh tế và tài hoa nghệ thuật nổi bật chi phối hoạt động của đương số tại phương diện Cung Thiên Di.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "THIÊN KHÔI"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao Thiên khôi",
+        "text": "<b>Đặc tính Cát Tinh:</b> Đệ nhất Quý Nhân cát tinh chủ về người dẫn đầu.<br><b>Luận giải:</b> Mang lại lộc may mắn đi đầu dẫn dắt, được các bậc đi trước tin cậy đề bạt nâng đỡ vượt bậc trong mưu sự tại Cung Thiên Di.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "THIÊN VIỆT"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao Thiên việt",
+        "text": "<b>Đặc tính Cát Tinh:</b> Quý nhân phò tá cát tinh tối thượng.<br><b>Luận giải:</b> Đương số luôn tìm thấy cơ hội bứt phá mở đường khi mưu sự, có quý nhân âm thầm giúp sức tháo gỡ mọi cản trở khó khăn tại Cung Thiên Di.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀO HOA"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao Đào hoa",
+        "text": "<b>Đặc tính Đào Hoa:</b> Duyên phận, sức hút cá nhân nổi bật.<br><b>Luận giải:</b> Mang lại cát duyên tốt lành, sức quyến rũ giao tế khéo léo giúp đương số rất được mọi người xung quanh yêu mến trợ giúp tại khía cạnh Cung Thiên Di.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "HỒNG LOAN"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao Hồng loan",
+        "text": "<b>Đặc tính Cát Tinh:</b> Nhân duyên hòa hợp cát sự hỷ sự tốt lành.<br><b>Luận giải:</b> Mang đến sự dịu dàng thanh tao đoan trang trong giao thiệp xã hội và cuộc sống gia đình ấm áp tại Cung Thiên Di.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "ĐỊA KHÔNG"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao Địa không",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở cản trở, hao hụt bất ngờ.<br><b>Luận giải:</b> Hạn chế hoặc thử thách bản lĩnh ý chí đương số tại Cung Thiên Di. Cần hành sự bình tĩnh kiên trì tuyệt đối không mạo hiểm đầu cơ trục lợi.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐỊA KIẾP"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao Địa kiếp",
+        "text": "<b>Đặc tính Sát Tinh:</b> Tổn thất phá hoại, thăng trầm dốc đứng.<br><b>Luận giải:</b> Tạo áp lực biến động đột ngột hoặc rủi ro hao tài phá của lớn tại cung Cung Thiên Di. Khuyên đương số quản lý chặt chẽ hành sự cẩn mật.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "HÓA KỴ"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao Hóa kỵ",
+        "text": "<b>Đặc tính Sát Tinh:</b> Nghi kỵ hiểu lầm, thị phi gièm pha dèm pha lời nói.<br><b>Luận giải:</b> Bản cung dễ xảy ra cọ xát nhỏ trong giao tế đối thoại, đương số cần học cách lắng nghe khiêm nhường gác bất đồng tại Cung Thiên Di.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "TANG MÔN"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao Tang môn",
+        "text": "<b>Đặc tính Sát Tinh:</b> Lo nghĩ buồn phiền ảo tinh thần mỏi mệt.<br><b>Luận giải:</b> Đương số dễ chịu áp lực tâm lý lo lắng xa vời cản trở hành sự tại Cung Thiên Di, khuyên rèn chí khí sảng khoái năng lượng tích cực.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "KÌNH DƯƠNG"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao Kình dương",
+        "text": "<b>Đặc tính Sát Tinh:</b> Va chạm trực diện, cạnh tranh gay gắt.<br><b>Luận giải:</b> Mang năng lượng xung khắc bộc trực mạnh mẽ, đề phòng tranh chấp lời nói pháp lý cọ xát chi thể tại cung Cung Thiên Di.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀ LA"
+        ],
+        "title": "Cung Cung Thiên Di an tại [Chi] có sao Đà la",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Thiên Di tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      }
+    ],
+    "tat_ach": [
+      {
+        "stars": [
+          "TỬ VI"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao tử vi tọa thủ",
+        "text": "<b>Hóa giải ách nạn:</b> Là đệ nhất cát tinh giải tai ách giúp đương số gặp nguy hóa an, hóa giải mọi bệnh tật hiểm nghèo nhanh chóng.<br><b>Sức khỏe:</b> Cơ thể dẻo dai khỏe mạnh, tinh thần sảng khoái và ít gặp rủi ro tai nạn lớn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN PHỦ"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao thiên phủ tọa thủ",
+        "text": "<b>Giải ách tai ương:</b> Cơ thể khỏe mạnh ít đau ốm hiểm nghèo, gặp bệnh tật ách nạn được hóa giải nhanh chóng.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VŨ KHÚC"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao vũ khúc tọa thủ",
+        "text": "<b>Sức khỏe:</b> Cơ thể dẻo dai khỏe mạnh đề phòng bệnh nhẹ đường hô hấp hoặc đau cơ khớp nhẹ.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN TƯỚNG"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao thiên tướng tọa thủ",
+        "text": "<b>Giải ách sức khỏe:</b> Giải trừ bệnh tật tai ách hiệu quả khỏe mạnh lâu dài đề phòng bệnh nhẹ tiêu hóa đường ruột.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI DƯƠNG"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao thái dương tọa thủ",
+        "text": "<b>Sức khỏe:</b> Cơ thể khỏe mạnh tràn đầy năng lượng chú ý giữ gìn hệ thần kinh mắt tránh mệt mỏi căng thẳng.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI ÂM"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao thái âm tọa thủ",
+        "text": "<b>Sức khỏe:</b> Thể chất lành mạnh đề phòng bệnh nhẹ đường huyết huyết áp chú ý ngủ nghỉ khoa học.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "CỰ MÔN"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao cự môn tọa thủ",
+        "text": "<b>Sức khỏe:</b> Đề phòng sức khỏe hệ hô hấp tiêu hóa giữ lối sống điều độ tinh thần sảng khoái.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN CƠ"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao thiên cơ tọa thủ",
+        "text": "<b>Sức khỏe:</b> Giữ tinh thần thư thái tránh suy nghĩ quá độ mất ngủ nhức đầu nhẹ dưỡng sinh điều độ.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN LƯƠNG"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao thiên lương tọa thủ",
+        "text": "<b>Giải ách cứu khổ: Khả năng giải trừ bệnh tật tai ương cao nhất thể trạng dẻo dai khỏe mạnh lâu dài.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN ĐỒNG"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao thiên đồng tọa thủ",
+        "text": "<b>Sức khỏe giải ách:</b> Giải ách tai ương tốt cơ thể khỏe mạnh đề phòng bệnh tiêu hóa ăn uống điều độ.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "LIÊM TRINH"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao liêm trinh tọa thủ",
+        "text": "<b>Sức khỏe:</b> Chú ý giữ gìn hệ tuần hoàn khí huyết tránh làm việc căng thẳng thức khuya dưỡng sinh điều độ.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THAM LANG"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao tham lang tọa thủ",
+        "text": "<b>Sức khỏe: Phòng tránh mệt mỏi thể chất nhẹ rèn luyện thể dục đều đặn giữ sinh hoạt khoa học điều độ.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THẤT SÁT"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao thất sát tọa thủ",
+        "text": "<b>Sức khỏe đề phòng:</b> Bảo vệ xương khớp chân tay tránh va chạm chi thể nhẹ rèn luyện dẻo dai khỏe mạnh.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "PHÁ QUÂN"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao phá quân tọa thủ",
+        "text": "<b>Sức khỏe đề phòng: Giữ gìn khí huyết ăn uống khoa học điều độ rèn luyện thể chất dẻo dai khỏe mạnh bền bỉ.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VĂN XƯƠNG"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao Văn xương",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Xương chủ về học thuật tri thức khoa bảng.<br><b>Luận giải:</b> Sự hiện diện của Văn Xương mang lại luồng cát khí tri thức, học hỏi nhạy bén nhạy cảm, giúp đương số đỗ đạt cao khoa bảng hanh thông và có uy tín học vấn tốt lành tại khía cạnh Cung Tật Ách.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "VĂN KHÚC"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao Văn khúc",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Khúc chủ về năng khiếu nghệ thuật giao tế khéo léo.<br><b>Luận giải:</b> Tăng tiến duyên giao tiếp hùng biện, khiếu thẩm mỹ tinh tế và tài hoa nghệ thuật nổi bật chi phối hoạt động của đương số tại phương diện Cung Tật Ách.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "THIÊN KHÔI"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao Thiên khôi",
+        "text": "<b>Đặc tính Cát Tinh:</b> Đệ nhất Quý Nhân cát tinh chủ về người dẫn đầu.<br><b>Luận giải:</b> Mang lại lộc may mắn đi đầu dẫn dắt, được các bậc đi trước tin cậy đề bạt nâng đỡ vượt bậc trong mưu sự tại Cung Tật Ách.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "THIÊN VIỆT"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao Thiên việt",
+        "text": "<b>Đặc tính Cát Tinh:</b> Quý nhân phò tá cát tinh tối thượng.<br><b>Luận giải:</b> Đương số luôn tìm thấy cơ hội bứt phá mở đường khi mưu sự, có quý nhân âm thầm giúp sức tháo gỡ mọi cản trở khó khăn tại Cung Tật Ách.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀO HOA"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao Đào hoa",
+        "text": "<b>Đặc tính Đào Hoa:</b> Duyên phận, sức hút cá nhân nổi bật.<br><b>Luận giải:</b> Mang lại cát duyên tốt lành, sức quyến rũ giao tế khéo léo giúp đương số rất được mọi người xung quanh yêu mến trợ giúp tại khía cạnh Cung Tật Ách.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "HỒNG LOAN"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao Hồng loan",
+        "text": "<b>Đặc tính Cát Tinh:</b> Nhân duyên hòa hợp cát sự hỷ sự tốt lành.<br><b>Luận giải:</b> Mang đến sự dịu dàng thanh tao đoan trang trong giao thiệp xã hội và cuộc sống gia đình ấm áp tại Cung Tật Ách.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "ĐỊA KHÔNG"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao Địa không",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở cản trở, hao hụt bất ngờ.<br><b>Luận giải:</b> Hạn chế hoặc thử thách bản lĩnh ý chí đương số tại Cung Tật Ách. Cần hành sự bình tĩnh kiên trì tuyệt đối không mạo hiểm đầu cơ trục lợi.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐỊA KIẾP"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao Địa kiếp",
+        "text": "<b>Đặc tính Sát Tinh:</b> Tổn thất phá hoại, thăng trầm dốc đứng.<br><b>Luận giải:</b> Tạo áp lực biến động đột ngột hoặc rủi ro hao tài phá của lớn tại cung Cung Tật Ách. Khuyên đương số quản lý chặt chẽ hành sự cẩn mật.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "HÓA KỴ"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao Hóa kỵ",
+        "text": "<b>Đặc tính Sát Tinh:</b> Nghi kỵ hiểu lầm, thị phi gièm pha dèm pha lời nói.<br><b>Luận giải:</b> Bản cung dễ xảy ra cọ xát nhỏ trong giao tế đối thoại, đương số cần học cách lắng nghe khiêm nhường gác bất đồng tại Cung Tật Ách.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "TANG MÔN"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao Tang môn",
+        "text": "<b>Đặc tính Sát Tinh:</b> Lo nghĩ buồn phiền ảo tinh thần mỏi mệt.<br><b>Luận giải:</b> Đương số dễ chịu áp lực tâm lý lo lắng xa vời cản trở hành sự tại Cung Tật Ách, khuyên rèn chí khí sảng khoái năng lượng tích cực.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "KÌNH DƯƠNG"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao Kình dương",
+        "text": "<b>Đặc tính Sát Tinh:</b> Va chạm trực diện, cạnh tranh gay gắt.<br><b>Luận giải:</b> Mang năng lượng xung khắc bộc trực mạnh mẽ, đề phòng tranh chấp lời nói pháp lý cọ xát chi thể tại cung Cung Tật Ách.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀ LA"
+        ],
+        "title": "Cung Cung Tật Ách an tại [Chi] có sao Đà la",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Tật Ách tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      }
+    ],
+    "tai_bach": [
+      {
+        "stars": [
+          "TỬ VI"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao tử vi tọa thủ",
+        "text": "<b>Khả năng kiếm tiền:</b> Tài lộc dồi dào chính đáng từ danh vị chức vụ uy tín lớn, quản lý giữ gìn tiền của xuất sắc.<br><b>Tích lũy tài chính:</b> Dòng tài chính bền vững vững mạnh, có duyên nắm giữ dòng tiền lớn của doanh nghiệp hay tổ chức.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN PHỦ"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao thiên phủ tọa thủ",
+        "text": "<b>Đắc vị Tài khố:</b> Giàu sang phú quý bền vững suốt đời, của cải tích lũy gia tăng vững chắc tiền bạc dồi dào.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VŨ KHÚC"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao vũ khúc tọa thủ",
+        "text": "<b>Đắc vị Tài tinh:</b> Tài tinh cư Tài chủ về nguồn thu tài chính dồi dào tự tay tạo lập, tiền của luân chuyển sinh lời mạnh mẽ.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN TƯỚNG"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao thiên tướng tọa thủ",
+        "text": "<b>Khả năng tài chính:</b> Nguồn tài lộc chính đáng ổn định từ danh vị sự nghiệp chính chức uy tín rõ ràng.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI DƯƠNG"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao thái dương tọa thủ",
+        "text": "<b>Kiếm tiền tài lộc: Nguồn tài lộc dồi dào chính đáng từ danh tiếng chuyên môn nghiệp vụ kiếm tiền minh bạch.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI ÂM"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao thái âm tọa thủ",
+        "text": "<b>Khả năng tích lũy:</b> Vượng tài vượng lộc giữ tiền của xuất sắc nguồn tài chính tích lũy gia tăng lâu bền vững vàng.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "CỰ MÔN"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao cự môn tọa thủ",
+        "text": "<b>Khả năng tài chính: Kiếm tiền đắc lợi đắc danh từ đàm phán thuyết phục chuyên môn sâu mang lại tài sản lớn.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN CƠ"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao thiên cơ tọa thủ",
+        "text": "<b>Khả năng tài chính:</b> Kiếm tiền nhạy bén sinh lời từ chất xám mưu lược đầu tư công nghệ năng lực trí tuệ xuất sắc.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN LƯƠNG"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao thiên lương tọa thủ",
+        "text": "<b>Khả năng tài chính: Tài lộc bình ổn đắc lộc tự nhiên từ phúc thiện hành sự nghiệp không lo thiếu thốn của ăn của để.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN ĐỒNG"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao thiên đồng tọa thủ",
+        "text": "<b>Khả năng tài chính: Tài lộc đến chậm rãi đều đặn bền vững vừa đủ chi dùng rộng rãi an nhàn cuộc sống phú quý.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "LIÊM TRINH"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao liêm trinh tọa thủ",
+        "text": "<b>Khả năng tài chính:</b> Kiếm tiền dứt khoát từ sự nghiệp chuyên môn chính chức uy tín giữ gìn tiền của vững chắc.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THAM LANG"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao tham lang tọa thủ",
+        "text": "<b>Tài vận bộc phát: Tài lộc vượng phát từ kinh doanh buôn bán cơ hội tốt sinh lời nhanh chóng dồi dào.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THẤT SÁT"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao thất sát tọa thủ",
+        "text": "<b>Tài chính luân chuyển: Kiếm tiền quyết liệt đột phá dòng tài chính bứt phá mạnh mẽ theo từng đợt dự án lớn.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "PHÁ QUÂN"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao phá quân tọa thủ",
+        "text": "<b>Khả năng tài chính: Nguồn tiền bạc luân chuyển mạnh mẽ đầu tư lớn bộc phát nhanh thu lợi nhuận mạnh mẽ bền vững.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VĂN XƯƠNG"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao Văn xương",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Xương chủ về học thuật tri thức khoa bảng.<br><b>Luận giải:</b> Sự hiện diện của Văn Xương mang lại luồng cát khí tri thức, học hỏi nhạy bén nhạy cảm, giúp đương số đỗ đạt cao khoa bảng hanh thông và có uy tín học vấn tốt lành tại khía cạnh Cung Tài Bạch.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "VĂN KHÚC"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao Văn khúc",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Khúc chủ về năng khiếu nghệ thuật giao tế khéo léo.<br><b>Luận giải:</b> Tăng tiến duyên giao tiếp hùng biện, khiếu thẩm mỹ tinh tế và tài hoa nghệ thuật nổi bật chi phối hoạt động của đương số tại phương diện Cung Tài Bạch.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "THIÊN KHÔI"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao Thiên khôi",
+        "text": "<b>Đặc tính Cát Tinh:</b> Đệ nhất Quý Nhân cát tinh chủ về người dẫn đầu.<br><b>Luận giải:</b> Mang lại lộc may mắn đi đầu dẫn dắt, được các bậc đi trước tin cậy đề bạt nâng đỡ vượt bậc trong mưu sự tại Cung Tài Bạch.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "THIÊN VIỆT"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao Thiên việt",
+        "text": "<b>Đặc tính Cát Tinh:</b> Quý nhân phò tá cát tinh tối thượng.<br><b>Luận giải:</b> Đương số luôn tìm thấy cơ hội bứt phá mở đường khi mưu sự, có quý nhân âm thầm giúp sức tháo gỡ mọi cản trở khó khăn tại Cung Tài Bạch.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀO HOA"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao Đào hoa",
+        "text": "<b>Đặc tính Đào Hoa:</b> Duyên phận, sức hút cá nhân nổi bật.<br><b>Luận giải:</b> Mang lại cát duyên tốt lành, sức quyến rũ giao tế khéo léo giúp đương số rất được mọi người xung quanh yêu mến trợ giúp tại khía cạnh Cung Tài Bạch.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "HỒNG LOAN"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao Hồng loan",
+        "text": "<b>Đặc tính Cát Tinh:</b> Nhân duyên hòa hợp cát sự hỷ sự tốt lành.<br><b>Luận giải:</b> Mang đến sự dịu dàng thanh tao đoan trang trong giao thiệp xã hội và cuộc sống gia đình ấm áp tại Cung Tài Bạch.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "ĐỊA KHÔNG"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao Địa không",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở cản trở, hao hụt bất ngờ.<br><b>Luận giải:</b> Hạn chế hoặc thử thách bản lĩnh ý chí đương số tại Cung Tài Bạch. Cần hành sự bình tĩnh kiên trì tuyệt đối không mạo hiểm đầu cơ trục lợi.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐỊA KIẾP"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao Địa kiếp",
+        "text": "<b>Đặc tính Sát Tinh:</b> Tổn thất phá hoại, thăng trầm dốc đứng.<br><b>Luận giải:</b> Tạo áp lực biến động đột ngột hoặc rủi ro hao tài phá của lớn tại cung Cung Tài Bạch. Khuyên đương số quản lý chặt chẽ hành sự cẩn mật.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "HÓA KỴ"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao Hóa kỵ",
+        "text": "<b>Đặc tính Sát Tinh:</b> Nghi kỵ hiểu lầm, thị phi gièm pha dèm pha lời nói.<br><b>Luận giải:</b> Bản cung dễ xảy ra cọ xát nhỏ trong giao tế đối thoại, đương số cần học cách lắng nghe khiêm nhường gác bất đồng tại Cung Tài Bạch.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "TANG MÔN"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao Tang môn",
+        "text": "<b>Đặc tính Sát Tinh:</b> Lo nghĩ buồn phiền ảo tinh thần mỏi mệt.<br><b>Luận giải:</b> Đương số dễ chịu áp lực tâm lý lo lắng xa vời cản trở hành sự tại Cung Tài Bạch, khuyên rèn chí khí sảng khoái năng lượng tích cực.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "KÌNH DƯƠNG"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao Kình dương",
+        "text": "<b>Đặc tính Sát Tinh:</b> Va chạm trực diện, cạnh tranh gay gắt.<br><b>Luận giải:</b> Mang năng lượng xung khắc bộc trực mạnh mẽ, đề phòng tranh chấp lời nói pháp lý cọ xát chi thể tại cung Cung Tài Bạch.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀ LA"
+        ],
+        "title": "Cung Cung Tài Bạch an tại [Chi] có sao Đà la",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Tài Bạch tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      }
+    ],
+    "tu_tuc": [
+      {
+        "stars": [
+          "TỬ VI"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao tử vi tọa thủ",
+        "text": "<b>Con cái thế hệ sau:</b> Con cái sau này thông minh hiếu thảo đức độ hiền hòa, học vấn xán lạn đỗ đạt cao.<br><b>Sự nghiệp con cái:</b> Con cái có chí tiến thủ lớn tự xây dựng sự nghiệp hiển danh lừng lẫy, làm rạng danh dòng họ.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN PHỦ"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao thiên phủ tọa thủ",
+        "text": "<b>Con cái thế hệ sau:</b> Con cái sau này đông đủ, hiếu thảo nho nhã và biết quản lý tiền bạc làm ăn phát đạt sớm.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VŨ KHÚC"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao vũ khúc tọa thủ",
+        "text": "<b>Con cái thế hệ sau:</b> Con cái cá tính mạnh mẽ quyết liệt tự lập sớm, có khiếu kinh tế tài chính xuất sắc tương lai phát đạt.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN TƯỚNG"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao thiên tướng tọa thủ",
+        "text": "<b>Con cái thế hệ sau: Con cái hiền hậu nho nhã hiếu thảo học vấn xuất sắc đỗ đạt cao tương lai xán lạn.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI DƯƠNG"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao thái dương tọa thủ",
+        "text": "<b>Con cái thế hệ sau:</b> Con cái thông minh xán lạn tự lập chí hướng to lớn lập nên công danh vang dội.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI ÂM"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao thái âm tọa thủ",
+        "text": "<b>Con cái thế hệ sau:</b> Con cái nho nhã hiền hậu hiếu thuận nếp sống gia đình ấm áp hạnh phúc đong đầy thế hệ sau.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "CỰ MÔN"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao cự môn tọa thủ",
+        "text": "<b>Con cái thế hệ sau:</b> Con cái học rộng tài hoa phản biện độc lập sắc sảo tự tin trong cuộc sống.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN CƠ"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao thiên cơ tọa thủ",
+        "text": "<b>Con cái thế hệ sau:</b> Con cái hoạt bát thông minh đỗ đạt cao học vấn xán lạn tương lai thành đạt lớn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN LƯƠNG"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao thiên lương tọa thủ",
+        "text": "<b>Con cái thế hệ sau: Con cái ngoan ngoãn hiếu thuận nhân hậu n nếp gia giáo gia quy đầm ấm.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN ĐỒNG"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao thiên đồng tọa thủ",
+        "text": "<b>Con cái thế hệ sau:</b> Con cái hiền lành vui vẻ hiếu thảo nếp sống gia đình ấm áp hạnh phúc đong đầy.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "LIÊM TRINH"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao liêm trinh tọa thủ",
+        "text": "<b>Con cái thế hệ sau: Con cái cá tính mạnh mẽ tự lập sớm chí hướng lớn lập công danh sự nghiệp hiển hách.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THAM LANG"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao tham lang tọa thủ",
+        "text": "<b>Con cái thế hệ sau:</b> Con cái thông minh hoạt bát nhạy bén nghệ thuật xã hội năng động xán lạn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THẤT SÁT"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao thất sát tọa thủ",
+        "text": "<b>Con cái thế hệ sau: Con cái dứt khoát tự lập tự cường sớm xây dựng công danh sự nghiệp hiển đạt bằng năng lực thép.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "PHÁ QUÂN"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao phá quân tọa thủ",
+        "text": "<b>Con cái thế hệ sau: Con cái hiếu động thông minh tháo vát thích tìm tòi tự lập sớm tương lai đột phá lớn.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VĂN XƯƠNG"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao Văn xương",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Xương chủ về học thuật tri thức khoa bảng.<br><b>Luận giải:</b> Sự hiện diện của Văn Xương mang lại luồng cát khí tri thức, học hỏi nhạy bén nhạy cảm, giúp đương số đỗ đạt cao khoa bảng hanh thông và có uy tín học vấn tốt lành tại khía cạnh Cung Tử Tức.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "VĂN KHÚC"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao Văn khúc",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Khúc chủ về năng khiếu nghệ thuật giao tế khéo léo.<br><b>Luận giải:</b> Tăng tiến duyên giao tiếp hùng biện, khiếu thẩm mỹ tinh tế và tài hoa nghệ thuật nổi bật chi phối hoạt động của đương số tại phương diện Cung Tử Tức.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "THIÊN KHÔI"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao Thiên khôi",
+        "text": "<b>Đặc tính Cát Tinh:</b> Đệ nhất Quý Nhân cát tinh chủ về người dẫn đầu.<br><b>Luận giải:</b> Mang lại lộc may mắn đi đầu dẫn dắt, được các bậc đi trước tin cậy đề bạt nâng đỡ vượt bậc trong mưu sự tại Cung Tử Tức.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "THIÊN VIỆT"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao Thiên việt",
+        "text": "<b>Đặc tính Cát Tinh:</b> Quý nhân phò tá cát tinh tối thượng.<br><b>Luận giải:</b> Đương số luôn tìm thấy cơ hội bứt phá mở đường khi mưu sự, có quý nhân âm thầm giúp sức tháo gỡ mọi cản trở khó khăn tại Cung Tử Tức.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀO HOA"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao Đào hoa",
+        "text": "<b>Đặc tính Đào Hoa:</b> Duyên phận, sức hút cá nhân nổi bật.<br><b>Luận giải:</b> Mang lại cát duyên tốt lành, sức quyến rũ giao tế khéo léo giúp đương số rất được mọi người xung quanh yêu mến trợ giúp tại khía cạnh Cung Tử Tức.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "HỒNG LOAN"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao Hồng loan",
+        "text": "<b>Đặc tính Cát Tinh:</b> Nhân duyên hòa hợp cát sự hỷ sự tốt lành.<br><b>Luận giải:</b> Mang đến sự dịu dàng thanh tao đoan trang trong giao thiệp xã hội và cuộc sống gia đình ấm áp tại Cung Tử Tức.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "ĐỊA KHÔNG"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao Địa không",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở cản trở, hao hụt bất ngờ.<br><b>Luận giải:</b> Hạn chế hoặc thử thách bản lĩnh ý chí đương số tại Cung Tử Tức. Cần hành sự bình tĩnh kiên trì tuyệt đối không mạo hiểm đầu cơ trục lợi.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐỊA KIẾP"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao Địa kiếp",
+        "text": "<b>Đặc tính Sát Tinh:</b> Tổn thất phá hoại, thăng trầm dốc đứng.<br><b>Luận giải:</b> Tạo áp lực biến động đột ngột hoặc rủi ro hao tài phá của lớn tại cung Cung Tử Tức. Khuyên đương số quản lý chặt chẽ hành sự cẩn mật.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "HÓA KỴ"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao Hóa kỵ",
+        "text": "<b>Đặc tính Sát Tinh:</b> Nghi kỵ hiểu lầm, thị phi gièm pha dèm pha lời nói.<br><b>Luận giải:</b> Bản cung dễ xảy ra cọ xát nhỏ trong giao tế đối thoại, đương số cần học cách lắng nghe khiêm nhường gác bất đồng tại Cung Tử Tức.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "TANG MÔN"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao Tang môn",
+        "text": "<b>Đặc tính Sát Tinh:</b> Lo nghĩ buồn phiền ảo tinh thần mỏi mệt.<br><b>Luận giải:</b> Đương số dễ chịu áp lực tâm lý lo lắng xa vời cản trở hành sự tại Cung Tử Tức, khuyên rèn chí khí sảng khoái năng lượng tích cực.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "KÌNH DƯƠNG"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao Kình dương",
+        "text": "<b>Đặc tính Sát Tinh:</b> Va chạm trực diện, cạnh tranh gay gắt.<br><b>Luận giải:</b> Mang năng lượng xung khắc bộc trực mạnh mẽ, đề phòng tranh chấp lời nói pháp lý cọ xát chi thể tại cung Cung Tử Tức.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀ LA"
+        ],
+        "title": "Cung Cung Tử Tức an tại [Chi] có sao Đà la",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Tử Tức tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      }
+    ],
+    "phu_the": [
+      {
+        "stars": [
+          "TỬ VI"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao tử vi tọa thủ",
+        "text": "<b>Hôn nhân:</b> Bạn đời có cá tính tôn nghiêm quyền quý, có chí tiến thủ lớn và trách nhiệm gánh vác việc gia đình cao.<br><b>Hòa thuận:</b> Vợ chồng có sự tôn trọng sâu sắc lẫn nhau, bạn đời là hậu phương vững chắc thúc đẩy đương số thành công lớn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN PHỦ"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao thiên phủ tọa thủ",
+        "text": "<b>Hôn nhân gia đạo:</b> Bạn đời đảm đang hiền thục quản lý gia quy chu đáo, vợ chồng đồng lòng chung tay làm giàu cát vượng.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VŨ KHÚC"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao vũ khúc tọa thủ",
+        "text": "<b>Hôn nhân gia đạo:</b> Bạn đời giỏi tính toán quản lý tài chính, vợ chồng cần học cách chia ngọt sẻ bùi bớt cái tôi để ấm êm.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN TƯỚNG"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao thiên tướng tọa thủ",
+        "text": "<b>Hôn nhân gia đạo:</b> Bạn đời đoan trang hiền hậu có nếp sống trách nhiệm cao vợ chồng đồng lòng chung thủy lâu dài.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI DƯƠNG"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao thái dương tọa thủ",
+        "text": "<b>Hôn nhân gia đạo:</b> Bạn đời khí chất mạnh mẽ hào sảng gánh vác gia đình chu đáo tận tâm hậu phương vững.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI ÂM"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao thái âm tọa thủ",
+        "text": "<b>Hôn nhân gia đạo:</b> Bạn đời hiền thục dung mạo đoan trang thanh tú vợ chồng hòa thuận tình cảm thắm thiết lâu bền.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "CỰ MÔN"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao cự môn tọa thủ",
+        "text": "<b>Hôn nhân: Bạn đời thông minh sắc sảo thích chia sẻ đối thoại vợ chồng cần thường xuyên trò chuyện thấu hiểu nhường nhịn.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN CƠ"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao thiên cơ tọa thủ",
+        "text": "<b>Hôn nhân gia đạo: Bạn đời tri thức năng động chia sẻ giúp đỡ mưu sự đắc lực cho đương số phát triển.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN LƯƠNG"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao thiên lương tọa thủ",
+        "text": "<b>Hôn nhân:</b> Bạn đời đức độ thấu hiểu chung thủy chăm lo gia đình chu đáo bạn đồng hành đáng tin cậy trọn đời.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN ĐỒNG"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao thiên đồng tọa thủ",
+        "text": "<b>Hôn nhân gia đạo: Bạn đời vui tính hiền lành thích chia sẻ vợ chồng hòa thuận thấu hiểu đầm ấm cát duyên.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "LIÊM TRINH"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao liêm trinh tọa thủ",
+        "text": "<b>Hôn nhân gia đạo: Bạn đời giỏi giang có trách nhiệm gánh vác lớn vợ chồng cần gác cái tôi tôn trọng lẫn nhau.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THAM LANG"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao tham lang tọa thủ",
+        "text": "<b>Hôn nhân gia đạo: Bạn đời dung mạo khả ái giao tế tháo vát đảm đang cùng lo toan sản nghiệp gia đạo vững.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THẤT SÁT"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao thất sát tọa thủ",
+        "text": "<b>Hôn nhân: Bạn đời độc lập quyết đoán có chí hướng lớn gánh vác việc lớn gia đình tôn trọng sự riêng tư của nhau.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "PHÁ QUÂN"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao phá quân tọa thủ",
+        "text": "<b>Hôn nhân gia đạo: Bạn đời tháo vát cá tính mạnh gánh vác việc gia đình tốt vợ chồng nhường nhịn cái tôi giữ hòa thuận.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VĂN XƯƠNG"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao Văn xương",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Xương chủ về học thuật tri thức khoa bảng.<br><b>Luận giải:</b> Sự hiện diện của Văn Xương mang lại luồng cát khí tri thức, học hỏi nhạy bén nhạy cảm, giúp đương số đỗ đạt cao khoa bảng hanh thông và có uy tín học vấn tốt lành tại khía cạnh Cung Phu Thê.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "VĂN KHÚC"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao Văn khúc",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Khúc chủ về năng khiếu nghệ thuật giao tế khéo léo.<br><b>Luận giải:</b> Tăng tiến duyên giao tiếp hùng biện, khiếu thẩm mỹ tinh tế và tài hoa nghệ thuật nổi bật chi phối hoạt động của đương số tại phương diện Cung Phu Thê.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "THIÊN KHÔI"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao Thiên khôi",
+        "text": "<b>Đặc tính Cát Tinh:</b> Đệ nhất Quý Nhân cát tinh chủ về người dẫn đầu.<br><b>Luận giải:</b> Mang lại lộc may mắn đi đầu dẫn dắt, được các bậc đi trước tin cậy đề bạt nâng đỡ vượt bậc trong mưu sự tại Cung Phu Thê.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "THIÊN VIỆT"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao Thiên việt",
+        "text": "<b>Đặc tính Cát Tinh:</b> Quý nhân phò tá cát tinh tối thượng.<br><b>Luận giải:</b> Đương số luôn tìm thấy cơ hội bứt phá mở đường khi mưu sự, có quý nhân âm thầm giúp sức tháo gỡ mọi cản trở khó khăn tại Cung Phu Thê.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀO HOA"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao Đào hoa",
+        "text": "<b>Đặc tính Đào Hoa:</b> Duyên phận, sức hút cá nhân nổi bật.<br><b>Luận giải:</b> Mang lại cát duyên tốt lành, sức quyến rũ giao tế khéo léo giúp đương số rất được mọi người xung quanh yêu mến trợ giúp tại khía cạnh Cung Phu Thê.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "HỒNG LOAN"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao Hồng loan",
+        "text": "<b>Đặc tính Cát Tinh:</b> Nhân duyên hòa hợp cát sự hỷ sự tốt lành.<br><b>Luận giải:</b> Mang đến sự dịu dàng thanh tao đoan trang trong giao thiệp xã hội và cuộc sống gia đình ấm áp tại Cung Phu Thê.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "ĐỊA KHÔNG"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao Địa không",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở cản trở, hao hụt bất ngờ.<br><b>Luận giải:</b> Hạn chế hoặc thử thách bản lĩnh ý chí đương số tại Cung Phu Thê. Cần hành sự bình tĩnh kiên trì tuyệt đối không mạo hiểm đầu cơ trục lợi.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐỊA KIẾP"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao Địa kiếp",
+        "text": "<b>Đặc tính Sát Tinh:</b> Tổn thất phá hoại, thăng trầm dốc đứng.<br><b>Luận giải:</b> Tạo áp lực biến động đột ngột hoặc rủi ro hao tài phá của lớn tại cung Cung Phu Thê. Khuyên đương số quản lý chặt chẽ hành sự cẩn mật.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "HÓA KỴ"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao Hóa kỵ",
+        "text": "<b>Đặc tính Sát Tinh:</b> Nghi kỵ hiểu lầm, thị phi gièm pha dèm pha lời nói.<br><b>Luận giải:</b> Bản cung dễ xảy ra cọ xát nhỏ trong giao tế đối thoại, đương số cần học cách lắng nghe khiêm nhường gác bất đồng tại Cung Phu Thê.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "TANG MÔN"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao Tang môn",
+        "text": "<b>Đặc tính Sát Tinh:</b> Lo nghĩ buồn phiền ảo tinh thần mỏi mệt.<br><b>Luận giải:</b> Đương số dễ chịu áp lực tâm lý lo lắng xa vời cản trở hành sự tại Cung Phu Thê, khuyên rèn chí khí sảng khoái năng lượng tích cực.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "KÌNH DƯƠNG"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao Kình dương",
+        "text": "<b>Đặc tính Sát Tinh:</b> Va chạm trực diện, cạnh tranh gay gắt.<br><b>Luận giải:</b> Mang năng lượng xung khắc bộc trực mạnh mẽ, đề phòng tranh chấp lời nói pháp lý cọ xát chi thể tại cung Cung Phu Thê.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀ LA"
+        ],
+        "title": "Cung Cung Phu Thê an tại [Chi] có sao Đà la",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Phu Thê tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      }
+    ],
+    "huynh_de": [
+      {
+        "stars": [
+          "TỬ VI"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao tử vi tọa thủ",
+        "text": "<b>Tình nghĩa anh em:</b> Anh chị em trong nhà thành đạt giàu có hiển quý, tình cảm ruột thịt gắn bó sâu sắc.<br><b>Tương trợ:</b> Hỗ trợ đắc lực tương trợ lẫn nhau về kinh tế cũng như tinh thần trên con đường sự nghiệp lập nghiệp.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN PHỦ"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao thiên phủ tọa thủ",
+        "text": "<b>Tình nghĩa anh em:</b> Anh chị em hòa thuận đùm bọc, kinh tế khá giả giúp đỡ tương hỗ đắc lực ấm cúng.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VŨ KHÚC"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao vũ khúc tọa thủ",
+        "text": "<b>Anh chị em:</b> Anh em độc lập tự lực cánh sinh gầy dựng sự nghiệp riêng vững chắc phân minh tài chính.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN TƯỚNG"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao thiên tướng tọa thủ",
+        "text": "<b>Tình nghĩa anh em:</b> Anh chị em hòa thuận đoàn kết gắn bó sâu đậm giúp đỡ hỗ trợ tương hỗ đắc lực trong cuộc sống.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI DƯƠNG"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao thái dương tọa thủ",
+        "text": "<b>Tình nghĩa anh em:</b> Anh chị em ruột thịt danh vọng cao hiển đạt giúp đỡ hỗ trợ đắc lực lập đại nghiệp lớn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THÁI ÂM"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao thái âm tọa thủ",
+        "text": "<b>Tình nghĩa anh em:</b> Anh chị em tình cảm gắn bó chia sẻ sâu sắc tri kỷ đùm bọc nâng đỡ tương hỗ nhau.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "CỰ MÔN"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao cự môn tọa thủ",
+        "text": "<b>Anh chị em: Anh em độc lập tự lập nghiệp riêng phân minh tài chính rõ ràng sòng phẳng.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN CƠ"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao thiên cơ tọa thủ",
+        "text": "<b>Tình nghĩa anh em:</b> Anh chị em thông minh tháo vát đùm bọc hỗ trợ tương hỗ đắc lực ý tưởng mưu sự lớn.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN LƯƠNG"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao thiên lương tọa thủ",
+        "text": "<b>Tình nghĩa anh em:</b> Anh chị em nhân hậu hiền hòa che chở bảo bọc giúp đỡ nhau chí tình chí nghĩa lâu dài.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THIÊN ĐỒNG"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao thiên đồng tọa thủ",
+        "text": "<b>Tình nghĩa anh em: Anh chị em hòa đồng gắn bó vui vẻ tương hỗ đắc lực trong cuộc sống gia đình.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "LIÊM TRINH"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao liêm trinh tọa thủ",
+        "text": "<b>Tình nghĩa anh em:</b> Anh chị em tự lực tháo vát tự gầy dựng sự nghiệp riêng vững vàng phân minh tài chính rõ ràng.",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THAM LANG"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao tham lang tọa thủ",
+        "text": "<b>Tình nghĩa anh em: Anh chị em tháo vát năng nổ lập nghiệp phát tài nhanh chóng tương hỗ giúp đỡ đắc lực.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "THẤT SÁT"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao thất sát tọa thủ",
+        "text": "<b>Tình nghĩa anh em: Anh chị em quyết liệt tự lập gầy dựng sự nghiệp riêng vững chắc phân minh tài chính rõ ràng.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "PHÁ QUÂN"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao phá quân tọa thủ",
+        "text": "<b>Tình nghĩa anh em: Anh em độc lập bôn ba lập nghiệp riêng vững chắc phân minh tài chính sòng phẳng rõ ràng.</b>",
+        "source": "Trung Châu tử vi đẩu số - Nguyễn Anh Vũ dịch"
+      },
+      {
+        "stars": [
+          "VĂN XƯƠNG"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao Văn xương",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Xương chủ về học thuật tri thức khoa bảng.<br><b>Luận giải:</b> Sự hiện diện của Văn Xương mang lại luồng cát khí tri thức, học hỏi nhạy bén nhạy cảm, giúp đương số đỗ đạt cao khoa bảng hanh thông và có uy tín học vấn tốt lành tại khía cạnh Cung Huynh Đệ.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "VĂN KHÚC"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao Văn khúc",
+        "text": "<b>Đặc tính Cát Tinh:</b> Văn Khúc chủ về năng khiếu nghệ thuật giao tế khéo léo.<br><b>Luận giải:</b> Tăng tiến duyên giao tiếp hùng biện, khiếu thẩm mỹ tinh tế và tài hoa nghệ thuật nổi bật chi phối hoạt động của đương số tại phương diện Cung Huynh Đệ.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "THIÊN KHÔI"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao Thiên khôi",
+        "text": "<b>Đặc tính Cát Tinh:</b> Đệ nhất Quý Nhân cát tinh chủ về người dẫn đầu.<br><b>Luận giải:</b> Mang lại lộc may mắn đi đầu dẫn dắt, được các bậc đi trước tin cậy đề bạt nâng đỡ vượt bậc trong mưu sự tại Cung Huynh Đệ.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "THIÊN VIỆT"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao Thiên việt",
+        "text": "<b>Đặc tính Cát Tinh:</b> Quý nhân phò tá cát tinh tối thượng.<br><b>Luận giải:</b> Đương số luôn tìm thấy cơ hội bứt phá mở đường khi mưu sự, có quý nhân âm thầm giúp sức tháo gỡ mọi cản trở khó khăn tại Cung Huynh Đệ.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀO HOA"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao Đào hoa",
+        "text": "<b>Đặc tính Đào Hoa:</b> Duyên phận, sức hút cá nhân nổi bật.<br><b>Luận giải:</b> Mang lại cát duyên tốt lành, sức quyến rũ giao tế khéo léo giúp đương số rất được mọi người xung quanh yêu mến trợ giúp tại khía cạnh Cung Huynh Đệ.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "HỒNG LOAN"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao Hồng loan",
+        "text": "<b>Đặc tính Cát Tinh:</b> Nhân duyên hòa hợp cát sự hỷ sự tốt lành.<br><b>Luận giải:</b> Mang đến sự dịu dàng thanh tao đoan trang trong giao thiệp xã hội và cuộc sống gia đình ấm áp tại Cung Huynh Đệ.",
+        "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+      },
+      {
+        "stars": [
+          "ĐỊA KHÔNG"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao Địa không",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở cản trở, hao hụt bất ngờ.<br><b>Luận giải:</b> Hạn chế hoặc thử thách bản lĩnh ý chí đương số tại Cung Huynh Đệ. Cần hành sự bình tĩnh kiên trì tuyệt đối không mạo hiểm đầu cơ trục lợi.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐỊA KIẾP"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao Địa kiếp",
+        "text": "<b>Đặc tính Sát Tinh:</b> Tổn thất phá hoại, thăng trầm dốc đứng.<br><b>Luận giải:</b> Tạo áp lực biến động đột ngột hoặc rủi ro hao tài phá của lớn tại cung Cung Huynh Đệ. Khuyên đương số quản lý chặt chẽ hành sự cẩn mật.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "HÓA KỴ"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao Hóa kỵ",
+        "text": "<b>Đặc tính Sát Tinh:</b> Nghi kỵ hiểu lầm, thị phi gièm pha dèm pha lời nói.<br><b>Luận giải:</b> Bản cung dễ xảy ra cọ xát nhỏ trong giao tế đối thoại, đương số cần học cách lắng nghe khiêm nhường gác bất đồng tại Cung Huynh Đệ.",
+        "source": "Tử vi chỉ nam - Song An Đỗ Văn Lưu"
+      },
+      {
+        "stars": [
+          "TANG MÔN"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao Tang môn",
+        "text": "<b>Đặc tính Sát Tinh:</b> Lo nghĩ buồn phiền ảo tinh thần mỏi mệt.<br><b>Luận giải:</b> Đương số dễ chịu áp lực tâm lý lo lắng xa vời cản trở hành sự tại Cung Huynh Đệ, khuyên rèn chí khí sảng khoái năng lượng tích cực.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "KÌNH DƯƠNG"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao Kình dương",
+        "text": "<b>Đặc tính Sát Tinh:</b> Va chạm trực diện, cạnh tranh gay gắt.<br><b>Luận giải:</b> Mang năng lượng xung khắc bộc trực mạnh mẽ, đề phòng tranh chấp lời nói pháp lý cọ xát chi thể tại cung Cung Huynh Đệ.",
+        "source": "Đăng Hạ Thuật - Phan Tử Ngư"
+      },
+      {
+        "stars": [
+          "ĐÀ LA"
+        ],
+        "title": "Cung Cung Huynh Đệ an tại [Chi] có sao Đà la",
+        "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Huynh Đệ tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
+        "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+      }
+    ]
+  },
+  "limitReadingsDatabase": [
+    {
+      "stars": [
+        "QUỐC ẤN",
+        "TUẦN"
+      ],
+      "title": "Hạn gặp Quốc ấn, Tuần",
+      "text": "Đường công danh chức vị gặp cản trở trì hoãn bất ngờ, mưu sự danh lộc cần hết sức thận trọng đề phòng biến động hoặc bãi miễn.",
+      "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+    },
+    {
+      "stars": [
+        "QUỐC ẤN",
+        "TRIỆT"
+      ],
+      "title": "Hạn gặp Quốc ấn, Triệt",
+      "text": "Công việc gặp sự ngưng trệ cản trở ban đầu, làm ăn buôn bán đề phòng thủ tục hành chính dây dưa kéo dài.",
+      "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+    },
+    {
+      "stars": [
+        "TƯỚNG QUÂN",
+        "TUẦN"
+      ],
+      "title": "Hạn gặp Tuần, Tướng quân",
+      "text": "Đề phòng nạn thương tích đao kiếm va chạm chi thể hoặc tai nạn xe cộ nhẹ. Thực quyền công danh có phần suy giảm.",
+      "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+    },
+    {
+      "stars": [
+        "TƯỚNG QUÂN",
+        "TRIỆT"
+      ],
+      "title": "Hạn gặp Triệt, Tướng quân",
+      "text": "Đề phòng va chạm thương tích chi thể hoặc tai nạn giao thông nhẹ, đau mỏi đầu mặt mặt. Uy tín danh vị dễ gặp thách thức.",
+      "source": "Tử vi đẩu số tân biên - Vân Đằng Thái Thứ Lang"
+    },
+    {
+      "stars": [
+        "TỬ VI"
+      ],
+      "title": "Hạn gặp sao Tử vi",
+      "text": "Đế tinh chiếu mạng mang lại vượng vận hanh thông lớn, công danh thăng tiến rực rỡ, được quý nhân quyền quý nâng đỡ đắc lực tài danh.",
+      "source": "Trung Châu tử vi đẩu số"
+    },
+    {
+      "stars": [
+        "THIÊN PHỦ"
+      ],
+      "title": "Hạn gặp sao Thiên phủ",
+      "text": "Tài khố mở rộng chủ về điền sản đất đai dồi dào hưng thịnh, tiền tài tích lũy vững chắc an khang phú quý.",
+      "source": "Trung Châu tử vi đẩu số"
+    },
+    {
+      "stars": [
+        "VŨ KHÚC"
+      ],
+      "title": "Hạn gặp sao Vũ khúc",
+      "text": "Tài tinh cư hạn mang lại nhiều cơ hội làm ăn sinh lời lớn, kinh doanh buôn bán thuận lợi vượt trội, thích hợp mua bán điền sản.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "THIÊN TƯỚNG"
+      ],
+      "title": "Hạn gặp sao Thiên tướng",
+      "text": "Ấn tinh chiếu mạng chủ về thực quyền uy tín gia tăng lớn trong công việc, được mọi người kính nể phò tá đắc lực.",
+      "source": "Trung Châu tử vi đẩu số"
+    },
+    {
+      "stars": [
+        "THÁI DƯƠNG"
+      ],
+      "title": "Hạn gặp sao Thái dương",
+      "text": "Thời vận hoành phát danh tài, công danh hiển đạt sáng sủa rực rỡ, uy tín và tiếng tăm vang xa.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "THÁI ÂM"
+      ],
+      "title": "Hạn gặp sao Thái âm",
+      "text": "Tài lộc hưng vượng giữ của xuất sắc, cuộc sống thảnh thơi an nhàn hưởng phúc cát tường gia đạo yên ấm.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "CỰ MÔN"
+      ],
+      "title": "Hạn gặp sao Cự môn",
+      "text": "Mưu sự được toại lòng đẹp ý, hoành phát tài lộc thuyết phục được đối tác lớn, vướng tranh chấp pháp lý đắc thắng.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "THIÊN CƠ"
+      ],
+      "title": "Hạn gặp sao Thiên cơ",
+      "text": "Mưu sự linh hoạt sáng tạo nhiều dự án kế hoạch mới mẻ tháo vát, có lộc dịch chuyển du lịch hoặc đi xa.",
+      "source": "Tử vi chỉ nam"
+    },
+    {
+      "stars": [
+        "THIÊN LƯƠNG"
+      ],
+      "title": "Hạn gặp sao Thiên lương",
+      "text": "Được ấm tinh che chở hóa giải mọi tai ương bệnh tật nguy hiểm thành an lành, gặp dữ hóa cát thọ mạng dẻo dai.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "THIÊN ĐỒNG"
+      ],
+      "title": "Hạn gặp sao Thiên đồng",
+      "text": "Phúc tinh chiếu mang lại cát khánh hỷ sự gia đạo, gặp may mắn quý nhân nâng đỡ mưu sự hanh thông thảnh thơi.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "LIÊM TRINH"
+      ],
+      "title": "Hạn gặp sao Liêm trinh",
+      "text": "Công việc bận rộn nhiều lo toan bứt phá, đề phòng nóng nảy vội vã vướng vào cọ xát bất hòa không đáng.",
+      "source": "Tử vi đẩu số giải mã đời người"
+    },
+    {
+      "stars": [
+        "THAM LANG"
+      ],
+      "title": "Hạn gặp sao Tham lang",
+      "text": "Thời vận bộc phát tài lộc kinh doanh cơ hội tốt xã giao rộng, đề phòng đào hoa vướng víu thị phi tình cảm nhẹ.",
+      "source": "Tử vi đẩu số giải mã đời người"
+    },
+    {
+      "stars": [
+        "THẤT SÁT"
+      ],
+      "title": "Hạn gặp sao Thất sát",
+      "text": "Vận trình biến động mạnh đòi hỏi xông pha hành sự quyết đoán, đề phòng va chạm thương tích cơ khớp nhẹ.",
+      "source": "Đăng Hạ Thuật"
+    },
+    {
+      "stars": [
+        "PHÁ QUÂN"
+      ],
+      "title": "Hạn gặp sao Phá quân",
+      "text": "Hao tán tiền tài ban đầu để đầu tư đổi mới công nghệ hoặc chuyển đổi mô hình công việc đột phá về sau.",
+      "source": "Đăng Hạ Thuật"
+    },
+    {
+      "stars": [
+        "HỶ THẦN"
+      ],
+      "title": "Hạn gặp sao Hỷ thần",
+      "text": "Chủ về tin vui mừng khánh hỷ sự, tinh thần hân hoan vui tươi hỷ lạc gặp nhiều duyên may lành.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "PHÚC ĐỨC"
+      ],
+      "title": "Hạn gặp sao Phúc đức",
+      "text": "Nhị đức chiếu hạn mang lại phúc khí hóa giải tai ách bệnh tật nhẹ nhàng, tâm tư thanh thản an bình.",
+      "source": "Nghiên cứu tinh mệnh học"
+    },
+    {
+      "stars": [
+        "THIÊN ĐỨC"
+      ],
+      "title": "Hạn gặp sao Thiên đức",
+      "text": "Đắc cát khí trời ban giải trừ tai ương nguy nan nhỏ, gặp dữ hóa cát sự nghiệp công danh gặp may mắn.",
+      "source": "Nghiên cứu tinh mệnh học"
+    },
+    {
+      "stars": [
+        "THIÊN PHÚC"
+      ],
+      "title": "Hạn gặp sao Thiên phúc",
+      "text": "Được quý nhân âm thầm giúp sức hết mình cát tường, cuộc sống vạn sự thuận lợi hanh thông.",
+      "source": "Nghiên cứu tinh mệnh học"
+    },
+    {
+      "stars": [
+        "THIÊN Y"
+      ],
+      "title": "Hạn gặp sao Thiên y",
+      "text": "Chủ về sức khỏe cải thiện, đau ốm gặp thầy gặp thuốc chữa trị dứt điểm nhanh chóng cứu giải tai ương tốt.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "THIÊN RIÊU"
+      ],
+      "title": "Hạn gặp sao Thiên riêu",
+      "text": "Thời vận đào hoa vươn vượng giao tế cởi mở cẩn trọng thị phi tình ái phiêu lưu hoặc hao lộc ăn chơi.",
+      "source": "Tử vi chỉ nam"
+    },
+    {
+      "stars": [
+        "THIÊN DIÊU"
+      ],
+      "title": "Hạn gặp sao Thiên diêu",
+      "text": "Thời vận đào hoa vươn vượng giao tế cởi mở cẩn trọng thị phi tình ái phiêu lưu hoặc hao lộc ăn chơi.",
+      "source": "Tử vi chỉ nam"
+    },
+    {
+      "stars": [
+        "KIẾP SÁT"
+      ],
+      "title": "Hạn gặp sao Kiếp sát",
+      "text": "Đề phòng hao hụt tài chính lặt vặt chi tiêu, tránh va chạm chi thể nhẹ rèn luyện dẻo dai thể lực.",
+      "source": "Đăng Hạ Thuật"
+    },
+    {
+      "stars": [
+        "ĐẨU QUÂN"
+      ],
+      "title": "Hạn gặp sao Đẩu quân",
+      "text": "Thời gian cần kiểm soát chặt chẽ chi tiêu quản lý dòng tiền nghiêm ngặt cẩn thận, mưu sự thận trọng.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "ĐẦU QUÂN"
+      ],
+      "title": "Hạn gặp sao Đẩu quân",
+      "text": "Thời gian cần kiểm soát chặt chẽ chi tiêu quản lý dòng tiền nghiêm ngặt cẩn thận, mưu sự thận trọng.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "TỬ PHÙ"
+      ],
+      "title": "Hạn gặp sao Tử phù",
+      "text": "Đề phòng tiểu nhân gièm pha gièm pha dèm pha sau lưng cản trở nhỏ, hành sự cẩn tắc minh bạch vô ưu.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "THIÊN LA"
+      ],
+      "title": "Hạn gặp sao Thiên la",
+      "text": "Thời vận chịu sự kiềm chế ngưng trệ, mưu sự danh lộc tiến triển chậm, khuyên kiên trì rèn giũa năng lực.",
+      "source": "Tử vi chỉ nam"
+    },
+    {
+      "stars": [
+        "ĐỊA VÕNG"
+      ],
+      "title": "Hạn gặp sao Địa võng",
+      "text": "Chịu áp lực bao vây ngưng trệ khó bứt phá lập tức, cần kiên trì bền bỉ chờ thời cơ chín muồi bứt phá.",
+      "source": "Tử vi chỉ nam"
+    },
+    {
+      "stars": [
+        "PHÁ TOÁI"
+      ],
+      "title": "Hạn gặp sao Phá toái",
+      "text": "Đề phòng cản trở phá hoại nửa chừng công việc từ đối thủ, cẩn trọng ký kết hợp đồng thương lượng.",
+      "source": "Đăng Hạ Thuật"
+    },
+    {
+      "stars": [
+        "LONG ĐỨC"
+      ],
+      "title": "Hạn gặp sao Long đức",
+      "text": "Được cát tinh nhân đức che chở giải trừ ách hiểm, đem lại cát tường may mắn hanh thông công danh.",
+      "source": "Trung Châu tử vi đẩu số"
+    },
+    {
+      "stars": [
+        "VĂN TINH"
+      ],
+      "title": "Hạn gặp sao Văn tinh",
+      "text": "Học vấn thi cử đắc lợi hanh thông, tư duy nhạy bén sáng suốt thích hợp tiếp thu tri thức chuyên môn sâu.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "THIÊN TRÙ"
+      ],
+      "title": "Hạn gặp sao Thiên trù",
+      "text": "Vượng lộc ăn uống giao tế tiệc tùng dồi dào, hợp tác làm ăn ẩm thực dịch vụ đắc lợi phát tài.",
+      "source": "Trung Châu tử vi đẩu số"
+    },
+    {
+      "stars": [
+        "THIÊN GIẢI"
+      ],
+      "title": "Hạn gặp sao Thiên giải",
+      "text": "Hóa giải hung hiểm tai ương nhẹ nhàng giải trừ mâu thuẫn tranh chấp đem lại bình an tốt lành.",
+      "source": "Trung Châu tử vi đẩu số"
+    },
+    {
+      "stars": [
+        "ĐỊA GIẢI"
+      ],
+      "title": "Hạn gặp sao Địa giải",
+      "text": "Cát tinh giải ách mang lại may mắn hóa nguy thành an tiêu trừ bệnh tật ách nạn nhanh chóng.",
+      "source": "Trung Châu tử vi đẩu số"
+    },
+    {
+      "stars": [
+        "THIÊN HỶ"
+      ],
+      "title": "Hạn gặp sao Thiên hỷ",
+      "text": "Chủ về tin vui cát khánh hỷ sự trong gia đạo tình cảm kết hôn sinh con, mọi sự hanh thông tốt lành.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "THIÊN MÃ"
+      ],
+      "title": "Hạn gặp sao Thiên mã",
+      "text": "Bận rộn dịch chuyển đi lại nhiều, có cơ hội đi xa đi công tác xuất ngoại hoặc thay đổi nơi ăn chốn ở cát lợi.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "QUAN PHÙ"
+      ],
+      "title": "Hạn gặp sao Quan phù",
+      "text": "Đề phòng tranh chấp pháp lý giấy tờ hành chính cản trở nhỏ, hành sự cần tuân thủ nghiêm chỉnh pháp luật.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "QUAN PHỦ"
+      ],
+      "title": "Hạn gặp sao Quan phủ",
+      "text": "Cảnh báo tranh cãi giấy tờ hành chính pháp luật hành sự cẩn thận giấy tờ rõ ràng phân minh vô ưu.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "CÔ THẦN"
+      ],
+      "title": "Hạn gặp sao Cô thần",
+      "text": "Tâm lý cô đơn ít chia sẻ tâm sự đời sống tình cảm có khoảng cách trầm lắng cần mở rộng giao lưu đối thoại.",
+      "source": "Tử vi đẩu số giải mã đời người"
+    },
+    {
+      "stars": [
+        "QUẢ TÚ"
+      ],
+      "title": "Hạn gặp sao Quả tú",
+      "text": "Đời sống tình cảm nội tâm khép kín ít giãi bày chia sẻ, vợ chồng cần nhường nhịn trò chuyện thấu hiểu.",
+      "source": "Tử vi đẩu số giải mã đời người"
+    },
+    {
+      "stars": [
+        "ĐẠI HAO"
+      ],
+      "title": "Hạn gặp sao Đại hao",
+      "text": "Song hao ngộ hạn chủ về hao tài tốn của đầu tư lớn đổi mới trang thiết bị công việc, tránh mạo hiểm cho vay mượn tiền bạc.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "TIỂU HAO"
+      ],
+      "title": "Hạn gặp sao Tiểu hao",
+      "text": "Song hao ngộ hạn chủ về hao tài tốn của đầu tư lớn đổi mới trang thiết bị công việc, tránh mạo hiểm cho vay mượn tiền bạc.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "TẤU THƯ"
+      ],
+      "title": "Hạn gặp sao Tấu thư",
+      "text": "Đắc lợi về giấy tờ bằng cấp thi cử khen thưởng học thuật, tiếng nói có uy tín thuyết phục đối tác khách hàng.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "ĐƯỜNG PHÙ"
+      ],
+      "title": "Hạn gặp sao Đường phù",
+      "text": "Gia tăng uy tín danh dự, có duyên sửa sang nhà cửa mua sắm đất đai điền sản khang trang vững vàng.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "BỆNH PHÙ"
+      ],
+      "title": "Hạn gặp sao Bệnh phù",
+      "text": "Đề phòng sức khỏe giảm sút mệt mỏi thể chất nhẹ, cần chú ý chế độ dinh dưỡng và ngủ nghỉ khoa học.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "BẠCH HỔ"
+      ],
+      "title": "Hạn gặp sao Bạch hổ",
+      "text": "Hạn ngộ Tang Hổ đề phòng lo âu phiền muộn, sức khỏe bản thân hoặc người nhà giảm sút chú ý an toàn đi lại.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "LỘC TỒN"
+      ],
+      "title": "Hạn gặp sao Lộc tồn",
+      "text": "Tài lộc hanh thông hưng vượng dồi dào, giải trừ mọi tai ách nhỏ đem lại sự an khang cát tường.",
+      "source": "Tử vi đẩu số tân biên"
+    },
+    {
+      "stars": [
+        "HÓA LỘC"
+      ],
+      "title": "Hạn gặp sao Hóa lộc",
+      "text": "Vận trình cát vượng phát đạt lớn về tài chính, kinh doanh buôn bán đắc tài lộc sinh lời mạnh mẽ.",
+      "source": "Trung Châu tử vi đẩu số"
+    },
+    {
+      "stars": [
+        "HÓA QUYỀN"
+      ],
+      "title": "Hạn gặp sao Hóa quyền",
+      "text": "Nắm giữ chức vụ quyền hạn mới thăng tiến lớn trong công việc, tiếng nói sức ảnh hưởng uy tín tăng cao.",
+      "source": "Trung Châu tử vi đẩu số"
+    },
+    {
+      "stars": [
+        "HÓA KHOA"
+      ],
+      "title": "Hạn gặp sao Hóa khoa",
+      "text": "Khoa bảng học vấn hanh thông đỗ đạt cao danh vọng tốt, giải trừ ách nạn bệnh tật vô cùng mạnh mẽ.",
+      "source": "Trung Châu tử vi đẩu số"
+    },
+    {
+      "stars": [
+        "HÓA KỴ"
+      ],
+      "title": "Hạn gặp sao Hóa kỵ",
+      "text": "Đề phòng thị phi hiểu lầm tranh chấp từ lời ăn tiếng nói hành sự cẩn thận nhẫn nhịn ứng xử khéo léo.",
+      "source": "Tử vi chỉ nam"
+    },
+    {
+      "stars": [
+        "ĐỊA KHÔNG"
+      ],
+      "title": "Hạn gặp sao Địa không",
+      "text": "Hạn gặp nhiều trắc trở cản trở đột ngột cản trở mưu sự, khuyên đương số kiên trì tuyệt đối không mạo hiểm đầu cơ.",
+      "source": "Tử vi đẩu số giải mã đời người"
+    },
+    {
+      "stars": [
+        "ĐỊA KIẾP"
+      ],
+      "title": "Hạn gặp sao Địa kiếp",
+      "text": "Cảnh báo rủi ro hao tài phá của lớn bất ngờ do tin người hoặc đầu tư lệch hướng hành sự cẩn tắc.",
+      "source": "Tử vi đẩu số giải mã đời người"
+    },
+    {
+      "stars": [
+        "TANG MÔN"
+      ],
+      "title": "Hạn gặp sao Tang môn",
+      "text": "Hao tốn tâm trí ưu tư buồn phiền nghĩ ngợi nhiều, đề phòng sức khỏe bản thân hoặc người nhà giảm sút.",
+      "source": "Đăng Hạ Thuật"
+    },
+    {
+      "stars": [
+        "KÌNH DƯƠNG"
+      ],
+      "title": "Hạn gặp sao Kình dương",
+      "text": "Năng lượng bộc phát mạnh mẽ nhưng dễ va chạm tranh cãi trực diện nóng nảy, cẩn trọng đi lại va quệt nhẹ.",
+      "source": "Đăng Hạ Thuật"
+    },
+    {
+      "stars": [
+        "ĐÀ LA"
+      ],
+      "title": "Hạn gặp sao Đà la",
+      "text": "Đề phòng tiểu nhân gièm pha gièm pha dèm pha sau lưng cản trở nhỏ, mưu sự danh lộc tiến triển chậm cần kiên trì.",
+      "source": "Tử vi đẩu số giải mã đời người"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.xlsx
+*.pdf
+*.zip
+deploy_gcp/
+.vscode/
+.idea/
+venv/
