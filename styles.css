@@ -1726,3 +1726,47 @@ h1 {
 .aspect-body-text strong {
   color: #0f172a;
 }
+
+/* ==========================================================================
+   APP FOOTER (COPYRIGHT & CONTACT)
+   ========================================================================== */
+.app-footer {
+  margin-top: 24px;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(140, 100, 30, 0.05);
+}
+
+.app-footer .copyright-text {
+  font-size: 0.92rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.app-footer .copyright-text strong {
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+.app-footer .footer-email {
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.app-footer .footer-email:hover {
+  color: #2563eb;
+}
+
+.app-footer .contact-text {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
