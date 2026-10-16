@@ -25,7 +25,7 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
         clean_path = urllib.parse.unquote(self.path.split('?')[0])
         
         # 1. Allowed main web interface assets
-        if clean_path in ('/', '/index.html', '/styles.css', '/script.js', '/favicon.ico'):
+        if clean_path in ('/', '/index.html', '/styles.css', '/script.js', '/favicon.ico', '/favicon.svg', '/favicon.png', '/logo.svg'):
             return super().do_GET()
             
         # 2. Allowed generated download files: only .pdf and .xlsx in local root
