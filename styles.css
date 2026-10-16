@@ -386,6 +386,23 @@ h1 {
   border-color: var(--color-gold);
 }
 
+/* Empty chamber state waiting for user input */
+.chamber-card.empty-chamber {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1.5px dashed rgba(180, 140, 50, 0.4);
+  box-shadow: none;
+  cursor: default;
+}
+.chamber-card.empty-chamber::before {
+  display: none;
+}
+.chamber-card.empty-chamber:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--color-gold);
+  background: rgba(255, 255, 255, 0.65);
+}
+
 /* Active Chamber (Selected) */
 .chamber-card.active {
   background: #fffdf8;

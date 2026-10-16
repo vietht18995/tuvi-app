@@ -316,6 +316,9 @@ function drawPhiTinhLines(activeId) {
   }
 }
 
+// Calculation status flag
+let hasCalculated = false;
+
 // Embedded Tử Vi Data Object
 let tuviData = {
   "personal_info": {
@@ -3712,6 +3715,10 @@ function toggleAccordion(id) {
 let currentDedicatedMonth = 1;
 
 function switchMainTab(tabId) {
+  if (!hasCalculated && tabId !== 'laso') {
+    alert("Vui lòng nhập họ tên, ngày tháng năm sinh tại tab 'LÁ SỐ TỬ VI & BÁT TRẬN' và bấm 'LẬP THÀNH LÁ SỐ' trước để xem đầy đủ luận giải nhé!");
+    return;
+  }
   const btnLaso = document.getElementById("btn-main-tab-laso");
   const btnLuangiai = document.getElementById("btn-main-tab-luangiai");
   const btnBatu = document.getElementById("btn-main-tab-batu");
@@ -5758,46 +5765,27 @@ function getAspectInfluenceHtml(chamber) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Always start in fresh Form input mode waiting for user to enter their info
+  const formBox = document.getElementById("tuvi-form-box");
+  const resultBox = document.getElementById("tuvi-result-box");
+  if (formBox) formBox.style.display = "block";
+  if (resultBox) resultBox.style.display = "none";
+
+  // Clear inputs
+  const inpName = document.getElementById("inp-name");
+  const inpDate = document.getElementById("inp-birth-date");
+  if (inpName) inpName.value = "";
+  if (inpDate) inpDate.value = "";
+
+  // Render 12 empty chambers
   renderGrid();
-  
-  if (tuviData && tuviData.personal_info) {
-    // Fill Central panel result state on initial load
-    document.getElementById("result-name").innerText = tuviData.personal_info.name;
-    const gridInfo = document.getElementById("result-info-grid");
-    const p = tuviData.personal_info;
-    gridInfo.innerHTML = `
-      <div class="center-info-item"><span>Năm sinh:</span> ${p.birth_year_solar} (${p.birth_year_lunar})</div>
-      <div class="center-info-item"><span>Giờ sinh:</span> ${p.birth_hour}</div>
-      <div class="center-info-item"><span>Bản mệnh:</span> ${p.element_fate}</div>
-      <div class="center-info-item"><span>Cục ngũ hành:</span> ${p.element_cuc}</div>
-      <div class="center-info-item"><span>Chủ mệnh:</span> ${p.fate_lord}</div>
-      <div class="center-info-item"><span>Chủ thân:</span> ${p.body_lord}</div>
-    `;
-    
-    // Toggle Central Box views
-    document.getElementById("tuvi-form-box").style.display = "none";
-    document.getElementById("tuvi-result-box").style.display = "block";
-    
-    // If Excel & PDF links exist, ensure they are shown
-    const excelLink = document.getElementById("download-excel-link");
-    if (excelLink) {
-      const excelFilename = `La_So_Tu_Vi_${p.name.replace(/ /g, '_')}.xlsx`;
-      excelLink.href = excelFilename;
-      excelLink.style.display = "inline-flex";
-    }
-    const pdfLink = document.getElementById("download-pdf-link");
-    if (pdfLink) {
-      const pdfFilename = `La_So_Tu_Vi_${p.name.replace(/ /g, '_')}_Toan_Thu.pdf`;
-      pdfLink.href = pdfFilename;
-      pdfLink.style.display = "inline-flex";
-    }
+
+  // Hide details-panel until user calculates their chart
+  const detailsPanel = document.getElementById("details-panel");
+  if (detailsPanel) {
+    detailsPanel.style.display = "none";
   }
-  
-  renderPersonalInfo();
-  generateDetailedReadings();
-  renderBatuDedicatedTab();
-  renderDedicatedMonthlyTab(1);
-  
+
   // Set window resize event to redraw SVG lines if active
   window.addEventListener("resize", () => {
     const activeCard = document.querySelector(".chamber-card.active");
@@ -5811,16 +5799,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // Render 12 Chambers into the Grid
 function renderGrid() {
   const gridContainer = document.querySelector(".tuvi-grid");
-  const chambers = tuviData.chambers;
-  const chamberMap = {};
-  
-  chambers.forEach(c => {
-    chamberMap[c.id] = c;
-  });
-  
   const cards = gridContainer.querySelectorAll(".chamber-card");
   cards.forEach(c => c.remove());
-  
+
   const chiGridCoords = {
     "Tỵ": { r: 0, c: 0 },
     "Ngọ": { r: 0, c: 1 },
@@ -5835,6 +5816,40 @@ function renderGrid() {
     "Tý": { r: 3, c: 2 },
     "Hợi": { r: 3, c: 3 }
   };
+
+  // If chart is not calculated yet, render 12 empty chambers
+  if (!hasCalculated) {
+    const defaultChis = ["Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi", "Tý", "Sửu", "Dần", "Mão", "Thìn"];
+    defaultChis.forEach(chi => {
+      const coord = chiGridCoords[chi];
+      const card = document.createElement("div");
+      card.className = "chamber-card empty-chamber";
+      card.style.gridRow = coord.r + 1;
+      card.style.gridColumn = coord.c + 1;
+      card.style.cursor = "default";
+      card.innerHTML = `
+        <div class="card-header" style="justify-content: center; background: rgba(0,0,0,0.2); padding: 5px 8px;">
+          <span class="chamber-name" style="font-size: 0.82rem; color: #a1a1aa; letter-spacing: 1px;">CUNG ${chi.toUpperCase()}</span>
+        </div>
+        <div class="card-body" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 110px; opacity: 0.45; text-align: center; padding: 10px;">
+          <span style="font-size: 1.5rem; margin-bottom: 4px; color: #d4d4d8;">☯</span>
+          <span style="font-size: 0.72rem; color: #a1a1aa; line-height: 1.3;">Chờ an sao...</span>
+        </div>
+        <div class="card-footer" style="justify-content: center; opacity: 0.35; padding: 3px 6px; font-size: 0.65rem;">
+          <span class="sub-info">Cung vị ${chi}</span>
+        </div>
+      `;
+      gridContainer.appendChild(card);
+    });
+    return;
+  }
+
+  const chambers = tuviData.chambers;
+  const chamberMap = {};
+  
+  chambers.forEach(c => {
+    chamberMap[c.id] = c;
+  });
   
   chambers.forEach(chamber => {
     const coord = chiGridCoords[chamber.chi];
@@ -8580,6 +8595,17 @@ function submitTuViForm() {
     // Toggle Central Box views
     document.getElementById("tuvi-form-box").style.display = "none";
     document.getElementById("tuvi-result-box").style.display = "block";
+    
+    // Mark as calculated and show details panel
+    hasCalculated = true;
+    const headerSub = document.getElementById("header-subtitle");
+    if (headerSub) {
+      headerSub.innerHTML = `Đương số: <strong>${result.personal_info.name}</strong> (${result.personal_info.birth_year_lunar} - ${result.personal_info.element_fate}) | Lưu niên: <strong>${result.personal_info.analysis_year_lunar} (${result.personal_info.analysis_year_solar})</strong>`;
+    }
+    const detailsPanel = document.getElementById("details-panel");
+    if (detailsPanel) {
+      detailsPanel.style.display = "block";
+    }
     
     // Re-render
     renderGrid();

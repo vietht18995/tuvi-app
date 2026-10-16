@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hệ Thống Tử Vi Đẩu Số Đông Phương & Bản Luận Giải Chi Tiết - Hoàng Tuấn Việt (Ất Hợi 1995)">
+  <meta name="description" content="Hệ Thống Tử Vi Đẩu Số Đông Phương & Bản Luận Giải Chi Tiết - Bát Tự Mệnh Lý">
   <meta name="author" content="Antigravity Coding Assistant">
-  <title>Lá Số Tử Vi & Bí Truyền Dịch Học - Hoàng Tuấn Việt (1995)</title>
-  <link rel="stylesheet" href="styles.css?v=26">
+  <title>Lá Số Tử Vi & Bí Truyền Dịch Học - Hệ Thống Tử Vi Hoàng Gia</title>
+  <link rel="stylesheet" href="styles.css?v=27">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
           <span>☯</span>
         </div>
         <h1>LÁ SỐ TỬ VI HOÀNG GIA</h1>
-        <div class="subtitle">Đương số: <strong>Hoàng Tuấn Việt</strong> (Ất Hợi 1995 - Sơn Đầu Hỏa) | Lưu niên: <strong>Bính Ngọ (2026)</strong></div>
+        <div class="subtitle" id="header-subtitle">Hệ Thống Mệnh Lý Đông Phương • Vui lòng nhập thông tin để an sao lập lá số</div>
       </div>
     </header>
 
@@ -118,7 +118,7 @@
                 <div class="tuvi-form-container" id="tuvi-form-box">
                   <h3 class="center-title">☸ THIẾT LẬP LÁ SỐ ☯</h3>
                   <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 8px;">
-                    <input type="text" id="inp-name" placeholder="Họ và tên" value="Hoàng Tuấn Việt" class="inp-field">
+                    <input type="text" id="inp-name" placeholder="Họ và tên..." value="" class="inp-field">
                     <div style="display: flex; gap: 8px;">
                       <select id="inp-gender" class="inp-field" style="flex: 1;">
                         <option value="Nam">Nam</option>
@@ -126,17 +126,17 @@
                       </select>
                       <input type="number" id="inp-analysis-year" placeholder="Năm xem" value="2026" class="inp-field" style="width: 80px;">
                     </div>
-                    <input type="date" id="inp-birth-date" value="1995-09-18" class="inp-field">
+                    <input type="date" id="inp-birth-date" value="" class="inp-field">
                     <div style="display: flex; gap: 8px; width: 100%;">
                       <select id="inp-birth-hour" class="inp-field" style="flex: 1;">
-                        <option value="Tý">Giờ Tý (23h - 01h)</option>
+                        <option value="Tý" selected>Giờ Tý (23h - 01h)</option>
                         <option value="Sửu">Giờ Sửu (01h - 03h)</option>
                         <option value="Dần">Giờ Dần (03h - 05h)</option>
                         <option value="Mão">Giờ Mão (05h - 07h)</option>
                         <option value="Thìn">Giờ Thìn (07h - 09h)</option>
                         <option value="Tỵ">Giờ Tỵ (09h - 11h)</option>
                         <option value="Ngọ">Giờ Ngọ (11h - 13h)</option>
-                        <option value="Mùi" selected>Giờ Mùi (13h - 15h)</option>
+                        <option value="Mùi">Giờ Mùi (13h - 15h)</option>
                         <option value="Thân">Giờ Thân (15h - 17h)</option>
                         <option value="Dậu">Giờ Dậu (17h - 19h)</option>
                         <option value="Tuất">Giờ Tuất (19h - 21h)</option>
@@ -151,7 +151,7 @@
                 <!-- Result state (Hidden by default, shown by script) -->
                 <div class="tuvi-result-container" id="tuvi-result-box" style="display: none; width: 100%;">
                   <h3 class="center-title">☸ BẢN MỆNH THIÊN BÀN ☯</h3>
-                  <div class="center-name" id="result-name">Hoàng Tuấn Việt</div>
+                  <div class="center-name" id="result-name">---</div>
                   
                   <!-- Tab Headers -->
                   <div class="center-tabs">
