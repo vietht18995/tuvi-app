@@ -181,7 +181,11 @@ def run_server(port=8000):
 if __name__ == "__main__":
     # Change working directory to this file's folder to serve static files correctly
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    port = int(os.environ.get("PORT", 7860 if "SPACE_ID" in os.environ else 8000))
-    if len(sys.argv) > 1:
+    port_env = os.environ.get("PORT")
+    if port_env:
+        port = int(port_env)
+    elif len(sys.argv) > 1:
         port = int(sys.argv[1])
+    else:
+        port = 8000
     run_server(port)

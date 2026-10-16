@@ -27,6 +27,6 @@ RUN pip install --no-cache-dir --user -r requirements.txt
 # Sao chép toàn bộ mã nguồn ứng dụng
 COPY --chown=user . $HOME/app/
 
-EXPOSE 7860
+EXPOSE 10000
 
-CMD ["python", "-u", "server.py", "7860"]
+CMD ["python", "-u", "server.py"]
