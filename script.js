@@ -6186,8 +6186,9 @@ function renderPersonalInfo() {
       <div class="section-title">Tổng quan bản thân</div>
       <div class="star-interpretation-list">
         <div class="star-interpret-item"><span class="star-interpret-name">Họ và tên:</span><span class="star-interpret-desc">${p.name} (${p.gender})</span></div>
-        <div class="star-interpret-item"><span class="star-interpret-name">Năm sinh:</span><span class="star-interpret-desc">${p.birth_year_solar} (${p.birth_year_lunar})</span></div>
-        <div class="star-interpret-item"><span class="star-interpret-name">Giờ sinh âm lịch:</span><span class="star-interpret-desc">${p.birth_hour} (Giờ ${p.birth_hour_stem}, ngày ${p.birth_day_lunar_stem}, tháng ${p.birth_month_lunar_stem})</span></div>
+        <div class="star-interpret-item"><span class="star-interpret-name">Ngày sinh Dương lịch:</span><span class="star-interpret-desc">Ngày ${p.birth_day_solar}/${p.birth_month_solar}/${p.birth_year_solar}</span></div>
+        <div class="star-interpret-item"><span class="star-interpret-name">Ngày sinh Âm lịch:</span><span class="star-interpret-desc">Ngày ${p.birth_day_lunar} tháng ${p.birth_month_lunar} năm ${p.birth_year_lunar} (${p.birth_day_lunar_stem}, ${p.birth_month_lunar_stem})</span></div>
+        <div class="star-interpret-item"><span class="star-interpret-name">Giờ sinh:</span><span class="star-interpret-desc">${p.birth_hour} (Giờ ${p.birth_hour_stem})</span></div>
         <div class="star-interpret-item"><span class="star-interpret-name">Bản mệnh:</span><span class="star-interpret-desc">${p.element_fate}</span></div>
         <div class="star-interpret-item"><span class="star-interpret-name">Cục ngũ hành:</span><span class="star-interpret-desc">${p.element_cuc} (${p.relation_fate_cuc})</span></div>
         <div class="star-interpret-item"><span class="star-interpret-name">Lượng số (cân cốt):</span><span class="star-interpret-desc">${p.weight}</span></div>
@@ -8513,37 +8514,130 @@ function resetToPersonal() {
   generateDetailedReadings();
 }
 
+// Calendar Type Switcher (1. Lịch Dương / 2. Lịch Âm)
+function setCalendarType(type) {
+  const hiddenInput = document.getElementById("inp-calendar-type");
+  const btnSolar = document.getElementById("btn-type-solar");
+  const btnLunar = document.getElementById("btn-type-lunar");
+  const solarBox = document.getElementById("solar-date-container");
+  const lunarBox = document.getElementById("lunar-date-container");
+  
+  if (!hiddenInput || !btnSolar || !btnLunar || !solarBox || !lunarBox) return;
+
+  hiddenInput.value = type;
+  
+  if (type === "lunar") {
+    btnSolar.classList.remove("active");
+    btnLunar.classList.add("active");
+    solarBox.style.display = "none";
+    lunarBox.style.display = "block";
+    
+    // Auto sync from solar date if available
+    const solarVal = document.getElementById("inp-birth-date").value;
+    if (solarVal) {
+      const [sy, sm, sd] = solarVal.split("-").map(Number);
+      if (sy && sm && sd) {
+        fetch("/api/solar2lunar", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ solar_day: sd, solar_month: sm, solar_year: sy })
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.lunar_day) {
+            document.getElementById("inp-lunar-day").value = data.lunar_day;
+            document.getElementById("inp-lunar-month").value = data.lunar_month;
+            document.getElementById("inp-lunar-year").value = data.lunar_year;
+            document.getElementById("inp-lunar-leap").checked = data.lunar_leap === 1;
+          }
+        })
+        .catch(() => {});
+      }
+    }
+  } else {
+    btnLunar.classList.remove("active");
+    btnSolar.classList.add("active");
+    lunarBox.style.display = "none";
+    solarBox.style.display = "block";
+    
+    // Auto sync from lunar date if available
+    const ld = parseInt(document.getElementById("inp-lunar-day").value);
+    const lm = parseInt(document.getElementById("inp-lunar-month").value);
+    const ly = parseInt(document.getElementById("inp-lunar-year").value);
+    const lleap = document.getElementById("inp-lunar-leap").checked ? 1 : 0;
+    if (ld && lm && ly) {
+      fetch("/api/lunar2solar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ lunar_day: ld, lunar_month: lm, lunar_year: ly, lunar_leap: lleap })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.solar_day) {
+          const mStr = String(data.solar_month).padStart(2, "0");
+          const dStr = String(data.solar_day).padStart(2, "0");
+          document.getElementById("inp-birth-date").value = `${data.solar_year}-${mStr}-${dStr}`;
+        }
+      })
+      .catch(() => {});
+    }
+  }
+}
+
 // Submit birth details form to calculate Tử Vi dynamically
 function submitTuViForm() {
-  const name = document.getElementById("inp-name").value;
+  const name = document.getElementById("inp-name").value.trim();
   const gender = document.getElementById("inp-gender").value;
   const analysisYear = document.getElementById("inp-analysis-year").value;
-  const birthDateStr = document.getElementById("inp-birth-date").value;
   const birthHour = document.getElementById("inp-birth-hour").value;
   const birthMinute = parseInt(document.getElementById("inp-birth-minute").value) || 0;
-  
-  if (!name || !birthDateStr) {
-    alert("Vui lòng điền họ tên và ngày sinh!");
+  const calendarType = (document.getElementById("inp-calendar-type") ? document.getElementById("inp-calendar-type").value : "solar");
+
+  if (!name) {
+    alert("Vui lòng điền họ và tên!");
     return;
   }
-  
-  const [solarYear, solarMonth, solarDay] = birthDateStr.split("-").map(Number);
-  
+
   const payload = {
     name: name,
     gender: gender,
-    solar_day: solarDay,
-    solar_month: solarMonth,
-    solar_year: solarYear,
     birth_hour: birthHour,
     birth_minute: birthMinute,
-    analysis_year: Number(analysisYear)
+    analysis_year: Number(analysisYear) || 2026,
+    calendar_type: calendarType
   };
-  
+
+  if (calendarType === "lunar") {
+    const lunarDay = parseInt(document.getElementById("inp-lunar-day").value);
+    const lunarMonth = parseInt(document.getElementById("inp-lunar-month").value);
+    const lunarYear = parseInt(document.getElementById("inp-lunar-year").value);
+    const lunarLeap = document.getElementById("inp-lunar-leap").checked ? 1 : 0;
+
+    if (!lunarYear || isNaN(lunarYear)) {
+      alert("Vui lòng nhập năm sinh âm lịch hợp lệ!");
+      return;
+    }
+
+    payload.lunar_day = lunarDay;
+    payload.lunar_month = lunarMonth;
+    payload.lunar_year = lunarYear;
+    payload.lunar_leap = lunarLeap;
+  } else {
+    const birthDateStr = document.getElementById("inp-birth-date").value;
+    if (!birthDateStr) {
+      alert("Vui lòng chọn ngày sinh dương lịch!");
+      return;
+    }
+    const [solarYear, solarMonth, solarDay] = birthDateStr.split("-").map(Number);
+    payload.solar_day = solarDay;
+    payload.solar_month = solarMonth;
+    payload.solar_year = solarYear;
+  }
+
   const submitBtn = document.querySelector(".btn-submit");
   submitBtn.disabled = true;
   submitBtn.innerText = "ĐANG TÍNH TOÁN...";
-  
+
   fetch("/api/calculate", {
     method: "POST",
     headers: {
@@ -8584,12 +8678,12 @@ function submitTuViForm() {
     
     const p = result.personal_info;
     gridInfo.innerHTML = `
-      <div class="center-info-item"><span>Năm sinh:</span> ${p.birth_year_solar} (${p.birth_year_lunar})</div>
-      <div class="center-info-item"><span>Giờ sinh:</span> ${p.birth_hour}</div>
-      <div class="center-info-item"><span>Bản mệnh:</span> ${p.element_fate}</div>
-      <div class="center-info-item"><span>Cục ngũ hành:</span> ${p.element_cuc}</div>
-      <div class="center-info-item"><span>Chủ mệnh:</span> ${p.fate_lord}</div>
-      <div class="center-info-item"><span>Chủ thân:</span> ${p.body_lord}</div>
+      <div class="center-info-item"><span>Dương lịch:</span> <strong>${p.birth_day_solar}/${p.birth_month_solar}/${p.birth_year_solar}</strong></div>
+      <div class="center-info-item"><span>Âm lịch:</span> <strong>${p.birth_day_lunar}/${p.birth_month_lunar} (${p.birth_year_lunar})</strong></div>
+      <div class="center-info-item"><span>Giờ sinh:</span> <strong>${p.birth_hour} (${p.birth_hour_stem || ''})</strong></div>
+      <div class="center-info-item"><span>Bản mệnh:</span> <strong>${p.element_fate}</strong></div>
+      <div class="center-info-item"><span>Cục ngũ hành:</span> <strong>${p.element_cuc}</strong></div>
+      <div class="center-info-item"><span>Chủ Mệnh / Thân:</span> <strong>${p.fate_lord || ''} / ${p.body_lord || ''}</strong></div>
     `;
     
     // Toggle Central Box views
@@ -8622,7 +8716,7 @@ function submitTuViForm() {
   })
   .finally(() => {
     submitBtn.disabled = false;
-    submitBtn.innerText = "LẬP LÁ SỐ";
+    submitBtn.innerText = "LẬP THÀNH LÁ SỐ";
   });
 }
 

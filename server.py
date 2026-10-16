@@ -57,12 +57,26 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
                 raw_name = params.get("name", "Vô danh")
                 safe_name = sanitize_filename(raw_name)
                 
+                calendar_type = params.get("calendar_type", "solar")
+                if calendar_type == "lunar":
+                    from lasotuvi.Lich_HND import L2S
+                    ld = int(params.get("lunar_day", 1))
+                    lm = int(params.get("lunar_month", 1))
+                    ly = int(params.get("lunar_year", 1995))
+                    lleap = int(params.get("lunar_leap", 0))
+                    s_date = L2S(ld, lm, ly, lleap)
+                    s_day, s_month, s_year = int(s_date[0]), int(s_date[1]), int(s_date[2])
+                else:
+                    s_day = int(params.get("solar_day", 18))
+                    s_month = int(params.get("solar_month", 9))
+                    s_year = int(params.get("solar_year", 1995))
+
                 chart_data = calculate_tuvi(
                     name=raw_name,
                     gender=params.get("gender", "Nam"),
-                    solar_day=int(params.get("solar_day", 18)),
-                    solar_month=int(params.get("solar_month", 9)),
-                    solar_year=int(params.get("solar_year", 1995)),
+                    solar_day=s_day,
+                    solar_month=s_month,
+                    solar_year=s_year,
                     birth_hour=params.get("birth_hour", "Mùi"),
                     analysis_year=int(params.get("analysis_year", 2026)),
                     birth_minute=int(params.get("birth_minute", 0))
@@ -112,12 +126,26 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
                 raw_name = params.get("name", "Vô danh")
                 safe_name = sanitize_filename(raw_name)
                 
+                calendar_type = params.get("calendar_type", "solar")
+                if calendar_type == "lunar":
+                    from lasotuvi.Lich_HND import L2S
+                    ld = int(params.get("lunar_day", 1))
+                    lm = int(params.get("lunar_month", 1))
+                    ly = int(params.get("lunar_year", 1995))
+                    lleap = int(params.get("lunar_leap", 0))
+                    s_date = L2S(ld, lm, ly, lleap)
+                    s_day, s_month, s_year = int(s_date[0]), int(s_date[1]), int(s_date[2])
+                else:
+                    s_day = int(params.get("solar_day", 18))
+                    s_month = int(params.get("solar_month", 9))
+                    s_year = int(params.get("solar_year", 1995))
+
                 chart_data = calculate_tuvi(
                     name=raw_name,
                     gender=params.get("gender", "Nam"),
-                    solar_day=int(params.get("solar_day", 18)),
-                    solar_month=int(params.get("solar_month", 9)),
-                    solar_year=int(params.get("solar_year", 1995)),
+                    solar_day=s_day,
+                    solar_month=s_month,
+                    solar_year=s_year,
                     birth_hour=params.get("birth_hour", "Mùi"),
                     analysis_year=int(params.get("analysis_year", 2026)),
                     birth_minute=int(params.get("birth_minute", 0))
@@ -137,7 +165,7 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
                 err_response = {"error": str(e)}
                 self.wfile.write(json.dumps(err_response, ensure_ascii=False).encode('utf-8'))
         elif self.path == '/api/lunar2solar':
-            content_length = int(self.headers['Content-Length'])
+            content_length = int(self.headers.get('Content-Length', 0))
             post_data = self.rfile.read(content_length)
             params = json.loads(post_data.decode('utf-8'))
             
@@ -165,6 +193,31 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.end_headers()
                 err_response = {"error": str(e)}
                 self.wfile.write(json.dumps(err_response, ensure_ascii=False).encode('utf-8'))
+        elif self.path == '/api/solar2lunar':
+            content_length = int(self.headers.get('Content-Length', 0))
+            post_data = self.rfile.read(content_length)
+            params = json.loads(post_data.decode('utf-8'))
+            try:
+                from lasotuvi.Lich_HND import S2L
+                sd = int(params.get("solar_day", 18))
+                sm = int(params.get("solar_month", 9))
+                sy = int(params.get("solar_year", 1995))
+                l_date = S2L(sd, sm, sy, 7)
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                res = {
+                    "lunar_day": l_date[0],
+                    "lunar_month": l_date[1],
+                    "lunar_year": l_date[2],
+                    "lunar_leap": l_date[3]
+                }
+                self.wfile.write(json.dumps(res, ensure_ascii=False).encode('utf-8'))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}, ensure_ascii=False).encode('utf-8'))
         else:
             super().do_POST()
 

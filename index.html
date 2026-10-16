@@ -134,7 +134,80 @@
                       </select>
                       <input type="number" id="inp-analysis-year" placeholder="Năm xem" value="2026" class="inp-field" style="width: 80px;">
                     </div>
-                    <input type="date" id="inp-birth-date" value="" class="inp-field">
+                    <!-- Calendar Type Selection: 1. Lịch Dương / 2. Lịch Âm -->
+                    <div class="calendar-type-selector">
+                      <button type="button" class="cal-type-btn active" id="btn-type-solar" onclick="setCalendarType('solar')">
+                        ☀️ 1. Lịch Dương
+                      </button>
+                      <button type="button" class="cal-type-btn" id="btn-type-lunar" onclick="setCalendarType('lunar')">
+                        🌙 2. Lịch Âm
+                      </button>
+                      <input type="hidden" id="inp-calendar-type" value="solar">
+                    </div>
+
+                    <!-- Solar Date Input Container -->
+                    <div id="solar-date-container">
+                      <input type="date" id="inp-birth-date" value="" class="inp-field" title="Chọn ngày sinh Dương lịch">
+                    </div>
+
+                    <!-- Lunar Date Input Container (Hidden by default) -->
+                    <div id="lunar-date-container" style="display: none;">
+                      <div style="display: flex; gap: 6px;">
+                        <select id="inp-lunar-day" class="inp-field" style="flex: 1; padding: 7px 4px; font-size: 0.8rem;" title="Ngày sinh Âm lịch">
+                          <option value="1">Mùng 1</option>
+                          <option value="2">Mùng 2</option>
+                          <option value="3">Mùng 3</option>
+                          <option value="4">Mùng 4</option>
+                          <option value="5">Mùng 5</option>
+                          <option value="6">Mùng 6</option>
+                          <option value="7">Mùng 7</option>
+                          <option value="8">Mùng 8</option>
+                          <option value="9">Mùng 9</option>
+                          <option value="10">Mùng 10</option>
+                          <option value="11">Ngày 11</option>
+                          <option value="12">Ngày 12</option>
+                          <option value="13">Ngày 13</option>
+                          <option value="14">Ngày 14</option>
+                          <option value="15">Ngày 15 (Rằm)</option>
+                          <option value="16">Ngày 16</option>
+                          <option value="17">Ngày 17</option>
+                          <option value="18" selected>Ngày 18</option>
+                          <option value="19">Ngày 19</option>
+                          <option value="20">Ngày 20</option>
+                          <option value="21">Ngày 21</option>
+                          <option value="22">Ngày 22</option>
+                          <option value="23">Ngày 23</option>
+                          <option value="24">Ngày 24</option>
+                          <option value="25">Ngày 25</option>
+                          <option value="26">Ngày 26</option>
+                          <option value="27">Ngày 27</option>
+                          <option value="28">Ngày 28</option>
+                          <option value="29">Ngày 29</option>
+                          <option value="30">Ngày 30</option>
+                        </select>
+                        <select id="inp-lunar-month" class="inp-field" style="flex: 1.25; padding: 7px 4px; font-size: 0.8rem;" title="Tháng sinh Âm lịch">
+                          <option value="1">Tháng 1 (Giêng)</option>
+                          <option value="2">Tháng 2</option>
+                          <option value="3">Tháng 3</option>
+                          <option value="4">Tháng 4</option>
+                          <option value="5">Tháng 5</option>
+                          <option value="6">Tháng 6</option>
+                          <option value="7">Tháng 7</option>
+                          <option value="8" selected>Tháng 8</option>
+                          <option value="9">Tháng 9</option>
+                          <option value="10">Tháng 10</option>
+                          <option value="11">Tháng 11</option>
+                          <option value="12">Tháng 12 (Chạp)</option>
+                        </select>
+                        <input type="number" id="inp-lunar-year" class="inp-field" placeholder="Năm ÂL" style="flex: 1; min-width: 65px; padding: 7px 6px; font-size: 0.8rem;" value="1995" min="1900" max="2100" title="Năm sinh Âm lịch">
+                      </div>
+                      <div style="display: flex; align-items: center; justify-content: flex-end; margin-top: 4px; padding-right: 4px;">
+                        <label class="lunar-leap-toggle" title="Đánh dấu nếu sinh vào tháng nhuận của năm âm lịch đó">
+                          <input type="checkbox" id="inp-lunar-leap" value="1" style="cursor: pointer; accent-color: var(--color-gold);">
+                          <span>Tháng Nhuận</span>
+                        </label>
+                      </div>
+                    </div>
                     <div style="display: flex; gap: 8px; width: 100%;">
                       <select id="inp-birth-hour" class="inp-field" style="flex: 1;">
                         <option value="Tý" selected>Giờ Tý (23h - 01h)</option>
