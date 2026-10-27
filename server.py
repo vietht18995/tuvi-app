@@ -4,6 +4,7 @@ import os
 import re
 import secrets
 import sqlite3
+import threading
 import sys
 import time
 import urllib.parse
@@ -41,11 +42,14 @@ def sanitize_filename(name):
     return clean[:50] or "User"
 
 DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp_charts.db")
+# Giới hạn số lượng tiến trình Chrome chạy ngầm tạo PDF (tối đa 1 tại 1 thời điểm để bảo toàn RAM 512MB)
+pdf_generation_semaphore = threading.Semaphore(1)
 
 def init_temp_db():
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30.0)
         cursor = conn.cursor()
+        cursor.execute('PRAGMA journal_mode=WAL;')
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS temp_charts (
                 id TEXT PRIMARY KEY,
@@ -104,7 +108,7 @@ def init_temp_db():
 
 def cleanup_expired_charts():
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30.0)
         cursor = conn.cursor()
         cursor.execute('DELETE FROM temp_charts WHERE expires_at < ?', (time.time(),))
         conn.commit()
@@ -114,7 +118,7 @@ def cleanup_expired_charts():
 
 def save_temp_chart(chart_id, chart_data, now_ts, expires_at):
     cleanup_expired_charts()
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=30.0)
     cursor = conn.cursor()
     cursor.execute('''
         INSERT OR REPLACE INTO temp_charts (id, chart_data, created_at, expires_at)
@@ -125,7 +129,7 @@ def save_temp_chart(chart_id, chart_data, now_ts, expires_at):
 
 def get_temp_chart(chart_id):
     cleanup_expired_charts()
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=30.0)
     cursor = conn.cursor()
     cursor.execute('SELECT chart_data, expires_at FROM temp_charts WHERE id = ?', (chart_id,))
     row = cursor.fetchone()
@@ -143,7 +147,7 @@ def get_temp_chart(chart_id):
 
 def increment_stat(stat_key, delta=1):
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30.0)
         cursor = conn.cursor()
         cursor.execute('''
             UPDATE site_stats 
@@ -163,7 +167,7 @@ def get_client_ip(handler):
 
 def log_visitor(ip, user_agent, path):
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30.0)
         cursor = conn.cursor()
         cursor.execute('''
             INSERT INTO visitor_logs (ip, user_agent, path, visited_at)
@@ -176,7 +180,7 @@ def log_visitor(ip, user_agent, path):
 
 def log_chart_generation(chart_id, name, gender, birth_date, birth_hour, element_fate, ip, user_agent):
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30.0)
         cursor = conn.cursor()
         cursor.execute('''
             INSERT INTO chart_generation_logs (chart_id, name, gender, birth_date, birth_hour, element_fate, ip, user_agent, created_at)
@@ -189,7 +193,7 @@ def log_chart_generation(chart_id, name, gender, birth_date, birth_hour, element
 
 def get_admin_dashboard_data():
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30.0)
         cursor = conn.cursor()
         now = time.time()
 
@@ -270,7 +274,7 @@ def get_admin_dashboard_data():
 
 def get_site_stats():
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30.0)
         cursor = conn.cursor()
         cursor.execute('SELECT stat_key, stat_value FROM site_stats')
         rows = cursor.fetchall()
@@ -340,6 +344,59 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
             log_visitor(client_ip, ua, clean_path)
             increment_stat('total_visitors', 1)
 
+        # 1.5 API: Tải file Sách PDF Toàn Thư (Tạo theo nhu cầu Lazy + Semaphore)
+        if clean_path == '/api/download_pdf':
+            query_params = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+            chart_id = (query_params.get('chart_id') or query_params.get('id') or [None])[0]
+            if not chart_id:
+                self.send_response(400)
+                self.send_header('Content-Type', 'text/html; charset=utf-8')
+                self.end_headers()
+                self.wfile.write("<h3>400: Thiếu mã lá số để tải PDF.</h3>".encode('utf-8'))
+                return
+
+            record = get_temp_chart(chart_id.strip().upper())
+            if not record:
+                self.send_response(404)
+                self.send_header('Content-Type', 'text/html; charset=utf-8')
+                self.end_headers()
+                self.wfile.write("<h3>404: Lá số không tồn tại hoặc đã hết hạn lưu trữ 15 phút. Vui lòng lập lại lá số mới.</h3>".encode('utf-8'))
+                return
+
+            chart_data = record["chart_data"]
+            p = chart_data.get("personal_info", {})
+            raw_name = p.get("name", "User")
+            safe_name = sanitize_filename(raw_name)
+            pdf_filename = f"La_So_Tu_Vi_{safe_name}_Toan_Thu.pdf"
+            pdf_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), pdf_filename)
+
+            # Lazy compilation with Semaphore queue
+            if not os.path.exists(pdf_path):
+                with pdf_generation_semaphore:
+                    if not os.path.exists(pdf_path):
+                        try:
+                            from generate_pdf_book import generate_pdf_book
+                            generate_pdf_book(chart_data, pdf_path)
+                        except Exception as pdf_err:
+                            print("Lỗi tạo PDF theo nhu cầu:", pdf_err)
+                            self.send_response(500)
+                            self.send_header('Content-Type', 'text/html; charset=utf-8')
+                            self.end_headers()
+                            self.wfile.write(f"<h3>500: Lỗi biên soạn sách PDF: {pdf_err}</h3>".encode('utf-8'))
+                            return
+
+            if os.path.exists(pdf_path):
+                ascii_filename = remove_vietnamese_diacritics(pdf_filename)
+                encoded_filename = urllib.parse.quote(pdf_filename)
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/pdf')
+                self.send_header('Content-Length', str(os.path.getsize(pdf_path)))
+                self.send_header('Content-Disposition', f'attachment; filename="{ascii_filename}"; filename*=UTF-8\'\'{encoded_filename}')
+                self.end_headers()
+                with open(pdf_path, 'rb') as f:
+                    self.copyfile(f, self.wfile)
+                return
+
         # 1. API: Tra cứu lá số tạm thời theo ID (thời hạn 15 phút)
         if clean_path == '/api/get_temp_chart':
             query_params = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
@@ -393,6 +450,26 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
         pure_name = clean_path.lstrip('/')
         if (clean_path.endswith('.pdf') or clean_path.endswith('.xlsx')) and '/' not in pure_name and '\\' not in pure_name:
             file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), pure_name)
+            if not os.path.exists(file_path) and clean_path.endswith('.pdf'):
+                # Kiểm tra xem có lá số tương ứng trong temp_charts không để tạo on-demand
+                try:
+                    conn = sqlite3.connect(DB_PATH, timeout=30.0)
+                    cursor = conn.cursor()
+                    cursor.execute("SELECT chart_data FROM temp_charts ORDER BY created_at DESC LIMIT 50")
+                    rows = cursor.fetchall()
+                    conn.close()
+                    for (cdata_str,) in rows:
+                        cdata = json.loads(cdata_str)
+                        c_name = sanitize_filename(cdata.get("personal_info", {}).get("name", ""))
+                        if c_name and c_name in pure_name:
+                            with pdf_generation_semaphore:
+                                if not os.path.exists(file_path):
+                                    from generate_pdf_book import generate_pdf_book
+                                    generate_pdf_book(cdata, file_path)
+                            break
+                except Exception as ex_gen:
+                    print("Lỗi tạo PDF on-demand qua direct link:", ex_gen)
+
             if os.path.exists(file_path):
                 content_type = 'application/pdf' if clean_path.endswith('.pdf') else 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                 ascii_filename = remove_vietnamese_diacritics(pure_name)
@@ -470,16 +547,6 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
                 except Exception as ex:
                     print("Error generating Excel:", str(ex))
 
-                # Regenerate Comprehensive PDF Book for this user dynamically!
-                try:
-                    from generate_pdf_book import generate_pdf_book
-                    pdf_filename = f"La_So_Tu_Vi_{safe_name}_Toan_Thu.pdf"
-                    pdf_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), pdf_filename)
-                    generate_pdf_book(chart_data, pdf_path)
-                    chart_data["personal_info"]["pdf_download_url"] = pdf_filename
-                except Exception as ex:
-                    print("Error generating PDF Book:", str(ex))
-
                 # Lưu trữ lá số tạm thời (hết hạn đúng sau 15 phút = 900s)
                 chart_id = secrets.token_hex(4).upper()
                 now_ts = time.time()
@@ -487,6 +554,11 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
                 chart_data["chart_id"] = chart_id
                 chart_data["expires_at"] = expires_at
                 chart_data["remaining_seconds"] = 900
+
+                # Thiết lập tải PDF theo nhu cầu (Lazy Generation qua Semaphore - chỉ tạo khi người dùng click tải)
+                pdf_filename = f"La_So_Tu_Vi_{safe_name}_Toan_Thu.pdf"
+                chart_data["personal_info"]["pdf_filename"] = pdf_filename
+                chart_data["personal_info"]["pdf_download_url"] = f"/api/download_pdf?chart_id={chart_id}"
 
                 try:
                     save_temp_chart(chart_id, chart_data, now_ts, expires_at)
@@ -635,8 +707,10 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
 def run_server(port=8000, host='0.0.0.0'):
     init_temp_db()
     server_address = (host, port)
-    httpd = http.server.HTTPServer(server_address, TuViRequestHandler)
-    print(f"Server Tử Vi đang chạy tại http://{host}:{port}...")
+    httpd = http.server.ThreadingHTTPServer(server_address, TuViRequestHandler)
+    httpd.daemon_threads = True
+    httpd.allow_reuse_address = True
+    print(f"Server Tử Vi Đa Luồng (ThreadingHTTPServer) đang chạy tại http://{host}:{port}...")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:

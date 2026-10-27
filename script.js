@@ -9160,6 +9160,20 @@ function applyChartData(result, remainingSeconds) {
   if (pdfLink && result.personal_info.pdf_download_url) {
     pdfLink.href = result.personal_info.pdf_download_url;
     pdfLink.style.display = "inline-flex";
+    
+    // Phản hồi trực quan khi biên soạn PDF theo nhu cầu (Lazy PDF)
+    pdfLink.onclick = function() {
+      if (pdfLink.dataset.downloading === "true") return;
+      const origHtml = pdfLink.innerHTML;
+      pdfLink.dataset.downloading = "true";
+      pdfLink.style.opacity = "0.75";
+      pdfLink.innerHTML = `<span style="display:inline-block; animation: spinMandalaClockwise 1.2s linear infinite; margin-right:6px;">☸</span> Đang xuất bản Sách PDF...`;
+      setTimeout(() => {
+        pdfLink.dataset.downloading = "false";
+        pdfLink.style.opacity = "1";
+        pdfLink.innerHTML = origHtml;
+      }, 5000);
+    };
   }
 
   // Refill Central panel result state
