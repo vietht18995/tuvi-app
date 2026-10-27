@@ -893,6 +893,7 @@ def render_daivan_limits_html(chart_data, db):
 """
 
 def generate_pdf_book(chart_data, output_pdf_path):
+    output_pdf_path = os.path.abspath(output_pdf_path)
     readings_db = load_readings_database()
     p = chart_data.get("personal_info", {})
     chambers = chart_data.get("chambers", [])
@@ -1584,6 +1585,7 @@ def generate_pdf_book(chart_data, output_pdf_path):
 """
         
         cung_desc = CHAMBER_DESCS.get(cid, "Cung vị phản ánh khía cạnh quan trọng của đời người.")
+        tt_span = f'<span style="color: #dc2626; font-weight: bold;">[{tt_val}]</span>' if tt_val != 'Không' else ''
 
         html_content += f"""
     <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 14px; margin-bottom: 12px; page-break-inside: avoid;">
@@ -1597,7 +1599,7 @@ def generate_pdf_book(chart_data, output_pdf_path):
       </div>
 
       <div style="font-size: 8pt; line-height: 1.4; margin-bottom: 4px;">
-        <div><strong>Chính tinh:</strong> <span style="color: #7f1d1d; font-weight: bold;">{chinh}</span> {f'<span style=\"color: #dc2626; font-weight: bold;\">[{tt_val}]</span>' if tt_val != 'Không' else ''}</div>
+        <div><strong>Chính tinh:</strong> <span style="color: #7f1d1d; font-weight: bold;">{chinh}</span> {tt_span}</div>
         <div><strong>Cát tinh:</strong> <span style="color: #16a34a;">{cat}</span></div>
         <div><strong>Hung tinh:</strong> <span style="color: #dc2626;">{hung}</span></div>
         <div><strong>Sao Lưu {analysis_year}:</strong> <span style="color: #6d28d9; font-weight: bold;">{luu}</span></div>
@@ -1782,11 +1784,12 @@ def generate_pdf_book(chart_data, output_pdf_path):
             "nh_luu_list": nh_luu_list,
             "advice": m_advice
         })
+        m_tt_tag = f'<strong style="color: #dc2626;">[{m_tt}]</strong>' if m_tt != 'Không' else ''
 
         html_content += f"""
         <tr>
           <td style="text-align: center;"><strong>Tháng {m}</strong></td>
-          <td><strong>{m_cung.get('name')}</strong> ({m_cung.get('chi')})<br><span style="color: #7f1d1d;">{m_chinh}</span> {f'<strong style=\"color: #dc2626;\">[{m_tt}]</strong>' if m_tt != 'Không' else ''}{m_luu_tag}</td>
+          <td><strong>{m_cung.get('name')}</strong> ({m_cung.get('chi')})<br><span style="color: #7f1d1d;">{m_chinh}</span> {m_tt_tag}{m_luu_tag}</td>
           <td><strong>{xc_cung.get('name')}</strong> ({xc_cung.get('chi')})<br><span style="color: #475569;">{xc_chinh}</span>{xc_luu_str}</td>
           <td>{th1_cung.get('name')} ({th1_cung.get('chi')}) & {th2_cung.get('name')} ({th2_cung.get('chi')}){th_luu_str}</td>
           <td><strong>{nh_cung.get('name')}</strong> ({nh_cung.get('chi')})<br><span style="color: #64748b; font-size: 7.5pt;">{m_chi} hợp {nh_cung.get('chi')}</span></td>

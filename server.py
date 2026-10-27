@@ -142,7 +142,21 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
         if (clean_path.endswith('.pdf') or clean_path.endswith('.xlsx')) and '/' not in pure_name and '\\' not in pure_name:
             file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), pure_name)
             if os.path.exists(file_path):
-                return super().do_GET()
+                content_type = 'application/pdf' if clean_path.endswith('.pdf') else 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                self.send_response(200)
+                self.send_header('Content-Type', content_type)
+                self.send_header('Content-Length', str(os.path.getsize(file_path)))
+                self.send_header('Content-Disposition', f'attachment; filename="{pure_name}"')
+                self.end_headers()
+                with open(file_path, 'rb') as f:
+                    self.copyfile(f, self.wfile)
+                return
+            else:
+                self.send_response(404)
+                self.send_header('Content-Type', 'text/html; charset=utf-8')
+                self.end_headers()
+                self.wfile.write("<h3>404: Tệp tin không tồn tại hoặc đang trong quá trình khởi tạo. Vui lòng thử lại sau giây lát.</h3>".encode('utf-8'))
+                return
 
         # 5. Block all other requests (.py, .bat, .exe, .json, .git, system files, etc.)
         self.send_response(403)
