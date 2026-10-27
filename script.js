@@ -8850,6 +8850,53 @@ function executeCalculateWithPayload(payload) {
     submitBtn.innerText = "ĐANG TÍNH TOÁN...";
   }
 
+  let calculationResult = null;
+  let calculationError = null;
+  let minRitualCompleted = false;
+  let chartRevealed = false;
+
+  const minRitualDurationMs = 2800; // 2.8s: ensures countdown (3 -> 2 -> 1) & matrix animation complete smoothly
+
+  function tryRevealChart() {
+    if (chartRevealed) return;
+
+    if (calculationError) {
+      chartRevealed = true;
+      if (window.skipCelestialSummon) window.skipCelestialSummon();
+      alert("Đã xảy ra lỗi: " + calculationError + "\nLưu ý: Bạn cần chạy file server.py trước!");
+      return;
+    }
+
+    if (calculationResult && minRitualCompleted) {
+      chartRevealed = true;
+      if (window.finishCelestialSummon) {
+        window.finishCelestialSummon(() => {
+          applyChartData(calculationResult, calculationResult.remaining_seconds || 900);
+        });
+      } else {
+        applyChartData(calculationResult, calculationResult.remaining_seconds || 900);
+      }
+    }
+  }
+
+  // Hook skip event: if user clicks 'Bỏ qua nghi thức ✕', immediately reveal when data is ready
+  window.onCelestialSummonSkipped = function() {
+    minRitualCompleted = true;
+    tryRevealChart();
+  };
+
+  // Launch Celestial Summoning Ritual & Astrological Matrix
+  if (typeof window.startCelestialSummon === 'function') {
+    window.startCelestialSummon();
+  }
+
+  // Minimum ritual timer for theatrical presentation
+  setTimeout(() => {
+    minRitualCompleted = true;
+    tryRevealChart();
+  }, minRitualDurationMs);
+
+  // Send request in parallel
   fetch("/api/calculate", {
     method: "POST",
     headers: {
@@ -8863,14 +8910,15 @@ function executeCalculateWithPayload(payload) {
   })
   .then(result => {
     if (result.error) {
-      alert("Lỗi: " + result.error);
-      return;
+      calculationError = result.error;
+    } else {
+      calculationResult = result;
     }
-    
-    applyChartData(result, result.remaining_seconds || 900);
+    tryRevealChart();
   })
   .catch(err => {
-    alert("Đã xảy ra lỗi: " + err.message + "\nLưu ý: Bạn cần chạy file server.py trước!");
+    calculationError = err.message;
+    tryRevealChart();
   })
   .finally(() => {
     if (submitBtn) {

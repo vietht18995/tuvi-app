@@ -82,13 +82,16 @@
 
   // Sacred Incantations for the HUD
   const celestialChants = [
-    "✦ Thanh Long Xuất Hải • Càn Khôn Bản Mệnh Khởi Dựng...",
-    "✦ Hỏa Phụng Triều Dương • Tinh Tú Quy Tụ Tam Hợp...",
-    "✦ Kim Quy Tải Thư • Định Trụ Thiên Bàn Thập Nhị Cung...",
-    "✦ Tứ Linh Đồng Quy • Vạn Tinh Chiếu Mệnh • Thành Bàn!"
+    "✦ Bước 1: Khởi động Bát Trận Càn Khôn • Nạp Can Chi Tứ Trụ...",
+    "✦ Bước 2: An vị 14 Chính Tinh & Tứ Hóa Phi Tinh (Lộc • Quyền • Khoa • Kỵ)...",
+    "✦ Bước 3: Phối hợp Bát Tự Hà Lạc, Dụng Thần & Đại Vận 120 Năm...",
+    "✦ Bước 4: Khắc xuất Sách Tử Vi Toàn Thư Hoàng Gia PDF độc bản...",
+    "✦ Vạn Tinh Quy Tông • Khởi Mở Thiên Bàn Hoàng Gia! ✦"
   ];
   let chantIdx = 0;
   let chantInterval = null;
+  let countdownSec = 3;
+  let countdownInterval = null;
 
   // =========================================================================
   // THREE.JS 3D SCENE & RIG
@@ -1419,6 +1422,10 @@
       clearInterval(chantInterval);
       chantInterval = null;
     }
+    if (countdownInterval) {
+      clearInterval(countdownInterval);
+      countdownInterval = null;
+    }
     if (animId) {
       (window.cancelAnimationFrame || cancelAnimationFrame)(animId);
       animId = null;
@@ -1428,6 +1435,10 @@
     if (overlay) {
       overlay.style.display = "none";
       overlay.classList.remove("active", "fade-out");
+    }
+
+    if (typeof window.onCelestialSummonSkipped === 'function') {
+      try { window.onCelestialSummonSkipped(); } catch (e) {}
     }
 
     // Call any pending callback exactly once!
@@ -1474,12 +1485,26 @@
       }
       animate3D();
 
+      // Countdown Timer (3s -> 2s -> 1s)
+      countdownSec = 3;
+      const countdownEl = document.getElementById("celestial-countdown-num");
+      if (countdownEl) countdownEl.innerText = countdownSec;
+      if (countdownInterval) clearInterval(countdownInterval);
+      countdownInterval = setInterval(() => {
+        if (countdownSec > 1) {
+          countdownSec--;
+          if (countdownEl) countdownEl.innerText = countdownSec;
+        } else {
+          if (countdownEl) countdownEl.innerText = "1";
+        }
+      }, 850);
+
       // HUD Step Updates
       chantIdx = 0;
       const statusText = document.getElementById("celestial-status-text");
       const progressFill = document.getElementById("celestial-progress-fill");
       if (statusText) statusText.innerText = celestialChants[0];
-      if (progressFill) progressFill.style.width = "18%";
+      if (progressFill) progressFill.style.width = "22%";
 
       if (chantInterval) clearInterval(chantInterval);
       chantInterval = setInterval(() => {
@@ -1489,19 +1514,19 @@
           setTimeout(() => {
             statusText.innerText = celestialChants[chantIdx];
             statusText.style.opacity = "1";
-          }, 180);
+          }, 150);
         }
         if (progressFill) {
-          const pct = Math.min(22 + chantIdx * 24, 92);
+          const pct = Math.min(25 + chantIdx * 24, 96);
           progressFill.style.width = pct + "%";
         }
-      }, 1050);
+      }, 750);
 
-      // Auto-safety fallback (6.5s): Never trap the user on screen
+      // Auto-safety fallback (7.5s): Never trap the user on screen
       if (safetyTimeout) clearTimeout(safetyTimeout);
       safetyTimeout = setTimeout(() => {
         window.skipCelestialSummon();
-      }, 6500);
+      }, 7500);
     } catch (e) {
       console.warn("startCelestialSummon warning:", e);
     }
@@ -1515,6 +1540,12 @@
       clearTimeout(safetyTimeout);
       safetyTimeout = null;
     }
+    if (countdownInterval) {
+      clearInterval(countdownInterval);
+      countdownInterval = null;
+    }
+    const countdownEl = document.getElementById("celestial-countdown-num");
+    if (countdownEl) countdownEl.innerText = "0";
 
     // Helper: Safely invoke callback exactly once
     function invokeCallbackOnce(cb) {

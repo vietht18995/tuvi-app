@@ -888,7 +888,7 @@
     </div>
   </div>
 
-  <!-- Celestial Summoning Ritual Overlay (Tứ Linh Quy Tụ True 3D WebGL) -->
+  <!-- Celestial Summoning Ritual Overlay (Tứ Linh Quy Tụ True 3D WebGL + Ma Trận Tử Vi Càn Khôn) -->
   <div id="celestial-summon-overlay" class="celestial-overlay">
     <!-- Skip Ceremony Button -->
     <button type="button" class="celestial-skip-btn" onclick="window.skipCelestialSummon ? window.skipCelestialSummon() : window.finishCelestialSummon()" title="Bỏ qua nghi thức xem ngay lá số">
@@ -897,17 +897,43 @@
     <!-- True 3D Three.js WebGL Canvas for Cosmic Light & Particle System -->
     <canvas id="three-celestial-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2;"></canvas>
 
-    <!-- Ceremony HUD: Sleek, compact & low-profile -->
+    <!-- Central Astrological Matrix (Ma Trận Tử Vi & Bát Quái Càn Khôn) -->
+    <div class="celestial-matrix-stage">
+      <div class="matrix-ambient-halo"></div>
+      <div class="matrix-laser-cross"></div>
+      <div class="matrix-ring-outer"></div>
+      <div class="matrix-ring-middle"></div>
+      <div class="matrix-ring-inner"></div>
+      <div class="matrix-core-taiji">
+        <div class="taiji-spinning-flame"></div>
+      </div>
+    </div>
+
+    <!-- Ceremony HUD: Sleek, compact & low-profile with Live Countdown Timer -->
     <div class="celestial-hud">
       <div class="celestial-hud-header">
-        <span class="celestial-seal-badge">☸ ĐẠI LỄ TINH QUANG ☯</span>
-        <h2 class="celestial-hud-title">TỨ LINH QUY TỤ • AN ĐỊNH MỆNH TRỜI</h2>
+        <span class="celestial-seal-badge">☸ ĐẠI LỄ TINH QUANG • KHỞI MỞ THIÊN BÀN ☯</span>
+        <h2 class="celestial-hud-title">MA TRẬN TỬ VI • AN ĐỊNH MỆNH TRỜI</h2>
       </div>
+
+      <!-- Live Countdown Badge -->
+      <div class="celestial-countdown-box">
+        <span class="countdown-pulse-icon">⏳</span>
+        <span class="countdown-label">Ước tính hoàn tất:</span>
+        <span class="countdown-number" id="celestial-countdown-num">3</span>
+        <span class="countdown-unit">giây</span>
+      </div>
+
       <div class="celestial-hud-status" id="celestial-status-text">
-        ✦ Thanh Long Xuất Hải • Càn Khôn Bản Mệnh Khởi Dựng...
+        ✦ Khởi động Bát Trận Càn Khôn • Nạp Can Chi Tứ Trụ...
       </div>
+
       <div class="celestial-progress-bar">
         <div class="celestial-progress-fill" id="celestial-progress-fill"></div>
+      </div>
+
+      <div class="celestial-hud-subnote">
+        ✨ <i>Đã nhận phí chuyển khoản 6,868 VNĐ. Đang phân tích Bát Tự & xuất bản Sách Toàn Thư PDF độc bản...</i>
       </div>
     </div>
 
@@ -918,9 +944,9 @@
   <!-- Three.js 3D WebGL Library (Local offline bundle) -->
   <script src="three.min.js"></script>
   <!-- Celestial 3D Effects & Ritual System -->
-  <script src="celestial_effects.js?v=7"></script>
+  <script src="celestial_effects.js?v=8"></script>
   <!-- Main JavaScript File -->
-  <script src="script.js?v=31"></script>
+  <script src="script.js?v=32"></script>
 </body>
 </html>
 
