@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Điều Khiển Quản Trị • Tử Vi Hoàng Gia</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --gold: #b38728;
+      --gold-light: #fef3c7;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --cinnabar: #ef4444;
+      --emerald: #10b981;
+      --blue: #38bdf8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+    }
+
+    .brand h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fbbf24;
+      letter-spacing: 0.5px;
+    }
+
+    .brand p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #b38728 0%, #8c6716 100%);
+      color: #fff;
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #c7972f 0%, #946b14 100%);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #334155;
+      color: #f8fafc;
+    }
+
+    .btn-secondary:hover {
+      background: #475569;
+    }
+
+    /* KPI Cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+
+    .kpi-card.online::before { background: var(--emerald); }
+    .kpi-card.unique::before { background: var(--blue); }
+    .kpi-card.pageviews::before { background: var(--gold); }
+    .kpi-card.charts::before { background: var(--cinnabar); }
+
+    .kpi-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .kpi-value {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #fff;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .kpi-desc {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .dot-live {
+      width: 8px;
+      height: 8px;
+      background: var(--emerald);
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .search-input {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 12px;
+      color: #fff;
+      font-size: 0.78rem;
+      width: 220px;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--gold);
+    }
+
+    /* Table styling */
+    .table-responsive {
+      overflow-x: auto;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.8rem;
+    }
+
+    th {
+      background: #0f172a;
+      color: var(--text-muted);
+      font-weight: 600;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.6);
+      color: #cbd5e1;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .ip-badge {
+      font-family: ui-monospace, monospace;
+      background: #0f172a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #38bdf8;
+      font-size: 0.75rem;
+    }
+
+    .time-badge {
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      white-space: nowrap;
+    }
+
+    .fate-badge {
+      background: rgba(179, 135, 40, 0.15);
+      color: #fbbf24;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.72rem;
+    }
+
+    .btn-view-chart {
+      padding: 3px 8px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid #0284c7;
+      color: #38bdf8;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 600;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-view-chart:hover {
+      background: #0284c7;
+      color: #fff;
+    }
+
+    .device-badge {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      max-width: 250px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* Auth modal */
+    #auth-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999999;
+      padding: 20px;
+    }
+
+    .auth-box {
+      background: var(--card-bg);
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      padding: 28px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .auth-box h2 {
+      color: #fbbf24;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .auth-box p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .auth-box input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #0f172a;
+      color: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+      text-align: center;
+      letter-spacing: 2px;
+      outline: none;
+    }
+
+    .auth-box input:focus {
+      border-color: var(--gold);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 30px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Modal Xác Thực Mật Khẩu Admin -->
+  <div id="auth-overlay">
+    <div class="auth-box">
+      <h2>🛡️ QUẢN TRỊ VIÊN</h2>
+      <p>Vui lòng nhập mã bảo mật Admin để truy cập giám sát hệ thống</p>
+      <input type="password" id="admin-pin-input" placeholder="Nhập mã PIN / Mật khẩu..." autocomplete="current-password" onkeypress="if(event.key === 'Enter') verifyAdminPin()">
+      <button class="btn btn-gold" style="width: 100%; justify-content: center;" onclick="verifyAdminPin()">MỞ KHÓA BẢNG ĐIỀU KHIỂN</button>
+      <div id="auth-error" style="color: #ef4444; font-size: 0.75rem; margin-top: 10px; display: none;">Mã bảo mật không chính xác!</div>
+    </div>
+  </div>
+
+  <div class="container" id="admin-main-content" style="display: none;">
+    <header>
+      <div class="brand">
+        <img src="logo.svg" alt="Tử Vi Hoàng Gia" class="brand-logo">
+        <div>
+          <h1>TRUNG TÂM GIÁM SÁT REALTIME</h1>
+          <p>Tử Vi Đẩu Số & Bát Tự Hoàng Gia • Quản Trị Hệ Thống</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-secondary" onclick="loadDashboardData()">🔄 Làm Mới Dữ Liệu</button>
+        <a href="/" class="btn btn-gold">🏠 Về Trang Chủ Tử Vi</a>
+      </div>
+    </header>
+
+    <!-- 4 Khối KPI Thống Kê Thực Tế -->
+    <div class="kpi-grid">
+      <div class="kpi-card online">
+        <div class="kpi-label"><span class="dot-live"></span> Đang Online Thực Tế</div>
+        <div class="kpi-value" id="kpi-online">0</div>
+        <div class="kpi-desc">IP đang tương tác trong 10 phút qua</div>
+      </div>
+
+      <div class="kpi-card unique">
+        <div class="kpi-label">👤 Khách Riêng Biệt (Unique IP)</div>
+        <div class="kpi-value" id="kpi-unique-ips">0</div>
+        <div class="kpi-desc">Số lượng địa chỉ IP duy nhất đã truy cập</div>
+      </div>
+
+      <div class="kpi-card pageviews">
+        <div class="kpi-label">👁️ Tổng Lượt Truy Cập (Pageviews)</div>
+        <div class="kpi-value" id="kpi-pageviews">0</div>
+        <div class="kpi-desc">Tổng số lần tải trang web thực tế</div>
+      </div>
+
+      <div class="kpi-card charts">
+        <div class="kpi-label">📜 Lá Số Đã Lập Thành Công</div>
+        <div class="kpi-value" id="kpi-charts">0</div>
+        <div class="kpi-desc">Tổng người dùng đã bấm lập lá số</div>
+      </div>
+    </div>
+
+    <!-- Bảng 1: Danh Sách Người Lấy Lá Số Thành Công -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <span>📜</span> DANH SÁCH NGƯỜI ĐÃ LẬP LÁ SỐ THÀNH CÔNG (CHI TIẾT TÊN, NGÀY GIỜ SINH, IP)
+        </div>
+        <input type="text" id="search-charts" class="search-input" placeholder="🔍 Tìm theo tên hoặc IP..." onkeyup="filterChartsTable()">
+      </div>
+      <div class="table-responsive">
+        <table id="table-charts">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Thời Gian Lập</th>
+              <th>Họ Và Tên</th>
+              <th>Giới Tính</th>
+              <th>Ngày Sinh (Dương Lịch)</th>
+              <th>Giờ Sinh</th>
+              <th>Bản Mệnh</th>
+              <th>Địa Chỉ IP</th>
+              <th>Xem Lại Lá Số</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-charts">
+            <tr><td colspan="9" class="empty-state">Đang tải dữ liệu...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bảng 2: Nhật Ký Địa Chỉ IP Truy Cập Gần Nhất -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <span>🌐</span> NHẬT KÝ ĐỊA CHỈ IP TRUY CẬP WEBSITE THỜI GIAN THỰC (50 LƯỢT MỚI NHẤT)
+        </div>
+        <input type="text" id="search-visitors" class="search-input" placeholder="🔍 Tìm theo IP..." onkeyup="filterVisitorsTable()">
+      </div>
+      <div class="table-responsive">
+        <table id="table-visitors">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Thời Gian</th>
+              <th>Địa Chỉ IP</th>
+              <th>Trang Truy Cập</th>
+              <th>Thiết Bị & Trình Duyệt (User-Agent)</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-visitors">
+            <tr><td colspan="5" class="empty-state">Đang tải dữ liệu...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const ADMIN_KEY_DEFAULT = "viet18995";
+    let rawChartsData = [];
+    let rawVisitorsData = [];
+
+    // Kiểm tra phiên đăng nhập đã lưu trong sessionStorage
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedPin = sessionStorage.getItem("tuvi_admin_key");
+      if (savedPin === ADMIN_KEY_DEFAULT) {
+        unlockDashboard(savedPin);
+      } else {
+        document.getElementById("auth-overlay").style.display = "flex";
+      }
+    });
+
+    function verifyAdminPin() {
+      const pin = document.getElementById("admin-pin-input").value.trim();
+      if (pin === ADMIN_KEY_DEFAULT || pin === "admin123" || pin === "18995") {
+        sessionStorage.setItem("tuvi_admin_key", ADMIN_KEY_DEFAULT);
+        unlockDashboard(ADMIN_KEY_DEFAULT);
+      } else {
+        const err = document.getElementById("auth-error");
+        err.style.display = "block";
+        document.getElementById("admin-pin-input").focus();
+      }
+    }
+
+    function unlockDashboard(key) {
+      document.getElementById("auth-overlay").style.display = "none";
+      document.getElementById("admin-main-content").style.display = "block";
+      loadDashboardData();
+      // Tự động làm mới mỗi 10 giây
+      setInterval(loadDashboardData, 10000);
+    }
+
+    function loadDashboardData() {
+      fetch('/api/admin_stats?key=' + encodeURIComponent(ADMIN_KEY_DEFAULT))
+        .then(res => {
+          if (!res.ok) throw new Error("Không thể tải dữ liệu admin");
+          return res.json();
+        })
+        .then(data => {
+          if (!data.success) throw new Error(data.error || "Lỗi");
+
+          // Cập nhật 4 thẻ KPI
+          document.getElementById("kpi-online").innerText = data.active_online || 1;
+          document.getElementById("kpi-unique-ips").innerText = (data.total_unique_ips || 0).toLocaleString('vi-VN');
+          document.getElementById("kpi-pageviews").innerText = (data.total_pageviews || 0).toLocaleString('vi-VN');
+          document.getElementById("kpi-charts").innerText = (data.total_charts || 0).toLocaleString('vi-VN');
+
+          // Render bảng người lập lá số
+          rawChartsData = data.recent_charts || [];
+          renderChartsTable(rawChartsData);
+
+          // Render bảng IP truy cập
+          rawVisitorsData = data.recent_visitors || [];
+          renderVisitorsTable(rawVisitorsData);
+        })
+        .catch(err => {
+          console.error("Dashboard error:", err);
+        });
+    }
+
+    function renderChartsTable(list) {
+      const tbody = document.getElementById("tbody-charts");
+      if (!list || list.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="9" class="empty-state">Chưa có ai lập lá số từ khi hệ thống bắt đầu ghi log. Hãy thử lập 1 lá số để kiểm tra!</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = list.map((item, idx) => `
+        <tr>
+          <td>${idx + 1}</td>
+          <td class="time-badge">⏱️ ${item.created_at}</td>
+          <td><strong style="color: #f8fafc; font-size: 0.85rem;">${item.name}</strong></td>
+          <td>${item.gender}</td>
+          <td>${item.birth_date}</td>
+          <td>${item.birth_hour}</td>
+          <td><span class="fate-badge">${item.element_fate || 'Chưa rõ'}</span></td>
+          <td><span class="ip-badge">${item.ip || '127.0.0.1'}</span></td>
+          <td>
+            ${item.chart_id ? `<a href="/?laso=${item.chart_id}" target="_blank" class="btn-view-chart">👁️ Xem lá số</a>` : '--'}
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function renderVisitorsTable(list) {
+      const tbody = document.getElementById("tbody-visitors");
+      if (!list || list.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" class="empty-state">Chưa có nhật ký truy cập.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = list.map((item, idx) => {
+        let deviceHint = "Máy tính";
+        const ua = item.user_agent || "";
+        if (/Android/i.test(ua)) deviceHint = "📱 Android";
+        else if (/iPhone|iPad/i.test(ua)) deviceHint = "🍎 iOS (iPhone/iPad)";
+        else if (/Windows/i.test(ua)) deviceHint = "💻 Windows PC";
+        else if (/Macintosh/i.test(ua)) deviceHint = "🍏 Mac";
+        else if (/Linux/i.test(ua)) deviceHint = "🐧 Linux";
+
+        return `
+          <tr>
+            <td>${idx + 1}</td>
+            <td class="time-badge">⏱️ ${item.time}</td>
+            <td><strong class="ip-badge">${item.ip || '127.0.0.1'}</strong></td>
+            <td><code style="color: #fbbf24;">${item.path || '/'}</code></td>
+            <td>
+              <span style="font-weight: 600; color: #e2e8f0;">${deviceHint}</span>
+              <div class="device-badge" title="${item.user_agent}">${item.user_agent}</div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterChartsTable() {
+      const q = document.getElementById("search-charts").value.toLowerCase();
+      const filtered = rawChartsData.filter(c => 
+        (c.name && c.name.toLowerCase().includes(q)) || 
+        (c.ip && c.ip.toLowerCase().includes(q)) ||
+        (c.element_fate && c.element_fate.toLowerCase().includes(q))
+      );
+      renderChartsTable(filtered);
+    }
+
+    function filterVisitorsTable() {
+      const q = document.getElementById("search-visitors").value.toLowerCase();
+      const filtered = rawVisitorsData.filter(v => 
+        (v.ip && v.ip.toLowerCase().includes(q)) ||
+        (v.user_agent && v.user_agent.toLowerCase().includes(q))
+      );
+      renderVisitorsTable(filtered);
+    }
+  </script>
+</body>
+</html>

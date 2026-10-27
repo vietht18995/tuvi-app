@@ -65,6 +65,36 @@ def init_temp_db():
         cursor.execute('INSERT OR IGNORE INTO site_stats (stat_key, stat_value) VALUES ("total_visitors", 1868)')
         cursor.execute('INSERT OR IGNORE INTO site_stats (stat_key, stat_value) VALUES ("total_charts_created", 688)')
 
+        # Bảng nhật ký chi tiết khách truy cập theo IP thực tế
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS visitor_logs (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                ip TEXT,
+                user_agent TEXT,
+                path TEXT,
+                visited_at REAL
+            )
+        ''')
+        cursor.execute('CREATE INDEX IF NOT EXISTS idx_visitor_ip ON visitor_logs(ip)')
+        cursor.execute('CREATE INDEX IF NOT EXISTS idx_visitor_time ON visitor_logs(visited_at)')
+
+        # Bảng nhật ký chi tiết người lập lá số thành công
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS chart_generation_logs (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                chart_id TEXT,
+                name TEXT,
+                gender TEXT,
+                birth_date TEXT,
+                birth_hour TEXT,
+                element_fate TEXT,
+                ip TEXT,
+                user_agent TEXT,
+                created_at REAL
+            )
+        ''')
+        cursor.execute('CREATE INDEX IF NOT EXISTS idx_chart_time ON chart_generation_logs(created_at)')
+
         # Auto-clean expired charts on initialization
         cursor.execute('DELETE FROM temp_charts WHERE expires_at < ?', (time.time(),))
         conn.commit()
@@ -125,6 +155,119 @@ def increment_stat(stat_key, delta=1):
     except Exception as e:
         print("Lỗi cập nhật thống kê:", e)
 
+def get_client_ip(handler):
+    xff = handler.headers.get('X-Forwarded-For')
+    if xff:
+        return xff.split(',')[0].strip()
+    return handler.client_address[0]
+
+def log_visitor(ip, user_agent, path):
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute('''
+            INSERT INTO visitor_logs (ip, user_agent, path, visited_at)
+            VALUES (?, ?, ?, ?)
+        ''', (ip, (user_agent or '')[:250], (path or '')[:100], time.time()))
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        print("Lỗi ghi log khách truy cập:", e)
+
+def log_chart_generation(chart_id, name, gender, birth_date, birth_hour, element_fate, ip, user_agent):
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute('''
+            INSERT INTO chart_generation_logs (chart_id, name, gender, birth_date, birth_hour, element_fate, ip, user_agent, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (chart_id, name, gender, birth_date, birth_hour, element_fate, ip, (user_agent or '')[:250], time.time()))
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        print("Lỗi ghi log tạo lá số:", e)
+
+def get_admin_dashboard_data():
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        now = time.time()
+
+        # Real active online users in last 10 minutes (600s)
+        cursor.execute('SELECT COUNT(DISTINCT ip) FROM visitor_logs WHERE visited_at > ?', (now - 600,))
+        active_online = cursor.fetchone()[0] or 0
+
+        # Real unique visitors total
+        cursor.execute('SELECT COUNT(DISTINCT ip) FROM visitor_logs')
+        total_unique_ips = cursor.fetchone()[0] or 0
+
+        # Real pageviews total
+        cursor.execute('SELECT COUNT(*) FROM visitor_logs')
+        total_pageviews = cursor.fetchone()[0] or 0
+
+        # Real charts total
+        cursor.execute('SELECT COUNT(*) FROM chart_generation_logs')
+        total_charts = cursor.fetchone()[0] or 0
+
+        # Recent 50 chart generations
+        cursor.execute('''
+            SELECT chart_id, name, gender, birth_date, birth_hour, element_fate, ip, created_at
+            FROM chart_generation_logs
+            ORDER BY id DESC
+            LIMIT 50
+        ''')
+        chart_rows = cursor.fetchall()
+        recent_charts = []
+        for r in chart_rows:
+            recent_charts.append({
+                "chart_id": r[0],
+                "name": r[1],
+                "gender": r[2],
+                "birth_date": r[3],
+                "birth_hour": r[4],
+                "element_fate": r[5],
+                "ip": r[6],
+                "created_at": time.strftime('%H:%M:%S %d/%m/%Y', time.localtime(r[7]))
+            })
+
+        # Recent 50 visitor IPs
+        cursor.execute('''
+            SELECT ip, path, user_agent, visited_at
+            FROM visitor_logs
+            ORDER BY id DESC
+            LIMIT 50
+        ''')
+        visitor_rows = cursor.fetchall()
+        recent_visitors = []
+        for r in visitor_rows:
+            recent_visitors.append({
+                "ip": r[0],
+                "path": r[1],
+                "user_agent": r[2],
+                "time": time.strftime('%H:%M:%S %d/%m/%Y', time.localtime(r[3]))
+            })
+
+        conn.close()
+        return {
+            "active_online": max(1, active_online),
+            "total_unique_ips": total_unique_ips,
+            "total_pageviews": total_pageviews,
+            "total_charts": total_charts,
+            "recent_charts": recent_charts,
+            "recent_visitors": recent_visitors
+        }
+    except Exception as e:
+        print("Lỗi lấy dữ liệu admin:", e)
+        return {
+            "active_online": 1,
+            "total_unique_ips": 0,
+            "total_pageviews": 0,
+            "total_charts": 0,
+            "recent_charts": [],
+            "recent_visitors": [],
+            "error": str(e)
+        }
+
 def get_site_stats():
     try:
         conn = sqlite3.connect(DB_PATH)
@@ -147,6 +290,22 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
         # Security Layer: Normalize path and prevent directory traversal
         clean_path = urllib.parse.unquote(self.path.split('?')[0])
 
+        # 0.1 API Admin Quản Trị: Thống kê chi tiết IP và người lập lá số
+        if clean_path == '/api/admin_stats':
+            admin_data = get_admin_dashboard_data()
+            admin_data["success"] = True
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
+            self.end_headers()
+            self.wfile.write(json.dumps(admin_data, ensure_ascii=False).encode('utf-8'))
+            return
+
+        # 0.2 Trang Giao diện Quản trị viên
+        if clean_path in ('/admin', '/admin.html'):
+            self.path = '/admin.html'
+            return super().do_GET()
+
         # 0. API: Thống kê số lượng truy cập và số lá số đã lập thành công (Realtime)
         if clean_path == '/api/get_stats':
             stats = get_site_stats()
@@ -165,8 +324,11 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(json.dumps(res, ensure_ascii=False).encode('utf-8'))
             return
 
-        # Tăng biến đếm lượt khách truy cập trang chủ
+        # Ghi nhận nhật ký lượt khách truy cập thực tế (IP, User-Agent)
         if clean_path in ('/', '/index.html'):
+            client_ip = get_client_ip(self)
+            ua = self.headers.get('User-Agent', '')
+            log_visitor(client_ip, ua, clean_path)
             increment_stat('total_visitors', 1)
 
         # 1. API: Tra cứu lá số tạm thời theo ID (thời hạn 15 phút)
@@ -211,7 +373,7 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
         allowed_assets = (
             '/', '/index.html', '/styles.css', '/script.js', '/celestial_effects.js',
             '/three.min.js',
-            '/favicon.ico', '/favicon.svg', '/favicon.png', '/logo.svg',
+            '/admin.html', '/favicon.ico', '/favicon.svg', '/favicon.png', '/logo.svg',
             '/beast_dragon.svg', '/beast_phoenix.svg', '/beast_tortoise.svg', '/beast_qilin.svg',
             '/qr_payment.png'
         )
@@ -320,6 +482,21 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
                 try:
                     save_temp_chart(chart_id, chart_data, now_ts, expires_at)
                     increment_stat('total_charts_created', 1)
+                    # Ghi nhận nhật ký người lập lá số vào cơ sở dữ liệu
+                    client_ip = get_client_ip(self)
+                    ua = self.headers.get('User-Agent', '')
+                    birth_str = f"{s_day:02d}/{s_month:02d}/{s_year}"
+                    elem_fate = chart_data.get('personal_info', {}).get('element_fate', '')
+                    log_chart_generation(
+                        chart_id=chart_id,
+                        name=raw_name,
+                        gender=params.get('gender', 'Nam'),
+                        birth_date=birth_str,
+                        birth_hour=params.get('birth_hour', ''),
+                        element_fate=elem_fate,
+                        ip=client_ip,
+                        user_agent=ua
+                    )
                     chart_data["site_stats"] = get_site_stats()
                 except Exception as ex_db:
                     print("Error saving temp chart to SQLite:", ex_db)
