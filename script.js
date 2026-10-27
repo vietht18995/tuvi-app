@@ -8687,8 +8687,31 @@ function setCalendarType(type) {
   }
 }
 
-// Submit birth details form to calculate Tử Vi dynamically
-function submitTuViForm() {
+// ==========================================================================
+// VIETQR PAYMENT MODAL & SUBMIT CONTROLLER
+// ==========================================================================
+let pendingTuViPayload = null;
+
+function removeVietnameseTones(str) {
+  if (!str) return "";
+  str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+  str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+  str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+  str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+  str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+  str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+  str = str.replace(/đ/g, "d");
+  str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "A");
+  str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "E");
+  str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "I");
+  str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "O");
+  str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "U");
+  str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "Y");
+  str = str.replace(/Đ/g, "D");
+  return str.replace(/[^a-zA-Z0-9\s]/g, "").replace(/\s+/g, " ").trim();
+}
+
+function handleOpenPaymentModal() {
   const name = document.getElementById("inp-name").value.trim();
   const gender = document.getElementById("inp-gender").value;
   const analysisYear = document.getElementById("inp-analysis-year").value;
@@ -8697,7 +8720,8 @@ function submitTuViForm() {
   const calendarType = (document.getElementById("inp-calendar-type") ? document.getElementById("inp-calendar-type").value : "solar");
 
   if (!name) {
-    alert("Vui lòng điền họ và tên!");
+    alert("Vui lòng điền họ và tên đương số!");
+    document.getElementById("inp-name").focus();
     return;
   }
 
@@ -8729,6 +8753,7 @@ function submitTuViForm() {
     const birthDateStr = document.getElementById("inp-birth-date").value;
     if (!birthDateStr) {
       alert("Vui lòng chọn ngày sinh dương lịch!");
+      document.getElementById("inp-birth-date").focus();
       return;
     }
     const [solarYear, solarMonth, solarDay] = birthDateStr.split("-").map(Number);
@@ -8737,9 +8762,89 @@ function submitTuViForm() {
     payload.solar_year = solarYear;
   }
 
+  pendingTuViPayload = payload;
+
+  // Cập nhật nội dung chuyển khoản động
+  const memoEl = document.getElementById("payment-memo");
+  if (memoEl) {
+    const cleanName = removeVietnameseTones(name).toUpperCase();
+    memoEl.innerText = `TUVI ${cleanName}`;
+  }
+
+  // Mở popup modal
+  const modal = document.getElementById("payment-modal");
+  if (modal) {
+    modal.style.display = "flex";
+  }
+}
+
+function closePaymentModal() {
+  const modal = document.getElementById("payment-modal");
+  if (modal) {
+    modal.style.display = "none";
+  }
+}
+
+function handlePaymentBackdropClick(event) {
+  if (event.target && event.target.id === "payment-modal") {
+    closePaymentModal();
+  }
+}
+
+function copyPaymentText(text, btn) {
+  if (!text) return;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      onCopyDone();
+    }).catch(() => {
+      fallbackCopy(text);
+    });
+  } else {
+    fallbackCopy(text);
+  }
+
+  function fallbackCopy(val) {
+    const tempInput = document.createElement("input");
+    tempInput.value = val;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    onCopyDone();
+  }
+
+  function onCopyDone() {
+    if (btn) {
+      const orig = btn.innerHTML;
+      btn.innerHTML = "✅ Đã chép!";
+      btn.classList.add("copied");
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.classList.remove("copied");
+      }, 2000);
+    }
+  }
+}
+
+function confirmPaymentAndCalculate() {
+  closePaymentModal();
+  if (pendingTuViPayload) {
+    executeCalculateWithPayload(pendingTuViPayload);
+  } else {
+    handleOpenPaymentModal();
+  }
+}
+
+function submitTuViForm() {
+  handleOpenPaymentModal();
+}
+
+function executeCalculateWithPayload(payload) {
   const submitBtn = document.querySelector(".btn-submit");
-  submitBtn.disabled = true;
-  submitBtn.innerText = "ĐANG TÍNH TOÁN...";
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerText = "ĐANG TÍNH TOÁN...";
+  }
 
   fetch("/api/calculate", {
     method: "POST",
@@ -8764,8 +8869,10 @@ function submitTuViForm() {
     alert("Đã xảy ra lỗi: " + err.message + "\nLưu ý: Bạn cần chạy file server.py trước!");
   })
   .finally(() => {
-    submitBtn.disabled = false;
-    submitBtn.innerText = "LẬP THÀNH LÁ SỐ";
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerText = "LẬP THÀNH LÁ SỐ";
+    }
   });
 }
 

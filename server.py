@@ -131,7 +131,8 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
             '/', '/index.html', '/styles.css', '/script.js', '/celestial_effects.js',
             '/three.min.js',
             '/favicon.ico', '/favicon.svg', '/favicon.png', '/logo.svg',
-            '/beast_dragon.svg', '/beast_phoenix.svg', '/beast_tortoise.svg', '/beast_qilin.svg'
+            '/beast_dragon.svg', '/beast_phoenix.svg', '/beast_tortoise.svg', '/beast_qilin.svg',
+            '/qr_payment.png'
         )
         if clean_path in allowed_assets:
             return super().do_GET()
