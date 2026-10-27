@@ -2014,6 +2014,10 @@ def generate_pdf_book(chart_data, output_pdf_path):
         "--disable-gpu",
         "--no-sandbox",
         "--disable-dev-shm-usage",
+        "--disable-extensions",
+        "--disable-background-networking",
+        "--disable-default-apps",
+        "--disable-sync",
         "--no-pdf-header-footer",
         f"--print-to-pdf={output_pdf_path}",
         file_uri
