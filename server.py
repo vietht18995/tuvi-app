@@ -7,6 +7,7 @@ import sqlite3
 import sys
 import time
 import urllib.parse
+import unicodedata
 
 # Ensure stdout uses UTF-8 to avoid encoding errors on Windows terminal
 if sys.stdout.encoding != 'UTF-8':
@@ -15,13 +16,30 @@ if sys.stdout.encoding != 'UTF-8':
 # Setup path to import our engine
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+def remove_vietnamese_diacritics(text):
+    text = re.sub(r'[àáạảãâầấậẩẫăằắặẳẵ]', 'a', str(text))
+    text = re.sub(r'[ÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴ]', 'A', text)
+    text = re.sub(r'[èéẹẻẽêềếệểễ]', 'e', text)
+    text = re.sub(r'[ÈÉẸẺẼÊỀẾỆỂỄ]', 'E', text)
+    text = re.sub(r'[ìíịỉĩ]', 'i', text)
+    text = re.sub(r'[ÌÍỊỈĨ]', 'I', text)
+    text = re.sub(r'[òóọỏõôồốộổỗơờớợởỡ]', 'o', text)
+    text = re.sub(r'[ÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠ]', 'O', text)
+    text = re.sub(r'[ùúụủũưừứựửữ]', 'u', text)
+    text = re.sub(r'[ÙÚỤỦŨƯỪỨỰỬỮ]', 'U', text)
+    text = re.sub(r'[ỳýỵỷỹ]', 'y', text)
+    text = re.sub(r'[ỲÝỴỶỸ]', 'Y', text)
+    text = re.sub(r'[đ]', 'd', text)
+    text = re.sub(r'[Đ]', 'D', text)
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('utf-8')
+    return text
+
 def sanitize_filename(name):
-    # Only allow alphanumeric, spaces, hyphens, and Vietnamese unicode characters
-    clean = re.sub(r'[^\w\s-]', '', str(name), flags=re.UNICODE).strip()
+    ascii_name = remove_vietnamese_diacritics(name)
+    clean = re.sub(r'[^a-zA-Z0-9\s-]', '', ascii_name).strip()
     clean = re.sub(r'[-\s]+', '_', clean)
     return clean[:50] or "User"
 
-# SQLite Database for 15-minute temporary chart persistence
 DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp_charts.db")
 
 def init_temp_db():
@@ -206,10 +224,13 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
             file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), pure_name)
             if os.path.exists(file_path):
                 content_type = 'application/pdf' if clean_path.endswith('.pdf') else 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                ascii_filename = remove_vietnamese_diacritics(pure_name)
+                encoded_filename = urllib.parse.quote(pure_name)
                 self.send_response(200)
                 self.send_header('Content-Type', content_type)
                 self.send_header('Content-Length', str(os.path.getsize(file_path)))
-                self.send_header('Content-Disposition', f'attachment; filename="{pure_name}"')
+                # RFC 5987 / RFC 6266: Safe ASCII filename parameter + UTF-8 filename*
+                self.send_header('Content-Disposition', f'attachment; filename="{ascii_filename}"; filename*=UTF-8\'\'{encoded_filename}')
                 self.end_headers()
                 with open(file_path, 'rb') as f:
                     self.copyfile(f, self.wfile)
