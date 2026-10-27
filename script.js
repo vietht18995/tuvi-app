@@ -1383,6 +1383,52 @@ const classicalReadingsDatabase = {
       "title": "Cung Cung Mệnh an tại [Chi] có sao Đà la",
       "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Mệnh tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
       "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+    },
+    {
+      "stars": [
+        "LIÊM TRINH",
+        "HÓA KỴ"
+      ],
+      "title": "Cung Mệnh an tại [Chi] hội tụ Liêm Trinh, Hóa Kỵ",
+      "text": "<b>Đặc tính luận giải chuyên sâu (Trường phái Bửu Đình):</b> Liêm Trinh là tù tinh, biểu trưng cho sự liêm khiết, đạo đức và kỷ cương. Khi ngộ Hóa Kỵ đồng cung hoặc hợp chiếu, biểu thị sự thử thách lớn về mặt danh dự hoặc đạo đức bị người đời hiểu lầm, gièm pha. Bửu Đình nhấn mạnh: Người có cách này thường nội tâm dằn vặt, giàu lòng tự trọng nhưng dễ gặp cảnh thị phi bất ngờ trong công danh sự nghiệp. Cần nhất hội tụ được Lưu Hà - Thanh Long hoặc Ân Quang - Thiên Quý để rũ sạch oan khiên, chuyển hung thành đại trí.",
+      "source": "Tử vi ứng dụng (Quyển 2 & 7) — Cụ Bửu Đình"
+    },
+    {
+      "stars": [
+        "TƯỚNG QUÂN",
+        "QUỐC ẤN",
+        "THIÊN HÌNH"
+      ],
+      "title": "Cung Mệnh an tại [Chi] đắc cách Binh Hình Tướng Ấn",
+      "text": "<b>Đặc tính luận giải chuyên sâu (Trường phái Bửu Đình):</b> Cụ Bửu Đình đặc biệt coi trọng bộ Tướng Binh Hình Ấn. Thiên Hình khi đi đơn lẻ là sao hình phạt khắt khe, nhưng khi hội cùng Tướng Quân, Quốc Ấn lại trở thành thanh bảo kiếm trao tay vị tướng soái, biến hung sát thành quyền uy cái thế. Đương số là bậc túc trí đa mưu, có tài chỉ huy, lãnh đạo quân sự, pháp luật hoặc đứng đầu cơ quan thực thi trọng trách lớn, lời nói ra có uy lực chấn nhiếp quần hùng.",
+      "source": "Tử vi ứng dụng (Quyển 1 & 4) — Cụ Bửu Đình"
+    },
+    {
+      "stars": [
+        "TANG MÔN",
+        "BẠCH HỔ"
+      ],
+      "title": "Cung Mệnh an tại [Chi] có Tang Môn, Bạch Hổ tọa thủ hội chiếu",
+      "text": "<b>Đặc tính luận giải chuyên sâu (Trường phái Bửu Đình):</b> Người đời thường sợ Tang Hổ là bại tinh sầu bi, nhưng trong Tử Vi Ứng Dụng, Cụ Bửu Đình giải minh: Tang Hổ là bộ sao của 'máu thịt và lòng trắc ẩn'. Người Mệnh Tang Hổ tâm can thường đau đáu nỗi niềm nhân thế, giàu tình thương, can trường và có ý chí sắt đá vượt nghịch cảnh. Rất hợp với các ngành nghề y dược cứu người, thẩm phán công lý, hoặc nghệ thuật bi cảm lay động lòng người.",
+      "source": "Tử vi ứng dụng (Quyển 7) — Cụ Bửu Đình"
+    },
+    {
+      "stars": [
+        "THIÊN KHỐC",
+        "THIÊN HƯ"
+      ],
+      "title": "Cung Mệnh an tại [Chi] có Thiên Khốc, Thiên Hư hội tụ",
+      "text": "<b>Đặc tính luận giải chuyên sâu (Trường phái Bửu Đình):</b> Khốc Hư tại Tý Ngọ được Bửu Đình xưng tụng là 'Tiền bần hậu phú, hữu danh vô thực biến thành danh lừng bốn bể'. Tiếng khóc than của thời trẻ biến thành hồi chuông đại hồng chung ngân vang khi vào trung hậu vận, chủ về người có tài hùng biện thuyết phục và làm rạng danh dòng tộc.",
+      "source": "Tử vi ứng dụng (Quyển 1 & 6) — Cụ Bửu Đình"
+    },
+    {
+      "stars": [
+        "ĐỊA KHÔNG",
+        "ĐỊA KIẾP"
+      ],
+      "title": "Cung Mệnh an tại [Chi] có Địa Không, Địa Kiếp đắc địa Tỵ Hợi",
+      "text": "<b>Đặc tính luận giải chuyên sâu (Trường phái Bửu Đình):</b> Cụ Bửu Đình nhấn mạnh Không Kiếp đắc địa như sấm chớp trên trời giáng xuống, phát dã như lôi. Đương số có tư duy cách tân đột phá, làm những việc phi thường người khác không dám nghĩ tới. Tuy nhiên, bạo phát thì dễ bạo tàn, người có cách này phải lấy chữ Đức và sự bao dung làm gốc rễ thì phú quý mới trường tồn.",
+      "source": "Tử vi ứng dụng (Quyển 3 & 7) — Cụ Bửu Đình"
     }
   ],
   "phu_mau": [
@@ -1803,6 +1849,15 @@ const classicalReadingsDatabase = {
       "title": "Cung Cung Phúc Đức an tại [Chi] có sao Đà la",
       "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Phúc Đức tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
       "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+    },
+    {
+      "stars": [
+        "ÂN QUANG",
+        "THIÊN QUÝ"
+      ],
+      "title": "Cung Phúc Đức an tại [Chi] có Quang Quý chiếu tọa",
+      "text": "<b>Đặc tính luận giải chuyên sâu (Trường phái Bửu Đình):</b> Quang Quý tại Phúc Đức là dòng họ có phúc ấm sâu dày của tiền nhân, được thần linh bảo hộ. Đương số lúc nguy nan luôn có điềm may cứu giải, tâm hồn hướng thiện, hậu vận thanh thản an nhàn.",
+      "source": "Tử vi ứng dụng (Quyển 6) — Cụ Bửu Đình"
     }
   ],
   "dien_trach": [
@@ -2223,6 +2278,24 @@ const classicalReadingsDatabase = {
       "title": "Cung Cung Quan Lộc an tại [Chi] có sao Đà la",
       "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Quan Lộc tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
       "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+    },
+    {
+      "stars": [
+        "TƯỚNG QUÂN",
+        "QUỐC ẤN"
+      ],
+      "title": "Cung Quan Lộc an tại [Chi] có Tướng Quân ngộ Quốc Ấn",
+      "text": "<b>Đặc tính luận giải chuyên sâu (Trường phái Bửu Đình):</b> Tướng ngộ Ấn là cách cục 'Ấn kiếm phân minh, chưởng quản quyền bính'. Đương số trong đường công danh chức nghiệp nắm giữ vị trí then chốt, có thực quyền và được cấp trên tín cẩn trao ấn tín giao quyền tự quyết. Sự nghiệp thăng tiến quang minh, danh chính ngôn thuận.",
+      "source": "Tử vi ứng dụng (Quyển 2) — Cụ Bửu Đình"
+    },
+    {
+      "stars": [
+        "HÓA QUYỀN",
+        "THIÊN KHÔI"
+      ],
+      "title": "Cung Quan Lộc an tại [Chi] có Hóa Quyền hội Thiên Khôi",
+      "text": "<b>Đặc tính luận giải chuyên sâu (Trường phái Bửu Đình):</b> Đắc cách quý nhân trợ quyền, là bậc thủ lĩnh đứng đầu ngành nghề. Lời nói có trọng lượng, mưu tính việc gì cũng có bề trên giúp đỡ, khai mở cơ nghiệp rực rỡ và vững chắc.",
+      "source": "Tử vi ứng dụng (Quyển 5) — Cụ Bửu Đình"
     }
   ],
   "no_boc": [
@@ -3063,6 +3136,24 @@ const classicalReadingsDatabase = {
       "title": "Cung Cung Tài Bạch an tại [Chi] có sao Đà la",
       "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Tài Bạch tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
       "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+    },
+    {
+      "stars": [
+        "HÓA LỘC",
+        "LỘC TỒN"
+      ],
+      "title": "Cung Tài Bạch an tại [Chi] hội tụ Song Lộc triều viên",
+      "text": "<b>Đặc tính luận giải chuyên sâu (Trường phái Bửu Đình):</b> Song Lộc tề tụ tài cung là cách 'Kho đụn đầy ắp, tiền tài như nước nguồn'. Cụ Bửu Đình lưu ý: Lộc Tồn là tài lộc thiên ban cần cù tích lũy, Hóa Lộc là tài lộc do tài hoa lưu loát sinh sôi. Khi lưỡng Lộc tương phùng, đương số kinh doanh đắc lợi, tiền tài dồi dào suốt bốn mùa.",
+      "source": "Tử vi ứng dụng (Quyển 3) — Cụ Bửu Đình"
+    },
+    {
+      "stars": [
+        "VŨ KHÚC",
+        "THIÊN PHỦ"
+      ],
+      "title": "Cung Tài Bạch an tại [Chi] có Vũ Khúc, Thiên Phủ tọa thủ",
+      "text": "<b>Đặc tính luận giải chuyên sâu (Trường phái Bửu Đình):</b> Vũ Khúc tài tinh ngộ Thiên Phủ thiên kho là cách cục đệ nhất phú gia. Khả năng quản lý tài chính, đầu tư tích lũy và điều tiết dòng tiền tuyệt hảo. Tay trắng làm nên đại nghiệp, cơ ngơi bề thế.",
+      "source": "Tử vi ứng dụng (Quyển 1) — Cụ Bửu Đình"
     }
   ],
   "tu_tuc": [
@@ -3483,6 +3574,15 @@ const classicalReadingsDatabase = {
       "title": "Cung Cung Phu Thê an tại [Chi] có sao Đà la",
       "text": "<b>Đặc tính Sát Tinh:</b> Cản trở khuất tất, trì hoãn mưu sự.<br><b>Luận giải:</b> Đề phòng tiểu nhân gièm pha ngầm, mưu sự danh tài tại Cung Phu Thê tiến triển chậm cần kiên nhẫn bền bỉ gầy dựng.",
       "source": "Tử vi đẩu số giải mã đời người - Phan Tử Ngư"
+    },
+    {
+      "stars": [
+        "THÁI DƯƠNG",
+        "THÁI ÂM"
+      ],
+      "title": "Cung Phu Thê an tại [Chi] có Nhật Nguyệt đồng lâm hoặc chiếu",
+      "text": "<b>Đặc tính luận giải chuyên sâu (Trường phái Bửu Đình):</b> Nhật Nguyệt phối hợp âm dương hòa hợp. Cụ Bửu Đình luận: Người hôn phối vừa có trí tuệ mẫn tiệp (Thái Dương) vừa có nét dịu dàng chu đáo (Thái Âm). Vợ chồng tương kính như tân, cùng nhau dựng xây cơ đồ gia đình hưng vượng.",
+      "source": "Tử vi ứng dụng (Quyển 4) — Cụ Bửu Đình"
     }
   ],
   "huynh_de": [
@@ -5794,6 +5894,9 @@ document.addEventListener("DOMContentLoaded", () => {
       drawConnectingLines(activeId);
     }
   });
+
+  // Tự động kiểm tra và tải lại lá số nếu đường dẫn có ID lưu tạm 15 phút (?laso=... hoặc /laso/...)
+  checkAndLoadSharedChart();
 });
 
 // Render 12 Chambers into the Grid
@@ -8655,61 +8758,7 @@ function submitTuViForm() {
       return;
     }
     
-    // Update local data
-    tuviData.personal_info = result.personal_info;
-    tuviData.chambers = result.chambers;
-    tuviData.bazi = result.bazi;
-    
-    // Update Excel & PDF links
-    const excelLink = document.getElementById("download-excel-link");
-    if (excelLink && result.personal_info.excel_download_url) {
-      excelLink.href = result.personal_info.excel_download_url;
-      excelLink.style.display = "inline-flex";
-    }
-    const pdfLink = document.getElementById("download-pdf-link");
-    if (pdfLink && result.personal_info.pdf_download_url) {
-      pdfLink.href = result.personal_info.pdf_download_url;
-      pdfLink.style.display = "inline-flex";
-    }
-    
-    // Refill Central panel result state
-    document.getElementById("result-name").innerText = result.personal_info.name;
-    const gridInfo = document.getElementById("result-info-grid");
-    
-    const p = result.personal_info;
-    gridInfo.innerHTML = `
-      <div class="center-info-item"><span>Dương lịch:</span> <strong>${p.birth_day_solar}/${p.birth_month_solar}/${p.birth_year_solar}</strong></div>
-      <div class="center-info-item"><span>Âm lịch:</span> <strong>${p.birth_day_lunar}/${p.birth_month_lunar} (${p.birth_year_lunar})</strong></div>
-      <div class="center-info-item"><span>Giờ sinh:</span> <strong>${p.birth_hour} (${p.birth_hour_stem || ''})</strong></div>
-      <div class="center-info-item"><span>Bản mệnh:</span> <strong>${p.element_fate}</strong></div>
-      <div class="center-info-item"><span>Cục ngũ hành:</span> <strong>${p.element_cuc}</strong></div>
-      <div class="center-info-item"><span>Chủ Mệnh / Thân:</span> <strong>${p.fate_lord || ''} / ${p.body_lord || ''}</strong></div>
-    `;
-    
-    // Toggle Central Box views
-    document.getElementById("tuvi-form-box").style.display = "none";
-    document.getElementById("tuvi-result-box").style.display = "block";
-    
-    // Mark as calculated and show details panel
-    hasCalculated = true;
-    const headerSub = document.getElementById("header-subtitle");
-    if (headerSub) {
-      headerSub.innerHTML = `Đương số: <strong>${result.personal_info.name}</strong> (${result.personal_info.birth_year_lunar} - ${result.personal_info.element_fate}) | Lưu niên: <strong>${result.personal_info.analysis_year_lunar} (${result.personal_info.analysis_year_solar})</strong>`;
-    }
-    const detailsPanel = document.getElementById("details-panel");
-    if (detailsPanel) {
-      detailsPanel.style.display = "block";
-    }
-    
-    // Re-render
-    renderGrid();
-    resetToPersonal();
-    generateDetailedReadings();
-    renderBatuDedicatedTab();
-    renderDedicatedMonthlyTab(1);
-    
-    // Set default active tab to Tử Vi
-    switchCenterTab('tuvi');
+    applyChartData(result, result.remaining_seconds || 900);
   })
   .catch(err => {
     alert("Đã xảy ra lỗi: " + err.message + "\nLưu ý: Bạn cần chạy file server.py trước!");
@@ -8723,7 +8772,242 @@ function submitTuViForm() {
 function showInputForm() {
   document.getElementById("tuvi-form-box").style.display = "block";
   document.getElementById("tuvi-result-box").style.display = "none";
+  const shareContainer = document.getElementById("share-chart-container");
+  if (shareContainer) shareContainer.style.display = "none";
+  if (currentShareTimerInterval) {
+    clearInterval(currentShareTimerInterval);
+    currentShareTimerInterval = null;
+  }
+  // Xóa tham số ?laso= khi quay lại nhập liệu
+  if (window.location.search.includes('laso=') || window.location.pathname.includes('/laso/')) {
+    window.history.replaceState({}, '', window.location.origin + '/');
+  }
   resetToPersonal();
+}
+
+// ==========================================================================
+// 15-MINUTE TEMPORARY CHART SHARING & RESTORATION ENGINE
+// ==========================================================================
+let currentShareTimerInterval = null;
+
+function startShareTimer(remainingSeconds) {
+  if (currentShareTimerInterval) {
+    clearInterval(currentShareTimerInterval);
+    currentShareTimerInterval = null;
+  }
+
+  const badge = document.getElementById("share-timer-badge");
+  if (!badge) return;
+
+  let timeLeft = Math.max(0, parseInt(remainingSeconds) || 900);
+
+  function updateBadge() {
+    if (timeLeft <= 0) {
+      badge.textContent = "⏱️ Đã hết hạn (15 phút)";
+      badge.className = "share-timer-badge expired";
+      if (currentShareTimerInterval) {
+        clearInterval(currentShareTimerInterval);
+        currentShareTimerInterval = null;
+      }
+      return;
+    }
+
+    const mins = Math.floor(timeLeft / 60);
+    const secs = timeLeft % 60;
+    const strMins = mins < 10 ? "0" + mins : mins;
+    const strSecs = secs < 10 ? "0" + secs : secs;
+    badge.textContent = `⏱️ Còn ${strMins}:${strSecs}`;
+
+    if (timeLeft <= 120) {
+      badge.className = "share-timer-badge warning";
+    } else {
+      badge.className = "share-timer-badge";
+    }
+    timeLeft--;
+  }
+
+  updateBadge();
+  currentShareTimerInterval = setInterval(updateBadge, 1000);
+}
+
+function displayShareLink(chartId, remainingSeconds) {
+  if (!chartId) return;
+  const shareContainer = document.getElementById("share-chart-container");
+  const shareInput = document.getElementById("share-chart-url");
+  if (!shareContainer || !shareInput) return;
+
+  const fullUrl = window.location.origin + '/?laso=' + encodeURIComponent(chartId);
+  shareInput.value = fullUrl;
+  shareContainer.style.display = "block";
+
+  // Cập nhật thanh địa chỉ URL của trình duyệt mà không load lại trang
+  try {
+    const currentParams = new URLSearchParams(window.location.search);
+    if (currentParams.get("laso") !== chartId) {
+      window.history.pushState({ laso: chartId }, '', fullUrl);
+    }
+  } catch (e) {
+    console.warn("Could not pushState:", e);
+  }
+
+  startShareTimer(remainingSeconds || 900);
+}
+
+function copyShareChartUrl() {
+  const shareInput = document.getElementById("share-chart-url");
+  const copyBtn = document.getElementById("btn-copy-share");
+  if (!shareInput) return;
+
+  shareInput.select();
+  shareInput.setSelectionRange(0, 99999);
+
+  const textToCopy = shareInput.value;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      onCopySuccess();
+    }).catch(() => {
+      document.execCommand("copy");
+      onCopySuccess();
+    });
+  } else {
+    document.execCommand("copy");
+    onCopySuccess();
+  }
+
+  function onCopySuccess() {
+    if (copyBtn) {
+      const origText = copyBtn.innerHTML;
+      copyBtn.innerHTML = "✅ Đã chép!";
+      copyBtn.classList.add("copied");
+      setTimeout(() => {
+        copyBtn.innerHTML = origText;
+        copyBtn.classList.remove("copied");
+      }, 2000);
+    }
+  }
+}
+
+function applyChartData(result, remainingSeconds) {
+  // Update local data
+  tuviData.personal_info = result.personal_info;
+  tuviData.chambers = result.chambers;
+  tuviData.bazi = result.bazi;
+
+  // Điền lại form nếu người dùng muốn chỉnh sửa sau này
+  const p = result.personal_info;
+  const inpName = document.getElementById("inp-name");
+  if (inpName && p.name) inpName.value = p.name;
+  
+  const inpDate = document.getElementById("inp-birth-date");
+  if (inpDate && p.birth_year_solar && p.birth_month_solar && p.birth_day_solar) {
+    const mm = p.birth_month_solar < 10 ? "0" + p.birth_month_solar : p.birth_month_solar;
+    const dd = p.birth_day_solar < 10 ? "0" + p.birth_day_solar : p.birth_day_solar;
+    inpDate.value = `${p.birth_year_solar}-${mm}-${dd}`;
+  }
+
+  // Update Excel & PDF links
+  const excelLink = document.getElementById("download-excel-link");
+  if (excelLink && result.personal_info.excel_download_url) {
+    excelLink.href = result.personal_info.excel_download_url;
+    excelLink.style.display = "inline-flex";
+  }
+  const pdfLink = document.getElementById("download-pdf-link");
+  if (pdfLink && result.personal_info.pdf_download_url) {
+    pdfLink.href = result.personal_info.pdf_download_url;
+    pdfLink.style.display = "inline-flex";
+  }
+
+  // Refill Central panel result state
+  document.getElementById("result-name").innerText = result.personal_info.name;
+  const gridInfo = document.getElementById("result-info-grid");
+
+  gridInfo.innerHTML = `
+    <div class="center-info-item"><span>Dương lịch:</span> <strong>${p.birth_day_solar}/${p.birth_month_solar}/${p.birth_year_solar}</strong></div>
+    <div class="center-info-item"><span>Âm lịch:</span> <strong>${p.birth_day_lunar}/${p.birth_month_lunar} (${p.birth_year_lunar})</strong></div>
+    <div class="center-info-item"><span>Giờ sinh:</span> <strong>${p.birth_hour} (${p.birth_hour_stem || ''})</strong></div>
+    <div class="center-info-item"><span>Bản mệnh:</span> <strong>${p.element_fate}</strong></div>
+    <div class="center-info-item"><span>Cục ngũ hành:</span> <strong>${p.element_cuc}</strong></div>
+    <div class="center-info-item"><span>Chủ Mệnh / Thân:</span> <strong>${p.fate_lord || ''} / ${p.body_lord || ''}</strong></div>
+  `;
+
+  // Toggle Central Box views
+  document.getElementById("tuvi-form-box").style.display = "none";
+  document.getElementById("tuvi-result-box").style.display = "block";
+
+  // Mark as calculated and show details panel
+  hasCalculated = true;
+  const headerSub = document.getElementById("header-subtitle");
+  if (headerSub) {
+    headerSub.innerHTML = `Đương số: <strong>${result.personal_info.name}</strong> (${result.personal_info.birth_year_lunar} - ${result.personal_info.element_fate}) | Lưu niên: <strong>${result.personal_info.analysis_year_lunar} (${result.personal_info.analysis_year_solar})</strong>`;
+  }
+  const detailsPanel = document.getElementById("details-panel");
+  if (detailsPanel) {
+    detailsPanel.style.display = "block";
+  }
+
+  // Re-render
+  renderGrid();
+  resetToPersonal();
+  generateDetailedReadings();
+  renderBatuDedicatedTab();
+  renderDedicatedMonthlyTab(1);
+
+  // Set default active tab to Tử Vi
+  switchCenterTab('tuvi');
+
+  // Hiển thị khung liên kết 15 phút và kích hoạt đếm ngược
+  if (result.chart_id) {
+    displayShareLink(result.chart_id, remainingSeconds || result.remaining_seconds || 900);
+  }
+}
+
+function checkAndLoadSharedChart() {
+  const urlParams = new URLSearchParams(window.location.search);
+  let chartId = urlParams.get('laso') || urlParams.get('id');
+
+  if (!chartId) {
+    const pathMatch = window.location.pathname.match(/\/laso\/([A-Za-z0-9]+)/);
+    if (pathMatch) {
+      chartId = pathMatch[1];
+    }
+  }
+
+  if (!chartId) return;
+
+  // Hiển thị thông báo đang tải lại lá số
+  const submitBtn = document.querySelector(".btn-submit");
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerText = "ĐANG TẢI LÁ SỐ CŨ...";
+  }
+
+  fetch('/api/get_temp_chart?id=' + encodeURIComponent(chartId))
+    .then(res => {
+      if (!res.ok) {
+        return res.json().then(errData => {
+          throw new Error(errData.error || "Không thể tải lá số.");
+        });
+      }
+      return res.json();
+    })
+    .then(data => {
+      if (data.success && data.chart_data) {
+        applyChartData(data.chart_data, data.remaining_seconds);
+      } else {
+        throw new Error(data.error || "Lá số đã hết hạn lưu trữ.");
+      }
+    })
+    .catch(err => {
+      alert("⚠️ " + err.message + "\n\n(Lưu ý: Hệ thống chỉ lưu tạm thời lá số trong 15 phút. Quý vị vui lòng nhập lại thông tin để lập lá số mới.)");
+      window.history.replaceState({}, '', window.location.origin + '/');
+      showInputForm();
+    })
+    .finally(() => {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "LẬP THÀNH LÁ SỐ";
+      }
+    });
 }
 
 // Switch between Tử Vi and Bát Tự tabs in the Center Card

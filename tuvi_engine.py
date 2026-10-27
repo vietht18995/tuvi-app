@@ -326,6 +326,9 @@ def calculate_generic_bazi(day_master, chi_thang, pillars):
         "ha_lac": ha_lac_data,
         "treatises": {
             "trich_thien_tuy": f"Trích Thiên Tủy (Phần Luận Can Khí - Lưu Bá Ôn): '{trich_thien}' (Lưu ý: Đoạn trích mô tả đặc tính tự nhiên của Thiên Can {day_master}, không phải lời bình giải riêng cho lá số cá nhân).",
+            "thieu_vi_hoa": f"Dự đoán theo Tứ Trụ (Thiệu Vĩ Hoa & Trần Viên - Dịch giả Nguyễn Văn Mậu): Nhật Chủ {day_master} sinh tháng {chi_thang} ({vuong_suy_desc}). " + (f"Thân Vượng cần Tiết/Hao/Khắc; chọn Dụng Thần là {dung_than}, Hỷ Thần trợ lực là {hy_than} để giữ thế quân bình cát tường." if is_strong else f"Thân Nhược cần Sinh/Trợ; chọn Dụng Thần bổ khuyết là {dung_than}, Hỷ Thần là {hy_than} tiếp thêm nguyên khí sinh tồn."),
+            "ly_thuan_tuong": f"Huyền cơ của Tứ Trụ (Lý Thuận Tường): Xét Thiên Can {day_master} phối nạp tiết lệnh {chi_thang}, vận hành theo quy luật sinh khắc chế hóa và thiên can ngũ hợp để hóa giải hung sát, khởi phát cát tinh.",
+            "ma_tran_384": f"Giải mã ma trận 384 (Nguyễn Nguyên Bảy): Cửu Cung Lạc Thư đối ứng Hậu Thiên Bát Quái, kết nối trục số học cân bằng 15 giữa Mệnh bàn Tử Vi và thời vận dịch lý.",
             "system_summary": sys_summary
         },
         "disclaimer": "Tuân thủ tính trung thực học thuật: Tách biệt rõ ràng giữa 'Heuristic sơ bộ tự đặt' và 'Thuật toán theo nguồn thư tịch'. Các kết luận chưa đủ điều kiện thẩm định đều được ghi 'Chưa xác định'."

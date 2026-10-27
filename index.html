@@ -11,7 +11,7 @@
   <link rel="alternate icon" type="image/png" href="favicon.png?v=3">
   <link rel="shortcut icon" href="favicon.ico?v=3">
   <link rel="apple-touch-icon" href="favicon.png?v=3">
-  <link rel="stylesheet" href="styles.css?v=29">
+  <link rel="stylesheet" href="styles.css?v=40">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +33,11 @@
         </div>
         <h1>LÁ SỐ TỬ VI HOÀNG GIA</h1>
         <div class="subtitle" id="header-subtitle">Hệ Thống Mệnh Lý Đông Phương • Vui lòng nhập thông tin để an sao lập lá số</div>
+        <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px; margin-bottom: 4px; flex-wrap: wrap;">
+          <button type="button" class="celestial-action-btn" onclick="replayCelestialSummon()" title="Chiêm ngưỡng lại nghi thức triệu hồi Kim Long & Hỏa Phụng">
+            ✨ Chiêm Ngưỡng Đại Lễ Tinh Quang
+          </button>
+        </div>
       </div>
     </header>
 
@@ -82,9 +87,32 @@
     <!-- Tab 1: Lá Số & Cung Vị -->
     <div id="main-tab-content-laso" class="main-tab-content active">
       <main class="dashboard-layout">
-        <!-- Grid Column (Left) -->
+        <!-- Khối Bàn Cờ Lá Số Trung Tâm (Căn giữa màn hình, hai bên là Đôi Câu Đối Cung Đình) -->
+        <div class="tuvi-board-container">
+          <!-- Cột Tả (Bên Trái): Câu Đối Cung Đình Tả Thanh Long -->
+          <aside class="imperial-banner imperial-banner-left" aria-hidden="true">
+          <div class="banner-top-cap"></div>
+          <div class="banner-crest">
+            <div class="banner-crest-title">☸ TẢ THANH LONG ☯</div>
+            <div class="banner-crest-sub">CÀN KHÔN BẢN MỆNH</div>
+          </div>
+          <div class="banner-scroll-body">
+            <div class="banner-couplet-text">
+              <span>TẢ</span><span>PHÙ</span><span>THIÊN</span><span>KHÔI</span><span>AN</span><span>BẢN</span><span>MỆNH</span>
+              <span class="couplet-star">✦</span>
+              <span>CÀN</span><span>KHÔN</span><span>QUY</span><span>TỤ</span><span>ĐỊNH</span><span>THIÊN</span><span>CƠ</span>
+            </div>
+          </div>
+          <div class="banner-bottom-tassel">
+            <div class="tassel-knot"></div>
+            <div class="tassel-threads"></div>
+          </div>
+        </aside>
+
+        <!-- Grid Column (Center Piece) -->
         <section class="grid-column">
           <div class="tuvi-grid-wrapper">
+
             <!-- SVG Overlay for drawing connecting lines & celestial energy -->
             <svg class="svg-overlay" id="svg-connections">
               <defs id="svg-defs">
@@ -254,6 +282,23 @@
                     </div>
                   </div>
                   
+                  <!-- Khung liên kết chia sẻ lá số lưu trữ 15 phút -->
+                  <div class="share-chart-box" id="share-chart-container" style="display: none;">
+                    <div class="share-chart-header">
+                      <span class="share-title"><span class="share-icon">🔗</span> LIÊN KẾT LÁ SỐ (LƯU TRỮ 15 PHÚT)</span>
+                      <span class="share-timer-badge" id="share-timer-badge">⏱️ Còn 15:00</span>
+                    </div>
+                    <div class="share-input-group">
+                      <input type="text" id="share-chart-url" readonly value="" placeholder="Đang tạo link lá số...">
+                      <button type="button" class="btn-copy-share" id="btn-copy-share" onclick="copyShareChartUrl()">
+                        📋 Sao chép
+                      </button>
+                    </div>
+                    <div class="share-notice" id="share-notice-text">
+                      ℹ️ Lá số được lưu giữ trên hệ thống trong vòng <strong>15 phút</strong>. Quý vị có thể gửi liên kết này để mở lại lá số đã lập bất cứ lúc nào trước khi hết hạn.
+                    </div>
+                  </div>
+
                   <button class="btn-change-date" onclick="showInputForm()">Nhập ngày sinh khác</button>
                 </div>
               </div>
@@ -262,7 +307,28 @@
           </div>
         </section>
 
-        <!-- Details Column (Right) -->
+        <!-- Cột Hữu (Bên Phải): Câu Đối Cung Đình Hữu Bạch Hổ -->
+        <aside class="imperial-banner imperial-banner-right" aria-hidden="true">
+          <div class="banner-top-cap"></div>
+          <div class="banner-crest banner-crest-phoenix">
+            <div class="banner-crest-title">☸ HỮU BẠCH HỔ ☯</div>
+            <div class="banner-crest-sub">NHẬT NGUYỆT QUANG MINH</div>
+          </div>
+          <div class="banner-scroll-body">
+            <div class="banner-couplet-text">
+              <span>HỮU</span><span>BẬT</span><span>THIÊN</span><span>VIỆT</span><span>CHIẾU</span><span>QUAN</span><span>LỘC</span>
+              <span class="couplet-star">✦</span>
+              <span>NHẬT</span><span>NGUYỆT</span><span>QUANG</span><span>MINH</span><span>PHÁT</span><span>ĐẠI</span><span>NGHIỆP</span>
+            </div>
+          </div>
+          <div class="banner-bottom-tassel">
+            <div class="tassel-knot"></div>
+            <div class="tassel-threads"></div>
+          </div>
+        </aside>
+        </div>
+
+        <!-- Khối Luận Giải & Thông Tin Chi Tiết (NẰM Ở PHÍA DƯỚI LÁ SỐ) -->
         <aside class="details-column" id="details-panel">
           <!-- Rendered dynamically by script.js -->
         </aside>
@@ -734,8 +800,39 @@
     </footer>
   </div>
 
+  <!-- Celestial Summoning Ritual Overlay (Tứ Linh Quy Tụ True 3D WebGL) -->
+  <div id="celestial-summon-overlay" class="celestial-overlay">
+    <!-- Skip Ceremony Button -->
+    <button type="button" class="celestial-skip-btn" onclick="window.skipCelestialSummon ? window.skipCelestialSummon() : window.finishCelestialSummon()" title="Bỏ qua nghi thức xem ngay lá số">
+      Bỏ qua nghi thức ✕
+    </button>
+    <!-- True 3D Three.js WebGL Canvas for Cosmic Light & Particle System -->
+    <canvas id="three-celestial-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2;"></canvas>
+
+    <!-- Ceremony HUD: Sleek, compact & low-profile -->
+    <div class="celestial-hud">
+      <div class="celestial-hud-header">
+        <span class="celestial-seal-badge">☸ ĐẠI LỄ TINH QUANG ☯</span>
+        <h2 class="celestial-hud-title">TỨ LINH QUY TỤ • AN ĐỊNH MỆNH TRỜI</h2>
+      </div>
+      <div class="celestial-hud-status" id="celestial-status-text">
+        ✦ Thanh Long Xuất Hải • Càn Khôn Bản Mệnh Khởi Dựng...
+      </div>
+      <div class="celestial-progress-bar">
+        <div class="celestial-progress-fill" id="celestial-progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Golden Flash on Completion -->
+    <div class="celestial-flash" id="celestial-flash"></div>
+  </div>
+
+  <!-- Three.js 3D WebGL Library (Local offline bundle) -->
+  <script src="three.min.js"></script>
+  <!-- Celestial 3D Effects & Ritual System -->
+  <script src="celestial_effects.js?v=7"></script>
   <!-- Main JavaScript File -->
-  <script src="script.js?v=27"></script>
+  <script src="script.js?v=31"></script>
 </body>
 </html>
 

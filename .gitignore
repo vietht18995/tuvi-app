@@ -9,3 +9,10 @@ deploy_gcp/
 .vscode/
 .idea/
 venv/
+temp_charts.db*
+_backup_codex/
+scratch_*.py
+enhance_tuvi_dataset.py
+generate_beasts.py
+sync_script_classical.py
+start_online_server.bat

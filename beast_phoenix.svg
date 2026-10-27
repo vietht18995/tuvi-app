@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" width="100%" height="100%">
+  <defs>
+    <linearGradient id="phxGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb" />
+      <stop offset="40%" stop-color="#f59e0b" />
+      <stop offset="80%" stop-color="#b91c1c" />
+      <stop offset="100%" stop-color="#450a0a" />
+    </linearGradient>
+    <linearGradient id="phxWing" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#991b1b" />
+      <stop offset="40%" stop-color="#ea580c" />
+      <stop offset="80%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+    <filter id="phxGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#phxGlow)">
+    <!-- Long Sweeping Tail Feathers (5 Lông Đuôi Phượng Hoàng Lượn Sóng) -->
+    <g fill="none" stroke-linecap="round">
+      <!-- Tail 1 (Center Long) -->
+      <path d="M 120 145 C 90 190 60 215 30 250" stroke="url(#phxWing)" stroke-width="4.5" />
+      <g transform="translate(30, 250)">
+        <ellipse cx="0" cy="0" rx="9" ry="14" fill="#dc2626" transform="rotate(-30)" />
+        <ellipse cx="0" cy="0" rx="6" ry="10" fill="#facc15" transform="rotate(-30)" />
+        <circle cx="0" cy="0" r="3" fill="#450a0a" />
+      </g>
+
+      <!-- Tail 2 -->
+      <path d="M 125 150 C 110 200 80 235 55 255" stroke="url(#phxWing)" stroke-width="4" />
+      <g transform="translate(55, 255)">
+        <ellipse cx="0" cy="0" rx="8" ry="12" fill="#ea580c" transform="rotate(-20)" />
+        <circle cx="0" cy="0" r="4" fill="#fef08a" />
+      </g>
+
+      <!-- Tail 3 -->
+      <path d="M 115 145 C 80 175 40 195 10 215" stroke="url(#phxWing)" stroke-width="4" />
+      <g transform="translate(10, 215)">
+        <ellipse cx="0" cy="0" rx="8" ry="12" fill="#ea580c" transform="rotate(-45)" />
+        <circle cx="0" cy="0" r="4" fill="#fde047" />
+      </g>
+
+      <!-- Tail 4 (Flowing upward curve) -->
+      <path d="M 130 148 C 120 185 105 220 90 250" stroke="url(#phxWing)" stroke-width="3.5" />
+      <g transform="translate(90, 250)">
+        <ellipse cx="0" cy="0" rx="7" ry="10" fill="#dc2626" transform="rotate(-10)" />
+        <circle cx="0" cy="0" r="3" fill="#fef08a" />
+      </g>
+
+      <!-- Tail 5 -->
+      <path d="M 110 140 C 65 155 35 160 5 175" stroke="url(#phxWing)" stroke-width="3.5" />
+      <g transform="translate(5, 175)">
+        <ellipse cx="0" cy="0" rx="7" ry="10" fill="#dc2626" transform="rotate(-60)" />
+        <circle cx="0" cy="0" r="3" fill="#facc15" />
+      </g>
+    </g>
+
+    <!-- Main Left/Back Wing -->
+    <g transform="translate(140, 110)">
+      <path d="M0,0 C-15,-40 -10,-85 30,-100 C15,-80 5,-60 5,-40 C15,-70 35,-85 55,-90 C40,-65 30,-45 25,-25 C45,-55 70,-65 90,-70 C70,-45 55,-25 45,-10 C65,-30 85,-40 105,-45 C85,-20 65,-5 40,5 Z" fill="url(#phxWing)" opacity="0.9" />
+    </g>
+
+    <!-- Bird Body & Chest -->
+    <path d="M 125 145 C 115 130 120 100 135 85 C 150 70 170 65 190 70 C 180 85 175 105 170 125 C 160 145 140 155 125 145 Z" fill="url(#phxGold)" />
+    
+    <!-- Chest Feather Texture -->
+    <path d="M 140 95 Q 150 105 160 95 M 135 110 Q 148 122 162 110 M 130 125 Q 145 138 158 125" stroke="#fde047" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.8" />
+
+    <!-- Main Right/Front Wing (Expanded Magnificent Wing) -->
+    <g transform="translate(160, 95)">
+      <!-- Primary Large Flight Feathers -->
+      <path d="M0,0 C20,-35 60,-75 115,-85 C95,-60 75,-40 60,-20 C85,-45 125,-60 150,-62 C125,-35 100,-15 80,0 C110,-20 145,-25 165,-22 C135,-5 105,10 85,20 C110,10 135,12 155,20 C125,28 95,32 75,35 C95,35 120,42 135,52 C105,52 80,48 55,42 C30,35 10,20 0,0 Z" fill="url(#phxWing)" />
+      <!-- Wing Inner Coverts Glow -->
+      <path d="M 10 5 C 30,-15 65,-35 95,-40 C 75,-25 55,-10 35,5 Z" fill="#fef08a" opacity="0.8" />
+    </g>
+
+    <!-- Graceful Neck and Royal Head -->
+    <g transform="translate(190, 70)">
+      <!-- Neck curve -->
+      <path d="M0,0 C15,-5 25,-18 30,-30 C32,-35 30,-42 22,-45 C15,-48 8,-42 5,-35 C2,-25 -5,-12 -12,0 Z" fill="url(#phxGold)" />
+      
+      <!-- Head Crest Plumes (3 Vương Miện Lông Chim Phượng) -->
+      <path d="M 22 -45 C 30,-62 45,-70 58,-75 C 45,-62 35,-55 25,-48" fill="none" stroke="url(#phxWing)" stroke-width="3" stroke-linecap="round" />
+      <circle cx="58" cy="-75" r="4.5" fill="#fde047" />
+      
+      <path d="M 20 -46 C 22,-65 30,-78 40,-88 C 30,-72 25,-60 20,-50" fill="none" stroke="url(#phxWing)" stroke-width="3" stroke-linecap="round" />
+      <circle cx="40" cy="-88" r="4.5" fill="#ef4444" />
+
+      <path d="M 17 -45 C 10,-60 12,-72 15,-82 C 12,-68 12,-58 16,-48" fill="none" stroke="url(#phxWing)" stroke-width="2.5" stroke-linecap="round" />
+      <circle cx="15" cy="-82" r="3.5" fill="#facc15" />
+
+      <!-- Head & Beak -->
+      <path d="M 22 -45 C 28,-42 35,-42 42,-40 C 35,-36 30,-35 25,-35 Z" fill="#f59e0b" />
+      <polygon points="42,-40 52,-38 40,-35" fill="#facc15" />
+
+      <!-- Ruby Eye -->
+      <circle cx="28" cy="-42" r="3.5" fill="#dc2626" />
+      <circle cx="27" cy="-43" r="1.5" fill="#ffffff" />
+    </g>
+  </g>
+</svg>
