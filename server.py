@@ -290,8 +290,17 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
         # Security Layer: Normalize path and prevent directory traversal
         clean_path = urllib.parse.unquote(self.path.split('?')[0])
 
-        # 0.1 API Admin Quản Trị: Thống kê chi tiết IP và người lập lá số
+        # 0.1 API Admin Quản Trị: Thống kê chi tiết IP và người lập lá số (Yêu cầu PIN bảo mật)
         if clean_path == '/api/admin_stats':
+            query_params = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+            admin_key = query_params.get('key', [''])[0]
+            if admin_key != 'j95%C?H7hqHk!Tf+':
+                self.send_response(403)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"success": False, "error": "Mã PIN Quản Trị không chính xác."}).encode('utf-8'))
+                return
+
             admin_data = get_admin_dashboard_data()
             admin_data["success"] = True
             self.send_response(200)

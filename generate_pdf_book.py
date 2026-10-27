@@ -1,4 +1,5 @@
 import os
+import base64
 import sys
 import subprocess
 import json
@@ -893,6 +894,17 @@ def render_daivan_limits_html(chart_data, db):
 """
 
 def generate_pdf_book(chart_data, output_pdf_path):
+    # Encode QR code as base64 data URI for closing page
+    qr_data_uri = ""
+    qr_img_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "qr_payment.png")
+    if os.path.exists(qr_img_path):
+        try:
+            with open(qr_img_path, "rb") as qrf:
+                b64_str = base64.b64encode(qrf.read()).decode("utf-8")
+                qr_data_uri = f"data:image/png;base64,{b64_str}"
+        except Exception as qr_err:
+            print("Warning loading QR code image:", qr_err)
+
     output_pdf_path = os.path.abspath(output_pdf_path)
     readings_db = load_readings_database()
     p = chart_data.get("personal_info", {})
@@ -1942,6 +1954,45 @@ def generate_pdf_book(chart_data, output_pdf_path):
       Người hiểu mệnh không phải để buông xuôi cho số phận an bài, mà để <strong>biết tiến biết thoái</strong>, khi gặp thuận cảnh thì phát huy hết tài năng cống hiến cho đời, khi gặp nghịch cảnh thì điềm tĩnh tu thân tích đức.
       Đức độ, sự trung thực, lòng hiếu thảo và chữ NGHĨA chính là nguồn năng lượng tối thượng có thể hóa giải mọi hung sát tinh, mang lại phúc thọ an khang cho bản thân và muôn đời con cháu mai sau.
     </p>
+  </div>
+
+  <!-- ================= LỜI CẢM ƠN, BẢN QUYỀN & ỦNG HỘ TÁC GIẢ ================= -->
+  <div class="page-break" style="page-break-before: always; text-align: center; padding: 30px 15px;">
+    <div style="border: 2px solid #b45309; border-radius: 12px; padding: 22px 26px; background: #fffbeb; box-shadow: 0 4px 15px rgba(180, 83, 9, 0.1);">
+      <div style="font-size: 22pt; margin-bottom: 6px;">☸ 💖 ☯</div>
+      <h2 style="font-family: 'Cinzel Decorative', 'Georgia', serif; font-size: 15pt; color: #78350f; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 1px;">
+        LỜI CẢM ƠN & TÙY TÂM ĐỒNG HÀNH
+      </h2>
+      <div style="width: 80px; height: 2px; background: #f59e0b; margin: 0 auto 14px auto;"></div>
+      
+      <p style="font-size: 9pt; color: #451a03; line-height: 1.55; max-width: 620px; margin: 0 auto 14px auto; text-align: justify;">
+        Kính gửi Quý độc giả,<br/>
+        Chân thành cảm ơn Quý bạn đã tin tưởng sử dụng hệ thống <strong>Tử Vi Toàn Thư & Bát Tự Hà Lạc</strong>. 
+        Tập đại thư vận mệnh này được kết tinh từ sự phối hợp công phu giữa thuật an sao cổ truyền Đông phương và công nghệ thuật toán hiện đại, nhằm mang lại cho Quý bạn bức tranh toàn cảnh, sáng tỏ và sâu sắc nhất về bản mệnh đời mình.<br/>
+        Mọi nghiên cứu và sự cải tiến của hệ thống được thực hiện bằng trọn vẹn tâm huyết. Hãy ủng hộ tôi để hệ thống được cải tiến hằng ngày, mọi sự ủng hộ của các bạn đều giúp hệ thống hoàn thiện và duy trì phụng sự cộng đồng tốt hơn!
+      </p>
+
+      <!-- Khung Mã QR và Thông tin Chuyển khoản -->
+      <div style="display: inline-block; background: #ffffff; border: 1.5px solid #d97706; border-radius: 10px; padding: 10px 18px; margin: 8px auto 14px auto;">
+        <img src="{qr_data_uri}" alt="Mã QR TPBank Hoàng Tuấn Việt" style="width: 140px; height: auto; border-radius: 6px; display: block; margin: 0 auto 8px auto;" />
+        <div style="font-size: 8pt; color: #78350f; font-weight: bold; line-height: 1.45;">
+          Ngân hàng TPBank (Tiên Phong Bank)<br/>
+          Chủ tài khoản: <span style="color: #b45309; font-size: 8.5pt;">HOANG TUAN VIET</span><br/>
+          Số tài khoản: <span style="color: #dc2626; font-size: 9pt;">0300 1779 995</span><br/>
+          Nội dung: <em>UNG HO TU VI</em>
+        </div>
+      </div>
+
+      <div style="font-size: 8.2pt; color: #78350f; font-style: italic; margin-bottom: 16px;">
+        🙏 "Một hạt cát bồi đắp nên sa mạc, một giọt nước hòa thành biển khơi. Mọi sự ủng hộ của Quý bạn đều là nguồn động viên vô giá!"
+      </div>
+
+      <div style="border-top: 1px dashed #d97706; padding-top: 10px; font-size: 7.8pt; color: #92400e; line-height: 1.45;">
+        <strong>BẢN QUYỀN TÁC PHẨM & CÔNG TRÌNH:</strong><br/>
+        Bản quyền tác phẩm thuộc về: <strong>HOÀNG TUẤN VIỆT (Hoàng Tuấn Việt) © 2026</strong>.<br/>
+        Mọi quyền được bảo lưu. Email liên hệ học thuật & bảo trợ: <em>viet.ht.18995@gmail.com</em>
+      </div>
+    </div>
   </div>
 
 </body>

@@ -806,6 +806,57 @@
       </div>
     </footer>
 
+    <!-- Section Ủng Hộ Tác Giả Cuối Trang -->
+    <section class="support-author-section" id="support-author-section">
+      <div class="support-card-container">
+        <div class="support-header">
+          <div class="support-crest">☸ 💖 ☯</div>
+          <h3 class="support-title">ĐỒNG HÀNH & ỦNG HỘ TÁC GIẢ HOÀNG TUẤN VIỆT</h3>
+          <p class="support-desc">
+            Hệ thống <strong>Tử Vi & Bát Tự Toàn Thư</strong> được phát triển nhằm phụng sự học thuật và cộng đồng.
+            Hãy ủng hộ tôi để hệ thống được cải tiến hằng ngày, mọi sự ủng hộ của các bạn đều giúp hệ thống hoàn thiện và duy trì phụng sự cộng đồng tốt hơn!
+          </p>
+        </div>
+        <div class="support-body-grid">
+          <div class="support-qr-box">
+            <img src="/qr_payment.png" alt="Mã QR Chuyển khoản TPBank - Hoàng Tuấn Việt" class="support-qr-img" />
+            <span class="support-qr-caption">Quét mã VietQR chuyển khoản nhanh bằng mọi app ngân hàng</span>
+          </div>
+          <div class="support-bank-info">
+            <div class="support-row">
+              <span class="support-row-label">🏦 Ngân hàng:</span>
+              <span class="support-row-val">TPBank (Tiên Phong Bank)</span>
+            </div>
+            <div class="support-row">
+              <span class="support-row-label">👤 Chủ tài khoản:</span>
+              <span class="support-row-val highlight-gold">HOANG TUAN VIET</span>
+            </div>
+            <div class="support-row">
+              <span class="support-row-label">💳 Số tài khoản:</span>
+              <span class="support-row-val">
+                <strong class="highlight-stk">0300 1779 995</strong>
+                <button type="button" class="btn-copy-mini" onclick="copyPaymentText('03001779995', this)">📋 Chép</button>
+              </span>
+            </div>
+            <div class="support-row">
+              <span class="support-row-label">📝 Nội dung CK:</span>
+              <span class="support-row-val">
+                <strong>UNG HO TU VI</strong>
+                <button type="button" class="btn-copy-mini" onclick="copyPaymentText('UNG HO TU VI', this)">📋 Chép</button>
+              </span>
+            </div>
+            <div class="support-row">
+              <span class="support-row-label">💰 Mức ủng hộ:</span>
+              <span class="support-row-val">Tùy tâm (Gợi ý lộc phát: 6,868 VNĐ)</span>
+            </div>
+            <p class="support-thankyou-note">
+              🙏 <em>Chân thành cảm ơn tấm lòng và sự đồng hành quý báu của quý bạn! Chúc quý bạn vạn sự cát tường, phúc thọ an khang!</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Copyright & Contact Footer -->
     <footer class="app-footer">
       <div class="footer-inner">
@@ -828,9 +879,11 @@
       <button type="button" class="payment-modal-close" onclick="closePaymentModal()" aria-label="Đóng">&times;</button>
       
       <div class="payment-modal-header">
-        <div class="payment-crest">☸ ☯ ☸</div>
-        <h3 id="payment-modal-title" class="payment-title">☸ PHÍ KHỞI TẠO LÁ SỐ: 6,868 VNĐ ☯</h3>
-        <p class="payment-subtitle">Quét mã VietQR chuyển khoản nhanh bằng mọi ứng dụng ngân hàng</p>
+        <div class="payment-crest">☸ 💖 ☯</div>
+        <h3 id="payment-modal-title" class="payment-title">☸ ỦNG HỘ PHÁT TRIỂN HỆ THỐNG ☯</h3>
+        <p class="payment-subtitle">
+          Hãy ủng hộ tôi để hệ thống được cải tiến hằng ngày, mọi sự ủng hộ của các bạn đều giúp hệ thống hoàn thiện và duy trì phụng sự cộng đồng tốt hơn!
+        </p>
       </div>
 
       <div class="payment-modal-body">
@@ -839,7 +892,7 @@
           <img src="/qr_payment.png" alt="Mã QR Chuyển khoản TPBank - HOANG TUAN VIET" class="payment-qr-image" />
         </div>
 
-        <!-- Bảng thông tin thanh toán chi tiết -->
+        <!-- Bảng thông tin chuyển khoản chi tiết -->
         <div class="payment-details-card">
           <div class="payment-detail-row">
             <span class="detail-label">🏦 Ngân hàng:</span>
@@ -864,22 +917,25 @@
             </span>
           </div>
           <div class="payment-detail-row">
-            <span class="detail-label">💰 Mức phí an sao:</span>
+            <span class="detail-label">💰 Mức ủng hộ:</span>
             <span class="detail-value stk-wrapper">
-              <strong class="highlight-stk" style="color: #dc2626; font-size: 0.95rem;">6,868 VNĐ</strong>
+              <strong class="highlight-stk" style="color: #b45309; font-size: 0.95rem;">Tùy tâm (Gợi ý: 6,868 VNĐ)</strong>
               <button type="button" class="btn-copy-mini" onclick="copyPaymentText('6868', this)">📋 Chép</button>
             </span>
           </div>
         </div>
         
         <p class="payment-hint">
-          ✨ <em>Mức phí tượng trưng: <strong>6,868 VNĐ</strong> (Lộc Phát Lộc Phát). Sau khi chuyển khoản, quý vị bấm nút xác nhận bên dưới để hệ thống lập lá số và xuất sách toàn thư tức thì!</em>
+          ✨ <em>Mọi sự ủng hộ tùy tâm của quý bạn là nguồn động viên to lớn để tôi trang trải chi phí máy chủ và nâng cấp các tính năng Tử Vi Toàn Thư mới mỗi ngày.</em>
         </p>
       </div>
 
       <div class="payment-modal-footer">
-        <button type="button" class="btn-confirm-payment" onclick="confirmPaymentAndCalculate()">
-          <span class="btn-icon">⚡</span> XÁC NHẬN ĐÃ CHUYỂN 6,868 VNĐ - LẬP LÁ SỐ NGAY
+        <button type="button" class="btn-confirm-payment" onclick="confirmPaymentAndCalculate(true)">
+          <span class="btn-icon">💖</span> TÔI ĐÃ ỦNG HỘ - LẬP LÁ SỐ NGAY
+        </button>
+        <button type="button" class="btn-support-later" onclick="confirmPaymentAndCalculate(false)">
+          <span class="btn-icon">🕊️</span> Hiện tôi chưa thể ủng hộ, tôi sẽ ủng hộ sau (Lập lá số miễn phí)
         </button>
         <button type="button" class="btn-cancel-payment" onclick="closePaymentModal()">
           Quay lại chỉnh sửa thông tin
@@ -920,7 +976,7 @@
       <div class="celestial-countdown-box">
         <span class="countdown-pulse-icon">⏳</span>
         <span class="countdown-label">Ước tính hoàn tất:</span>
-        <span class="countdown-number" id="celestial-countdown-num">3</span>
+        <span class="countdown-number" id="celestial-countdown-num">10</span>
         <span class="countdown-unit">giây</span>
       </div>
 
@@ -933,7 +989,7 @@
       </div>
 
       <div class="celestial-hud-subnote">
-        ✨ <i>Đã nhận phí chuyển khoản 6,868 VNĐ. Đang phân tích Bát Tự & xuất bản Sách Toàn Thư PDF độc bản...</i>
+        ✨ <i>Cảm ơn quý bạn đã đồng hành. Hệ thống đang an định 12 cung bản mệnh & biên soạn Sách Toàn Thư PDF...</i>
       </div>
     </div>
 
@@ -944,9 +1000,9 @@
   <!-- Three.js 3D WebGL Library (Local offline bundle) -->
   <script src="three.min.js"></script>
   <!-- Celestial 3D Effects & Ritual System -->
-  <script src="celestial_effects.js?v=8"></script>
+  <script src="celestial_effects.js?v=9"></script>
   <!-- Main JavaScript File -->
-  <script src="script.js?v=32"></script>
+  <script src="script.js?v=33"></script>
 </body>
 </html>
 

@@ -8830,9 +8830,10 @@ function copyPaymentText(text, btn) {
   }
 }
 
-function confirmPaymentAndCalculate() {
+function confirmPaymentAndCalculate(hasSupported = true) {
   closePaymentModal();
   if (pendingTuViPayload) {
+    pendingTuViPayload.has_supported = !!hasSupported;
     executeCalculateWithPayload(pendingTuViPayload);
   } else {
     handleOpenPaymentModal();
@@ -8855,7 +8856,7 @@ function executeCalculateWithPayload(payload) {
   let minRitualCompleted = false;
   let chartRevealed = false;
 
-  const minRitualDurationMs = 2800; // 2.8s: ensures countdown (3 -> 2 -> 1) & matrix animation complete smoothly
+  const minRitualDurationMs = 10000; // 10s: countdown & astrological matrix presentation // 2.8s: ensures countdown (3 -> 2 -> 1) & matrix animation complete smoothly
 
   function tryRevealChart() {
     if (chartRevealed) return;

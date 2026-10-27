@@ -486,7 +486,7 @@
   </div>
 
   <script>
-    const ADMIN_KEY_DEFAULT = "viet18995";
+    const ADMIN_KEY_DEFAULT = "j95%C?H7hqHk!Tf+";
     let rawChartsData = [];
     let rawVisitorsData = [];
 
@@ -502,7 +502,7 @@
 
     function verifyAdminPin() {
       const pin = document.getElementById("admin-pin-input").value.trim();
-      if (pin === ADMIN_KEY_DEFAULT || pin === "admin123" || pin === "18995") {
+      if (pin === ADMIN_KEY_DEFAULT) {
         sessionStorage.setItem("tuvi_admin_key", ADMIN_KEY_DEFAULT);
         unlockDashboard(ADMIN_KEY_DEFAULT);
       } else {
