@@ -807,7 +807,7 @@
       
       <div class="payment-modal-header">
         <div class="payment-crest">☸ ☯ ☸</div>
-        <h3 id="payment-modal-title" class="payment-title">CÚNG DƯỜNG TÙY TÂM & PHÍ AN SAO</h3>
+        <h3 id="payment-modal-title" class="payment-title">☸ PHÍ KHỞI TẠO LÁ SỐ: 6,868 VNĐ ☯</h3>
         <p class="payment-subtitle">Quét mã VietQR chuyển khoản nhanh bằng mọi ứng dụng ngân hàng</p>
       </div>
 
@@ -842,19 +842,22 @@
             </span>
           </div>
           <div class="payment-detail-row">
-            <span class="detail-label">💰 Mức phí:</span>
-            <span class="detail-value highlight-amount">Tùy tâm ủng hộ / Phí dịch vụ an sao</span>
+            <span class="detail-label">💰 Mức phí an sao:</span>
+            <span class="detail-value stk-wrapper">
+              <strong class="highlight-stk" style="color: #dc2626; font-size: 0.95rem;">6,868 VNĐ</strong>
+              <button type="button" class="btn-copy-mini" onclick="copyPaymentText('6868', this)">📋 Chép</button>
+            </span>
           </div>
         </div>
         
         <p class="payment-hint">
-          ✨ <em>Sau khi chuyển khoản, quý vị bấm nút xác nhận bên dưới để hệ thống lập lá số và xuất sách toàn thư tức thì!</em>
+          ✨ <em>Mức phí tượng trưng: <strong>6,868 VNĐ</strong> (Lộc Phát Lộc Phát). Sau khi chuyển khoản, quý vị bấm nút xác nhận bên dưới để hệ thống lập lá số và xuất sách toàn thư tức thì!</em>
         </p>
       </div>
 
       <div class="payment-modal-footer">
         <button type="button" class="btn-confirm-payment" onclick="confirmPaymentAndCalculate()">
-          <span class="btn-icon">⚡</span> XÁC NHẬN ĐÃ CHUYỂN KHOẢN - LẬP LÁ SỐ NGAY
+          <span class="btn-icon">⚡</span> XÁC NHẬN ĐÃ CHUYỂN 6,868 VNĐ - LẬP LÁ SỐ NGAY
         </button>
         <button type="button" class="btn-cancel-payment" onclick="closePaymentModal()">
           Quay lại chỉnh sửa thông tin
