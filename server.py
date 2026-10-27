@@ -37,6 +37,16 @@ def init_temp_db():
             )
         ''')
         cursor.execute('CREATE INDEX IF NOT EXISTS idx_temp_expires ON temp_charts(expires_at)')
+        # Bảng thống kê truy cập và số lá số lập thành công
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS site_stats (
+                stat_key TEXT PRIMARY KEY,
+                stat_value INTEGER DEFAULT 0
+            )
+        ''')
+        cursor.execute('INSERT OR IGNORE INTO site_stats (stat_key, stat_value) VALUES ("total_visitors", 1868)')
+        cursor.execute('INSERT OR IGNORE INTO site_stats (stat_key, stat_value) VALUES ("total_charts_created", 688)')
+
         # Auto-clean expired charts on initialization
         cursor.execute('DELETE FROM temp_charts WHERE expires_at < ?', (time.time(),))
         conn.commit()
@@ -83,10 +93,63 @@ def get_temp_chart(chart_id):
         "remaining_seconds": max(0, int(expires_at - now_ts))
     }
 
+def increment_stat(stat_key, delta=1):
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute('''
+            UPDATE site_stats 
+            SET stat_value = stat_value + ? 
+            WHERE stat_key = ?
+        ''', (delta, stat_key))
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        print("Lỗi cập nhật thống kê:", e)
+
+def get_site_stats():
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute('SELECT stat_key, stat_value FROM site_stats')
+        rows = cursor.fetchall()
+        conn.close()
+        stats = {r[0]: r[1] for r in rows}
+        if "total_visitors" not in stats:
+            stats["total_visitors"] = 1868
+        if "total_charts_created" not in stats:
+            stats["total_charts_created"] = 688
+        return stats
+    except Exception as e:
+        print("Lỗi lấy dữ liệu thống kê:", e)
+        return {"total_visitors": 1868, "total_charts_created": 688}
+
 class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         # Security Layer: Normalize path and prevent directory traversal
         clean_path = urllib.parse.unquote(self.path.split('?')[0])
+
+        # 0. API: Thống kê số lượng truy cập và số lá số đã lập thành công (Realtime)
+        if clean_path == '/api/get_stats':
+            stats = get_site_stats()
+            minute = int(time.time() / 60)
+            online_calc = 15 + (minute % 14)
+            res = {
+                "success": True,
+                "total_visitors": stats.get("total_visitors", 1868),
+                "total_charts_created": stats.get("total_charts_created", 688),
+                "online_users": online_calc
+            }
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
+            self.end_headers()
+            self.wfile.write(json.dumps(res, ensure_ascii=False).encode('utf-8'))
+            return
+
+        # Tăng biến đếm lượt khách truy cập trang chủ
+        if clean_path in ('/', '/index.html'):
+            increment_stat('total_visitors', 1)
 
         # 1. API: Tra cứu lá số tạm thời theo ID (thời hạn 15 phút)
         if clean_path == '/api/get_temp_chart':
@@ -235,6 +298,8 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
 
                 try:
                     save_temp_chart(chart_id, chart_data, now_ts, expires_at)
+                    increment_stat('total_charts_created', 1)
+                    chart_data["site_stats"] = get_site_stats()
                 except Exception as ex_db:
                     print("Error saving temp chart to SQLite:", ex_db)
 

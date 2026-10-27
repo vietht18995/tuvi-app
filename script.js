@@ -5897,6 +5897,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Tự động kiểm tra và tải lại lá số nếu đường dẫn có ID lưu tạm 15 phút (?laso=... hoặc /laso/...)
   checkAndLoadSharedChart();
+
+  // Khởi động cập nhật thống kê Realtime: lượt truy cập & số lá số đã lập
+  updateLiveSiteStats();
+  setInterval(updateLiveSiteStats, 20000);
 });
 
 // Render 12 Chambers into the Grid
@@ -8994,7 +8998,92 @@ function copyShareChartUrl() {
   }
 }
 
+
+// ==========================================================================
+// REALTIME SITE STATS ENGINE (SỐ LƯỢT TRUY CẬP & SỐ LÁ SỐ ĐÃ LẬP THÀNH CÔNG)
+// ==========================================================================
+let currentVisitorCount = 0;
+let currentChartCount = 0;
+
+function formatNumber(num) {
+  return Number(num).toLocaleString('vi-VN');
+}
+
+function animateNumber(element, start, end, duration) {
+  if (!element) return;
+  start = parseInt(start) || 0;
+  end = parseInt(end) || 0;
+  if (start === end) {
+    element.innerText = formatNumber(end);
+    return;
+  }
+  const range = end - start;
+  const startTime = performance.now();
+
+  function step(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - (1 - progress) * (1 - progress);
+    const current = Math.floor(start + range * ease);
+    element.innerText = formatNumber(current);
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      element.innerText = formatNumber(end);
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+function updateLiveSiteStats() {
+  fetch('/api/get_stats', { cache: 'no-store' })
+    .then(res => res.json())
+    .then(data => {
+      if (!data || !data.success) return;
+      
+      const elVisitors = document.getElementById("stat-total-visitors");
+      const elCharts = document.getElementById("stat-total-charts");
+      const elOnline = document.getElementById("stat-online-users");
+      const footerCharts = document.getElementById("footer-stat-charts");
+      const footerVisitors = document.getElementById("footer-stat-visitors");
+
+      if (elVisitors) {
+        animateNumber(elVisitors, currentVisitorCount || (data.total_visitors - 4), data.total_visitors, 1000);
+      }
+      if (footerVisitors) {
+        footerVisitors.innerText = formatNumber(data.total_visitors);
+      }
+      currentVisitorCount = data.total_visitors;
+
+      if (elCharts) {
+        animateNumber(elCharts, currentChartCount || (data.total_charts_created - 3), data.total_charts_created, 1000);
+      }
+      if (footerCharts) {
+        footerCharts.innerText = formatNumber(data.total_charts_created);
+      }
+      currentChartCount = data.total_charts_created;
+
+      if (elOnline && data.online_users) {
+        elOnline.innerText = data.online_users;
+      }
+    })
+    .catch(err => {
+      console.warn("Could not fetch live site stats:", err);
+    });
+}
+
 function applyChartData(result, remainingSeconds) {
+  // Cập nhật tăng số lượng lá số lập thành công realtime
+  if (result.site_stats && result.site_stats.total_charts_created) {
+    currentChartCount = result.site_stats.total_charts_created;
+  } else {
+    currentChartCount = (currentChartCount || 688) + 1;
+  }
+  const elCharts = document.getElementById("stat-total-charts");
+  if (elCharts) elCharts.innerText = formatNumber(currentChartCount);
+  const footerCharts = document.getElementById("footer-stat-charts");
+  if (footerCharts) footerCharts.innerText = formatNumber(currentChartCount);
+
   // Update local data
   tuviData.personal_info = result.personal_info;
   tuviData.chambers = result.chambers;
