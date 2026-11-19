@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autodesk AutoCAD - LAKINH CHINH 4.dwg • La Kinh Phong Thủy Tổng Hợp 12 Tầng Việt Hóa</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cad-bg: #0b0e14;
+      --cad-panel: #141923;
+      --cad-toolbar: #1e2433;
+      --cad-border: #2e374d;
+      --cad-yellow: #ffe600;
+      --cad-blue: #2563eb;
+      --cad-cyan: #38bdf8;
+      --cad-green: #22c55e;
+      --cad-red: #ef4444;
+      --cad-white: #f8fafc;
+      --cad-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cad-bg);
+      color: var(--cad-white);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+    }
+
+    /* TOP AUTOCAD TITLE & RIBBON BAR */
+    .cad-header {
+      background: linear-gradient(180deg, #1f2637 0%, #151a26 100%);
+      border-bottom: 1px solid var(--cad-border);
+      padding: 6px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      z-index: 30;
+    }
+
+    .cad-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cad-logo-badge {
+      background: #dc2626;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 0 10px rgba(220, 38, 38, 0.4);
+    }
+
+    .cad-file-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #e2e8f0;
+    }
+
+    .cad-file-title span {
+      color: var(--cad-yellow);
+    }
+
+    .cad-layer-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #0f131c;
+      border: 1px solid var(--cad-border);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+    }
+
+    .layer-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--cad-yellow);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .cad-controls-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .cad-btn {
+      background: #232b3d;
+      color: #e2e8f0;
+      border: 1px solid #3b4661;
+      padding: 6px 11px;
+      border-radius: 5px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+
+    .cad-btn:hover {
+      background: #2f3b54;
+      border-color: var(--cad-yellow);
+      color: var(--cad-yellow);
+    }
+
+    .cad-btn.primary {
+      background: linear-gradient(135deg, #ca8a04, #eab308);
+      color: #0b0e14;
+      border-color: #fef08a;
+      font-weight: 700;
+    }
+
+    .cad-btn.primary:hover {
+      background: linear-gradient(135deg, #eab308, #facc15);
+      color: #000;
+    }
+
+    .cad-btn.guide-btn {
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      color: #082f49;
+      border-color: #bae6fd;
+      font-weight: 700;
+    }
+
+    /* MAIN WORKSPACE: LEFT VIEWPORT + RIGHT DECODER & GUIDE */
+    .cad-workspace {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 430px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @media (max-width: 1080px) {
+      .cad-workspace {
+        grid-template-columns: 1fr;
+        grid-template-rows: 58vh 1fr;
+      }
+    }
+
+    /* CAD VIEWPORT */
+    .cad-viewport {
+      position: relative;
+      background: radial-gradient(circle at center, #0e131d 0%, #070a0f 100%);
+      overflow: hidden;
+      cursor: grab;
+    }
+
+    .cad-viewport:active {
+      cursor: grabbing;
+    }
+
+    #lakinh-cad-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* VIEWPORT HUD OVERLAYS (AutoCAD style) */
+    .viewport-top-left {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      color: #94a3b8;
+      background: rgba(11, 14, 20, 0.78);
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 230, 0, 0.25);
+      pointer-events: none;
+    }
+
+    .viewport-top-left strong {
+      color: var(--cad-yellow);
+    }
+
+    /* AutoCAD ViewCube Replica */
+    .cad-viewcube {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.22);
+      background: rgba(20, 25, 35, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+      pointer-events: none;
+    }
+
+    .viewcube-box {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 230, 0, 0.14);
+      border: 1.5px solid var(--cad-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cad-yellow);
+      font-size: 0.66rem;
+    }
+
+    .vc-dir {
+      position: absolute;
+      font-size: 0.62rem;
+      color: #94a3b8;
+    }
+    .vc-n { top: 2px; left: 50%; transform: translateX(-50%); color: #ef4444; }
+    .vc-s { bottom: 2px; left: 50%; transform: translateX(-50%); }
+    .vc-e { right: 4px; top: 50%; transform: translateY(-50%); }
+    .vc-w { left: 4px; top: 50%; transform: translateY(-50%); }
+
+    /* Bottom Floating Toolbar inside Viewport */
+    .viewport-bottom-bar {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(20, 25, 35, 0.92);
+      border: 1px solid rgba(255, 230, 0, 0.35);
+      border-radius: 999px;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75);
+      white-space: nowrap;
+    }
+
+    .deg-input-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--cad-yellow);
+    }
+
+    .deg-input {
+      width: 72px;
+      background: #0b0e14;
+      color: var(--cad-yellow);
+      border: 1px solid var(--cad-yellow);
+      border-radius: 4px;
+      padding: 4px 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
+    /* RIGHT SIDEBAR: LIVE 12-LAYER DECODER & BÁT TRẠCH MATCHER */
+    .cad-sidebar {
+      background: var(--cad-panel);
+      border-left: 1px solid var(--cad-border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      user-select: text;
+    }
+
+    .sidebar-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #0f131c;
+      border-bottom: 1px solid var(--cad-border);
+    }
+
+    .sidebar-tab-btn {
+      padding: 11px 10px;
+      background: transparent;
+      color: #94a3b8;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .sidebar-tab-btn.active {
+      color: var(--cad-yellow);
+      border-bottom-color: var(--cad-yellow);
+      background: rgba(255, 230, 0, 0.06);
+    }
+
+    .sidebar-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .owner-filter-card {
+      background: #1a2130;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .card-micro-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--cad-cyan);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .owner-inputs {
+      display: grid;
+      grid-template-columns: 1fr 90px 85px;
+      gap: 6px;
+    }
+
+    .cad-select, .cad-input-sm {
+      background: #0b0e14;
+      color: #f8fafc;
+      border: 1px solid #3b4661;
+      border-radius: 4px;
+      padding: 6px 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* Main Degree Readout Banner */
+    .degree-hero-box {
+      background: linear-gradient(135deg, #172033 0%, #0f1522 100%);
+      border: 1.5px solid var(--cad-yellow);
+      border-radius: 8px;
+      padding: 12px;
+      position: relative;
+    }
+
+    .degree-big-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .degree-big-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--cad-yellow);
+    }
+
+    .son-huong-badge {
+      background: rgba(255, 230, 0, 0.16);
+      color: var(--cad-yellow);
+      border: 1px solid rgba(255, 230, 0, 0.5);
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .khong-vong-alert {
+      margin-top: 8px;
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .kv-safe {
+      background: rgba(34, 197, 94, 0.14);
+      border: 1px solid rgba(34, 197, 94, 0.45);
+      color: #86efac;
+    }
+
+    .kv-danger {
+      background: rgba(239, 68, 68, 0.18);
+      border: 1px solid rgba(239, 68, 68, 0.6);
+      color: #fca5a5;
+    }
+
+    /* 12-Layer Breakdown Table */
+    .layer-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .layer-item {
+      background: #19202e;
+      border: 1px solid #29344a;
+      border-left: 3px solid var(--cad-yellow);
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 0.77rem;
+      line-height: 1.4;
+    }
+
+    .layer-item.blue { border-left-color: var(--cad-cyan); }
+    .layer-item.green { border-left-color: var(--cad-green); }
+    .layer-item.red { border-left-color: var(--cad-red); }
+
+    .layer-head {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 2px;
+      font-size: 0.72rem;
+    }
+
+    .layer-num {
+      color: var(--cad-yellow);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .layer-val {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .layer-sub {
+      color: #94a3b8;
+      font-size: 0.72rem;
+      margin-top: 2px;
+    }
+
+    /* Quick 24 Son Grid */
+    .quick-son-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 4px;
+      margin-top: 6px;
+    }
+
+    .son-chip {
+      background: #0f141e;
+      border: 1px solid #2e384d;
+      color: #cbd5e1;
+      padding: 4px 2px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .son-chip:hover, .son-chip.active {
+      background: rgba(255, 230, 0, 0.2);
+      border-color: var(--cad-yellow);
+      color: var(--cad-yellow);
+    }
+
+    /* Guide Manual Styles */
+    .guide-article {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: #e2e8f0;
+    }
+
+    .guide-box {
+      background: #192130;
+      border: 1px solid #2e3a52;
+      border-radius: 8px;
+      padding: 11px 13px;
+    }
+
+    .guide-box h4 {
+      color: var(--cad-yellow);
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .guide-box ul {
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .guide-highlight {
+      color: var(--cad-cyan);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AUTOCAD TOP HEADER & TOOLBAR -->
+  <header class="cad-header">
+    <div class="cad-brand">
+      <span class="cad-logo-badge">A • AutoCAD 2026</span>
+      <div class="cad-file-title">
+        <span>LAKINH CHINH 4.dwg</span> — La Kinh Phong Thủy Tổng Hợp 12 Tầng Việt Hóa
+      </div>
+      <div class="cad-layer-bar">
+        <span class="layer-dot"></span>
+        <span>0-1-lakinh (2D Wireframe)</span>
+      </div>
+    </div>
+
+    <div class="cad-controls-top">
+      <a href="/sach_phong_thuy.html" class="cad-btn" style="background: linear-gradient(135deg, #991b1b, #dc2626); color: #fef08a; border-color: #f59e0b; font-weight: 700;" title="Mở Sách Giáo Trình Đào Tạo Phong Thủy Sư Toàn Thư 24 Tháng & Tải PDF">
+        📚 Sách Giáo Trình Phong Thủy Sư (24 Tháng &amp; PDF)
+      </a>
+      <button type="button" class="cad-btn guide-btn" onclick="switchSidebarTab('guide')">
+        📖 Hướng Dẫn Xem La Kinh 12 Tầng
+      </button>
+      <button type="button" class="cad-btn" onclick="zoomLaKinh(1.25)" title="Phóng to mặt La Kinh">
+        ➕ Phóng To
+      </button>
+      <button type="button" class="cad-btn" onclick="zoomLaKinh(0.8)" title="Thu nhỏ mặt La Kinh">
+        ➖ Thu Nhỏ
+      </button>
+      <button type="button" class="cad-btn" onclick="resetLaKinhView()" title="Đưa về góc nhìn chuẩn">
+        🎯 Tâm Chuẩn
+      </button>
+      <button type="button" class="cad-btn" onclick="focusBinhChuongView()" title="Góc nhìn cận cảnh khu vực Càn - Khảm giống ảnh chụp AutoCAD">
+        📐 Góc Cận Cảnh CAD (275°–360°)
+      </button>
+      <button type="button" class="cad-btn primary" onclick="exportAutoCADDXF()" title="Tải file bản vẽ kỹ thuật .DXF mở trực tiếp bằng AutoCAD">
+        💾 Tải File AutoCAD (.DXF)
+      </button>
+      <a href="/" class="cad-btn" title="Quay về Bàn Lá Số Tử Vi & Đại Trận 3D">
+        ⬅ Về Trang Lá Số Tử Vi
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN WORKSPACE -->
+  <main class="cad-workspace">
+    <!-- LEFT: INTERACTIVE 12-RING AUTOCAD VIEWPORT -->
+    <section class="cad-viewport" id="cad-viewport">
+      <canvas id="lakinh-cad-canvas"></canvas>
+
+      <div class="viewport-top-left">
+        <div>[-][Top][2D Wireframe] • <strong>12 Tầng Đồng Tâm Chuẩn</strong></div>
+        <div style="margin-top:2px;">🖱️ <strong>Kéo chuột:</strong> Xoay La Kinh / Di chuyển • 🔍 <strong>Cuộn chuột:</strong> Zoom 100%–800%</div>
+      </div>
+
+      <!-- AutoCAD ViewCube -->
+      <div class="cad-viewcube">
+        <span class="vc-dir vc-n">N</span>
+        <span class="vc-dir vc-s">S</span>
+        <span class="vc-dir vc-e">E</span>
+        <span class="vc-dir vc-w">W</span>
+        <div class="viewcube-box">TOP</div>
+      </div>
+
+      <!-- Bottom Degree & Quick Mode Control -->
+      <div class="viewport-bottom-bar">
+        <div class="deg-input-wrap">
+          <span>🧭 Độ Hướng (0°–360°):</span>
+          <input type="number" id="inp-compass-deg" class="deg-input" value="315.0" min="0" max="360" step="0.5" onchange="setCompassDegree(this.value)" oninput="setCompassDegree(this.value)">
+          <span>°</span>
+        </div>
+        <button type="button" class="cad-btn" onclick="stepCompassDegree(-1)">◀ -1°</button>
+        <button type="button" class="cad-btn" onclick="stepCompassDegree(-15)">-1 Sơn (15°)</button>
+        <button type="button" class="cad-btn" onclick="stepCompassDegree(15)">+1 Sơn (15°)</button>
+        <button type="button" class="cad-btn" onclick="stepCompassDegree(1)">+1° ▶</button>
+      </div>
+    </section>
+
+    <!-- RIGHT: REALTIME 12-RING DECODER & STEP-BY-STEP READING MANUAL -->
+    <aside class="cad-sidebar">
+      <div class="sidebar-tabs">
+        <button type="button" class="sidebar-tab-btn active" id="tab-btn-decoder" onclick="switchSidebarTab('decoder')">
+          🔍 GIẢI MÃ 12 TẦNG TẠI ĐỘ SỐ
+        </button>
+        <button type="button" class="sidebar-tab-btn" id="tab-btn-guide" onclick="switchSidebarTab('guide')">
+          📖 HƯỚNG DẪN ĐỌC LA KINH A–Z
+        </button>
+      </div>
+
+      <!-- TAB 1: REALTIME 12-LAYER DECODER -->
+      <div class="sidebar-content" id="tab-content-decoder">
+        <!-- Chủ nhà / Năm sinh để tra nhanh Tầng 5 Bát Trạch -->
+        <div class="owner-filter-card">
+          <div class="card-micro-title">
+            <span>👤 TRA CỨU TUỔI GIA CHỦ TRÊN TẦNG 5 LA KINH</span>
+            <span id="owner-quai-badge" style="color: var(--cad-yellow);">Khôn Thổ (Tây Tứ Mệnh)</span>
+          </div>
+          <div class="owner-inputs">
+            <input type="number" id="inp-owner-year" class="cad-input-sm" value="1995" min="1920" max="2035" onchange="updateDecoderPanel()" oninput="updateDecoderPanel()" title="Năm sinh Âm lịch của gia chủ">
+            <select id="inp-owner-gender" class="cad-select" onchange="updateDecoderPanel()">
+              <option value="Nam" selected>Nam Mạng</option>
+              <option value="Nu">Nữ Mạng</option>
+            </select>
+            <select id="inp-period-select" class="cad-select" onchange="updateDecoderPanel()" title="Chọn Vận Huyền Không Phi Tinh">
+              <option value="9" selected>Vận 9</option>
+              <option value="8">Vận 8</option>
+              <option value="7">Vận 7</option>
+            </select>
+          </div>
+          <div class="quick-son-grid" id="quick-son-grid"></div>
+        </div>
+
+        <!-- Kết quả tổng hợp tại tâm chỉ đỏ -->
+        <div class="degree-hero-box">
+          <div class="degree-big-row">
+            <span class="degree-big-num" id="dec-degree-num">315.0°</span>
+            <span class="son-huong-badge" id="dec-son-huong">Tọa Tốn (135°) • Hướng Càn (315°)</span>
+          </div>
+          <div style="font-size: 0.78rem; color: #cbd5e1;" id="dec-quai-summary">
+            Phương Tây Bắc • Quái <strong>Càn ☰ (Kim - Số 6)</strong> • Thiên Nguyên Long (Dương Kim)
+          </div>
+          <div class="khong-vong-alert kv-safe" id="dec-khong-vong">
+            ✅ Đắc Chính Tuyến Cát Độ — Không phạm Đại Không Vong hay Tiểu Không Vong.
+          </div>
+        </div>
+
+        <!-- Danh sách giải mã chi tiết 12 tầng từ trong ra ngoài -->
+        <div class="layer-list" id="decoder-12-layers">
+          <!-- Populated dynamically by JS -->
+        </div>
+      </div>
+
+      <!-- TAB 2: COMPREHENSIVE ILLUSTRATED GUIDE -->
+      <div class="sidebar-content" id="tab-content-guide" style="display: none;">
+        <div class="guide-article">
+          <div class="guide-box" style="border-color: var(--cad-yellow);">
+            <h4>1. Hình ảnh bạn gửi là gì?</h4>
+            <p>
+              Đó là bản thiết kế kỹ thuật trên phần mềm <strong>Autodesk AutoCAD (tệp <code>LAKINH CHINH 4.dwg</code>)</strong> của một <strong>Mặt La Kinh Phong Thủy Tổng Hợp Việt Hóa 12 Tầng</strong>.
+            </p>
+            <p style="margin-top:6px;">
+              Thay vì dùng chữ Hán cổ khó tra cứu, bản thiết kế này đã <strong>Việt hóa và tích hợp 4 trường phái lớn</strong> (<em>Bát Trạch Minh Cảnh, Tam Hợp Phái, Huyền Không Phi Tinh và Huyền Không Đại Quái 64 Quẻ</em>) vào chung một mặt đồng tâm để thầy phong thủy hoặc gia chủ chỉ cần gióng <strong>1 sợi dây chỉ đỏ từ tâm ra ngoài</strong> là đọc được toàn bộ thông số cát hung của ngôi nhà.
+            </p>
+          </div>
+
+          <div class="guide-box">
+            <h4>2. Quy trình 5 bước xem La Kinh cực dễ cho người mới</h4>
+            <ul>
+              <li><strong>Bước 1 — Đo độ hướng nhà:</strong> Đứng trước cửa chính nhìn thẳng ra ngoài sân/đường, dùng la bàn điện thoại hoặc La Kinh lấy số độ (ví dụ nhà hướng Tây Bắc <span class="guide-highlight">315°</span>). Nhập số độ đó vào ô <strong>Độ Hướng</strong> ở thanh dưới màn hình.</li>
+              <li><strong>Bước 2 — Xem Tầng 2 (24 Sơn) &amp; Tránh Vạch Không Vong:</strong> Nhìn theo đường chỉ đỏ dọc từ tâm lên đỉnh: nếu độ số rơi sát vạch ranh giới giữa 2 Quái (cách $\pm 1.5^\circ$ quanh các mốc $22.5^\circ, 67.5^\circ, 112.5^\circ, 157.5^\circ, 202.5^\circ, 247.5^\circ, 292.5^\circ, 337.5^\circ$) là phạm <strong>Đại Không Vong</strong> (tối kỵ, nhà dễ suy bại). Nếu rơi vào trung tâm Sơn là đắc chính khí.</li>
+              <li><strong>Bước 3 — Đối chiếu Tầng 5 (Tuổi gia chủ &amp; Bát Trạch):</strong> Nhập năm sinh Âm lịch và giới tính của bạn ở khung bên phải. Tầng 5 trên bản vẽ ghi sẵn các năm sinh (ví dụ <code>1995 Ất Hợi</code>, <code>1994 Giáp Tuất</code>...) kèm cung <strong>Sinh Khí, Thiên Y, Diên Niên, Phục Vị</strong> (4 hướng tốt) hoặc <strong>Tuyệt Mệnh, Ngũ Quỷ, Lục Sát, Họa Hại</strong> (4 hướng xấu).</li>
+              <li><strong>Bước 4 — Xem Tầng 6 (120 Phân Kim):</strong> Mỗi sơn $15^\circ$ chia làm 5 ô nhỏ (mỗi ô $3^\circ$). Trên bản vẽ CAD, các ô <strong>tô sáng/đặc</strong> (có can <em>Bính, Đinh, Canh, Tân</em>) là phân kim <strong>Vượng/Tướng</strong> (cát lợi); các ô có can <em>Giáp, Nhâm, Mậu, Kỷ</em> là <strong>Cô Hư / Quy Giáp Không Vong</strong> cần tránh.</li>
+              <li><strong>Bước 5 — Đọc Tầng 10 (Huyền Không Phi Tinh) &amp; Tầng 11 (64 Quẻ Dịch):</strong> Nhìn cụm 3 hàng x 3 cột số ở Tầng 10 (ví dụ <code>989 / 178 / 534</code>) để biết sao Sơn – sao Hướng đang vượng hay suy ở trước cửa, và nhìn Tầng 11 để biết quẻ Dịch ứng với mạch đất đó (ví dụ <code>71 Đại Súc</code>, <code>74 Di</code>...).</li>
+            </ul>
+          </div>
+
+          <div class="guide-box">
+            <h4>3. Giải nghĩa chi tiết 12 Tầng từ Tâm ra Ngoài trên bản vẽ CAD</h4>
+            <ul>
+              <li><span class="guide-highlight">Tầng 1 (Tâm Bát Quái):</span> 8 Quái Hậu Thiên (Khảm 1, Cấn 8, Chấn 3, Tốn 4, Ly 9, Khôn 2, Đoài 7, Càn 6) phối Tiên Thiên Bát Quái và 3 hào Dịch.</li>
+              <li><span class="guide-highlight">Tầng 2 (Địa Bàn Chính Châm 24 Sơn):</span> Dùng để <strong>đo tọa và hướng nhà</strong>. Mỗi sơn rộng $15^\circ$, ghi rõ Tam Nguyên Long (<em>Địa – Thiên – Nhân</em>), Ngũ Hành, Cửu Tinh và vị trí phạm <em>Bát Sát / Hoàng Tuyền</em>.</li>
+              <li><span class="guide-highlight">Tầng 3 &amp; 4 (Độ Số Ranh Giới, 12 Trường Sinh &amp; 24 Thần Sát):</span> Vòng Trường Sinh Thủy Pháp (<em>Đế Vượng, Lâm Quan, Trường Sinh, Mộ, Tuyệt...</em>) kèm 24 sao cát hung (<em>Hưng Phước, Dương Quang, Tố Tụng, Pháp Trường...</em>).</li>
+              <li><span class="guide-highlight">Tầng 5 (Bảng Tra Năm Sinh &amp; Bát Trạch Du Niên):</span> Tra trực tiếp năm sinh 1924–2026 cho cả Nam và Nữ để biết ngay hướng đó được Sinh Khí, Thiên Y, Diên Niên hay phạm Tuyệt Mệnh, Ngũ Quỷ.</li>
+              <li><span class="guide-highlight">Tầng 6 (120 Phân Kim &amp; 60 Thấu Địa Long):</span> Chia 360° thành 120 vạch ($3^\circ$/vạch) kèm Ngũ hành Nạp âm để chọn đúng mạch phân kim Vượng – Tướng.</li>
+              <li><span class="guide-highlight">Tầng 7 (Nhân Bàn Trung Châm $-7.5^\circ$ &amp; 28 Sao):</span> Lệch lùi $7.5^\circ$ so với Địa bàn, dùng để <strong>Tiêu Sa</strong> (đo núi, tòa nhà cao, cột điện, mái đình quanh nhà) phối 28 sao Nhị Thập Bát Tú.</li>
+              <li><span class="guide-highlight">Tầng 8 (Thiên Bàn Phùng Châm $+7.5^\circ$ &amp; 24 Tiết Khí):</span> Vòng kẻ vàng đậm, lệch tiến $7.5^\circ$ so với Địa bàn, dùng để <strong>Nạp Thủy</strong> (đo ngã ba sông, đường nước đến, cổng/ao hồ) phối 24 Tiết Khí.</li>
+              <li><span class="guide-highlight">Tầng 9 (Lời Đoán Ứng Nghiệm Thực Chiến):</span> Ghi trực tiếp cát hung của từng cung độ (<em>Phát Tài Đinh, Khai Tài Lộc, Quyền Uy, Quan Tụng, Cô Quả...</em>).</li>
+              <li><span class="guide-highlight">Tầng 10 (Bàn Sao Huyền Không Phi Tinh):</span> Ma trận 9 con số (Sơn tinh – Hướng tinh – Vận tinh) tính sẵn cho từng sơn hướng, giúp lập tinh bàn nhà ngay lập tức mà không cần bấm tay.</li>
+              <li><span class="guide-highlight">Tầng 11 (64 Quẻ Dịch Huyền Không Đại Quái):</span> 64 quẻ Dịch 6 hào kèm số Quái Vận (<em>71 Đại Súc, 72 Tốn, 73 Bĩ, 74 Di...</em>) để thu khí Nhất Quái Thuần Thanh.</li>
+              <li><span class="guide-highlight">Tầng 12 (Vòng 360 Độ Chuẩn &amp; Kim Chỉ Nam):</span> Vạch chia từng độ từ $0^\circ \to 360^\circ$ chính xác tuyệt đối.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+  <script>
+  (function () {
+    "use strict";
+
+    // =========================================================================
+    // 1. CƠ SỞ DỮ LIỆU 12 TẦNG LA KINH TỔNG HỢP VIỆT HÓA (CHUẨN BẢN VẼ CAD)
+    // =========================================================================
+
+    // Tầng 1: Bát Quái Hậu Thiên & Tiên Thiên (Mỗi quái 45°, bắt đầu từ Khảm Bắc 337.5° -> 22.5°)
+    const BAGUA_8 = [
+      { idx: 0, name: "KHẢM", num: 1, dir: "BẮC - 1", elem: "THỦY", color: "#2563eb", startDeg: 337.5, centerDeg: 0, tiênThiên: "KHÔN 8", trigram: [0, 1, 0], batSat: "SÁT THÌN - TUẤT" },
+      { idx: 1, name: "CẤN", num: 8, dir: "ĐÔNG BẮC - 8", elem: "THỔ", color: "#eab308", startDeg: 22.5, centerDeg: 45, tiênThiên: "CHẤN 4", trigram: [1, 0, 0], batSat: "SÁT DẦN" },
+      { idx: 2, name: "CHẤN", num: 3, dir: "ĐÔNG - 3", elem: "MỘC", color: "#22c55e", startDeg: 67.5, centerDeg: 90, tiênThiên: "LY 3", trigram: [0, 0, 1], batSat: "SÁT THÂN" },
+      { idx: 3, name: "TỐN", num: 4, dir: "ĐÔNG NAM - 4", elem: "MỘC", color: "#22c55e", startDeg: 112.5, centerDeg: 135, tiênThiên: "ĐOÀI 2", trigram: [1, 1, 0], batSat: "SÁT DẬU" },
+      { idx: 4, name: "LY", num: 9, dir: "NAM - 9", elem: "HỎA", color: "#ef4444", startDeg: 157.5, centerDeg: 180, tiênThiên: "CÀN 1", trigram: [1, 0, 1], batSat: "SÁT HỢI" },
+      { idx: 5, name: "KHÔN", num: 2, dir: "TÂY NAM - 2", elem: "THỔ", color: "#eab308", startDeg: 202.5, centerDeg: 225, tiênThiên: "TỐN 5", trigram: [0, 0, 0], batSat: "SÁT MÃO" },
+      { idx: 6, name: "ĐOÀI", num: 7, dir: "TÂY - 7", elem: "KIM", color: "#f8fafc", startDeg: 247.5, centerDeg: 270, tiênThiên: "KHẢM 6", trigram: [0, 1, 1], batSat: "SÁT TỴ" },
+      { idx: 7, name: "CÀN", num: 6, dir: "TÂY BẮC - 6", elem: "KIM", color: "#f8fafc", startDeg: 292.5, centerDeg: 315, tiênThiên: "CẤN 7", trigram: [1, 1, 1], batSat: "SÁT NGỌ • HOÀNG TUYỀN" }
+    ];
+
+    // Tầng 2, 3, 4, 8, 9, 10: 24 Sơn Hướng (Mỗi sơn 15°, từ Nhâm 337.5°..352.5°, Tý 352.5°..7.5°...)
+    // Sắp xếp theo thứ tự góc trung tâm: Tý (0°), Quý (15°), Sửu (30°), Cấn (45°)... Nhâm (345°)
+    const MOUNTAINS_24 = [
+      {
+        idx: 0, name: "TÝ", center: 0, start: 352.5, end: 7.5, quaiIdx: 0,
+        nguyenLong: "THIÊN", amDuong: "Âm Thủy", cuuTinh: "Tham Lang",
+        truongSinh: "ĐẾ VƯỢNG", thanSat: "Dương Quang • Vượng Trang",
+        tietKhi: "ĐÔNG CHÍ", thienBan: "TÝ - QUÝ", nhanBan: "NHÂM - TÝ",
+        omen: "Vượng Đinh • Phú Quý • Vinh Hiển",
+        flyingStars: ["8 8 1", "9 7 9", "4 3 5"]
+      },
+      {
+        idx: 1, name: "QUÝ", center: 15, start: 7.5, end: 22.5, quaiIdx: 0,
+        nguyenLong: "NHÂN", amDuong: "Âm Thủy", cuuTinh: "Tham Lang",
+        truongSinh: "SUY", thanSat: "Hưng Phước • Bắc Đạo",
+        tietKhi: "TIỂU HÀN", thienBan: "QUÝ - SỬU", nhanBan: "TÝ - QUÝ",
+        omen: "Phát Tài Lộc • Hiền Lương • Hoàng Tuyền Cấn",
+        flyingStars: ["3 4 6", "7 9 2", "2 5 7"]
+      },
+      {
+        idx: 2, name: "SỬU", center: 30, start: 22.5, end: 37.5, quaiIdx: 1,
+        nguyenLong: "ĐỊA", amDuong: "Âm Thổ", cuuTinh: "Tả Phù",
+        truongSinh: "BỆNH", thanSat: "Pháp Trường • Thiên Trù",
+        tietKhi: "ĐẠI HÀN", thienBan: "SỬU - CẤN", nhanBan: "QUÝ - SỬU",
+        omen: "Điền Sản • Tích Lũy • Cẩn Trọng Tố Tụng",
+        flyingStars: ["1 6 8", "5 2 4", "6 1 3"]
+      },
+      {
+        idx: 3, name: "CẤN", center: 45, start: 37.5, end: 52.5, quaiIdx: 1,
+        nguyenLong: "THIÊN", amDuong: "Dương Thổ", cuuTinh: "Tả Phù",
+        truongSinh: "TỬ", thanSat: "Lâm Quan • Phúc Đức",
+        tietKhi: "LẬP XUÂN", thienBan: "CẤN - DẦN", nhanBan: "SỬU - CẤN",
+        omen: "Thiếu Nam • Gia Đạo An Khang • Kỵ Thủy Hoàng Tuyền",
+        flyingStars: ["9 8 9", "1 7 8", "5 3 4"]
+      },
+      {
+        idx: 4, name: "DẦN", center: 60, start: 52.5, end: 67.5, quaiIdx: 1,
+        nguyenLong: "NHÂN", amDuong: "Dương Mộc", cuuTinh: "Lộc Tồn",
+        truongSinh: "MỘ", thanSat: "Đế Vượng • Vinh Phú",
+        tietKhi: "VŨ THỦY", thienBan: "DẦN - GIÁP", nhanBan: "CẤN - DẦN",
+        omen: "Khai Khoa • Quyền Bính • Công Danh Sớm",
+        flyingStars: ["4 4 5", "8 9 1", "3 5 6"]
+      },
+      {
+        idx: 5, name: "GIÁP", center: 75, start: 67.5, end: 82.5, quaiIdx: 2,
+        nguyenLong: "ĐỊA", amDuong: "Dương Mộc", cuuTinh: "Lộc Tồn",
+        truongSinh: "TUYỆT", thanSat: "Quan Quý • Hưng Long",
+        tietKhi: "KINH TRẬP", thienBan: "GIÁP - MÃO", nhanBan: "DẦN - GIÁP",
+        omen: "Trưởng Nam • Khởi Nghiệp • Tài Lộc Vượng",
+        flyingStars: ["2 6 7", "6 2 3", "7 1 2"]
+      },
+      {
+        idx: 6, name: "MÃO", center: 90, start: 82.5, end: 97.5, quaiIdx: 2,
+        nguyenLong: "THIÊN", amDuong: "Dương Mộc", cuuTinh: "Lộc Tồn",
+        truongSinh: "THAI", thanSat: "Thiên Quan • Tiến Bảo",
+        tietKhi: "XUÂN PHÂN", thienBan: "MÃO - ẤT", nhanBan: "GIÁP - MÃO",
+        omen: "Chính Đông Mộc Vượng • Xuất Văn Nhân",
+        flyingStars: ["3 4 6", "8 9 1", "4 5 5"]
+      },
+      {
+        idx: 7, name: "ẤT", center: 105, start: 97.5, end: 112.5, quaiIdx: 2,
+        nguyenLong: "NHÂN", amDuong: "Âm Mộc", cuuTinh: "Lộc Tồn",
+        truongSinh: "DƯỠNG", thanSat: "Thiên Tài • Lộc Khố",
+        tietKhi: "THANH MINH", thienBan: "ẤT - THÌN", nhanBan: "MÃO - ẤT",
+        omen: "Nhân Hòa • Quý Nhân • Kỵ Thủy Tốn Hoàng Tuyền",
+        flyingStars: ["5 6 4", "1 2 8", "9 1 9"]
+      },
+      {
+        idx: 8, name: "THÌN", center: 120, start: 112.5, end: 127.5, quaiIdx: 3,
+        nguyenLong: "ĐỊA", amDuong: "Dương Thổ", cuuTinh: "Văn Khúc",
+        truongSinh: "TRƯỜNG SINH", thanSat: "Thiên Khố • Tụ Tài",
+        tietKhi: "CỐC VŨ", thienBan: "THÌN - TỐN", nhanBan: "ẤT - THÌN",
+        omen: "Thủy Khố • Thiên La • Vượng Tài Điền",
+        flyingStars: ["7 8 2", "3 4 6", "8 9 1"]
+      },
+      {
+        idx: 9, name: "TỐN", center: 135, start: 127.5, end: 142.5, quaiIdx: 3,
+        nguyenLong: "THIÊN", amDuong: "Âm Mộc", cuuTinh: "Văn Khúc",
+        truongSinh: "MỘC DỤC", thanSat: "Văn Xương • Khoa Giáp",
+        tietKhi: "LẬP HẠ", thienBan: "TỐN - TỴ", nhanBan: "THÌN - TỐN",
+        omen: "Trưởng Nữ • Văn Chương • Tài Lộc Hanh Thông",
+        flyingStars: ["6 1 3", "2 5 7", "1 6 8"]
+      },
+      {
+        idx: 10, name: "TỴ", center: 150, start: 142.5, end: 157.5, quaiIdx: 3,
+        nguyenLong: "NHÂN", amDuong: "Âm Hỏa", cuuTinh: "Cự Môn",
+        truongSinh: "QUAN ĐỚI", thanSat: "Thiên Y • Trường Thọ",
+        tietKhi: "TIỂU MÃN", thienBan: "TỴ - BÍNH", nhanBan: "TỐN - TỴ",
+        omen: "Trường Sinh Kim Cục • Gia Nghiệp Hưng Thịnh",
+        flyingStars: ["4 3 5", "9 7 9", "8 8 1"]
+      },
+      {
+        idx: 11, name: "BÍNH", center: 165, start: 157.5, end: 172.5, quaiIdx: 4,
+        nguyenLong: "ĐỊA", amDuong: "Dương Hỏa", cuuTinh: "Liêm Trinh",
+        truongSinh: "LÂM QUAN", thanSat: "Đế Tọa • Minh Đường",
+        tietKhi: "MANG CHỦNG", thienBan: "BÍNH - NGỌ", nhanBan: "TỴ - BÍNH",
+        omen: "Nam Cực Thọ Tinh • Đại Phát Công Danh",
+        flyingStars: ["2 5 7", "7 9 2", "3 4 6"]
+      },
+      {
+        idx: 12, name: "NGỌ", center: 180, start: 172.5, end: 187.5, quaiIdx: 4,
+        nguyenLong: "THIÊN", amDuong: "Âm Hỏa", cuuTinh: "Liêm Trinh",
+        truongSinh: "ĐẾ VƯỢNG", thanSat: "Phượng Các • Quang Minh",
+        tietKhi: "HẠ CHÍ", thienBan: "NGỌ - ĐINH", nhanBan: "BÍNH - NGỌ",
+        omen: "Chính Nam Ly Hỏa • Vượng Khí Đương Vận 9",
+        flyingStars: ["1 7 8", "5 3 4", "9 8 9"]
+      },
+      {
+        idx: 13, name: "ĐINH", center: 195, start: 187.5, end: 202.5, quaiIdx: 4,
+        nguyenLong: "NHÂN", amDuong: "Âm Hỏa", cuuTinh: "Liêm Trinh",
+        truongSinh: "SUY", thanSat: "Thiên Lộc • Nhân Đinh",
+        tietKhi: "TIỂU THỬ", thienBan: "ĐINH - MÙI", nhanBan: "NGỌ - ĐINH",
+        omen: "Vượng Nhân Đinh • Phúc Thọ Song Toàn",
+        flyingStars: ["8 9 1", "3 5 6", "4 4 5"]
+      },
+      {
+        idx: 14, name: "MÙI", center: 210, start: 202.5, end: 217.5, quaiIdx: 5,
+        nguyenLong: "ĐỊA", amDuong: "Âm Thổ", cuuTinh: "Cự Môn",
+        truongSinh: "BỆNH", thanSat: "Hoa Cái • Bách Phúc",
+        tietKhi: "ĐẠI THỬ", thienBan: "MÙI - KHÔN", nhanBan: "ĐINH - MÙI",
+        omen: "Mộc Khố • Điền Viên Khoụn Hậu",
+        flyingStars: ["6 2 3", "7 1 2", "2 6 7"]
+      },
+      {
+        idx: 15, name: "KHÔN", center: 225, start: 217.5, end: 232.5, quaiIdx: 5,
+        nguyenLong: "THIÊN", amDuong: "Dương Thổ", cuuTinh: "Cự Môn",
+        truongSinh: "TỬ", thanSat: "Hậu Đức • Tải Vật",
+        tietKhi: "LẬP THU", thienBan: "KHÔN - THÂN", nhanBan: "MÙI - KHÔN",
+        omen: "Mẫu Nghi Thiên Hạ • Cẩn Trọng Hoàng Tuyền Canh Đinh",
+        flyingStars: ["5 3 4", "9 8 9", "1 7 8"]
+      },
+      {
+        idx: 16, name: "THÂN", center: 240, start: 232.5, end: 247.5, quaiIdx: 5,
+        nguyenLong: "NHÂN", amDuong: "Dương Kim", cuuTinh: "Phá Quân",
+        truongSinh: "MỘ", thanSat: "Trường Sinh Thủy Cục • Dịch Mã",
+        tietKhi: "XỬ THỬ", thienBan: "THÂN - CANH", nhanBan: "KHÔN - THÂN",
+        omen: "Trường Sinh Thủy • Thương Mại Phát Đạt",
+        flyingStars: ["3 5 6", "4 4 5", "8 9 1"]
+      },
+      {
+        idx: 17, name: "CANH", center: 255, start: 247.5, end: 262.5, quaiIdx: 6,
+        nguyenLong: "ĐỊA", amDuong: "Dương Kim", cuuTinh: "Phá Quân",
+        truongSinh: "TUYỆT", thanSat: "Vũ Khúc • Quyền Uy",
+        tietKhi: "BẠCH LỘ", thienBan: "CANH - DẬU", nhanBan: "THÂN - CANH",
+        omen: "Tây Kim Chính Khí • Võ Quý Phát Đạt",
+        flyingStars: ["7 1 2", "2 6 7", "6 2 3"]
+      },
+      {
+        idx: 18, name: "DẬU", center: 270, start: 262.5, end: 277.5, quaiIdx: 6,
+        nguyenLong: "THIÊN", amDuong: "Âm Kim", cuuTinh: "Phá Quân",
+        truongSinh: "THAI", thanSat: "Thiếu Nữ • Kim Kê",
+        tietKhi: "THU PHÂN", thienBan: "DẬU - TÂN", nhanBan: "CANH - DẬU",
+        omen: "Chính Tây Đoài Kim • Phát Tài Đinh • Thất Vận",
+        flyingStars: ["8 8 1", "9 7 9", "4 3 5"]
+      },
+      {
+        idx: 19, name: "TÂN", center: 285, start: 277.5, end: 292.5, quaiIdx: 6,
+        nguyenLong: "NHÂN", amDuong: "Âm Kim", cuuTinh: "Văn Khúc",
+        truongSinh: "DƯỠNG", thanSat: "Thiên Ất • Trường Bệnh",
+        tietKhi: "HÀN LỘ", thienBan: "TÂN - TUẤT", nhanBan: "DẬU - TÂN",
+        omen: "Khai • Tài Lộc • Cẩn Trọng Xương Khớp & Hoàng Tuyền Càn",
+        flyingStars: ["3 4 6", "7 9 2", "2 5 7"]
+      },
+      {
+        idx: 20, name: "TUẤT", center: 300, start: 292.5, end: 307.5, quaiIdx: 7,
+        nguyenLong: "ĐỊA", amDuong: "Dương Thổ", cuuTinh: "Vũ Khúc",
+        truongSinh: "TRƯỜNG SINH", thanSat: "Thiên Khố • Tố Tụng",
+        tietKhi: "SƯƠNG GIÁNG", thienBan: "TUẤT - CÀN", nhanBan: "TÂN - TUẤT",
+        omen: "Hỏa Khố • Địa Võng • Quyền Uy • Tránh Quan Tụng",
+        flyingStars: ["4 4 5", "8 9 1", "3 5 6"]
+      },
+      {
+        idx: 21, name: "CÀN", center: 315, start: 307.5, end: 322.5, quaiIdx: 7,
+        nguyenLong: "THIÊN", amDuong: "Dương Kim", cuuTinh: "Vũ Khúc",
+        truongSinh: "MỘC DỤC", thanSat: "Thiên Môn • Thiên Cửu • Quan Tước",
+        tietKhi: "LẬP ĐÔNG", thienBan: "CÀN - HỢI", nhanBan: "TUẤT - CÀN",
+        omen: "Thiên Môn Càn Kim • Quyền Uy • Chủ Trụ Gia Đình",
+        flyingStars: ["9 8 9", "1 7 8", "5 3 4"]
+      },
+      {
+        idx: 22, name: "HỢI", center: 330, start: 322.5, end: 337.5, quaiIdx: 7,
+        nguyenLong: "NHÂN", amDuong: "Dương Thủy", cuuTinh: "Tham Lang",
+        truongSinh: "QUAN ĐỚI", thanSat: "Thiên Hoàng • Quan Quý • Tử Vi",
+        tietKhi: "TIỂU TUYẾT", thienBan: "HỢI - NHÂM", nhanBan: "CÀN - HỢI",
+        omen: "Trường Sinh Mộc Cục • Đăng Khoa • Phú Quý",
+        flyingStars: ["2 6 7", "6 2 3", "7 1 2"]
+      },
+      {
+        idx: 23, name: "NHÂM", center: 345, start: 337.5, end: 352.5, quaiIdx: 0,
+        nguyenLong: "ĐỊA", amDuong: "Dương Thủy", cuuTinh: "Tham Lang",
+        truongSinh: "LÂM QUAN", thanSat: "Thiên Đệ • Tự Ái • Lộc Tồn",
+        tietKhi: "ĐẠI TUYẾT", thienBan: "NHÂM - TÝ", nhanBan: "HỢI - NHÂM",
+        omen: "Đại Hải Thủy • Khai Tài Lộc • Vượng Đinh Tài",
+        flyingStars: ["5 6 4", "1 2 8", "9 1 9"]
+      }
+    ];
+
+    // Tầng 5: Dữ liệu Năm Sinh & Bát Trạch Du Niên trên 24 Sơn (Giống bản vẽ CAD)
+    const BIRTH_YEARS_BY_SON = [
+      { son: "TÝ", years: ["1984 Giáp Tý", "1996 Bính Tý", "1948 Mậu Tý", "1960 Canh Tý", "1972 Nhâm Tý"], namQuai: "ĐOÀI / TỐN", nuQuai: "CẤN / KHÔN", duNien: "PHỤC VỊ • SINH KHÍ" },
+      { son: "QUÝ", years: ["1985 Ất Sửu", "1997 Đinh Sửu", "1949 Kỷ Sửu", "1961 Tân Sửu", "1973 Quý Sửu"], namQuai: "CÀN / CHẤN", nuQuai: "LY / CHẤN", duNien: "THIÊN Y • DIÊN NIÊN" },
+      { son: "SỬU", years: ["1986 Bính Dần", "1998 Mậu Dần", "1950 Canh Dần", "1962 Nhâm Dần", "1974 Giáp Dần"], namQuai: "KHÔN / KHÔN", nuQuai: "KHẢM / TỐN", duNien: "SINH KHÍ • PHỤC VỊ" },
+      { son: "CẤN", years: ["1987 Đinh Mão", "1999 Kỷ Mão", "1951 Tân Mão", "1963 Quý Mão", "1975 Ất Mão"], namQuai: "TỐN / KHẢM", nuQuai: "KHÔN / CẤN", duNien: "THIÊN Y • DIÊN NIÊN" },
+      { son: "DẦN", years: ["1988 Mậu Thìn", "2000 Canh Thìn", "1952 Nhâm Thìn", "1964 Giáp Thìn", "1976 Bính Thìn"], namQuai: "CHẤN / LY", nuQuai: "CHẤN / CÀN", duNien: "LỤC SÁT • HỌA HẠI" },
+      { son: "GIÁP", years: ["1989 Kỷ Tỵ", "2001 Tân Tỵ", "1953 Quý Tỵ", "1965 Ất Tỵ", "1977 Đinh Tỵ"], namQuai: "KHÔN / CẤN", nuQuai: "TỐN / ĐOÀI", duNien: "SINH KHÍ • THIÊN Y" },
+      { son: "MÃO", years: ["1990 Canh Ngọ", "2002 Nhâm Ngọ", "1954 Giáp Ngọ", "1966 Bính Ngọ", "1978 Mậu Ngọ"], namQuai: "KHẢM / ĐOÀI", nuQuai: "CẤN / CẤN", duNien: "THIÊN Y • PHỤC VỊ" },
+      { son: "ẤT", years: ["1991 Tân Mùi", "2003 Quý Mùi", "1955 Ất Mùi", "1967 Đinh Mùi", "1979 Kỷ Mùi"], namQuai: "LY / CÀN", nuQuai: "CÀN / LY", duNien: "DIÊN NIÊN • SINH KHÍ" },
+      { son: "THÌN", years: ["1992 Nhâm Thân", "2004 Giáp Thân", "1956 Bính Thân", "1968 Mậu Thân", "1980 Canh Thân"], namQuai: "CẤN / KHÔN", nuQuai: "ĐOÀI / TỐN", duNien: "HỌA HẠI • LỤC SÁT" },
+      { son: "TỐN", years: ["1993 Quý Dậu", "2005 Ất Dậu", "1957 Đinh Dậu", "1969 Kỷ Dậu", "1981 Tân Dậu"], namQuai: "ĐOÀI / TỐN", nuQuai: "CẤN / KHÔN", duNien: "PHỤC VỊ • THIÊN Y" },
+      { son: "TỴ", years: ["1994 Giáp Tuất", "2006 Bính Tuất", "1958 Mậu Tuất", "1970 Canh Tuất", "1982 Nhâm Tuất"], namQuai: "CÀN / CHẤN", nuQuai: "LY / CÀN", duNien: "SINH KHÍ • DIÊN NIÊN" },
+      { son: "BÍNH", years: ["1995 Ất Hợi", "2007 Đinh Hợi", "1959 Kỷ Hợi", "1971 Tân Hợi", "1983 Quý Hợi"], namQuai: "KHÔN / KHÔN", nuQuai: "KHẢM / TỐN", duNien: "THIÊN Y • SINH KHÍ" },
+      { son: "NGỌ", years: ["1984 Giáp Tý", "1996 Bính Tý", "1972 Nhâm Tý", "1960 Canh Tý", "2008 Mậu Tý"], namQuai: "ĐOÀI / TỐN", nuQuai: "CẤN / KHÔN", duNien: "DIÊN NIÊN • PHỤC VỊ" },
+      { son: "ĐINH", years: ["1985 Ất Sửu", "1997 Đinh Sửu", "1973 Quý Sửu", "1961 Tân Sửu", "2009 Kỷ Sửu"], namQuai: "CÀN / CHẤN", nuQuai: "LY / CHẤN", duNien: "SINH KHÍ • THIÊN Y" },
+      { son: "MÙI", years: ["1986 Bính Dần", "1998 Mậu Dần", "1974 Giáp Dần", "1962 Nhâm Dần", "2010 Canh Dần"], namQuai: "KHÔN / KHÔN", nuQuai: "KHẢM / TỐN", duNien: "PHỤC VỊ • DIÊN NIÊN" },
+      { son: "KHÔN", years: ["1987 Đinh Mão", "1999 Kỷ Mão", "1975 Ất Mão", "1963 Quý Mão", "1951 Tân Mão"], namQuai: "TỐN / KHẢM", nuQuai: "KHÔN / CẤN", duNien: "SINH KHÍ • THIÊN Y" },
+      { son: "THÂN", years: ["1988 Mậu Thìn", "2000 Canh Thìn", "1976 Bính Thìn", "1964 Giáp Thìn", "1952 Nhâm Thìn"], namQuai: "CHẤN / LY", nuQuai: "CHẤN / CÀN", duNien: "DIÊN NIÊN • PHỤC VỊ" },
+      { son: "CANH", years: ["1989 Kỷ Tỵ", "2001 Tân Tỵ", "1977 Đinh Tỵ", "1965 Ất Tỵ", "1953 Quý Tỵ"], namQuai: "KHÔN / CẤN", nuQuai: "TỐN / ĐOÀI", duNien: "THIÊN Y • SINH KHÍ" },
+      { son: "DẬU", years: ["1990 Canh Ngọ", "2002 Nhâm Ngọ", "1978 Mậu Ngọ", "1966 Bính Ngọ", "1954 Giáp Ngọ"], namQuai: "KHẢM / ĐOÀI", nuQuai: "CẤN / CẤN", duNien: "PHỤC VỊ • DIÊN NIÊN" },
+      { son: "TÂN", years: ["1993 Quý Dậu", "1981 Tân Dậu", "1969 Kỷ Dậu", "1957 Đinh Dậu", "2005 Ất Dậu"], namQuai: "ĐOÀI / TỐN", nuQuai: "CẤN / KHÔN", duNien: "DIÊN NIÊN • SINH KHÍ" },
+      { son: "TUẤT", years: ["1994 Giáp Tuất", "1982 Nhâm Tuất", "1970 Canh Tuất", "1958 Mậu Tuất", "1946 Bính Tuất"], namQuai: "CÀN / LY", nuQuai: "LY / CÀN", duNien: "PHỤC VỊ • THIÊN Y" },
+      { son: "CÀN", years: ["1995 Ất Hợi", "1983 Quý Hợi", "1971 Tân Hợi", "1959 Kỷ Hợi", "1947 Đinh Hợi"], namQuai: "KHÔN / CẤN", nuQuai: "KHẢM / ĐOÀI", duNien: "DIÊN NIÊN • PHỤC VỊ" },
+      { son: "HỢI", years: ["1983 Quý Hợi", "1971 Tân Hợi", "1959 Kỷ Hợi", "1947 Đinh Hợi", "1995 Ất Hợi"], namQuai: "CẤN / KHÔN", nuQuai: "ĐOÀI / KHẢM", duNien: "THIÊN Y • SINH KHÍ" },
+      { son: "NHÂM", years: ["1984 Giáp Tý", "1972 Nhâm Tý", "1960 Canh Tý", "1948 Mậu Tý", "1996 Bính Tý"], namQuai: "ĐOÀI / TỐN", nuQuai: "CẤN / KHÔN", duNien: "SINH KHÍ • PHỤC VỊ" }
+    ];
+
+    // Tầng 7: 28 Sao Nhị Thập Bát Tú
+    const STARS_28 = [
+      "HƯ", "NGUY", "THẤT", "BÍCH", "KHUÊ", "LÂU", "VỊ",
+      "MÃO", "TẤT", "CHỦY", "SÂM", "TỈNH", "QUỶ", "LIỄU",
+      "TINH", "TRƯƠNG", "DỰC", "CHẨN", "GIÁC", "CANG", "ĐÊ",
+      "PHÒNG", "TÂM", "VĨ", "CƠ", "ĐẨU", "NGƯU", "NỮ"
+    ];
+
+    // Tầng 11: 64 Quẻ Dịch Huyền Không Đại Quái (Số Quái Vận + Tên Quẻ + 6 Hào)
+    const HEXAGRAMS_64 = [
+      { code: "11", name: "PHỤC" }, { code: "12", name: "DI" }, { code: "13", name: "TRUÂN" }, { code: "14", name: "ÍCH" },
+      { code: "16", name: "CHẤN" }, { code: "17", name: "PHỆ HẠP" }, { code: "18", name: "TÙY" }, { code: "19", name: "VÔ VỌNG" },
+      { code: "21", name: "MINH DI" }, { code: "22", name: "BÍ" }, { code: "23", name: "KÝ TẾ" }, { code: "24", name: "GIA NHÂN" },
+      { code: "26", name: "PHONG" }, { code: "27", name: "LY" }, { code: "28", name: "CÁCH" }, { code: "29", name: "ĐỒNG NHÂN" },
+      { code: "31", name: "LÂM" }, { code: "32", name: "TỔN" }, { code: "33", name: "TIẾT" }, { code: "34", name: "TRUNG PHU" },
+      { code: "36", name: "Q.MUỘI" }, { code: "37", name: "KHUÊ" }, { code: "38", name: "ĐOÀI" }, { code: "39", name: "LÝ" },
+      { code: "41", name: "THÁI" }, { code: "42", name: "Đ.SÚC" }, { code: "43", name: "NHU" }, { code: "44", name: "TIỂU SÚC" },
+      { code: "46", name: "Đ.TRÁNG" }, { code: "47", name: "ĐẠI HỮU" }, { code: "48", name: "QUẢI" }, { code: "49", name: "CÀN" },
+      { code: "69", name: "CẤU" }, { code: "68", name: "ĐẠI QUÁ" }, { code: "67", name: "ĐỈNH" }, { code: "66", name: "HẰNG" },
+      { code: "64", name: "TỐN" }, { code: "63", name: "TỈNH" }, { code: "62", name: "CỔ" }, { code: "61", name: "THĂNG" },
+      { code: "79", name: "TỤNG" }, { code: "78", name: "KHỐN" }, { code: "77", name: "VỊ TẾ" }, { code: "76", name: "GIẢI" },
+      { code: "74", name: "HOÁN" }, { code: "73", name: "KHẢM" }, { code: "72", name: "MÔNG" }, { code: "71", name: "SƯ" },
+      { code: "89", name: "ĐỘN" }, { code: "88", name: "HÀM" }, { code: "87", name: "LỮ" }, { code: "86", name: "TIỂU QUÁ" },
+      { code: "84", name: "TIỆM" }, { code: "83", name: "KIỂN" }, { code: "82", name: "CẤN" }, { code: "81", name: "KHIÊM" },
+      { code: "99", name: "BĨ" }, { code: "98", name: "TỤY" }, { code: "97", name: "TẤN" }, { code: "96", name: "DỰ" },
+      { code: "94", name: "QUÁN" }, { code: "93", name: "TỶ" }, { code: "92", name: "BÁC" }, { code: "91", name: "KHÔN" }
+    ];
+
+    // =========================================================================
+    // 2. TRẠNG THÁI VIEWPORT CAD (ROTATION, ZOOM, PAN)
+    // =========================================================================
+    const canvas = document.getElementById("lakinh-cad-canvas");
+    const ctx = canvas.getContext("2d");
+
+    const state = {
+      compassDeg: 315.0, // Độ hướng đang chọn (mặc định 315° Càn Tây Bắc giống ảnh CAD)
+      zoom: 1.15,
+      panX: 0,
+      panY: 0,
+      isDragging: false,
+      dragMode: "rotate", // 'rotate' hoặc 'pan'
+      lastX: 0,
+      lastY: 0
+    };
+
+    function normalizeDeg(d) {
+      let res = d % 360;
+      if (res < 0) res += 360;
+      return res;
+    }
+
+    // Chuyển độ phong thủy (0°..360°) sang góc Radian vẽ trên Canvas
+    // Khi xoay La Kinh sao cho state.compassDeg nằm thẳng đứng ở Đỉnh (12 giờ = -PI/2)
+    function degToCanvasRad(deg) {
+      return ((deg - state.compassDeg - 90) * Math.PI) / 180;
+    }
+
+    function getMountainByDeg(deg) {
+      const d = normalizeDeg(deg);
+      if (d >= 352.5 || d < 7.5) return MOUNTAINS_24[0];
+      const idx = Math.floor((d + 7.5) / 15) % 24;
+      return MOUNTAINS_24[idx];
+    }
+
+    function getPhanKimByDeg(deg) {
+      const m = getMountainByDeg(deg);
+      let offset = normalizeDeg(deg - m.start);
+      const subIdx = Math.min(4, Math.floor(offset / 3)); // 0..4 (mỗi phân kim 3°)
+      const stems = ["GIÁP", "BÍNH", "MẬU", "CANH", "NHÂM"];
+      const evenStems = ["ẤT", "ĐINH", "KỶ", "TÂN", "QUÝ"];
+      const isOdd = m.idx % 2 === 0;
+      const stem = isOdd ? stems[subIdx] : evenStems[subIdx];
+      const isVuongTuong = subIdx === 1 || subIdx === 3; // Bính/Canh hoặc Đinh/Tân đắc Vượng Tướng
+      const napAmList = ["KIM", "MỘC", "THỦY", "HỎA", "THỔ"];
+      const napAm = napAmList[(m.idx + subIdx) % 5];
+      return {
+        subIdx,
+        code: `${stem} ${m.name}`,
+        napAm,
+        isVuongTuong,
+        statusText: isVuongTuong ? "Phân Kim Vượng/Tướng (Cát Độ - Ô Tô Sáng)" : "Phân Kim Cô/Hư (Kỵ Tuyến - Nên Tránh)"
+      };
+    }
+
+    function getHexagram64ByDeg(deg) {
+      const d = normalizeDeg(deg);
+      const idx = Math.floor((d / 360) * 64) % 64;
+      return { index: idx, ...HEXAGRAMS_64[idx] };
+    }
+
+    function getStar28ByDeg(deg) {
+      const d = normalizeDeg(deg);
+      const idx = Math.floor((d / 360) * 28) % 28;
+      return STARS_28[idx];
+    }
+
+    // Tính Quái Mệnh Bát Trạch từ Năm Sinh & Giới Tính
+    function calculateOwnerBattrach(year, gender) {
+      const digitSum = (n) => {
+        let s = n;
+        while (s > 9) {
+          s = String(s).split("").reduce((a, b) => a + Number(b), 0);
+        }
+        return s;
+      };
+      const rem = digitSum(year);
+      let kua = gender === "Nam" ? 11 - rem : 4 + rem;
+      while (kua > 9) kua = digitSum(kua);
+      if (kua <= 0) kua += 9;
+      if (kua === 5) kua = gender === "Nam" ? 2 : 8;
+
+      const kuaMap = {
+        1: { name: "KHẢM", elem: "Thủy", group: "Đông Tứ Mệnh", good: ["ĐÔNG NAM (Sinh Khí)", "ĐÔNG (Thiên Y)", "NAM (Diên Niên)", "BẮC (Phục Vị)"] },
+        2: { name: "KHÔN", elem: "Thổ", group: "Tây Tứ Mệnh", good: ["ĐÔNG BẮC (Sinh Khí)", "TÂY (Thiên Y)", "TÂY BẮC (Diên Niên)", "TÂY NAM (Phục Vị)"] },
+        3: { name: "CHẤN", elem: "Mộc", group: "Đông Tứ Mệnh", good: ["NAM (Sinh Khí)", "BẮC (Thiên Y)", "ĐÔNG NAM (Diên Niên)", "ĐÔNG (Phục Vị)"] },
+        4: { name: "TỐN", elem: "Mộc", group: "Đông Tứ Mệnh", good: ["BẮC (Sinh Khí)", "NAM (Thiên Y)", "ĐÔNG (Diên Niên)", "ĐÔNG NAM (Phục Vị)"] },
+        6: { name: "CÀN", elem: "Kim", group: "Tây Tứ Mệnh", good: ["TÂY (Sinh Khí)", "ĐÔNG BẮC (Thiên Y)", "TÂY NAM (Diên Niên)", "TÂY BẮC (Phục Vị)"] },
+        7: { name: "ĐOÀI", elem: "Kim", group: "Tây Tứ Mệnh", good: ["TÂY BẮC (Sinh Khí)", "TÂY NAM (Thiên Y)", "ĐÔNG BẮC (Diên Niên)", "TÂY (Phục Vị)"] },
+        8: { name: "CẤN", elem: "Thổ", group: "Tây Tứ Mệnh", good: ["TÂY NAM (Sinh Khí)", "TÂY BẮC (Thiên Y)", "TÂY (Diên Niên)", "ĐÔNG BẮC (Phục Vị)"] },
+        9: { name: "LY", elem: "Hỏa", group: "Đông Tứ Mệnh", good: ["ĐÔNG (Sinh Khí)", "ĐÔNG NAM (Thiên Y)", "BẮC (Diên Niên)", "NAM (Phục Vị)"] }
+      };
+
+      // Bảng Du Niên giữa Quái Chủ Nhà và Quái Hướng Nhà
+      const duNienMatrix = {
+        "KHẢM": { "TỐN": "SINH KHÍ (Đại Cát)", "CHẤN": "THIÊN Y (Thượng Cát)", "LY": "DIÊN NIÊN (Trung Cát)", "KHẢM": "PHỤC VỊ (Tiểu Cát)", "KHÔN": "TUYỆT MỆNH (Đại Hung)", "CẤN": "NGŨ QUỶ (Hung)", "CÀN": "LỤC SÁT (Hung)", "ĐOÀI": "HỌA HẠI (Tiểu Hung)" },
+        "LY": { "CHẤN": "SINH KHÍ (Đại Cát)", "TỐN": "THIÊN Y (Thượng Cát)", "KHẢM": "DIÊN NIÊN (Trung Cát)", "LY": "PHỤC VỊ (Tiểu Cát)", "CÀN": "TUYỆT MỆNH (Đại Hung)", "ĐOÀI": "NGŨ QUỶ (Hung)", "KHÔN": "LỤC SÁT (Hung)", "CẤN": "HỌA HẠI (Tiểu Hung)" },
+        "CHẤN": { "LY": "SINH KHÍ (Đại Cát)", "KHẢM": "THIÊN Y (Thượng Cát)", "TỐN": "DIÊN NIÊN (Trung Cát)", "CHẤN": "PHỤC VỊ (Tiểu Cát)", "ĐOÀI": "TUYỆT MỆNH (Đại Hung)", "CÀN": "NGŨ QUỶ (Hung)", "CẤN": "LỤC SÁT (Hung)", "KHÔN": "HỌA HẠI (Tiểu Hung)" },
+        "TỐN": { "KHẢM": "SINH KHÍ (Đại Cát)", "LY": "THIÊN Y (Thượng Cát)", "CHẤN": "DIÊN NIÊN (Trung Cát)", "TỐN": "PHỤC VỊ (Tiểu Cát)", "CẤN": "TUYỆT MỆNH (Đại Hung)", "KHÔN": "NGŨ QUỶ (Hung)", "ĐOÀI": "LỤC SÁT (Hung)", "CÀN": "HỌA HẠI (Tiểu Hung)" },
+        "CÀN": { "ĐOÀI": "SINH KHÍ (Đại Cát)", "CẤN": "THIÊN Y (Thượng Cát)", "KHÔN": "DIÊN NIÊN (Trung Cát)", "CÀN": "PHỤC VỊ (Tiểu Cát)", "LY": "TUYỆT MỆNH (Đại Hung)", "CHẤN": "NGŨ QUỶ (Hung)", "KHẢM": "LỤC SÁT (Hung)", "TỐN": "HỌA HẠI (Tiểu Hung)" },
+        "KHÔN": { "CẤN": "SINH KHÍ (Đại Cát)", "ĐOÀI": "THIÊN Y (Thượng Cát)", "CÀN": "DIÊN NIÊN (Trung Cát)", "KHÔN": "PHỤC VỊ (Tiểu Cát)", "KHẢM": "TUYỆT MỆNH (Đại Hung)", "TỐN": "NGŨ QUỶ (Hung)", "LY": "LỤC SÁT (Hung)", "CHẤN": "HỌA HẠI (Tiểu Hung)" },
+        "CẤN": { "KHÔN": "SINH KHÍ (Đại Cát)", "CÀN": "THIÊN Y (Thượng Cát)", "ĐOÀI": "DIÊN NIÊN (Trung Cát)", "CẤN": "PHỤC VỊ (Tiểu Cát)", "TỐN": "TUYỆT MỆNH (Đại Hung)", "KHẢM": "NGŨ QUỶ (Hung)", "CHẤN": "LỤC SÁT (Hung)", "LY": "HỌA HẠI (Tiểu Hung)" },
+        "ĐOÀI": { "CÀN": "SINH KHÍ (Đại Cát)", "KHÔN": "THIÊN Y (Thượng Cát)", "CẤN": "DIÊN NIÊN (Trung Cát)", "ĐOÀI": "PHỤC VỊ (Tiểu Cát)", "CHẤN": "TUYỆT MỆNH (Đại Hung)", "LY": "NGŨ QUỶ (Hung)", "TỐN": "LỤC SÁT (Hung)", "KHẢM": "HỌA HẠI (Tiểu Hung)" }
+      };
+
+      const info = kuaMap[kua];
+      return { kua, ...info, duNienMatrix: duNienMatrix[info.name] };
+    }
+
+    // =========================================================================
+    // 3. ENGINE VẼ VECTOR AUTOCAD 12 TẦNG (`renderLaKinhCAD`)
+    // =========================================================================
+    function drawTextAtPolar(text, radius, deg, fontSize, color, fontWeight = "600", radialAlign = false) {
+      const rad = degToCanvasRad(deg);
+      const x = Math.cos(rad) * radius;
+      const y = Math.sin(rad) * radius;
+      ctx.save();
+      ctx.translate(x, y);
+      if (radialAlign) {
+        ctx.rotate(rad);
+      } else {
+        ctx.rotate(rad + Math.PI / 2);
+      }
+      ctx.fillStyle = color;
+      ctx.font = `${fontWeight} ${fontSize}px 'JetBrains Mono', 'Inter', sans-serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(text, 0, 0);
+      ctx.restore();
+    }
+
+    function drawTrigramSymbol(trigramBits, radius, deg, size, color) {
+      const rad = degToCanvasRad(deg);
+      const x = Math.cos(rad) * radius;
+      const y = Math.sin(rad) * radius;
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rad + Math.PI / 2);
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1.6;
+      for (let i = 0; i < 3; i++) {
+        const ly = (i - 1) * (size * 0.42);
+        if (trigramBits[i] === 1) {
+          ctx.beginPath();
+          ctx.moveTo(-size * 0.55, ly);
+          ctx.lineTo(size * 0.55, ly);
+          ctx.stroke();
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(-size * 0.55, ly);
+          ctx.lineTo(-size * 0.12, ly);
+          ctx.moveTo(size * 0.12, ly);
+          ctx.lineTo(size * 0.55, ly);
+          ctx.stroke();
+        }
+      }
+      ctx.restore();
+    }
+
+    function drawHexagram6Symbol(hexIdx, radius, deg, size, color) {
+      const rad = degToCanvasRad(deg);
+      const x = Math.cos(rad) * radius;
+      const y = Math.sin(rad) * radius;
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rad + Math.PI / 2);
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1.15;
+      for (let b = 0; b < 6; b++) {
+        const bit = (hexIdx >> b) & 1;
+        const ly = (b - 2.5) * (size * 0.22);
+        if (bit === 1) {
+          ctx.beginPath();
+          ctx.moveTo(-size * 0.45, ly);
+          ctx.lineTo(size * 0.45, ly);
+          ctx.stroke();
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(-size * 0.45, ly);
+          ctx.lineTo(-size * 0.1, ly);
+          ctx.moveTo(size * 0.1, ly);
+          ctx.lineTo(size * 0.45, ly);
+          ctx.stroke();
+        }
+      }
+      ctx.restore();
+    }
+
+    function renderLaKinhCAD() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      if (canvas.width !== Math.floor(rect.width * dpr) || canvas.height !== Math.floor(rect.height * dpr)) {
+        canvas.width = Math.floor(rect.width * dpr);
+        canvas.height = Math.floor(rect.height * dpr);
+      }
+
+      ctx.save();
+      ctx.scale(dpr, dpr);
+      const W = rect.width;
+      const H = rect.height;
+
+      // Clear AutoCAD Model Space background
+      ctx.fillStyle = "#0b0e14";
+      ctx.fillRect(0, 0, W, H);
+
+      // Vẽ lưới tọa độ AutoCAD rất nhẹ ở nền
+      ctx.strokeStyle = "rgba(46, 55, 77, 0.25)";
+      ctx.lineWidth = 1;
+      const gridStep = 48;
+      for (let gx = 0; gx < W; gx += gridStep) {
+        ctx.beginPath();
+        ctx.moveTo(gx, 0);
+        ctx.lineTo(gx, H);
+        ctx.stroke();
+      }
+      for (let gy = 0; gy < H; gy += gridStep) {
+        ctx.beginPath();
+        ctx.moveTo(0, gy);
+        ctx.lineTo(W, gy);
+        ctx.stroke();
+      }
+
+      // Translate tới tâm La Kinh + Pan & Zoom
+      const cx = W / 2 + state.panX;
+      const cy = H / 2 + state.panY;
+      const baseR = Math.min(W, H) * 0.45;
+      ctx.translate(cx, cy);
+      ctx.scale(state.zoom, state.zoom);
+
+      // Bán kính chuẩn của 12 Tầng Đồng Tâm (Tỉ lệ chuẩn với baseR = 500)
+      const scaleFactor = baseR / 500;
+      ctx.scale(scaleFactor, scaleFactor);
+
+      const R = {
+        r0: 36,   // Tâm Thiên Trì
+        r1: 76,   // Tầng 1: Bát Quái Tiên/Hậu Thiên
+        r2: 118,  // Tầng 2: Địa Bàn Chính Châm 24 Sơn & Tam Nguyên Long
+        r3: 146,  // Tầng 3: Độ số ranh giới & Bát Sát / Hoàng Tuyền
+        r4: 176,  // Tầng 4: 12 Trường Sinh & 24 Thần Sát
+        r5: 256,  // Tầng 5: Bảng Tra Năm Sinh 1924-2026 & Bát Trạch Du Niên (Tầng lớn có vành xanh/vàng)
+        r6: 294,  // Tầng 6: 120 Phân Kim & Ô Trắng/Đen Vượng Tướng Cô Hư
+        r7: 326,  // Tầng 7: Nhân Bàn Trung Châm (-7.5°) & 28 Sao Nhị Thập Bát Tú
+        r8: 364,  // Tầng 8: Thiên Bàn Phùng Châm (+7.5°) & 24 Tiết Khí (Viền vàng đậm)
+        r9: 398,  // Tầng 9: Lời đoán Cát Hung Ứng Nghiệm Thực Chiến
+        r10: 444, // Tầng 10: Bàn Sao Huyền Không Phi Tinh (Ma trận 9 số)
+        r11: 478, // Tầng 11: 64 Quẻ Dịch Huyền Không Đại Quái (6 hào + tên quẻ)
+        r12: 500  // Tầng 12: Vòng 360 Độ Chuẩn & Viền Vàng Ngoài Cùng
+      };
+
+      // 1. Vẽ các vòng tròn đồng tâm phân tầng
+      const allRadii = [R.r0, R.r1, R.r2, R.r3, R.r4, R.r5, R.r6, R.r7, R.r8, R.r9, R.r10, R.r11, R.r12];
+      allRadii.forEach((rad) => {
+        ctx.beginPath();
+        ctx.arc(0, 0, rad, 0, Math.PI * 2);
+        if (rad === R.r5 || rad === R.r8 || rad === R.r9 || rad === R.r12) {
+          ctx.strokeStyle = "#ffe600"; // Đường viền Vàng đậm đặc trưng của bản vẽ LAKINH CHINH 4.dwg
+          ctx.lineWidth = rad === R.r12 ? 3.5 : 2.6;
+        } else {
+          ctx.strokeStyle = "#94a3b8";
+          ctx.lineWidth = 0.9;
+        }
+        ctx.stroke();
+      });
+
+      // Vẽ cung màu Xanh Dương (#2563eb) đặc trưng ở khu vực Khảm Thủy (Bắc: 337.5° -> 22.5°) giống ảnh CAD
+      [R.r1, R.r5, R.r6].forEach((rad) => {
+        ctx.beginPath();
+        ctx.arc(0, 0, rad, degToCanvasRad(337.5), degToCanvasRad(22.5));
+        ctx.strokeStyle = "#3b82f6";
+        ctx.lineWidth = 3.2;
+        ctx.stroke();
+      });
+
+      // 2. Vẽ vạch chia 8 Quái (mỗi 45°) từ r0 -> r5
+      BAGUA_8.forEach((bg) => {
+        const radStart = degToCanvasRad(bg.startDeg);
+        ctx.beginPath();
+        ctx.moveTo(Math.cos(radStart) * R.r0, Math.sin(radStart) * R.r0);
+        ctx.lineTo(Math.cos(radStart) * R.r10, Math.sin(radStart) * R.r10);
+        ctx.strokeStyle = "#ffe600";
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+
+        // Tầng 1: Tên Quái Hậu Thiên, Tiên Thiên, Số Lạc Thư & Quẻ 3 Hào
+        drawTextAtPolar(`${bg.name} ${bg.num}`, (R.r0 + R.r1) * 0.47, bg.centerDeg, 8.5, "#f8fafc", "700");
+        drawTrigramSymbol(bg.trigram, (R.r0 + R.r1) * 0.62, bg.centerDeg, 10, "#ffe600");
+        drawTextAtPolar(`${bg.dir} • ${bg.elem}`, R.r1 + 8, bg.centerDeg, 6.8, bg.color, "700");
+        drawTextAtPolar(bg.batSat, R.r2 + 7, bg.centerDeg, 6.2, "#cbd5e1", "600");
+      });
+
+      // 3. Vẽ 24 Sơn Hướng (Tầng 2, 3, 4, 5, 9, 10)
+      MOUNTAINS_24.forEach((m, idx) => {
+        const aStart = degToCanvasRad(m.start);
+        ctx.beginPath();
+        ctx.moveTo(Math.cos(aStart) * R.r1, Math.sin(aStart) * R.r1);
+        ctx.lineTo(Math.cos(aStart) * R.r7, Math.sin(aStart) * R.r7);
+        ctx.strokeStyle = "rgba(203, 213, 225, 0.55)";
+        ctx.lineWidth = 0.85;
+        ctx.stroke();
+
+        // Tầng 2: Tam Nguyên Long (ĐỊA / THIÊN / NHÂN) + Tên Sơn Lớn
+        const dotSymbol = m.amDuong.startsWith("Dương") ? "○" : "●";
+        drawTextAtPolar(`${dotSymbol} ${m.nguyenLong}`, R.r1 + 18, m.center, 6.2, "#94a3b8", "600");
+        drawTextAtPolar(m.name, R.r1 + 31, m.center, 11.5, "#ffffff", "800");
+
+        // Tầng 3: Độ số ranh giới (337.5, 352.5, 7.5...) & Cửu Tinh
+        drawTextAtPolar(String(m.start), R.r2 + 18, m.start, 6.2, "#cbd5e1", "600");
+        drawTextAtPolar(m.cuuTinh.toUpperCase(), R.r2 + 20, m.center, 5.8, "#94a3b8", "600");
+
+        // Tầng 4: 12 Trường Sinh & 24 Thần Sát
+        drawTextAtPolar(m.thanSat, R.r3 + 10, m.center, 5.4, "#cbd5e1", "500");
+        drawTextAtPolar(m.truongSinh, R.r3 + 22, m.center, 6.8, "#ffe600", "700");
+
+        // Tầng 5: Bảng Tra Năm Sinh (1924-2026) & Du Niên Bát Trạch (Chia 5 cột nhỏ mỗi sơn như ảnh CAD)
+        const bData = BIRTH_YEARS_BY_SON[idx];
+        if (bData) {
+          bData.years.forEach((yrStr, yIdx) => {
+            const subDeg = m.start + 1.5 + yIdx * 3.0;
+            const subLineRad = degToCanvasRad(m.start + yIdx * 3.0);
+            ctx.beginPath();
+            ctx.moveTo(Math.cos(subLineRad) * R.r4, Math.sin(subLineRad) * R.r4);
+            ctx.lineTo(Math.cos(subLineRad) * R.r6, Math.sin(subLineRad) * R.r6);
+            ctx.strokeStyle = "rgba(148, 163, 184, 0.3)";
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+
+            const [yrNum, ...canChiParts] = yrStr.split(" ");
+            const canChi = canChiParts.join(" ");
+            const yrColor = yIdx % 3 === 0 ? "#22c55e" : yIdx % 3 === 1 ? "#ef4444" : "#f8fafc";
+            drawTextAtPolar(yrNum, R.r4 + 12, subDeg, 5.6, "#f8fafc", "700");
+            drawTextAtPolar(canChi.toUpperCase(), R.r4 + 26, subDeg, 5.3, yrColor, "700");
+          });
+          drawTextAtPolar(`NAM: ${bData.namQuai} • NỮ: ${bData.nuQuai}`, R.r4 + 46, m.center, 5.2, "#cbd5e1", "600");
+          drawTextAtPolar(bData.duNien, R.r4 + 60, m.center, 5.6, "#38bdf8", "700");
+          drawTextAtPolar(`${BAGUA_8[m.quaiIdx].dir} • ${BAGUA_8[m.quaiIdx].name}`, R.r4 + 73, m.center, 6.2, "#ffe600", "700");
+        }
+
+        // Tầng 6: 120 Phân Kim & Ô Trắng/Đen Vượng Tướng Cô Hư (Giống ảnh CAD có các ô tô trắng đặc)
+        for (let pk = 0; pk < 5; pk++) {
+          const pkStart = m.start + pk * 3.0;
+          const pkEnd = pkStart + 3.0;
+          const pkMid = pkStart + 1.5;
+          const pkInfo = getPhanKimByDeg(pkMid);
+
+          // Tô ô trắng đặc cho các phân kim Vượng/Tướng đắc cách như trong ảnh AutoCAD
+          if (pkInfo.isVuongTuong && (idx + pk) % 2 === 0) {
+            ctx.beginPath();
+            ctx.arc(0, 0, R.r5 + 14, degToCanvasRad(pkStart), degToCanvasRad(pkEnd));
+            ctx.arc(0, 0, R.r5 + 2, degToCanvasRad(pkEnd), degToCanvasRad(pkStart), true);
+            ctx.closePath();
+            ctx.fillStyle = "rgba(248, 250, 252, 0.88)";
+            ctx.fill();
+            drawTextAtPolar(pkInfo.napAm, R.r5 + 8, pkMid, 4.8, "#0b0e14", "800");
+          } else {
+            drawTextAtPolar(pkInfo.napAm, R.r5 + 8, pkMid, 4.8, "#cbd5e1", "600");
+          }
+          drawTextAtPolar(pkInfo.code, R.r5 + 25, pkMid, 4.7, "#e2e8f0", "600");
+        }
+
+        // Tầng 7: Nhân Bàn Trung Châm (-7.5°)
+        const nhanStart = degToCanvasRad(m.start - 7.5);
+        ctx.beginPath();
+        ctx.moveTo(Math.cos(nhanStart) * R.r6, Math.sin(nhanStart) * R.r6);
+        ctx.lineTo(Math.cos(nhanStart) * R.r7, Math.sin(nhanStart) * R.r7);
+        ctx.strokeStyle = "rgba(203, 213, 225, 0.5)";
+        ctx.lineWidth = 0.7;
+        ctx.stroke();
+        drawTextAtPolar(m.name, R.r6 + 11, m.center - 7.5, 8.2, "#e2e8f0", "700");
+
+        // Tầng 8: Thiên Bàn Phùng Châm (+7.5°) & 24 Tiết Khí (Giữa 2 đường chỉ vàng)
+        const thienStart = degToCanvasRad(m.start + 7.5);
+        ctx.beginPath();
+        ctx.moveTo(Math.cos(thienStart) * R.r7, Math.sin(thienStart) * R.r7);
+        ctx.lineTo(Math.cos(thienStart) * R.r9, Math.sin(thienStart) * R.r9);
+        ctx.strokeStyle = "#cbd5e1";
+        ctx.lineWidth = 0.85;
+        ctx.stroke();
+        drawTextAtPolar(m.name, R.r7 + 13, m.center + 7.5, 9.0, "#ffe600", "800");
+        drawTextAtPolar(`${m.tietKhi} • TR.KHÍ`, R.r7 + 28, m.center + 7.5, 5.6, "#cbd5e1", "600");
+
+        // Tầng 9: Lời Đoán Ứng Nghiệm Thực Chiến
+        drawTextAtPolar(m.omen.toUpperCase(), (R.r8 + R.r9) * 0.5, m.center, 5.5, "#e2e8f0", "600");
+
+        // Tầng 10: Bàn Sao Huyền Không Phi Tinh (Ma trận 3 hàng số 881 / 979 / 435 như ảnh CAD)
+        const fsLine = degToCanvasRad(m.start);
+        ctx.beginPath();
+        ctx.moveTo(Math.cos(fsLine) * R.r9, Math.sin(fsLine) * R.r9);
+        ctx.lineTo(Math.cos(fsLine) * R.r10, Math.sin(fsLine) * R.r10);
+        ctx.strokeStyle = "rgba(203, 213, 225, 0.55)";
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+
+        [-4.2, 4.2].forEach((offsetDeg) => {
+          m.flyingStars.forEach((rowStr, rIdx) => {
+            const rPos = R.r9 + 12 + rIdx * 11;
+            drawTextAtPolar(rowStr, rPos, m.center + offsetDeg, 6.8, "#f8fafc", "700");
+          });
+        });
+      });
+
+      // 4. Vẽ 28 Sao Nhị Thập Bát Tú ở vành ngoài Tầng 7
+      STARS_28.forEach((starName, sIdx) => {
+        const sDeg = (sIdx / 28) * 360;
+        drawTextAtPolar(starName, R.r6 + 24, sDeg + 6.4, 5.8, "#38bdf8", "700");
+      });
+
+      // 5. Vẽ Tầng 11: 64 Quẻ Dịch Huyền Không Đại Quái (6 hào + Quái vận + Tên quẻ)
+      for (let h = 0; h < 64; h++) {
+        const hStart = (h / 64) * 360;
+        const hMid = hStart + 360 / 128;
+        const hRad = degToCanvasRad(hStart);
+        ctx.beginPath();
+        ctx.moveTo(Math.cos(hRad) * R.r10, Math.sin(hRad) * R.r10);
+        ctx.lineTo(Math.cos(hRad) * R.r11, Math.sin(hRad) * R.r11);
+        ctx.strokeStyle = "rgba(148, 163, 184, 0.45)";
+        ctx.lineWidth = 0.6;
+        ctx.stroke();
+
+        const hex = HEXAGRAMS_64[h];
+        drawHexagram6Symbol(h, R.r10 + 13, hMid, 11, "#f8fafc");
+        drawTextAtPolar(`${hex.code} ${hex.name}`, R.r10 + 27, hMid, 5.2, "#e2e8f0", "700");
+      }
+
+      // 6. Vẽ Tầng 12: Vòng 360 Độ Chuẩn & Vạch Chia Từng Độ (0°..360°)
+      for (let d = 0; d < 360; d++) {
+        const dRad = degToCanvasRad(d);
+        const isMajor5 = d % 5 === 0;
+        const innerTick = isMajor5 ? R.r11 : R.r12 - 7;
+        ctx.beginPath();
+        ctx.moveTo(Math.cos(dRad) * innerTick, Math.sin(dRad) * innerTick);
+        ctx.lineTo(Math.cos(dRad) * R.r12, Math.sin(dRad) * R.r12);
+        ctx.strokeStyle = isMajor5 ? "#ffe600" : "rgba(203, 213, 225, 0.55)";
+        ctx.lineWidth = isMajor5 ? 1.1 : 0.5;
+        ctx.stroke();
+
+        if (isMajor5) {
+          drawTextAtPolar(String(d), (R.r11 + R.r12) * 0.5, d + 1.4, 7.2, "#f8fafc", "700");
+        }
+      }
+
+      // 7. Vẽ Tâm Thiên Trì & Sợi Dây Chữ Thập Đỏ (Thiên Tâm Thập Đạo + Con Trỏ AutoCAD)
+      ctx.beginPath();
+      ctx.arc(0, 0, R.r0, 0, Math.PI * 2);
+      ctx.fillStyle = "#0f172a";
+      ctx.fill();
+      ctx.strokeStyle = "#ffe600";
+      ctx.lineWidth = 1.8;
+      ctx.stroke();
+
+      // Kim nam châm Thiên Trì
+      const northRad = degToCanvasRad(0);
+      ctx.save();
+      ctx.rotate(northRad + Math.PI / 2);
+      ctx.beginPath();
+      ctx.moveTo(0, -R.r0 * 0.82);
+      ctx.lineTo(5, 0);
+      ctx.lineTo(-5, 0);
+      ctx.closePath();
+      ctx.fillStyle = "#ef4444";
+      ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(0, R.r0 * 0.82);
+      ctx.lineTo(5, 0);
+      ctx.lineTo(-5, 0);
+      ctx.closePath();
+      ctx.fillStyle = "#38bdf8";
+      ctx.fill();
+      ctx.restore();
+
+      // Dây chữ thập Thiên Tâm Thập Đạo (cắt qua 12 tầng tại vị trí 12 giờ = Độ hướng đang chọn)
+      ctx.strokeStyle = "rgba(239, 68, 68, 0.9)";
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.moveTo(0, -R.r12 - 18);
+      ctx.lineTo(0, R.r12 + 18);
+      ctx.moveTo(-R.r12 - 18, 0);
+      ctx.lineTo(R.r12 + 18, 0);
+      ctx.stroke();
+
+      // Mũi tên tam giác chỉ độ ở đỉnh 12 giờ
+      ctx.beginPath();
+      ctx.moveTo(0, -R.r12 - 2);
+      ctx.lineTo(-8, -R.r12 - 16);
+      ctx.lineTo(8, -R.r12 - 16);
+      ctx.closePath();
+      ctx.fillStyle = "#ffe600";
+      ctx.fill();
+
+      ctx.restore();
+    }
+
+    // =========================================================================
+    // 4. BỘ GIẢI MÃ 12 TẦNG THỜI GIAN THỰC (`updateDecoderPanel`)
+    // =========================================================================
+    function checkKhongVong(deg) {
+      const d = normalizeDeg(deg);
+      // Ranh giới 8 Quái (Đại Không Vong: mỗi 45° từ 22.5°)
+      for (let i = 0; i < 8; i++) {
+        const boundary = 22.5 + i * 45;
+        let diff = Math.abs(d - boundary);
+        if (diff > 180) diff = 360 - diff;
+        if (diff <= 1.5) {
+          return {
+            isDanger: true,
+            text: `⚠️ CẢNH BÁO ĐẠI KHÔNG VONG (${boundary}° ± 1.5°): Tuyến độ nằm ngay vạch giao 2 Quái lớn! Tuyệt đối tránh lập hướng nhà/mộ tại độ này vì khí tạp loạn, dễ hao tài tổn đinh.`
+          };
+        }
+      }
+      // Ranh giới 24 Sơn (Tiểu Không Vong: mỗi 15° từ 7.5°)
+      for (let i = 0; i < 24; i++) {
+        const boundary = (7.5 + i * 15) % 360;
+        let diff = Math.abs(d - boundary);
+        if (diff > 180) diff = 360 - diff;
+        if (diff <= 1.0) {
+          return {
+            isDanger: true,
+            text: `⚠️ CẢNH BÁO TIỂU KHÔNG VONG (${boundary}° ± 1.0°): Tuyến độ nằm sát vạch ranh giới giữa 2 Sơn! Khí bất thuần, cần xoay lệch vào tâm sơn hoặc dùng pháp Kiêm hướng đúng Tam Nguyên.`
+          };
+        }
+      }
+      return {
+        isDanger: false,
+        text: "✅ ĐẮC CHÍNH TUYẾN CÁT ĐỘ: Độ số nằm trọn trong chính tâm Sơn, thu trọn thiên khí thuần khiết, không phạm Đại/Tiểu Không Vong."
+      };
+    }
+
+    window.updateDecoderPanel = function () {
+      const deg = normalizeDeg(state.compassDeg);
+      const sitDeg = normalizeDeg(deg + 180);
+
+      const facingM = getMountainByDeg(deg);
+      const sittingM = getMountainByDeg(sitDeg);
+      const facingBagua = BAGUA_8[facingM.quaiIdx];
+      const sittingBagua = BAGUA_8[sittingM.quaiIdx];
+      const phanKim = getPhanKimByDeg(deg);
+      const star28 = getStar28ByDeg(deg);
+      const hex64 = getHexagram64ByDeg(deg);
+      const bData = BIRTH_YEARS_BY_SON[facingM.idx];
+
+      const ownerYear = parseInt(document.getElementById("inp-owner-year").value, 10) || 1995;
+      const ownerGender = document.getElementById("inp-owner-gender").value || "Nam";
+      const period = document.getElementById("inp-period-select").value || "9";
+      const ownerBT = calculateOwnerBattrach(ownerYear, ownerGender);
+
+      const badgeEl = document.getElementById("owner-quai-badge");
+      if (badgeEl) {
+        badgeEl.textContent = `Cung ${ownerBT.name} (${ownerBT.elem} • ${ownerBT.group})`;
+      }
+
+      document.getElementById("dec-degree-num").textContent = `${deg.toFixed(1)}°`;
+      document.getElementById("dec-son-huong").textContent = `Tọa ${sittingM.name} (${sitDeg.toFixed(1)}°) • Hướng ${facingM.name} (${deg.toFixed(1)}°)`;
+      document.getElementById("dec-quai-summary").innerHTML =
+        `Phương <strong>${facingBagua.dir}</strong> • Quái <strong>${facingBagua.name} (${facingBagua.elem})</strong> • <strong>${facingM.nguyenLong} Nguyên Long</strong> (${facingM.amDuong})`;
+
+      const kv = checkKhongVong(deg);
+      const kvEl = document.getElementById("dec-khong-vong");
+      kvEl.className = `khong-vong-alert ${kv.isDanger ? "kv-danger" : "kv-safe"}`;
+      kvEl.textContent = kv.text;
+
+      const duNienWithOwner = ownerBT.duNienMatrix[facingBagua.name] || "Bình Hòa";
+      const isGoodDuNien = duNienWithOwner.includes("Cát");
+
+      const container = document.getElementById("decoder-12-layers");
+      container.innerHTML = `
+        <div class="layer-item">
+          <div class="layer-head"><span class="layer-num">TẦNG 1 • BÁT QUÁI TIÊN / HẬU THIÊN</span><span>Quái số ${facingBagua.num}</span></div>
+          <div class="layer-val">Hậu Thiên: ${facingBagua.name} (${facingBagua.elem}) • Tiên Thiên: ${facingBagua.tiênThiên}</div>
+          <div class="layer-sub">Tọa nhà thuộc quái ${sittingBagua.name} (${sittingBagua.dir}) — Hướng nhà thuộc quái ${facingBagua.name} (${facingBagua.dir}).</div>
+        </div>
+
+        <div class="layer-item blue">
+          <div class="layer-head"><span class="layer-num">TẦNG 2 & 3 • ĐỊA BÀN CHÍNH CHÂM 24 SƠN</span><span>${facingM.start}° – ${facingM.end}°</span></div>
+          <div class="layer-val">Sơn ${facingM.name} • ${facingM.nguyenLong} Nguyên Long (${facingM.amDuong}) • Sao ${facingM.cuuTinh}</div>
+          <div class="layer-sub">Khẩu quyết Bát Sát / Hoàng Tuyền tại cung này: <strong>${facingBagua.batSat}</strong> (Tránh đặt bể phốt/cổng xung sát tại chi này).</div>
+        </div>
+
+        <div class="layer-item">
+          <div class="layer-head"><span class="layer-num">TẦNG 4 • 12 TRƯỜNG SINH & 24 THẦN SÁT</span><span>Thủy Pháp Tam Hợp</span></div>
+          <div class="layer-val">Trường Sinh Thủy Pháp: ${facingM.truongSinh} • Thần Sát: ${facingM.thanSat}</div>
+          <div class="layer-sub">Dùng để đo phương vị nước đến (Minh đường lai thủy) và nước đi (Khứ thủy khẩu).</div>
+        </div>
+
+        <div class="layer-item ${isGoodDuNien ? "green" : "red"}">
+          <div class="layer-head"><span class="layer-num">TẦNG 5 • ĐỐI CHIẾU TUỔI GIA CHỦ (${ownerYear} - ${ownerGender})</span><span>Bát Trạch Minh Cảnh</span></div>
+          <div class="layer-val">Gia chủ cung ${ownerBT.name} gặp hướng ${facingBagua.name}: <span style="color:${isGoodDuNien ? "#4ade80" : "#f87171"}">${duNienWithOwner}</span></div>
+          <div class="layer-sub">4 hướng hợp tuổi gia chủ ${ownerYear}: ${ownerBT.good.join(" • ")}. Các năm tiêu biểu ghi trên Tầng 5 sơn ${facingM.name}: ${bData ? bData.years.join(", ") : ""}.</div>
+        </div>
+
+        <div class="layer-item ${phanKim.isVuongTuong ? "green" : "red"}">
+          <div class="layer-head"><span class="layer-num">TẦNG 6 • 120 PHÂN KIM & NGŨ HÀNH NẠP ÂM</span><span>Vạch 3° / Phân Kim</span></div>
+          <div class="layer-val">Phân Kim: ${phanKim.code} (Hành ${phanKim.napAm}) — ${phanKim.statusText}</div>
+          <div class="layer-sub">Trong bản vẽ CAD, các ô phân kim Bính/Đinh/Canh/Tân được tô sáng vì đắc khí Vượng – Tướng.</div>
+        </div>
+
+        <div class="layer-item blue">
+          <div class="layer-head"><span class="layer-num">TẦNG 7 • NHÂN BÀN TRUNG CHÂM (-7.5°) & 28 TÚ</span><span>Tiêu Sa (Đo Núi / Nhà Cao)</span></div>
+          <div class="layer-val">Sơn Nhân Bàn: ${facingM.nhanBan} • Chòm sao Nhị Thập Bát Tú: Sao ${star28}</div>
+          <div class="layer-sub">Dùng để đo các vật thể cao lớn xung quanh nhà (tòa nhà cao tầng, đỉnh núi, tháp, cột trụ).</div>
+        </div>
+
+        <div class="layer-item">
+          <div class="layer-head"><span class="layer-num">TẦNG 8 • THIÊN BÀN PHÙNG CHÂM (+7.5°) & 24 TIẾT KHÍ</span><span>Nạp Thủy (Đo Nước / Cổng)</span></div>
+          <div class="layer-val">Sơn Thiên Bàn: ${facingM.thienBan} • Tiết Khí: ${facingM.tietKhi} (Trực Khí)</div>
+          <div class="layer-sub">Vòng kẻ chỉ vàng đậm trên bản vẽ CAD: chuyên dùng để đo ngã ba đường, dòng sông, cổng và hồ nước.</div>
+        </div>
+
+        <div class="layer-item green">
+          <div class="layer-head"><span class="layer-num">TẦNG 9 • ĐOÁN ỨNG NGHIỆM THỰC CHIẾN</span><span>Cát Hung Phân Độ</span></div>
+          <div class="layer-val">${facingM.omen}</div>
+        </div>
+
+        <div class="layer-item">
+          <div class="layer-head"><span class="layer-num">TẦNG 10 • BÀN SAO HUYỀN KHÔNG PHI TINH (VẬN ${period})</span><span>Tọa ${sittingM.name} Hướng ${facingM.name}</span></div>
+          <div class="layer-val">Cụm Tinh Bàn Ghi Trên Bản Vẽ CAD: [ ${facingM.flyingStars.join(" | ")} ]</div>
+          <div class="layer-sub">Đương vận Đại Tiểu Thần Không Vận ${period}: Sao Cửu Tử (#9 - Hỏa) là Đương Vận Vượng Tinh, Sao Nhất Bạch (#1) và Nhị Hắc (#2) là Sinh Khí Tương Lai.</div>
+        </div>
+
+        <div class="layer-item blue">
+          <div class="layer-head"><span class="layer-num">TẦNG 11 & 12 • 64 QUẺ DỊCH HUYỀN KHÔNG ĐẠI QUÁI</span><span>Mỗi Quẻ 5.625°</span></div>
+          <div class="layer-val">Quẻ Dịch tại ${deg.toFixed(1)}°: Quẻ số ${hex64.code} — ${hex64.name} (Thứ tự ${hex64.index + 1}/64)</div>
+          <div class="layer-sub">Dùng để phối hợp Tọa – Hướng – Cổng – Bếp theo nguyên lý Nhất Quái Thuần Thanh hoặc Hợp Thập Đại Quái.</div>
+        </div>
+      `;
+
+      // Highlight quick son chip
+      document.querySelectorAll(".son-chip").forEach((el) => {
+        el.classList.toggle("active", el.dataset.son === facingM.name);
+      });
+    };
+
+    // =========================================================================
+    // 5. SỰ KIỆN TƯƠNG TÁC CHUỘT, PHÍM, CHỌN SƠN NHANH & XUẤT FILE AUTOCAD DXF
+    // =========================================================================
+    function initQuickSonChips() {
+      const grid = document.getElementById("quick-son-grid");
+      if (!grid) return;
+      grid.innerHTML = "";
+      MOUNTAINS_24.forEach((m) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "son-chip";
+        btn.dataset.son = m.name;
+        btn.textContent = m.name;
+        btn.title = `Xoay tới Sơn ${m.name} (${m.center}°)`;
+        btn.onclick = () => {
+          window.setCompassDegree(m.center);
+        };
+        grid.appendChild(btn);
+      });
+    }
+
+    window.setCompassDegree = function (val) {
+      const num = parseFloat(val);
+      if (isNaN(num)) return;
+      state.compassDeg = normalizeDeg(num);
+      const inp = document.getElementById("inp-compass-deg");
+      if (inp && document.activeElement !== inp) {
+        inp.value = state.compassDeg.toFixed(1);
+      }
+      renderLaKinhCAD();
+      window.updateDecoderPanel();
+    };
+
+    window.stepCompassDegree = function (delta) {
+      window.setCompassDegree(state.compassDeg + delta);
+      const inp = document.getElementById("inp-compass-deg");
+      if (inp) inp.value = state.compassDeg.toFixed(1);
+    };
+
+    window.zoomLaKinh = function (factor) {
+      state.zoom = Math.max(0.65, Math.min(8.5, state.zoom * factor));
+      renderLaKinhCAD();
+    };
+
+    window.resetLaKinhView = function () {
+      state.zoom = 1.05;
+      state.panX = 0;
+      state.panY = 0;
+      renderLaKinhCAD();
+    };
+
+    // Góc nhìn cận cảnh khu vực Tây Bắc - Bắc (Càn - Hợi - Nhâm - Tý - Tuất - Tân: 275°..360°) giống hệt bức ảnh chụp AutoCAD
+    window.focusBinhChuongView = function () {
+      state.compassDeg = 225.0;
+      state.zoom = 2.15;
+      state.panX = -135;
+      state.panY = -110;
+      const inp = document.getElementById("inp-compass-deg");
+      if (inp) inp.value = "315.0";
+      state.compassDeg = 315.0;
+      state.panX = 110;
+      state.panY = 185;
+      renderLaKinhCAD();
+      window.updateDecoderPanel();
+    };
+
+    window.switchSidebarTab = function (tab) {
+      const isDec = tab === "decoder";
+      document.getElementById("tab-btn-decoder").classList.toggle("active", isDec);
+      document.getElementById("tab-btn-guide").classList.toggle("active", !isDec);
+      document.getElementById("tab-content-decoder").style.display = isDec ? "flex" : "none";
+      document.getElementById("tab-content-guide").style.display = isDec ? "none" : "flex";
+    };
+
+    // Xuất file bản vẽ kỹ thuật AutoCAD (.DXF chuẩn R12/2000 mở trực tiếp trong Autodesk AutoCAD)
+    window.exportAutoCADDXF = function () {
+      const lines = [
+        "0", "SECTION", "2", "HEADER", "0", "ENDSEC",
+        "0", "SECTION", "2", "ENTITIES"
+      ];
+
+      const addCircle = (r, colorCode) => {
+        lines.push("0", "CIRCLE", "8", "0-1-lakinh", "62", String(colorCode), "10", "0.0", "20", "0.0", "30", "0.0", "40", r.toFixed(2));
+      };
+      const addLine = (x1, y1, x2, y2, colorCode) => {
+        lines.push("0", "LINE", "8", "0-1-lakinh", "62", String(colorCode), "10", x1.toFixed(2), "20", y1.toFixed(2), "30", "0.0", "11", x2.toFixed(2), "21", y2.toFixed(2), "31", "0.0");
+      };
+      const addText = (txt, x, y, height, angleDeg, colorCode) => {
+        lines.push("0", "TEXT", "8", "0-1-lakinh", "62", String(colorCode), "10", x.toFixed(2), "20", y.toFixed(2), "30", "0.0", "40", height.toFixed(2), "1", txt, "50", angleDeg.toFixed(2));
+      };
+
+      const radii = [36, 76, 118, 146, 176, 256, 294, 326, 364, 398, 444, 478, 500];
+      radii.forEach((r) => addCircle(r, (r === 256 || r === 364 || r === 500) ? 2 : 7)); // 2 = Yellow, 7 = White
+
+      // 24 Sơn & vạch chia
+      MOUNTAINS_24.forEach((m) => {
+        const radStart = ((90 - m.start) * Math.PI) / 180;
+        addLine(Math.cos(radStart) * 76, Math.sin(radStart) * 76, Math.cos(radStart) * 444, Math.sin(radStart) * 444, 7);
+
+        const radMid = ((90 - m.center) * Math.PI) / 180;
+        addText(m.name, Math.cos(radMid) * 98, Math.sin(radMid) * 98, 8.5, -m.center, 2);
+        addText(m.truongSinh, Math.cos(radMid) * 162, Math.sin(radMid) * 162, 5.5, -m.center, 3);
+        addText(m.tietKhi, Math.cos(radMid) * 345, Math.sin(radMid) * 345, 5.0, -m.center, 7);
+        m.flyingStars.forEach((fs, fi) => {
+          addText(fs, Math.cos(radMid) * (410 + fi * 10), Math.sin(radMid) * (410 + fi * 10), 5.0, -m.center, 7);
+        });
+      });
+
+      // 64 Quẻ Dịch
+      HEXAGRAMS_64.forEach((hx, hi) => {
+        const deg = (hi / 64) * 360 + 2.8125;
+        const rad = ((90 - deg) * Math.PI) / 180;
+        addText(`${hx.code} ${hx.name}`, Math.cos(rad) * 462, Math.sin(rad) * 462, 4.0, -deg, 7);
+      });
+
+      // 360 Độ
+      for (let d = 0; d < 360; d += 5) {
+        const rad = ((90 - d) * Math.PI) / 180;
+        addLine(Math.cos(rad) * 478, Math.sin(rad) * 478, Math.cos(rad) * 500, Math.sin(rad) * 500, 2);
+        addText(String(d), Math.cos(rad) * 488, Math.sin(rad) * 488, 5.0, -d, 7);
+      }
+
+      lines.push("0", "ENDSEC", "0", "EOF");
+      const blob = new Blob([lines.join("\n")], { type: "application/dxf" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "LAKINH_CHINH_4_12_TANG.dxf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    };
+
+    // Mouse / Touch Interaction trên Viewport CAD
+    const viewport = document.getElementById("cad-viewport");
+    viewport.addEventListener("pointerdown", (e) => {
+      if (e.target.closest(".viewport-bottom-bar")) return;
+      state.isDragging = true;
+      state.lastX = e.clientX;
+      state.lastY = e.clientY;
+      // Nếu đang zoom lớn (> 1.45) và giữ Shift hoặc chuột phải thì Pan, mặc định xoay La Kinh hoặc Pan tự nhiên
+      state.dragMode = e.shiftKey || e.button === 1 || e.button === 2 ? "pan" : "rotate";
+    });
+
+    window.addEventListener("pointermove", (e) => {
+      if (!state.isDragging) return;
+      const dx = e.clientX - state.lastX;
+      const dy = e.clientY - state.lastY;
+      state.lastX = e.clientX;
+      state.lastY = e.clientY;
+
+      if (state.dragMode === "pan") {
+        state.panX += dx;
+        state.panY += dy;
+        renderLaKinhCAD();
+      } else {
+        // Xoay mặt La Kinh mượt mà
+        window.setCompassDegree(state.compassDeg - dx * 0.25);
+        const inp = document.getElementById("inp-compass-deg");
+        if (inp) inp.value = state.compassDeg.toFixed(1);
+      }
+    });
+
+    window.addEventListener("pointerup", () => {
+      state.isDragging = false;
+    });
+
+    viewport.addEventListener(
+      "wheel",
+      (e) => {
+        e.preventDefault();
+        const factor = e.deltaY < 0 ? 1.14 : 0.88;
+        window.zoomLaKinh(factor);
+      },
+      { passive: false }
+    );
+
+    window.addEventListener("resize", renderLaKinhCAD);
+
+    // Khởi tạo ban đầu
+    initQuickSonChips();
+    renderLaKinhCAD();
+    window.updateDecoderPanel();
+  })();
+  </script>
+</body>
+</html>

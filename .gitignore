@@ -3,6 +3,7 @@ __pycache__/
 *$py.class
 *.xlsx
 *.pdf
+!Giao_Trinh_Phong_Thuy_Su_Toan_Thu.pdf
 *.zip
 cloudflared.exe
 deploy_gcp/

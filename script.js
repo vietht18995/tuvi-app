@@ -318,6 +318,7 @@ function drawPhiTinhLines(activeId) {
 
 // Calculation status flag
 let hasCalculated = false;
+window.classicalTreatisesDatabase = classicalTreatisesDatabase;
 
 // Embedded Tử Vi Data Object
 let tuviData = {
@@ -5865,6 +5866,7 @@ function getAspectInfluenceHtml(chamber) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  window.tuviData = tuviData;
   // Always start in fresh Form input mode waiting for user to enter their info
   const formBox = document.getElementById("tuvi-form-box");
   const resultBox = document.getElementById("tuvi-result-box");
@@ -8869,6 +8871,15 @@ function executeCalculateWithPayload(payload) {
     }
 
     if (calculationResult && minRitualCompleted) {
+      if (window.isExploringCelestialRealm) {
+        // User opted into interactive 3D exploration; apply chart data in background & refresh 3D HUD
+        applyChartData(calculationResult, calculationResult.remaining_seconds || 900);
+        if (typeof window.refreshCelestialChartHUD === "function") {
+          window.refreshCelestialChartHUD();
+        }
+        chartRevealed = true;
+        return;
+      }
       chartRevealed = true;
       if (window.finishCelestialSummon) {
         window.finishCelestialSummon(() => {
@@ -8914,6 +8925,13 @@ function executeCalculateWithPayload(payload) {
       calculationError = result.error;
     } else {
       calculationResult = result;
+      tuviData.personal_info = result.personal_info;
+      tuviData.chambers = result.chambers;
+      tuviData.bazi = result.bazi;
+      window.tuviData = tuviData;
+      if (typeof window.refreshCelestialChartHUD === "function") {
+        window.refreshCelestialChartHUD();
+      }
     }
     tryRevealChart();
   })
@@ -9137,6 +9155,7 @@ function applyChartData(result, remainingSeconds) {
   tuviData.personal_info = result.personal_info;
   tuviData.chambers = result.chambers;
   tuviData.bazi = result.bazi;
+  window.tuviData = tuviData;
 
   // Điền lại form nếu người dùng muốn chỉnh sửa sau này
   const p = result.personal_info;

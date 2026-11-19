@@ -438,7 +438,7 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
         # 3. Allowed main web interface assets
         allowed_assets = (
             '/', '/index.html', '/styles.css', '/script.js', '/celestial_effects.js',
-            '/three.min.js',
+            '/three.min.js', '/lakinh.html', '/sach_phong_thuy.html',
             '/admin.html', '/favicon.ico', '/favicon.svg', '/favicon.png', '/logo.svg',
             '/beast_dragon.svg', '/beast_phoenix.svg', '/beast_tortoise.svg', '/beast_qilin.svg',
             '/qr_payment.png'
@@ -451,6 +451,19 @@ class TuViRequestHandler(http.server.SimpleHTTPRequestHandler):
         if (clean_path.endswith('.pdf') or clean_path.endswith('.xlsx')) and '/' not in pure_name and '\\' not in pure_name:
             file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), pure_name)
             if not os.path.exists(file_path) and clean_path.endswith('.pdf'):
+                if pure_name == 'Giao_Trinh_Phong_Thuy_Su_Toan_Thu.pdf':
+                    try:
+                        with pdf_generation_semaphore:
+                            if not os.path.exists(file_path):
+                                import pathlib, subprocess
+                                from generate_pdf_book import get_browser_executable
+                                exe = get_browser_executable()
+                                html_p = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sach_phong_thuy.html')
+                                if exe and os.path.exists(html_p):
+                                    uri = pathlib.Path(html_p).resolve().as_uri()
+                                    subprocess.run([exe, '--headless=new', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage', '--disable-extensions', '--no-pdf-header-footer', f'--print-to-pdf={file_path}', uri], check=False)
+                    except Exception as ex_book:
+                        print("Lỗi tạo PDF sách phong thủy on-demand:", ex_book)
                 # Kiểm tra xem có lá số tương ứng trong temp_charts không để tạo on-demand
                 try:
                     conn = sqlite3.connect(DB_PATH, timeout=30.0)

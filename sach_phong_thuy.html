@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giáo Trình Đào Tạo Phong Thủy Sư Toàn Thư (Lộ Trình 24 Tháng - 5 Năm Hành Nghề)</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-page: #fdfaf3;
+      --bg-card: #ffffff;
+      --bg-sidebar: #161b26;
+      --gold: #b45309;
+      --gold-light: #fef3c7;
+      --gold-border: #d97706;
+      --crimson: #881337;
+      --crimson-dark: #4c0519;
+      --jade: #0f766e;
+      --ink: #1e293b;
+      --ink-muted: #475569;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-page);
+      color: var(--ink);
+      line-height: 1.7;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* LEFT FIXED SIDEBAR (MỤC LỤC SÁCH) */
+    .book-sidebar {
+      width: 310px;
+      background: var(--bg-sidebar);
+      color: #e2e8f0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      overflow-y: auto;
+      border-right: 2px solid #b45309;
+      z-index: 40;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-header {
+      padding: 18px 16px;
+      background: linear-gradient(135deg, #450a0a 0%, #1e1b4b 100%);
+      border-bottom: 1px solid rgba(245, 158, 11, 0.35);
+    }
+
+    .sidebar-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #fbbf24;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: #fef3c7;
+      line-height: 1.3;
+    }
+
+    .sidebar-actions {
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      background: #0f131d;
+      border-bottom: 1px solid #262f45;
+    }
+
+    .sb-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.15s;
+    }
+
+    .sb-btn.pdf-btn {
+      background: linear-gradient(135deg, #d97706, #f59e0b);
+      color: #0f172a;
+      border-color: #fde68a;
+    }
+
+    .sb-btn.pdf-btn:hover {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    }
+
+    .sb-btn.nav-btn {
+      background: #1e2638;
+      color: #cbd5e1;
+      border-color: #334155;
+    }
+
+    .sb-btn.nav-btn:hover {
+      border-color: #fbbf24;
+      color: #fbbf24;
+    }
+
+    .toc-container {
+      padding: 12px 14px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .toc-part-title {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fbbf24;
+      margin-bottom: 4px;
+      border-bottom: 1px solid rgba(251, 191, 36, 0.22);
+      padding-bottom: 3px;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .toc-link {
+      display: block;
+      padding: 5px 8px;
+      border-radius: 5px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.77rem;
+      font-weight: 500;
+      transition: all 0.12s;
+    }
+
+    .toc-link:hover {
+      background: rgba(251, 191, 36, 0.14);
+      color: #fde68a;
+    }
+
+    /* MAIN BOOK CONTENT AREA */
+    .book-main {
+      margin-left: 310px;
+      flex: 1;
+      max-width: 980px;
+      padding: 32px 44px 80px;
+    }
+
+    @media (max-width: 1024px) {
+      body {
+        flex-direction: column;
+      }
+      .book-sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+      .book-main {
+        margin-left: 0;
+        padding: 20px 18px 60px;
+      }
+    }
+
+    /* ROYAL BOOK COVER */
+    .book-cover {
+      background: linear-gradient(135deg, #3b0712 0%, #681223 50%, #2e1018 100%);
+      color: #fef3c7;
+      border: 4px double #f59e0b;
+      border-radius: 14px;
+      padding: 46px 36px;
+      text-align: center;
+      box-shadow: 0 20px 45px rgba(76, 5, 25, 0.25);
+      margin-bottom: 38px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-ornament {
+      font-size: 1.55rem;
+      letter-spacing: 8px;
+      color: #fbbf24;
+      margin-bottom: 12px;
+    }
+
+    .cover-subtitle-top {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #fde68a;
+      margin-bottom: 10px;
+    }
+
+    .cover-main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 14px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+    }
+
+    .cover-desc {
+      font-size: 0.96rem;
+      color: #fde68a;
+      max-width: 720px;
+      margin: 0 auto 24px;
+      line-height: 1.65;
+    }
+
+    .cover-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+      text-align: left;
+    }
+
+    @media (max-width: 720px) {
+      .cover-meta-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .cover-meta-box {
+      background: rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .cover-meta-box .m-lbl {
+      font-size: 0.68rem;
+      color: #fbbf24;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .cover-meta-box .m-val {
+      font-size: 0.86rem;
+      color: #ffffff;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    /* PART & CHAPTER STYLING */
+    .part-banner {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #fef3c7;
+      border-left: 6px solid #f59e0b;
+      border-radius: 10px;
+      padding: 18px 24px;
+      margin: 42px 0 24px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+    }
+
+    .part-banner .p-code {
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fbbf24;
+      text-transform: uppercase;
+    }
+
+    .part-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      color: #ffffff;
+      margin-top: 4px;
+    }
+
+    .chapter-card {
+      background: var(--bg-card);
+      border: 1px solid #e2d5b5;
+      border-top: 4px solid var(--crimson);
+      border-radius: 10px;
+      padding: 28px 30px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 16px rgba(180, 83, 9, 0.06);
+    }
+
+    .chapter-header {
+      border-bottom: 2px solid #f3e8d2;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+
+    .chapter-tag {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #f59e0b;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 9px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .chapter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.42rem;
+      font-weight: 800;
+      color: var(--crimson);
+      line-height: 1.3;
+    }
+
+    .chapter-card h4 {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: #92400e;
+      margin: 18px 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chapter-card p {
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+      color: #1e293b;
+      text-align: justify;
+    }
+
+    .chapter-card ul, .chapter-card ol {
+      padding-left: 22px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.91rem;
+    }
+
+    .formula-box {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-left: 4px solid #d97706;
+      border-radius: 8px;
+      padding: 13px 16px;
+      margin: 12px 0;
+      font-size: 0.89rem;
+    }
+
+    .formula-box strong {
+      color: #92400e;
+    }
+
+    .pithy-quote {
+      background: #f8fafc;
+      border-left: 4px solid var(--crimson);
+      padding: 11px 16px;
+      font-style: italic;
+      color: #334155;
+      margin: 12px 0;
+      font-size: 0.9rem;
+    }
+
+    /* TABLES */
+    .book-table-wrap {
+      overflow-x: auto;
+      margin: 14px 0;
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+
+    .book-table th {
+      background: #7f1d1d;
+      color: #fef3c7;
+      padding: 8px 10px;
+      text-align: left;
+      border: 1px solid #991b1b;
+      font-weight: 700;
+    }
+
+    .book-table td {
+      padding: 7px 10px;
+      border: 1px solid #e2d5b5;
+      color: #1e293b;
+    }
+
+    .book-table tr:nth-child(even) td {
+      background: #fdf8ee;
+    }
+
+    /* INTERACTIVE PRACTICE WIDGETS */
+    .interactive-lab {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #f8fafc;
+      border: 1.5px solid #f59e0b;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 18px 0;
+    }
+
+    .lab-title {
+      color: #fbbf24;
+      font-weight: 800;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .lab-controls {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .lab-input, .lab-select {
+      background: #090d16;
+      color: #f8fafc;
+      border: 1px solid #475569;
+      border-radius: 6px;
+      padding: 7px 10px;
+      font-size: 0.84rem;
+    }
+
+    .lab-btn {
+      background: #eab308;
+      color: #0f172a;
+      border: none;
+      border-radius: 6px;
+      padding: 7px 14px;
+      font-weight: 800;
+      font-size: 0.84rem;
+      cursor: pointer;
+    }
+
+    .lab-result {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      border-radius: 6px;
+      padding: 11px 14px;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    /* PRINT / PDF STYLES */
+    @media print {
+      .book-sidebar, .no-print {
+        display: none !important;
+      }
+      .book-main {
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+      body {
+        background: #ffffff;
+      }
+      .chapter-card {
+        page-break-inside: avoid;
+        box-shadow: none;
+      }
+      .part-banner {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR MỤC LỤC & CÔNG CỤ TẢI SÁCH PDF -->
+  <aside class="book-sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-badge">☸ GIÁO TRÌNH ĐÀO TẠO CHÍNH THỐNG ☯</div>
+      <div class="sidebar-title">PHONG THỦY SƯ TOÀN THƯ (LỘ TRÌNH 24 THÁNG)</div>
+    </div>
+
+    <div class="sidebar-actions">
+      <a href="/Giao_Trinh_Phong_Thuy_Su_Toan_Thu.pdf" download="Giao_Trinh_Phong_Thuy_Su_Toan_Thu.pdf" class="sb-btn pdf-btn">
+        📥 Tải Sách PDF Toàn Thư (Chuẩn A4)
+      </a>
+      <button type="button" class="sb-btn nav-btn" onclick="window.print()">
+        🖨️ In Sách / Xuất PDF Trực Tiếp
+      </button>
+      <a href="/lakinh.html" class="sb-btn nav-btn">
+        🧭 Mở La Kinh AutoCAD 12 Tầng
+      </a>
+      <a href="/" class="sb-btn nav-btn">
+        ⬅ Về Bàn Lá Số Tử Vi &amp; Đại Trận 3D
+      </a>
+    </div>
+
+    <nav class="toc-container">
+      <div>
+        <div class="toc-part-title">Quy Chế &amp; Lộ Trình 24 Tháng</div>
+        <ul class="toc-list">
+          <li><a href="#sec-lo-trinh" class="toc-link">0. Lộ trình 2 năm học &amp; 5 năm hành nghề</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="toc-part-title">Phần A • Đại Cương Nền Tảng</div>
+        <ul class="toc-list">
+          <li><a href="#ch-1" class="toc-link">Chương 1: Dịch Học &amp; Hà Đồ Lạc Thư</a></li>
+          <li><a href="#ch-2" class="toc-link">Chương 2: Đại Cương Phong Thủy Học</a></li>
+          <li><a href="#ch-3" class="toc-link">Chương 3: Triết Học &amp; Phật Pháp Ứng Dụng</a></li>
+          <li><a href="#ch-4" class="toc-link">Chương 4: Thiền Định &amp; Luyện Khí Cảm</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="toc-part-title">Phần B • Các Môn Bổ Trợ</div>
+        <ul class="toc-list">
+          <li><a href="#ch-5" class="toc-link">Chương 5: Quẻ Dịch &amp; Độn Toán (Mai Hoa)</a></li>
+          <li><a href="#ch-6" class="toc-link">Chương 6: Luận Tuổi &amp; Nạp Âm Can Chi</a></li>
+          <li><a href="#ch-7" class="toc-link">Chương 7: Coi Ngày (Trạch Nhật Cát Khánh)</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="toc-part-title">Phần C • Phong Thủy Chuyên Sâu</div>
+        <ul class="toc-list">
+          <li><a href="#ch-8" class="toc-link">Chương 8: Bát Trạch &amp; Dương Cơ Tam Yếu</a></li>
+          <li><a href="#ch-9" class="toc-link">Chương 9: Hình Khí Phong Thủy</a></li>
+          <li><a href="#ch-10" class="toc-link">Chương 10: Loan Đầu Ngoại Cục &amp; Hình Sát</a></li>
+          <li><a href="#ch-11" class="toc-link">Chương 11: Huyền Không Phi Tinh &amp; Đại Quái</a></li>
+          <li><a href="#ch-12" class="toc-link">Chương 12: Trấn Yểm, Chế Hóa &amp; Kích Hoạt</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="toc-part-title">Phần D • Kết Khóa &amp; Tốt Nghiệp</div>
+        <ul class="toc-list">
+          <li><a href="#ch-13" class="toc-link">Chương 13: Luận Công Trình Thực Tế (10 Bước)</a></li>
+          <li><a href="#ch-14" class="toc-link">Chương 14: Đề Thi Tốt Nghiệp &amp; Lễ Nhập Môn</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- NỘI DUNG SÁCH GIÁO TRÌNH -->
+  <main class="book-main">
+
+    <!-- TRANG BÌA SÁCH -->
+    <section class="book-cover">
+      <div class="cover-ornament">☸ ☯ ☸</div>
+      <div class="cover-subtitle-top">HỌC VIỆN HUYỀN HỌC ĐÔNG PHƯƠNG • GIÁO TRÌNH ĐÀO TẠO CHUYÊN NGHIỆP</div>
+      <h1 class="cover-main-title">SÁCH GIÁO TRÌNH ĐÀO TẠO<br>PHONG THỦY SƯ TOÀN THƯ</h1>
+      <p class="cover-desc">
+        Biên soạn đầy đủ theo khung chương trình <strong>24 Tháng Lý Thuyết &amp; Thực Hành Thực Chiến</strong>:
+        Từ Dịch Học Đại Cương, Triết Học Phật Pháp, Thiền Khí Cảm, Quẻ Dịch – Luận Tuổi – Coi Ngày đến Bát Trạch, Hình Khí, Loan Đầu, Huyền Không, Trấn Yểm và Tổng Hợp Luận Công Trình Thực Tế.
+      </p>
+
+      <div class="cover-meta-grid">
+        <div class="cover-meta-box">
+          <div class="m-lbl">Thời Gian Đào Tạo</div>
+          <div class="m-val">24 Tháng (2 Năm Lý Thuyết)</div>
+        </div>
+        <div class="cover-meta-box">
+          <div class="m-lbl">Chuẩn Hành Nghề</div>
+          <div class="m-val">3 Năm Lý Thuyết + 2 Năm Thực Địa</div>
+        </div>
+        <div class="cover-meta-box">
+          <div class="m-lbl">Cấu Trúc Giáo Trình</div>
+          <div class="m-val">4 Phần (A-B-C-D) • 14 Chương</div>
+        </div>
+        <div class="cover-meta-box">
+          <div class="m-lbl">Cấp Chứng Nhận</div>
+          <div class="m-val">Bài Test Cuối Khóa &amp; Lễ Nhập Môn</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MỤC 0: QUY CHẾ & LỘ TRÌNH ĐÀO TẠO PHONG THỦY SƯ -->
+    <article class="chapter-card" id="sec-lo-trinh">
+      <div class="chapter-header">
+        <span class="chapter-tag">CƯƠNG LĨNH ĐÀO TẠO • PHONG THỦY LIÊN HOA</span>
+        <h3 class="chapter-title">Lộ Trình 2 Năm Học Tập, Nghiên Cứu Trọn Đời &amp; Đạo Làm Nghề Phong Thủy Sư</h3>
+      </div>
+      <p>
+        Phong thủy không phải là trò mê tín dị đoan hay những lời phán truyền miệng vô căn cứ, mà là <strong>môn khoa học cổ đại nghiên cứu quy luật vận hành của Trường Khí giữa Thiên – Địa – Nhân</strong>. Để trở thành một <strong>Phong Thủy Sư thực thụ</strong> có khả năng khảo sát, luận đoán và cải tạo cát hung cho một gia đình hay một đại công trình, người học phải đi qua lộ trình kỷ luật nghiêm ngặt:
+      </p>
+      <ul>
+        <li><strong>1. Thời gian học chính khóa (24 tháng):</strong> Hoàn thành toàn bộ hệ thống lý thuyết từ Đại cương (Phần A), Các môn bổ trợ (Phần B) đến Chuyên ngành Phong thủy (Phần C) và Luận án thực địa (Phần D). Đây cũng là mốc hoàn tất nghĩa vụ tài chính học tập; toàn bộ các năm nghiên cứu chuyên sâu cùng Thầy về sau <strong>hoàn toàn miễn phí và không giới hạn thời gian</strong>.</li>
+        <li><strong>2. Quy chuẩn 5 năm hành nghề vững vàng (3 năm lý thuyết + 2 năm thực hành):</strong> Học lý thuyết giúp nắm chắc "Pháp", nhưng phải đi công trình thực tế, cầm La Kinh đo hàng trăm ngôi nhà, đối chiếu từng ngọn núi, khúc sông, ngã đường và nghiệm lý biến cố gia chủ suốt 2 năm thực tập mới luyện được "Nhãn" (mắt nhìn Loan đầu) và "Tâm" (trực giác đoán quẻ).</li>
+        <li><strong>3. Điều kiện cấp Chứng nhận Phong Thủy Sư &amp; Gia nhập Phong Thủy Liên Hoa:</strong> Hoàn thành các bài kiểm tra cuối mỗi học phần, bảo vệ thành công <strong>Bài Luận Tổng Hợp Công Trình Thực Tế</strong> cuối khóa, và thực hiện <strong>Lễ Nhập Môn</strong> (lập thệ giữ gìn đạo đức nghề nghiệp, tôn sư trọng đạo, không dùng thuật số hại người).</li>
+        <li><strong>4. Phương châm học tập:</strong> Học trực tuyến buổi tối kết hợp gặp mặt offline và đi thực địa công trình. Nguyên tắc cốt lõi là <strong>"Hỏi đến tận cùng những gì thắc mắc"</strong> — hiểu bản chất nguyên lý chứ không học vẹt công thức.</li>
+      </ul>
+    </article>
+
+    <!-- =====================================================================
+         PHẦN A: ĐẠI CƯƠNG NỀN TẢNG (CHƯƠNG 1 -> CHƯƠNG 4)
+         ===================================================================== -->
+    <div class="part-banner">
+      <div class="p-code">PHẦN A • NỀN TẢNG ĐẠI CƯƠNG (THÁNG 1 – THÁNG 6)</div>
+      <h2>Dịch Học • Đại Cương Phong Thủy • Triết Học Phật Pháp • Thiền Khí Cảm</h2>
+    </div>
+
+    <!-- CHƯƠNG 1: DỊCH HỌC -->
+    <article class="chapter-card" id="ch-1">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN A • CHƯƠNG 1</span>
+        <h3 class="chapter-title">Dịch Học Căn Bản: Âm Dương, Ngũ Hành, Hà Đồ – Lạc Thư &amp; Tiên Hậu Thiên Bát Quái</h3>
+      </div>
+
+      <h4>1.1. Nguyên lý Thái Cực – Lưỡng Nghi – Tứ Tượng – Bát Quái</h4>
+      <p>
+        Hệ từ Kinh Dịch viết: <em>"Dịch hữu Thái Cực, thị sinh Lưỡng Nghi, Lưỡng Nghi sinh Tứ Tượng, Tứ Tượng sinh Bát Quái"</em>. Mọi sự vật trong vũ trụ đều vận động theo quy luật đối đãi và chuyển hóa giữa hai cực <strong>Âm (⚋)</strong> và <strong>Dương (⚊)</strong>:
+      </p>
+      <ul>
+        <li><strong>Dương (⚊):</strong> Chủ về Động, Sáng, Cao, Nóng, Cứng, Phía trước, Trên, Sơn (Núi cao về hình nhưng Tĩnh về khí), Khí phát tán.</li>
+        <li><strong>Âm (⚋):</strong> Chủ về Tĩnh, Tối, Thấp, Lạnh, Mềm, Phía sau, Dưới, Thủy (Nước thấp về hình nhưng Động về khí), Khí thu liễm.</li>
+        <li><strong>Quy luật Âm Dương trong Phong Thủy:</strong> <em>"Cô Dương bất sinh, Độc Âm bất trưởng"</em>. Nhà quá sáng, nắng gắt chiếu xuyên suốt là Dương thái quá (dễ nóng nảy, hao tài); nhà ẩm thấp, tối tăm là Âm thái quá (dễ sinh bệnh tật, u uất). Phong thủy đạt chuẩn là trạng thái <strong>Âm Dương Quân Bình</strong>.</li>
+      </ul>
+
+      <h4>1.2. Ngũ Hành Sinh – Khắc – Chế – Hóa</h4>
+      <div class="formula-box">
+        <div>• <strong>Ngũ Hành Tương Sinh:</strong> Kim sinh Thủy → Thủy sinh Mộc → Mộc sinh Hỏa → Hỏa sinh Thổ → Thổ sinh Kim.</div>
+        <div>• <strong>Ngũ Hành Tương Khắc:</strong> Kim khắc Mộc → Mộc khắc Thổ → Thổ khắc Thủy → Thủy khắc Hỏa → Hỏa khắc Kim.</div>
+        <div>• <strong>Nguyên lý Phản Sinh – Phản Khắc (Ứng dụng khi Hóa Giải):</strong> Lửa quá mạnh dùng ít nước dập sẽ bùng thêm (Hỏa vượng thủy khô); Kim quá nhiều làm nước đục (Kim đa thủy trọc); Thổ quá dày chôn vùi Kim (Thổ đa kim mai). Do đó khi chế hóa phong thủy phải dùng <strong>Thông Quan (Tương Sinh tiết khí)</strong> thay vì đối kháng trực diện!</div>
+      </div>
+
+      <h4>1.3. Hà Đồ (Thể) &amp; Lạc Thư (Dụng – Nền tảng của La Kinh &amp; Cửu Cung)</h4>
+      <p>
+        <strong>Hà Đồ</strong> là cơ sở của Tiên Thiên Bát Quái và Ngũ Hành Hợp Hóa:
+        <em>"Thiên nhất sinh Thủy, Địa lục thành chi (1–6 Bắc Thủy); Địa nhị sinh Hỏa, Thiên thất thành chi (2–7 Nam Hỏa); Thiên tam sinh Mộc, Địa bát thành chi (3–8 Đông Mộc); Địa tứ sinh Kim, Thiên cửu thành chi (4–9 Tây Kim); Thiên ngũ sinh Thổ, Địa thập thành chi (5–10 Trung Cung Thổ)"</em>.
+      </p>
+      <p>
+        <strong>Lạc Thư Cửu Cung</strong> là cơ sở của Hậu Thiên Bát Quái và Huyền Không Phi Tinh:
+        <em>"Đới cửu lý nhất, tả tam hữu thất, nhị tứ vi kiên, lục bát vi túc, ngũ cư trung cung"</em> (Đội 9 đạp 1, trái 3 phải 7, 2–4 làm vai, 6–8 làm chân, 5 ở giữa). Tổng ngang – dọc – chéo đều bằng 15 (Hợp Thập tính cả trung cung).
+      </p>
+
+      <h4>1.4. Bảng Tra Cứu Toàn Diện 8 Quái (Tiên Thiên – Hậu Thiên – Nhân Đinh – Tạng Phủ)</h4>
+      <div class="book-table-wrap">
+        <table class="book-table">
+          <thead>
+            <tr>
+              <th>Quái</th>
+              <th>Ký Hiệu</th>
+              <th>Số Lạc Thư</th>
+              <th>Phương Hậu Thiên</th>
+              <th>Ngũ Hành</th>
+              <th>Nhân Đinh Ứng Vị</th>
+              <th>Bộ Phận Cơ Thể Ứng Bệnh</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>KHẢM</strong></td><td>☵ (Âm-Dương-Âm)</td><td><strong>1</strong> (Nhất Bạch)</td><td>Chính Bắc</td><td>Thủy</td><td>Trung Nam (Con trai thứ)</td><td>Thận, bàng quang, tai, máu huyết</td></tr>
+            <tr><td><strong>KHÔN</strong></td><td>☷ (3 hào Âm)</td><td><strong>2</strong> (Nhị Hắc)</td><td>Tây Nam</td><td>Âm Thổ</td><td>Lão Mẫu (Người mẹ / Nữ chủ)</td><td>Dạ dày, lá lách, bụng, tiêu hóa</td></tr>
+            <tr><td><strong>CHẤN</strong></td><td>☳ (2 Âm trên, 1 Dương dưới)</td><td><strong>3</strong> (Tam Bích)</td><td>Chính Đông</td><td>Dương Mộc</td><td>Trưởng Nam (Con trai cả)</td><td>Gan, mật, bàn chân, thần kinh</td></tr>
+            <tr><td><strong>TỐN</strong></td><td>☴ (2 Dương trên, 1 Âm dưới)</td><td><strong>4</strong> (Tứ Lục)</td><td>Đông Nam</td><td>Âm Mộc</td><td>Trưởng Nữ (Con gái cả)</td><td>Đùi,股, đường hô hấp, phong thấp</td></tr>
+            <tr><td><strong>TRUNG CUNG</strong></td><td>☸ (Thái Cực)</td><td><strong>5</strong> (Ngũ Hoàng)</td><td>Trung Tâm</td><td>Thổ</td><td>Tâm điểm toàn gia</td><td>Ngũ tạng tổng hợp, ung bướu</td></tr>
+            <tr><td><strong>CÀN</strong></td><td>☰ (3 hào Dương)</td><td><strong>6</strong> (Lục Bạch)</td><td>Tây Bắc</td><td>Dương Kim</td><td>Lão Phụ (Người cha / Nam chủ)</td><td>Đầu, não, xương cột sống, phổi</td></tr>
+            <tr><td><strong>ĐOÀI</strong></td><td>☱ (1 Âm trên, 2 Dương dưới)</td><td><strong>7</strong> (Thất Xích)</td><td>Chính Tây</td><td>Âm Kim</td><td>Thiếu Nữ (Con gái út)</td><td>Miệng, lưỡi, răng, họng, phế quản</td></tr>
+            <tr><td><strong>CẤN</strong></td><td>☶ (1 Dương trên, 2 Âm dưới)</td><td><strong>8</strong> (Bát Bạch)</td><td>Đông Bắc</td><td>Dương Thổ</td><td>Thiếu Nam (Con trai út)</td><td>Bàn tay, ngón tay, sống lưng, mũi</td></tr>
+            <tr><td><strong>LY</strong></td><td>☲ (Dương-Âm-Dương)</td><td><strong>9</strong> (Cửu Tử)</td><td>Chính Nam</td><td>Hỏa</td><td>Trung Nữ (Con gái thứ)</td><td>Tim mạch, mắt, huyết áp, thần trí</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- CHƯƠNG 2: ĐẠI CƯƠNG PHONG THỦY -->
+    <article class="chapter-card" id="ch-2">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN A • CHƯƠNG 2</span>
+        <h3 class="chapter-title">Đại Cương Phong Thủy Học: Khí, Tàng Phong Tụ Khí &amp; Hình – Lý – Khí – Số</h3>
+      </div>
+
+      <div class="pithy-quote">
+        "Táng giả, thừa sinh khí dã. Khí thừa phong tắc tán, giới thủy tắc chỉ. Cổ nhân tụ chi sử bất tán, hành chi sử hữu chỉ, cố vị chi Phong Thủy." — Quách Phác (Táng Thư)
+      </div>
+
+      <h4>2.1. Bản chất của chữ "Phong Thủy"</h4>
+      <p>
+        Sinh khí của trời đất gặp <strong>Gió (Phong)</strong> thổi mạnh thì tiêu tán, gặp <strong>Nước (Thủy)</strong> ngăn lại thì ngưng tụ. Người xưa tìm cách che chắn gió độc để sinh khí không bị thổi bay (<em>Tàng Phong</em>) và dẫn nước lành để giữ sinh khí ở lại nuôi dưỡng con người (<em>Đắc Thủy</em>), vì vậy gọi là <strong>Phong Thủy</strong>.
+      </p>
+
+      <h4>2.2. Bốn Trụ Cột: Hình – Lý – Khí – Số</h4>
+      <ul>
+        <li><strong>1. HÌNH (Loan Đầu / Hình Pháp):</strong> Là tất cả những gì mắt thường nhìn thấy được: thế núi, dòng sông, con đường, hình dáng mảnh đất, cấu trúc ngôi nhà, vị trí cổng – cửa – bếp – cầu thang. <em>"Hình nào thì Khí đó"</em> — Hình chiếm 50% sức mạnh phong thủy.</li>
+        <li><strong>2. LÝ (Lý Khí / Pháp Số):</strong> Là phương vị, độ số đo trên La Kinh 12 tầng, sự vận hành của Cửu Tinh, Bát Trạch, 24 Sơn, 120 Phân Kim, 64 Quẻ Dịch. Lý Khí giúp kích hoạt đúng huyệt điểm và tính được <strong>thời gian ứng nghiệm</strong>.</li>
+        <li><strong>3. KHÍ (Trường Năng Lượng Vô Hình):</strong> Là sinh khí lưu chuyển trong đất và trong không gian sống (ánh sáng, nhiệt độ, độ ẩm, từ trường trái đất và nhân khí của người ở).</li>
+        <li><strong>4. SỐ (Vận Số &amp; Nhân Quả Thời Không):</strong> Là Tam Nguyên Cửu Vận (mỗi vận 20 năm, đại vận 180 năm) kết hợp với mệnh số, phước báo của gia chủ.</li>
+      </ul>
+    </article>
+
+    <!-- CHƯƠNG 3: TRIẾT HỌC VÀ PHẬT PHÁP -->
+    <article class="chapter-card" id="ch-3">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN A • CHƯƠNG 3</span>
+        <h3 class="chapter-title">Triết Học Đông Phương &amp; Phật Pháp Trong Phong Thủy: "Hậu Đức Tải Vật" &amp; Cân Bằng Động</h3>
+      </div>
+
+      <h4>3.1. Nguyên lý "Cân Bằng Động" (Đạo của Vũ Trụ)</h4>
+      <p>
+        Vũ trụ không bao giờ đứng yên tuyệt đối mà luôn vận hành trong trạng thái <strong>Cân Bằng Động</strong>: Ngày chuyển sang đêm, bốn mùa Xuân – Hạ – Thu – Đông nối tiếp, thịnh cực tất suy, bĩ cực thái lai. Làm phong thủy không phải là "cướp khí của trời đất", mà là <strong>đặt con người vào đúng nhịp điệu cân bằng với tự nhiên</strong>.
+      </p>
+
+      <h4>3.2. Nguyên lý "Hậu Đức Tải Vật" — Tương Đồng Giữa Chủ Nhân và Ngôi Nhà</h4>
+      <p>
+        Quẻ Địa Thế Khôn trong Kinh Dịch dạy: <em>"Địa thế Khôn, quân tử dĩ hậu đức tải vật"</em> (Đất dày rộng nên chở được muôn vật; người quân tử lấy đức dày để gánh vác mọi sự).
+      </p>
+      <div class="formula-box">
+        <strong>"Đức" trong Phong Thủy là Sức Chứa (Trí tuệ, Tâm lượng, Phước báo và Nội lực):</strong><br>
+        • Một ngôi nhà có kích thước và hình khối đồ sộ như cung điện, lâu đài mang trường khí (Vật) cực nặng. Nếu người chủ chưa đủ "sức chứa" (vị thế, trí tuệ quản trị, nhân khí và dòng phước lực tương xứng) thì gọi là <strong>"Vật lấn Nhân" (Nhà nuốt người)</strong> — vào ở dễ sinh bất an, hao tán tài lực hoặc thị phi.<br>
+        • Ngược lại, khi Tâm Đức và Trí Tuệ của gia chủ tăng trưởng trước, trường khí ngôi nhà tự khắc được chuyển hóa thuận lợi: <em>"Phúc địa phúc nhân cư, phúc nhân cư phúc địa"</em>.
+      </div>
+
+      <h4>3.3. Phật Pháp &amp; Giới Luật Của Phong Thủy Sư</h4>
+      <ul>
+        <li><strong>Hiểu rõ Nhân Quả (Nhất Mệnh – Nhị Vận – Tam Phong Thủy – Tứ Tích Âm Đức – Ngũ Độc Thư):</strong> Phong thủy đứng thứ ba, giúp trợ lực 30%–40% để chiếc thuyền cuộc đời đi thuận gió; còn cội rễ bền vững nhất vẫn là <strong>Tích Âm Đức</strong> (làm lành, giữ giới, hiếu thuận, bố thí) và <strong>Độc Thư</strong> (mở mang trí tuệ).</li>
+        <li><strong>Tam Nghiệp Thanh Tịnh của người thầy:</strong> Không dùng lời hù dọa để trục lợi; không tiết lộ bí mật hay chê bai công khai gia chủ trước bàn dân thiên hạ (<em>"Khen ngoài sáng, khuyên giải riêng tư"</em>); không can thiệp sâu khi người ta chưa đủ duyên cầu thỉnh.</li>
+      </ul>
+    </article>
+
+    <!-- CHƯƠNG 4: THIỀN -->
+    <article class="chapter-card" id="ch-4">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN A • CHƯƠNG 4</span>
+        <h3 class="chapter-title">Thiền Định &amp; Phương Pháp Luyện Khí Cảm Cho Phong Thủy Sư</h3>
+      </div>
+
+      <h4>4.1. Vì sao Phong Thủy Sư bắt buộc phải tu tập Thiền?</h4>
+      <p>
+        La Kinh là dụng cụ đo độ số vật lý, nhưng <strong>Thân – Tâm của người thầy chính là chiếc La Kinh sống nhạy bén nhất</strong>. Khi tâm tán loạn, tham cầu hoặc mệt mỏi, việc bấm quẻ Mai Hoa sẽ sai lệch và không cảm nhận được "Hàn khí / Sát khí" tại hiện trường.
+      </p>
+
+      <h4>4.2. Thực hành Tĩnh Tọa 15 Phút Mỗi Ngày &amp; Trước Khi Đi Công Trình</h4>
+      <ol>
+        <li><strong>Điều Thân (Kiết già hoặc Bán già):</strong> Giữ cột sống thẳng tự nhiên (khai thông mạch Đốc), hai vai thả lỏng, lưỡi chạm nhẹ chân răng hàm trên (nối cầu Nhâm – Đốc), hai tay bắt ấn Định trên đùi.</li>
+        <li><strong>Điều Tức (Hơi thở Đan Điền):</strong> Hít vào bằng mũi chậm – sâu – đều, quán tưởng luồng thanh khí đi xuống Hạ Đan Điền (dưới rốn 3 phân); thở ra nhẹ nhàng đẩy hết trọc khí và tạp niệm ra ngoài.</li>
+        <li><strong>Điều Tâm (Quán Chiếu &amp; Cảm Khí):</strong> Khi bước vào một khu đất hoặc ngôi nhà, đứng tĩnh lặng 1 phút tại Minh Đường:
+          <ul>
+            <li>Nếu cảm thấy hơi thở thông suốt, ngực ấm áp, tâm trí thư thái, da thịt dễ chịu → <strong>Đất có Sinh Khí / Cát Khí</strong>.</li>
+            <li>Nếu cảm thấy lạnh sống lưng, ngực bức bối, đầu nặng hoặc gió lùa xoáy bất thường → <strong>Đất có Sát Khí / Âm Hàn Khí</strong>, cần dùng La Kinh tìm ngay nguồn sát để hóa giải.</li>
+          </ul>
+        </li>
+      </ol>
+    </article>
+
+    <!-- =====================================================================
+         PHẦN B: CÁC MÔN BỔ TRỢ (CHƯƠNG 5 -> CHƯƠNG 7)
+         ===================================================================== -->
+    <div class="part-banner">
+      <div class="p-code">PHẦN B • CÁC MÔN BỔ TRỢ THỰC HÀNH (THÁNG 7 – THÁNG 12)</div>
+      <h2>Quẻ Dịch &amp; Độn Toán • Luận Tuổi Can Chi • Coi Ngày (Trạch Nhật)</h2>
+    </div>
+
+    <!-- CHƯƠNG 5: QUẺ DỊCH, ĐỘN -->
+    <article class="chapter-card" id="ch-5">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN B • CHƯƠNG 5</span>
+        <h3 class="chapter-title">Quẻ Dịch &amp; Độn Toán: Mai Hoa Dịch Số, Thể – Dụng &amp; Tiểu Độn Lục Nhâm</h3>
+      </div>
+
+      <h4>5.1. Công thức Lập Quẻ Mai Hoa Dịch Số Theo Thời Gian &amp; Số Đo</h4>
+      <p>
+        Quy ước số Tiên Thiên Bát Quái: <strong>1 = Càn ☰, 2 = Đoài ☱, 3 = Ly ☲, 4 = Chấn ☳, 5 = Tốn ☴, 6 = Khảm ☵, 7 = Cấn ☶, 8 = Khôn ☷</strong>.
+      </p>
+      <div class="formula-box">
+        <div>• <strong>Quẻ Thượng (Ngoại Quái):</strong> $(\text{Số Năm Chi} + \text{Tháng ÂL} + \text{Ngày ÂL}) \pmod 8$ (Nếu chia hết cho 8 thì lấy số 8 = Khôn).</div>
+        <div>• <strong>Quẻ Hạ (Nội Quái):</strong> $(\text{Số Năm Chi} + \text{Tháng ÂL} + \text{Ngày ÂL} + \text{Số Giờ Chi}) \pmod 8$.</div>
+        <div>• <strong>Hào Động:</strong> $(\text{Tổng trên}) \pmod 6$ (Nếu chia hết cho 6 thì động hào 6).</div>
+        <div>• <strong>Luận Thể – Dụng:</strong> Quẻ không có hào động là <strong>Quẻ Thể</strong> (đại diện cho Gia chủ). Quẻ có hào động là <strong>Quẻ Dụng</strong> (đại diện cho Ngôi nhà / Sự việc). <em>Dụng sinh Thể là đại cát (nhà dưỡng người); Thể khắc Dụng là cát trung bình (làm chủ được nhà); Thể sinh Dụng là hao tiết (nhà rút sức người); Dụng khắc Thể là đại hung (nhà hại người)!</em></div>
+      </div>
+
+      <h4>5.2. Khẩu Quyết Tiểu Độn Lục Nhâm Bấm Tay Tức Thời</h4>
+      <p>
+        Khởi từ đốt ngón trỏ (Đại An) theo chiều kim đồng hồ qua 6 cung: <strong>1. Đại An (Đông - Mộc - Đại Cát) → 2. Lưu Niên (Bắc - Thủy - Trì trệ) → 3. Tốc Hỷ (Nam - Hỏa - Tin vui nhanh) → 4. Xích Khẩu (Tây - Kim - Cãi vã, thị phi) → 5. Tiểu Cát (Đông Nam - Thủy/Mộc - Thuận lợi, hòa hợp) → 6. Không Vong (Trung cung - Thổ - Hao tán, bất thành)</strong>.
+        Cách bấm: Lấy cung số 1 là Tháng ÂL → đếm tiếp tới Ngày ÂL → từ cung Ngày đếm tiếp tới Giờ ÂL sẽ ra kết quả cát hung tức thì khi gia chủ hỏi việc!
+      </p>
+
+      <!-- Phòng Thí Nghiệm Tương Tác: Bấm Quẻ Mai Hoa & Tiểu Độn -->
+      <div class="interactive-lab no-print">
+        <div class="lab-title">
+          <span>🔮 THỰC HÀNH LẬP QUẺ MAI HOA DỊCH SỐ &amp; TIỂU ĐỘN LỤC NHÂM</span>
+          <span style="font-size:0.75rem;color:#94a3b8;">Công cụ thực hành Phần B</span>
+        </div>
+        <div class="lab-controls">
+          <input type="number" id="mh-month" class="lab-input" value="10" min="1" max="12" style="width:95px;" title="Tháng Âm lịch">
+          <input type="number" id="mh-day" class="lab-input" value="18" min="1" max="30" style="width:95px;" title="Ngày Âm lịch">
+          <select id="mh-hour" class="lab-select">
+            <option value="1">Giờ Tý (1)</option>
+            <option value="2">Giờ Sửu (2)</option>
+            <option value="3">Giờ Dần (3)</option>
+            <option value="4">Giờ Mão (4)</option>
+            <option value="5" selected>Giờ Thìn (5)</option>
+            <option value="6">Giờ Tỵ (6)</option>
+            <option value="7">Giờ Ngọ (7)</option>
+            <option value="8">Giờ Mùi (8)</option>
+            <option value="9">Giờ Thân (9)</option>
+            <option value="10">Giờ Dậu (10)</option>
+            <option value="11">Giờ Tuất (11)</option>
+            <option value="12">Giờ Hợi (12)</option>
+          </select>
+          <button type="button" class="lab-btn" onclick="runMaiHoaLab()">⚡ Bấm Quẻ Luận Thể – Dụng</button>
+        </div>
+        <div class="lab-result" id="mh-lab-result">
+          Bấm nút để xem kết quả lập quẻ Mai Hoa (Thượng quái, Hạ quái, Hào động, quan hệ Thể – Dụng) và cung Tiểu Độn Lục Nhâm.
+        </div>
+      </div>
+    </article>
+
+    <!-- CHƯƠNG 6: LUẬN TUỔI -->
+    <article class="chapter-card" id="ch-6">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN B • CHƯƠNG 6</span>
+        <h3 class="chapter-title">Luận Tuổi Gia Chủ: Thiên Can, Địa Chi, Lục Thập Hoa Giáp &amp; Xung Hợp Nhân Sự</h3>
+      </div>
+
+      <h4>6.1. Hệ thống 10 Thiên Can &amp; Ngũ Hợp Hóa Khí</h4>
+      <ul>
+        <li><strong>Dương Can:</strong> Giáp (Mộc), Bính (Hỏa), Mậu (Thổ), Canh (Kim), Nhâm (Thủy).</li>
+        <li><strong>Âm Can:</strong> Ất (Mộc), Đinh (Hỏa), Kỷ (Thổ), Tân (Kim), Quý (Thủy).</li>
+        <li><strong>Thiên Can Ngũ Hợp:</strong> Giáp – Kỷ hợp hóa Thổ • Ất – Canh hợp hóa Kim • Bính – Tân hợp hóa Thủy • Đinh – Nhâm hợp hóa Mộc • Mậu – Quý hợp hóa Hỏa.</li>
+      </ul>
+
+      <h4>6.2. Hệ thống 12 Địa Chi: Tam Hợp – Lục Hợp – Tứ Hành Xung – Lục Hại</h4>
+      <div class="book-table-wrap">
+        <table class="book-table">
+          <thead>
+            <tr>
+              <th>Phân Loại</th>
+              <th>Các Cặp / Bộ Địa Chi</th>
+              <th>Ứng Dụng Trong Phong Thủy &amp; Luận Tuổi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Tam Hợp Cục</strong></td><td>Thân – Tý – Thìn (Thủy Cục) • Hợi – Mão – Mùi (Mộc Cục) • Dần – Ngọ – Tuất (Hỏa Cục) • Tỵ – Dậu – Sửu (Kim Cục)</td><td>Chọn tuổi hợp tác, mượn tuổi động thổ, lập Thủy pháp Tam Hợp Trường Sinh trên La Kinh (Tầng 4).</td></tr>
+            <tr><td><strong>Nhị Hợp (Lục Hợp)</strong></td><td>Tý – Sửu • Dần – Hợi • Mão – Tuất • Thìn – Dậu • Tỵ – Thân • Ngọ – Mùi</td><td>Hóa giải xung sát giữa tuổi gia chủ và hướng nhà hoặc năm hạn.</td></tr>
+            <tr><td><strong>Tứ Hành Xung (Lục Xung)</strong></td><td>Tý – Ngọ • Mão – Dậu (Tứ Chính Xung)<br>Dần – Thân • Tỵ – Hợi (Tứ Sinh Xung)<br>Thìn – Tuất • Sửu – Mùi (Tứ Mộ Xung)</td><td>Tuyệt đối không dùng tuổi Lục Xung với tuổi gia chủ hoặc Lục Xung với Thái Tuế năm đó để động thổ, khai trương.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>6.3. Tam Tai – Kim Lâu – Hoang Ốc Khi Làm Nhà</h4>
+      <div class="formula-box">
+        <div>• <strong>Tính Kim Lâu:</strong> Lấy Tuổi Mụ (Tuổi Âm lịch) chia cho 9. Nếu số dư là <strong>1 (Kim Lâu Thân), 3 (Kim Lâu Thê), 6 (Kim Lâu Tử), 8 (Kim Lâu Lục Súc)</strong> là phạm Kim Lâu.</div>
+        <div>• <strong>Tính Hoang Ốc (6 cung):</strong> 10 tuổi (Nhất Cát - Tốt), 20 tuổi (Nhì Nghi - Tốt), 30 tuổi (Tam Địa Sát - Xấu), 40 tuổi (Tứ Tấn Tài - Tốt), 50 tuổi (Ngũ Thọ Tử - Xấu), 60 tuổi (Lục Hoang Ốc - Xấu). Các tuổi lẻ đếm tiếp theo vòng chiều kim đồng hồ.</div>
+        <div>• <strong>Tính Tam Tai:</strong> Tuổi Thân – Tý – Thìn kỵ 3 năm Dần – Mão – Thìn; Tuổi Dần – Ngọ – Tuất kỵ Thân – Dậu – Tuất; Tuổi Hợi – Mão – Mùi kỵ Tỵ – Ngọ – Mùi; Tuổi Tỵ – Dậu – Sửu kỵ Hợi – Tý – Sửu.</div>
+      </div>
+    </article>
+
+    <!-- CHƯƠNG 7: COI NGÀY (TRẠCH NHẬT) -->
+    <article class="chapter-card" id="ch-7">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN B • CHƯƠNG 7</span>
+        <h3 class="chapter-title">Coi Ngày (Trạch Nhật Cát Khánh): Động Thổ, Nhập Trạch, Khai Trương &amp; Cưới Hỏi</h3>
+      </div>
+
+      <h4>7.1. Quy trình 4 Bước Trạch Nhật Chính Thống ("Bổ Long – Phù Sơn – Tướng Chủ")</h4>
+      <ol>
+        <li><strong>Bước 1 — Tuyệt đối loại bỏ các ngày Đại Hung Sát:</strong>
+          <ul>
+            <li><strong>Ngày Tam Nương:</strong> Mùng 3, 7, 13, 18, 22, 27 Âm lịch hàng tháng.</li>
+            <li><strong>Ngày Nguyệt Kỵ:</strong> Mùng 5, 14, 23 Âm lịch (<em>"Mùng năm, mười bốn, hai ba / Đi chơi còn lỗ nữa là đi buôn"</em>).</li>
+            <li><strong>Ngày Sát Chủ &amp; Thọ Tử theo tháng:</strong> Tháng Giêng (Tỵ/Tuất), Tháng 2 (Tý/Thân), Tháng 3 (Mùi/Hợi), Tháng 4 (Mão/Tỵ), Tháng 5 (Thân/Tý), Tháng 6 (Tuất/Ngọ), Tháng 7 (Hợi/Sửu), Tháng 8 (Sửu/Mùi), Tháng 9 (Ngọ/Dần), Tháng 10 (Dậu/Thân), Tháng 11 (Dần/Mão), Tháng 12 (Thìn/Dậu).</li>
+          </ul>
+        </li>
+        <li><strong>Bước 2 — Kiểm tra Phương Vị Tọa Nhà Không Phạm 4 Đại Sát Của Năm/Tháng:</strong>
+          <ul>
+            <li><strong>Thái Tuế &amp; Tuế Phá:</strong> Năm Ngọ thì Thái Tuế ở Ngọ (Nam), Tuế Phá ở Tý (Bắc). Không động thổ ở phương Tuế Phá.</li>
+            <li><strong>Tam Sát (Kiếp Sát – Tai Sát – Tuế Sát):</strong> Năm Thân–Tý–Thìn Tam Sát tại Nam (Tỵ–Ngọ–Mùi); Năm Dần–Ngọ–Tuất Tam Sát tại Bắc (Hợi–Tý–Sửu); Năm Hợi–Mão–Mùi Tam Sát tại Tây (Thân–Dậu–Tuất); Năm Tỵ–Dậu–Sửu Tam Sát tại Đông (Dần–Mão–Thìn). <em>"Tam Sát khả hướng, bất khả tọa"</em> (Nhà tọa vào phương Tam Sát tuyệt đối không được động thổ sửa chữa năm đó!).</li>
+            <li><strong>Ngũ Hoàng Đại Sát:</strong> Phương có sao số 5 bay tới trong năm hoặc tháng đó.</li>
+          </ul>
+        </li>
+        <li><strong>Bước 3 — Chọn ngày Sinh/Vượng cho Tọa Sơn &amp; Hợp Tuổi Gia Chủ:</strong> Chi của ngày chọn phải Tam Hợp hoặc Lục Hợp với Chi tuổi gia chủ (và Tọa Sơn), Thiên Can ngày là Lộc/Quý Nhân của tuổi chủ.</li>
+        <li><strong>Bước 4 — Chọn Trực Tốt &amp; Giờ Hoàng Đạo:</strong> Ưu tiên các trực <strong>Kiến, Mãn, Bình, Định, Thành, Khai</strong> và sao tốt trong Nhị Thập Bát Tú (Giác, Phòng, Vĩ, Cơ, Đẩu, Thất, Bích, Khuê, Lâu, Vị, Tất, Tỉnh, Trương, Chẩn).</li>
+      </ol>
+    </article>
+    <!-- =====================================================================
+         PHẦN C: PHONG THỦY CHUYÊN SÂU (CHƯƠNG 8 -> CHƯƠNG 12)
+         ===================================================================== -->
+    <div class="part-banner">
+      <div class="p-code">PHẦN C • PHONG THỦY CHUYÊN SÂU (THÁNG 13 – THÁNG 20)</div>
+      <h2>Bát Trạch • Hình Khí • Loan Đầu • Huyền Không • Trấn Yểm Chế Hóa</h2>
+    </div>
+
+    <!-- CHƯƠNG 8: BÁT TRẠCH -->
+    <article class="chapter-card" id="ch-8">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN C • CHƯƠNG 8</span>
+        <h3 class="chapter-title">Bát Trạch Minh Cảnh &amp; Dương Cơ Tam Yếu (Môn – Chủ – Táo)</h3>
+      </div>
+
+      <h4>8.1. Phân Nhóm Đông Tứ Mệnh / Đông Tứ Trạch &amp; Tây Tứ Mệnh / Tây Tứ Trạch</h4>
+      <ul>
+        <li><strong>Đông Tứ Mệnh &amp; Đông Tứ Trạch (4 Quái):</strong> <strong>Khảm (Bắc - Thủy), Ly (Nam - Hỏa), Chấn (Đông - Mộc), Tốn (Đông Nam - Mộc)</strong>. Người thuộc Đông Tứ Mệnh ở nhà Đông Tứ Trạch thì đắc 4 cung cát: Sinh Khí, Thiên Y, Diên Niên, Phục Vị.</li>
+        <li><strong>Tây Tứ Mệnh &amp; Tây Tứ Trạch (4 Quái):</strong> <strong>Càn (Tây Bắc - Kim), Khôn (Tây Nam - Thổ), Cấn (Đông Bắc - Thổ), Đoài (Tây - Kim)</strong>. Người thuộc Tây Tứ Mệnh ở nhà Tây Tứ Trạch thì đắc 4 cung cát tương ứng.</li>
+      </ul>
+
+      <h4>8.2. Bản Chất 8 Du Niên Cửu Tinh Trong Bát Trạch</h4>
+      <div class="book-table-wrap">
+        <table class="book-table">
+          <thead>
+            <tr>
+              <th>Tên Du Niên</th>
+              <th>Sao Cửu Tinh &amp; Hành</th>
+              <th>Tính Chất</th>
+              <th>Ứng Dụng Đặt Cửa / Phòng / Bếp / Khu Phụ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>1. SINH KHÍ</strong></td><td>Tham Lang (Dương Mộc)</td><td><strong>Thượng Cát</strong></td><td>Chủ về phát tài lộc, thăng quan tiến chức, vượng nhân đinh. Tốt nhất cho Cửa chính, Phòng khách, Phòng ngủ chủ.</td></tr>
+            <tr><td><strong>2. THIÊN Y</strong></td><td>Cự Môn (Dương Thổ)</td><td><strong>Thượng Cát</strong></td><td>Chủ về sức khỏe dồi dào, trừ bệnh tật, quý nhân phù trợ. Rất tốt để đặt Phòng ngủ, Hướng Bếp cứu bệnh.</td></tr>
+            <tr><td><strong>3. DIÊN NIÊN</strong></td><td>Vũ Khúc (Dương Kim)</td><td><strong>Thượng Cát</strong></td><td>Chủ về hòa thuận vợ chồng, phúc thọ lâu dài, ngoại giao đắc lực. Tốt cho Cửa chính, Phòng ngủ vợ chồng, Phòng thờ.</td></tr>
+            <tr><td><strong>4. PHỤC VỊ</strong></td><td>Tả Phù (Âm Mộc)</td><td><strong>Tiểu Cát</strong></td><td>Chủ về bình an, tĩnh tại, giữ gìn cơ nghiệp. Tốt cho Phòng thờ, Bàn học, Phòng thiền.</td></tr>
+            <tr><td><strong>5. HỌA HẠI</strong></td><td>Lộc Tồn (Âm Thổ)</td><td><strong>Tiểu Hung</strong></td><td>Chủ về thị phi, kiện tụng vặt, mệt mỏi. Nên đặt Khu vệ sinh, Kho chứa đồ hoặc Tọa Bếp để đốt cháy hung khí.</td></tr>
+            <tr><td><strong>6. LỤC SÁT</strong></td><td>Văn Khúc (Âm Thủy)</td><td><strong>Trung Hung</strong></td><td>Chủ về đào hoa xấu, bất hòa tình cảm, hao tài. Đặt bể phốt, nhà tắm để trấn áp (Thủy hạ).</td></tr>
+            <tr><td><strong>7. NGŨ QUỶ</strong></td><td>Liêm Trinh (Âm Hỏa)</td><td><strong>Đại Hung</strong></td><td>Chủ về hỏa hoạn, tai nạn bất ngờ, tiểu nhân phá hoại. Tọa Bếp tại Ngũ Quỷ hướng về Sinh Khí sẽ hóa hung thành cát.</td></tr>
+            <tr><td><strong>8. TUYỆT MỆNH</strong></td><td>Phá Quân (Âm Kim)</td><td><strong>Đại Hung</strong></td><td>Chủ về bệnh nặng, suy tuyệt nhân đinh, phá sản. Tuyệt đối tránh mở Cửa chính hay đặt Giường ngủ; dùng làm nhà kho/WC.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>8.3. Pháp Quyết "Dương Cơ Tam Yếu": Môn – Chủ – Táo</h4>
+      <div class="formula-box">
+        <div>• <strong>MÔN (Cửa Chính - Khí Khẩu):</strong> Nơi nạp 80% khí cho toàn bộ ngôi nhà, bắt buộc phải đặt tại cung Cát và tránh các tia sát ngoại cảnh.</div>
+        <div>• <strong>CHỦ (Phòng Ngủ Chủ Nhà &amp; Phòng Thờ):</strong> Nơi con người nghỉ ngơi 8 tiếng mỗi ngày, phải tọa ở cung Cát (Sinh Khí, Thiên Y, Diên Niên).</div>
+        <div>• <strong>TÁO (Bếp Nấu — Nguyên Tắc "Tọa Hung Hướng Cát"):</strong> Thân bếp đặt đè lên cung Hung (Tuyệt Mệnh, Ngũ Quỷ, Lục Sát, Họa Hại) để sức lửa thiêu đốt hung sát; miệng bếp (hướng lưng người đứng nấu) quay về cung Cát (Sinh Khí, Thiên Y, Diên Niên) để nạp phúc lộc. <em>Tuyệt đối kỵ đặt bếp tại cung Càn Tây Bắc ("Hỏa thiêu Thiên Môn" — hại người cha/nam chủ)!</em></div>
+      </div>
+    </article>
+
+    <!-- CHƯƠNG 9: HÌNH KHÍ -->
+    <article class="chapter-card" id="ch-9">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN C • CHƯƠNG 9</span>
+        <h3 class="chapter-title">Hình Khí Phong Thủy: "Hình Nào Khí Đó", Khuyết Góc Cửu Cung &amp; Dẫn Khí Nội Cục</h3>
+      </div>
+
+      <h4>9.1. Định Luật Cảm Ứng Hình – Khí</h4>
+      <p>
+        Trong phong thủy thực chiến, <strong>Hình thể kiến trúc quyết định trực tiếp tính chất của dòng Khí</strong>. Một ngôi nhà chưa cần đặt La Kinh xuống, chỉ nhìn hình khối bên ngoài đã đoán được 70% cát hung:
+      </p>
+      <ul>
+        <li><strong>Nhà vuông vức, cân đối (Tứ chính):</strong> Trường khí luân chuyển tròn đầy, tâm lý người ở ổn định, gia đạo bền vững.</li>
+        <li><strong>Nhà hình chữ L (Hình con dao phay / Khuyết lớn):</strong> Dễ mất cân bằng trường khí nghiêm trọng; phòng nằm ở phần lưỡi dao nhô ra thường chịu cô lập hoặc thương tổn.</li>
+        <li><strong>Nhà Thót Hậu (Trước rộng sau hẹp):</strong> Khí vào không tụ được mà bị ép thoát ra, càng ở lâu tài sản càng thu hẹp, hậu vận suy giảm.</li>
+        <li><strong>Nhà Nở Hậu (Trước hẹp vừa, sau nở rộng như túi tiền):</strong> Khí vào dễ tụ khó tán, tích lũy tài sản bền vững.</li>
+      </ul>
+
+      <h4>9.2. Luận Đoán Nhà Khuyết Góc Theo 8 Cung Bát Quái</h4>
+      <ul>
+        <li><strong>Khuyết góc Tây Bắc (Cung Càn):</strong> Ảnh hưởng trực tiếp đến người Cha / Nam chủ nhân (dễ đau đầu, xương khớp, mất quyền uy hoặc công danh trắc trở).</li>
+        <li><strong>Khuyết góc Tây Nam (Cung Khôn):</strong> Ảnh hưởng đến người Mẹ / Nữ chủ nhân (bệnh dạ dày, tiêu hóa, gia đạo thiếu hơi ấm).</li>
+        <li><strong>Khuyết góc Chính Đông (Cung Chấn):</strong> Ảnh hưởng đến Trưởng Nam, khó sinh con trai hoặc sự nghiệp con trai cả vất vả.</li>
+        <li><strong>Khuyết góc Đông Nam (Cung Tốn):</strong> Ảnh hưởng đến Trưởng Nữ, tài lộc văn chương và hô hấp.</li>
+      </ul>
+
+      <h4>9.3. Cấm Kỵ Hình Khí Nội Cục Cần Nhớ</h4>
+      <ul>
+        <li><strong>Xuyên Tâm Sát:</strong> Cửa chính thông thẳng một đường ra cửa hậu hoặc ban công sau (Khí vào tuột thẳng ra ngoài, tiền tài không giữ được). Hóa giải bằng bình phong hoặc tủ kệ chắn giữa.</li>
+        <li><strong>Cầu thang đâm thẳng ra cửa chính:</strong> Tài khí từ tầng trên đổ tuột ra ngoài cửa.</li>
+        <li><strong>Xà ngang ép đỉnh (Hoành lương áp đỉnh):</strong> Xà ngang đè trên giường ngủ, bàn làm việc hoặc bếp nấu gây ức chế trường khí, đau đầu, mất ngủ.</li>
+      </ul>
+    </article>
+
+    <!-- CHƯƠNG 10: LOAN ĐẦU -->
+    <article class="chapter-card" id="ch-10">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN C • CHƯƠNG 10</span>
+        <h3 class="chapter-title">Loan Đầu Ngoại Cục: Tứ Linh Huyệt Pháp, Thủy Pháp &amp; 12 Hình Sát Ngoại Cảnh</h3>
+      </div>
+
+      <h4>10.1. Mô Hình Tứ Linh Chuẩn Mực Trong Loan Đầu</h4>
+      <ul>
+        <li><strong>1. Hậu Huyền Vũ (Phía sau lưng nhà):</strong> Cần có núi cao, gò đất đầy đặn hoặc tòa nhà cao vững chãi làm chỗ dựa (<em>Tọa Sơn</em>), giúp gia chủ có quý nhân chống lưng, hậu vận vững chắc. Kỵ phía sau bị hụt sâu, vực thẳm hoặc đường xe chạy cắt ngang sau lưng.</li>
+        <li><strong>2. Tiền Chu Tước (Phía trước mặt nhà — Minh Đường):</strong> Cần quang đãng, sáng sủa, có sân (Nội minh đường) và khoảng không/hồ nước/đường thoáng (Ngoại minh đường) để tụ khí sinh tài.</li>
+        <li><strong>3. Tả Thanh Long (Bên trái từ trong nhà nhìn ra):</strong> Cần nhô cao vừa phải, uốn lượn sinh động, đại diện cho Nam giới, công danh và quý nhân.</li>
+        <li><strong>4. Hữu Bạch Hổ (Bên phải từ trong nhà nhìn ra):</strong> Cần thấp hơn hoặc bằng Thanh Long, hiền hòa ôm lấy minh đường. Kỵ <em>"Bạch Hổ ngẩng đầu"</em> (bên phải cao vọt áp bức bên trái) hoặc <em>"Bạch Hổ mở miệng"</em> (gây thị phi, tai thương).</li>
+      </ul>
+
+      <h4>10.2. Nhận Diện &amp; Hóa Giải Các Thế Sát Loan Đầu Nguy Hiểm</h4>
+      <div class="book-table-wrap">
+        <table class="book-table">
+          <thead>
+            <tr>
+              <th>Tên Thế Sát</th>
+              <th>Hình Dạng Thực Tế Ngoài Công Trình</th>
+              <th>Hậu Quả Ứng Nghiệm</th>
+              <th>Phương Pháp Hóa Giải Thực Chiến</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>1. Thương Sát (Lộ Xung)</strong></td><td>Con đường thẳng hoặc ngõ hẻm đâm trực diện vào cửa chính ngôi nhà.</td><td>Tai nạn máu huyết, phẫu thuật, hao tài đột ngột, thị phi.</td><td>Xây tường bình phong/hòn non bộ chắn trước, trồng hàng cây dày, treo Gương Bát Quái Hậu Thiên hoặc đặt đôi Kỳ Lân đá trấn cửa.</td></tr>
+            <tr><td><strong>2. Phản Cung Sát</strong></td><td>Đoạn đường cong hoặc khúc sông uốn cong hướng phần lưng cung tròn bắn thẳng vào nhà.</td><td>Tiểu nhân phản bội, ly tán tình cảm, thất thoát tiền bạc liên miên.</td><td>Trồng cây xanh che tầm nhìn, đặt Bể cá/Thủy cảnh nhỏ kết hợp Thạch Anh hoặc Kỳ Lân đồng hóa sát.</td></tr>
+            <tr><td><strong>3. Thiên Trảm Sát</strong></td><td>Khe hở hẹp giữa hai tòa nhà cao tầng đối diện chiếu thẳng như nhát chém gió vào cửa/ban công.</td><td>Gió lùa cực mạnh cắt đứt trường khí, dễ gặp tai nạn bất ngờ, bệnh hiểm nghèo.</td><td>Tránh mở cửa chính đối diện khe hở; dùng rèm dày, kính phản quang, đặt Hồ lô đồng và Long Quy hóa giải.</td></tr>
+            <tr><td><strong>4. Tiễn Xạ / Góc Nhọn</strong></td><td>Góc nhọn của tòa nhà đối diện, góc mái đình chùa đâm thẳng vào cửa chính hoặc cửa sổ.</td><td>Đau ốm bộ phận cơ thể ứng với phương vị bị đâm, cãi vã, kiện tụng.</td><td>Dùng chậu cây lá tròn cao che chắn góc nhọn, treo Gương Bát Quái Lồi hoặc Chuông gió đồng 6 ống.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- CHƯƠNG 11: HUYỀN KHÔNG -->
+    <article class="chapter-card" id="ch-11">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN C • CHƯƠNG 11</span>
+        <h3 class="chapter-title">Huyền Không Học: Tam Nguyên Cửu Vận, Phi Tinh 24 Sơn &amp; Chiến Lược Đón Vận 9</h3>
+      </div>
+
+      <h4>11.1. Hệ Thống Tam Nguyên Cửu Vận (Chu Kỳ 180 Năm)</h4>
+      <ul>
+        <li><strong>Thượng Nguyên (60 năm):</strong> Vận 1 Nhất Bạch Thủy (1864–1883) • Vận 2 Nhị Hắc Thổ (1884–1903) • Vận 3 Tam Bích Mộc (1904–1923).</li>
+        <li><strong>Trung Nguyên (60 năm):</strong> Vận 4 Tứ Lục Mộc (1924–1943) • Vận 5 Ngũ Hoàng Thổ (1944–1963) • Vận 6 Lục Bạch Kim (1964–1983).</li>
+        <li><strong>Hạ Nguyên (60 năm):</strong> Vận 7 Thất Xích Kim (1984–2003) • Vận 8 Bát Bạch Thổ (2004–2023) • <strong>Vận 9 Cửu Tử Ly Hỏa (2024–2043)</strong>.</li>
+      </ul>
+
+      <h4>11.2. Đặc Tính Cửu Tinh Trong Đương Vận 9 (2024 – 2043)</h4>
+      <div class="formula-box">
+        <div>• <strong>Đương Vận Đại Vượng Tinh:</strong> <strong>Sao Cửu Tử (#9 - Ly Hỏa)</strong> — Chủ về đại phát tài lộc, danh tiếng, công nghệ, văn hóa, hỷ khánh.</div>
+        <div>• <strong>Sinh Khí Tương Lai Tinh:</strong> <strong>Sao Nhất Bạch (#1 - Khảm Thủy)</strong> và <strong>Sao Nhị Hắc (#2 - Khôn Thổ, sang Vận 9 đã chuyển từ Bệnh phù thành Sinh khí tương lai)</strong>.</div>
+        <div>• <strong>Thoái Khí Tinh:</strong> <strong>Sao Bát Bạch (#8 - Cấn Thổ)</strong> — Vừa mãn vận, còn dư khí bình hòa.</div>
+        <div>• <strong>Tử Khí / Sát Khí Tinh (Cần Chế Hóa):</strong> <strong>Sao Ngũ Hoàng (#5 - Đại sát), Tam Bích (#3 - Thị phi kiện tụng), Lục Bạch (#6 - Suy khí), Thất Xích (#7 - Phá tài, trộm cướp), Tứ Lục (#4 - Tử khí)</strong>.</div>
+      </div>
+
+      <h4>11.3. Bốn Cục Diện Tinh Bàn Huyền Không Cốt Lõi</h4>
+      <ol>
+        <li><strong>1. Vượng Sơn Vượng Hướng (Đinh Tài Lưỡng Vượng):</strong> Sao Vượng của vận (ví dụ sao #9) của Sơn bàn bay về đúng phương Tọa, sao Vượng của Hướng bàn bay về đúng phương Hướng. Phía sau nhà có núi/nhà cao, phía trước có minh đường/nước thoáng → Gia đạo vừa khỏe mạnh đông con (Vượng Đinh), vừa phát đạt giàu có (Vượng Tài).</li>
+        <li><strong>2. Thượng Sơn Hạ Thủy (Đinh Tài Lưỡng Bại):</strong> Sao Vượng của Hướng tinh lại bay ra phía sau lưng (Tọa), còn sao Vượng của Sơn tinh lại bay ra phía trước cửa (Hướng). Nếu trước thấp sau cao theo kiểu thông thường sẽ phạm <em>"Sơn tinh xuống nước, Hướng tinh lên núi"</em> → Hại sức khỏe và phá tài. <strong>Cách hóa giải:</strong> Phía trước cần có án sơn/bình phong cao vừa phải (Thu sơn), phía sau mở giếng trời hoặc đặt hồ nước/thác nước (Thủy lý long thần hạ thủy).</li>
+        <li><strong>3. Song Tinh Đáo Hướng (Vượng Tài):</strong> Cả hai sao Vượng của Sơn và Hướng cùng hội tụ ở phía trước cửa chính. Phía trước cần có khoảng sân rộng, hồ nước vừa và ngoài xa có tòa nhà/án sơn đỡ lại (Thủy ngoại hữu sơn) thì đại phát tài lộc.</li>
+        <li><strong>4. Song Tinh Đáo Sơn (Vượng Đinh):</strong> Cả hai sao Vượng cùng hội tụ ở phía sau nhà. Phía sau cần có thế đất cao kèm hồ nước tĩnh hoặc mở cửa phụ phía sau để kích hoạt tài khí.</li>
+      </ol>
+    </article>
+
+    <!-- CHƯƠNG 12: TRẤN YỂM & HÓA GIẢI -->
+    <article class="chapter-card" id="ch-12">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN C • CHƯƠNG 12</span>
+        <h3 class="chapter-title">Trấn Yểm, Chế Hóa Ngũ Hành &amp; Kích Hoạt Tài Lộc Đúng Chính Pháp</h3>
+      </div>
+
+      <h4>12.1. Nguyên Tắc 4 Cấp Độ: Tị (Tránh) → Hóa (Tiết Khí) → Chế (Khắc) → Trấn (Pháp Khí)</h4>
+      <p>
+        Một Phong Thủy Sư chân chính luôn ưu tiên <strong>"Hóa" (dùng Ngũ hành tương sinh để tiết giảm hung khí)</strong> hơn là "Đấu / Sát" (dùng vật hung dữ đối chọi trực diện dễ gây phản phệ).
+      </p>
+
+      <h4>12.2. Phác Đồ Chế Hóa Các Tổ Hợp Hung Tinh Thường Gặp</h4>
+      <ul>
+        <li><strong>Hóa giải Ngũ Hoàng Đại Sát (#5 - Thổ độc) &amp; Nhị Hắc Bệnh Phù (#2 - Thổ):</strong>
+          <ul>
+            <li>Tuyệt đối không đặt vật màu đỏ, đèn sáng rực hay bếp lửa tại cung có Ngũ Hoàng (vì Hỏa sinh Thổ làm Ngũ Hoàng bùng phát!).</li>
+            <li>Tuyệt đối không đặt cây xanh tại đó (vì Mộc khắc Thổ làm kích nộ Ngũ Hoàng!).</li>
+            <li><strong>Chính pháp:</strong> Dùng <strong>Kim Khí Nặng</strong> để tiết khí Thổ (Thổ sinh Kim): Treo <strong>Chuông gió đồng 6 ống</strong>, đặt <strong>Hồ lô đồng nguyên chất</strong>, <strong>Lục Đế Tiền (6 đồng tiền cổ bằng đồng)</strong> hoặc hũ muối đồng (An nhẫn thủy).</li>
+          </ul>
+        </li>
+        <li><strong>Hóa giải Tam Bích (#3 - Mộc) gây thị phi, kiện tụng, trộm cắp:</strong> Dùng <strong>Hỏa Khí</strong> (Thảm đỏ, đèn ánh sáng ấm, đá thạch anh hồng/tím) để tiết Mộc sinh Hỏa, biến khí tranh đấu thành trí tuệ quang minh.</li>
+        <li><strong>Hóa giải Thất Xích (#7 - Kim suy) gây hao tài, thương tích kim khí:</strong> Dùng <strong>Thủy Khí Tĩnh</strong> (Bình nước gốm đen/xanh lam, An nhẫn thủy) để tiết Kim sinh Thủy.</li>
+      </ul>
+
+      <h4>12.3. Nghi Thức Thanh Tẩy, Khai Quang &amp; Giới Hạn Đạo Đức Của Trấn Yểm</h4>
+      <div class="formula-box">
+        <strong>Ba Nguyên Tắc Bất Di Bất Dịch Khi Dùng Pháp Khí Trấn Yểm:</strong><br>
+        1. <strong>Không bao giờ trấn yểm để hại hàng xóm hay đổi họa cho người khác:</strong> Ví dụ treo gương lõm/gương thú dữ chiếu thẳng vào cửa nhà đối diện sẽ tạo ác nghiệp trực tiếp cho cả gia chủ lẫn người thầy.<br>
+        2. <strong>Pháp khí phải đúng chất liệu Ngũ hành thật:</strong> Kim phải là đồng/kim loại thật; Thổ phải là đá tự nhiên/gốm nung (không dùng đồ nhựa sơn giả đồng).<br>
+        3. <strong>Tâm gia chủ là gốc:</strong> Khi an vị pháp khí, hướng dẫn gia chủ giữ tâm thiện lành, hiếu thuận và làm việc phước thiện để trường khí nội tâm đồng điệu với pháp khí.
+      </div>
+    </article>
+
+    <!-- =====================================================================
+         PHẦN D: KẾT KHÓA, THỰC ĐỊA & TỐT NGHIỆP (CHƯƠNG 13 -> CHƯƠNG 14)
+         ===================================================================== -->
+    <div class="part-banner">
+      <div class="p-code">PHẦN D • KẾT KHÓA, THỰC ĐỊA &amp; TỐT NGHIỆP (THÁNG 21 – THÁNG 24)</div>
+      <h2>Tổng Hợp Luận Công Trình Thực Tế • Đề Thi Cuối Khóa • Lễ Nhập Môn</h2>
+    </div>
+
+    <!-- CHƯƠNG 13: LUẬN CÔNG TRÌNH THỰC TẾ -->
+    <article class="chapter-card" id="ch-13">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN D • CHƯƠNG 13</span>
+        <h3 class="chapter-title">Quy Trình 10 Bước Khảo Sát &amp; Tổng Hợp Luận Đoán Công Trình Thực Tế</h3>
+      </div>
+
+      <h4>13.1. Quy Trình 10 Bước Chuẩn Khi Đi Công Trình Thực Tế</h4>
+      <ol>
+        <li><strong>Bước 1 — Bấm quẻ Tiên Thiên trước khi xuất phát:</strong> Khi gia chủ gọi điện mời hoặc lúc bước chân tới cổng, lập 1 quẻ Mai Hoa Dịch Số / Tiểu Độn để nắm trước "Thiên cơ" và vấn đề cốt lõi của ngôi nhà.</li>
+        <li><strong>Bước 2 — Thu thập thông tin Nhân Sự &amp; Thời Gian:</strong> Ghi đầy đủ năm tháng ngày giờ sinh của Trạch chủ, vợ/chồng, các con; năm xây dựng/nhập trạch ngôi nhà (để xác định đúng Vận Huyền Không).</li>
+        <li><strong>Bước 3 — Khảo sát Ngoại Cục Loan Đầu (4 phía):</strong> Đi bộ một vòng quanh nhà quan sát Tả Thanh Long – Hữu Bạch Hổ – Tiền Chu Tước – Hậu Huyền Vũ, ngã ba/ngã tư đường (Lộ pháp), dòng nước đến/đi (Thủy pháp) và các góc nhọn, cột điện, khe hẹp (Hình sát).</li>
+        <li><strong>Bước 4 — Đo La Kinh 12 Tầng tại 3 Vị Trí Chuẩn:</strong> Tháo đồng hồ, điện thoại, thắt lưng kim loại; đứng cách tường bê tông cốt thép ít nhất 1m–1.5m; đo 3 lần tại (1) Trước cửa chính 3 bước chân, (2) Giữa sân/đường nhìn song song mặt tiền, (3) Tại Trung cung ngôi nhà. Đối chiếu 3 kết quả để chốt chính xác độ số $0^\circ \to 360^\circ$.</li>
+        <li><strong>Bước 5 — Kiểm tra Tầng 2 &amp; Tầng 6 trên La Kinh:</strong> Xem độ số có phạm Đại/Tiểu Không Vong, Bát Sát, Hoàng Tuyền hay Phân Kim Cô Hư không.</li>
+        <li><strong>Bước 6 — Đo Ngoại Cảnh bằng Nhân Bàn (-7.5°) và Thiên Bàn (+7.5°):</strong> Đo các tòa nhà cao/đỉnh núi bằng Tầng 7 Nhân Bàn; đo ngã ba đường, cổng, hồ nước bằng Tầng 8 Thiên Bàn &amp; Tầng 4 Trường Sinh.</li>
+        <li><strong>Bước 7 — Vẽ Mặt Bằng Kiến Trúc &amp; Lập Cực Phân 8 Cung / 24 Sơn:</strong> Tìm tâm hình học (Trung cung Thái Cực) trên bản vẽ mặt bằng các tầng, đặt lưới 8 cung 24 sơn đúng theo độ số vừa đo.</li>
+        <li><strong>Bước 8 — Phối Bát Trạch (Tầng 5) &amp; Huyền Không Phi Tinh (Tầng 10):</strong> Kiểm tra Môn – Chủ – Táo – Khu vệ sinh – Cầu thang rơi vào sao Sơn/Hướng nào và Du niên nào.</li>
+        <li><strong>Bước 9 — Lập Phương Án Điều Chỉnh &amp; Chế Hóa:</strong> Đưa ra giải pháp khả thi nhất (xoay hướng bếp, đổi vị trí giường, mở/đóng cửa sổ, đặt bình phong, an vị pháp khí chế hóa Ngũ Hoàng/Nhị Hắc, kích hoạt Thủy/Sơn đương vận 9).</li>
+        <li><strong>Bước 10 — Trạch Nhật Thi Công &amp; Bàn Giao Hồ Sơ Luận Giải:</strong> Chọn ngày giờ cát khánh hợp tọa sơn và tuổi gia chủ để tiến hành cải tạo hoặc động thổ.</li>
+      </ol>
+
+      <h4>13.2. Án Lệ Thực Tế Mẫu (Case Study Điển Hình)</h4>
+      <div class="formula-box">
+        <strong>Án lệ: Nhà phố Tọa Tốn (Đông Nam 135°) – Hướng Càn (Tây Bắc 315°), nhập trạch năm 2025 (Vận 9), Gia chủ Nam sinh năm 1995 (Ất Hợi – Cung Khôn Thổ, Tây Tứ Mệnh):</strong><br>
+        • <strong>1. Phân tích Độ Số &amp; La Kinh 12 Tầng:</strong> Độ số $315.0^\circ$ nằm chính tâm Sơn Càn (Thiên Nguyên Long), đắc Chính tuyến, không phạm Không Vong.<br>
+        • <strong>2. Phân tích Bát Trạch (Tầng 5):</strong> Gia chủ cung Khôn (Tây Tứ Mệnh) ở nhà hướng Càn (Tây Bắc) đắc cung <strong>Diên Niên (Vũ Khúc Kim)</strong> — rất hợp mệnh, gia đạo bền vững, quý nhân nâng đỡ.<br>
+        • <strong>3. Phân tích Huyền Không Phi Tinh (Tầng 10):</strong> Vận 9 Tọa Tốn Hướng Càn có cặp sao Hướng tinh đương vận hội chiếu; tuy nhiên cần tuyệt đối tránh đặt Bếp tại góc Tây Bắc (Càn) để không phạm <em>"Hỏa thiêu Thiên Môn"</em>. Bếp nên đặt tọa Đông Nam (Tốn - Ngũ Quỷ) hoặc Chính Bắc (Khảm - Tuyệt Mệnh) quay miệng bếp về Tây Bắc (Diên Niên) hoặc Đông Bắc (Sinh Khí) là đạt chuẩn 100% cả Bát Trạch lẫn Huyền Không!
+      </div>
+    </article>
+
+    <!-- CHƯƠNG 14: BÀI TEST CUỐI KHÓA & LỄ NHẬP MÔN -->
+    <article class="chapter-card" id="ch-14">
+      <div class="chapter-header">
+        <span class="chapter-tag">PHẦN D • CHƯƠNG 14 • TỐT NGHIỆP</span>
+        <h3 class="chapter-title">Bài Kiểm Tra Tốt Nghiệp Phong Thủy Sư, Đề Tài Luận Văn &amp; Nghi Thức Lễ Nhập Môn</h3>
+      </div>
+
+      <h4>14.1. Đề Tài Bài Luận Cuối Khóa (Học Viên Chọn 1 Đề Tài Thực Địa)</h4>
+      <ol>
+        <li><strong>Đề tài 1:</strong> Khảo sát thực địa, đo La Kinh 12 tầng và lập Hồ sơ Phong thủy toàn diện (Loan đầu + Bát trạch + Huyền không + Trạch nhật) cho chính ngôi nhà học viên đang ở.</li>
+        <li><strong>Đề tài 2:</strong> Phân tích sâu mối tương quan giữa nguyên lý <em>"Hậu Đức Tải Vật"</em> (Triết học Dịch – Phật) và hiện tượng <em>"Nhà lớn nuốt người"</em> qua 3 công trình biệt thự thực tế.</li>
+        <li><strong>Đề tài 3:</strong> Luận giải và thiết kế phương án cứu giải cho một công trình phạm cục <em>"Thượng Sơn Hạ Thủy"</em> trong Hạ Nguyên Vận 9 (2024–2043).</li>
+      </ol>
+
+      <!-- BÀI TEST CUỐI KHÓA TƯƠNG TÁC -->
+      <div class="interactive-lab no-print" style="margin-top: 22px;">
+        <div class="lab-title">
+          <span>🎓 BÀI TEST CUỐI KHÓA CẤP CHỨNG NHẬN LÝ THUYẾT PHONG THỦY SƯ</span>
+          <span id="quiz-score-badge" style="color:#4ade80;">Hoàn thành 5 câu hỏi cốt lõi</span>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:14px;font-size:0.85rem;">
+          <div>
+            <div style="font-weight:700;color:#fde68a;margin-bottom:5px;">Câu 1: Khi dùng La Kinh 12 tầng, tầng nào dùng để Nạp Thủy (đo ngã ba đường, dòng sông, cổng nước)?</div>
+            <select id="q-1" class="lab-select" style="width:100%;">
+              <option value="0">-- Chọn đáp án --</option>
+              <option value="1">A. Địa Bàn Chính Châm (Tầng 2)</option>
+              <option value="2">B. Nhân Bàn Trung Châm lệch -7.5° (Tầng 7)</option>
+              <option value="3">C. Thiên Bàn Phùng Châm lệch +7.5° (Tầng 8 - Vòng chỉ vàng đậm)</option>
+            </select>
+          </div>
+
+          <div>
+            <div style="font-weight:700;color:#fde68a;margin-bottom:5px;">Câu 2: Trong quẻ Mai Hoa Dịch Số, quan hệ giữa Quẻ Thể (Chủ nhà) và Quẻ Dụng (Ngôi nhà) như thế nào là Đại Cát nhất?</div>
+            <select id="q-2" class="lab-select" style="width:100%;">
+              <option value="0">-- Chọn đáp án --</option>
+              <option value="1">A. Quẻ Dụng khắc Quẻ Thể (Nhà khắc người)</option>
+              <option value="2">B. Quẻ Dụng sinh Quẻ Thể (Ngôi nhà sinh dưỡng cho gia chủ)</option>
+              <option value="3">C. Quẻ Thể sinh Quẻ Dụng (Gia chủ hao sức nuôi nhà)</option>
+            </select>
+          </div>
+
+          <div>
+            <div style="font-weight:700;color:#fde68a;margin-bottom:5px;">Câu 3: Phương pháp chính thống để hóa giải sao Ngũ Hoàng Đại Sát (#5 - Hành Thổ độc) bay đến cửa là gì?</div>
+            <select id="q-3" class="lab-select" style="width:100%;">
+              <option value="0">-- Chọn đáp án --</option>
+              <option value="1">A. Treo đèn đỏ rực hoặc đặt bếp lửa (Hỏa sinh Thổ)</option>
+              <option value="2">B. Đặt chậu cây xanh lớn (Mộc khắc Thổ)</option>
+              <option value="3">C. Dùng Kim khí (Chuông gió đồng 6 ống, Hồ lô đồng, Lục Đế Tiền) để tiết khí Thổ sinh Kim</option>
+            </select>
+          </div>
+
+          <div>
+            <div style="font-weight:700;color:#fde68a;margin-bottom:5px;">Câu 4: Độ số hướng nhà rơi vào mốc 292.5° (vạch giao giữa quái Đoài Tây và quái Càn Tây Bắc) phạm vào lỗi gì trên La Kinh?</div>
+            <select id="q-4" class="lab-select" style="width:100%;">
+              <option value="0">-- Chọn đáp án --</option>
+              <option value="1">A. Phạm Đại Không Vong (Vạch giao giữa 2 Quái lớn — Tối kỵ)</option>
+              <option value="2">B. Đắc Chính Tuyến Vượng Khí</option>
+              <option value="3">C. Đắc Hợp Thập</option>
+            </select>
+          </div>
+
+          <div>
+            <div style="font-weight:700;color:#fde68a;margin-bottom:5px;">Câu 5: Trong Hạ Nguyên Vận 9 (2024–2043), ngôi sao nào là Đương Vận Đại Vượng Tinh?</div>
+            <select id="q-5" class="lab-select" style="width:100%;">
+              <option value="0">-- Chọn đáp án --</option>
+              <option value="1">A. Sao Thất Xích (#7 - Đoài Kim)</option>
+              <option value="2">B. Sao Bát Bạch (#8 - Cấn Thổ)</option>
+              <option value="3">C. Sao Cửu Tử (#9 - Ly Hỏa)</option>
+            </select>
+          </div>
+
+          <button type="button" class="lab-btn" onclick="gradeGraduationQuiz()">🏆 Nộp Bài &amp; Chấm Điểm Tốt Nghiệp</button>
+          <div class="lab-result" id="quiz-result-box">
+            Chọn đáp án cho 5 câu hỏi trên và bấm "Nộp Bài" để kiểm tra kết quả.
+          </div>
+        </div>
+      </div>
+
+      <h4>14.2. Tâm Pháp Lễ Nhập Môn Phong Thủy Sư</h4>
+      <div class="pithy-quote">
+        "Nhập môn học đạo, trước sửa tâm mình, sau giúp đời người. Kính Thiên – Lễ Phật – Trọng Sư – Thương Người; dùng học thuật chân chính để đem lại bình an, tuyệt đối không vì tư lợi mà làm trái nhân quả!"
+      </div>
+    </article>
+
+    <!-- PHẦN CUỐI SÁCH: LỜI CẢM ƠN, MÃ QR ỦNG HỘ & BẢN QUYỀN HOÀNG TUẤN VIỆT -->
+    <section class="chapter-card" style="border-top: 4px solid #d97706; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); text-align: center;">
+      <div style="font-size: 1.4rem; color: #b45309; margin-bottom: 6px;">☸ 💖 ☯</div>
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.35rem; color: #7f1d1d; margin-bottom: 8px;">
+        LỜI CẢM ƠN &amp; ĐỒNG HÀNH PHÁT TRIỂN HỆ THỐNG
+      </h3>
+      <p style="text-align: center; max-width: 680px; margin: 0 auto 16px; color: #451a03;">
+        Trân trọng cảm ơn quý bạn đọc và học viên đã nghiên cứu <strong>Sách Giáo Trình Đào Tạo Phong Thủy Sư Toàn Thư</strong> trên hệ thống Học Thuật Đông Phương. Mọi sự ủng hộ tùy tâm của quý bạn đều giúp hệ thống được cải tiến và phụng sự cộng đồng tốt hơn mỗi ngày!
+      </p>
+      <div style="display: inline-flex; flex-direction: column; align-items: center; background: #ffffff; padding: 16px 24px; border-radius: 12px; border: 1.5px solid #d97706; box-shadow: 0 8px 20px rgba(180, 83, 9, 0.12);">
+        <img src="qr_payment.png" alt="Mã QR Ủng Hộ Hoàng Tuấn Việt" style="width: 190px; height: auto; border-radius: 8px; margin-bottom: 10px;">
+        <div style="font-size: 0.86rem; color: #1e293b;"><strong>Ngân hàng:</strong> TPBank (Tiên Phong Bank)</div>
+        <div style="font-size: 0.86rem; color: #7f1d1d; font-weight: 800;">Chủ TK: HOANG TUAN VIET • STK: 0300 1779 995</div>
+      </div>
+      <div style="margin-top: 16px; font-size: 0.82rem; color: #78350f; font-weight: 600;">
+        © Bản quyền hệ thống &amp; ấn phẩm thuộc về <strong>Hoàng Tuấn Việt</strong> — Email: viet.ht.18995@gmail.com
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Công cụ thực hành lập quẻ Mai Hoa Dịch Số & Tiểu Độn Lục Nhâm (Chương 5)
+    function runMaiHoaLab() {
+      const month = parseInt(document.getElementById("mh-month").value, 10) || 10;
+      const day = parseInt(document.getElementById("mh-day").value, 10) || 18;
+      const hour = parseInt(document.getElementById("mh-hour").value, 10) || 5;
+      const yearChiNum = 7; // Năm Ngọ = 7
+
+      const trigrams = {
+        1: { name: "Càn ☰", elem: "Kim" },
+        2: { name: "Đoài ☱", elem: "Kim" },
+        3: { name: "Ly ☲", elem: "Hỏa" },
+        4: { name: "Chấn ☳", elem: "Mộc" },
+        5: { name: "Tốn ☴", elem: "Mộc" },
+        6: { name: "Khảm ☵", elem: "Thủy" },
+        7: { name: "Cấn ☶", elem: "Thổ" },
+        8: { name: "Khôn ☷", elem: "Thổ" }
+      };
+
+      let upperNum = (yearChiNum + month + day) % 8;
+      if (upperNum === 0) upperNum = 8;
+      let lowerNum = (yearChiNum + month + day + hour) % 8;
+      if (lowerNum === 0) lowerNum = 8;
+      let movingLine = (yearChiNum + month + day + hour) % 6;
+      if (movingLine === 0) movingLine = 6;
+
+      const upper = trigrams[upperNum];
+      const lower = trigrams[lowerNum];
+      const isLowerMoving = movingLine <= 3;
+      const theQuai = isLowerMoving ? upper : lower;
+      const dungQuai = isLowerMoving ? lower : upper;
+
+      // Tiểu Độn Lục Nhâm
+      const tieuDonList = [
+        "1. ĐẠI AN (Đông Mộc — Đại Cát: Mọi việc bình an, cầu tài có lộc, nhà đất vững bền)",
+        "2. LƯU NIÊN (Bắc Thủy — Trì Trệ: Mưu sự chậm thành, cần kiên nhẫn chờ thời)",
+        "3. TỐC HỶ (Nam Hỏa — Cát Khánh: Tin vui đến nhanh, giao dịch nhà đất thuận lợi)",
+        "4. XÍCH KHẨU (Tây Kim — Khẩu Thiệt: Đề phòng tranh chấp hợp đồng, cãi vã)",
+        "5. TIỂU CÁT (Đông Nam — Hòa Hợp: Có quý nhân giúp đỡ, mưu sự hanh thông)",
+        "6. KHÔNG VONG (Trung Cung — Hao Tán: Tạm hoãn động thổ/giao dịch lớn)"
+      ];
+      const tdIdx = (month + day + hour - 3) % 6;
+
+      document.getElementById("mh-lab-result").innerHTML = `
+        <div>• <strong>Quẻ Chủ Mai Hoa:</strong> Thượng Quái <strong>${upper.name} (${upper.elem})</strong> / Hạ Quái <strong>${lower.name} (${lower.elem})</strong> — Động hào <strong>${movingLine}</strong>.</div>
+        <div style="margin-top:4px;">• <strong>Phân định Thể – Dụng:</strong> Quẻ Thể (Gia chủ) là <strong>${theQuai.name} (${theQuai.elem})</strong> • Quẻ Dụng (Ngôi nhà/Sự việc) là <strong>${dungQuai.name} (${dungQuai.elem})</strong>.</div>
+        <div style="margin-top:4px;color:#fde68a;">• <strong>Kết quả Tiểu Độn Lục Nhâm:</strong> ${tieuDonList[tdIdx]}</div>
+      `;
+    }
+
+    // Chấm điểm Bài Test Tốt Nghiệp Phong Thủy Sư (Chương 14)
+    function gradeGraduationQuiz() {
+      const answers = { "q-1": "3", "q-2": "2", "q-3": "3", "q-4": "1", "q-5": "3" };
+      let correct = 0;
+      Object.keys(answers).forEach((id) => {
+        const val = document.getElementById(id).value;
+        if (val === answers[id]) correct++;
+      });
+
+      const box = document.getElementById("quiz-result-box");
+      if (correct === 5) {
+        box.innerHTML = `<strong style="color:#4ade80;font-size:0.95rem;">🎉 XUẤT SẮC (5/5 Điểm - Đạt Chuẩn 100%)!</strong><br>Bạn đã nắm vững toàn bộ nguyên lý cốt lõi của Giáo trình Phong Thủy Sư (La Kinh 12 tầng, Mai Hoa Thể-Dụng, Chế hóa Ngũ Hoàng, Không Vong và Phi Tinh Vận 9). Đủ điều kiện bảo vệ Bài Luận Cuối Khóa và làm Lễ Nhập Môn!`;
+      } else {
+        box.innerHTML = `<strong style="color:#fbbf24;">Kết quả: ${correct}/5 câu đúng.</strong><br>Gợi ý đáp án chuẩn: Câu 1 chọn <strong>C (Thiên Bàn +7.5°)</strong> • Câu 2 chọn <strong>B (Dụng sinh Thể)</strong> • Câu 3 chọn <strong>C (Kim khí tiết Thổ)</strong> • Câu 4 chọn <strong>A (Đại Không Vong)</strong> • Câu 5 chọn <strong>C (Sao Cửu Tử #9)</strong>.`;
+      }
+    }
+  </script>
+</body>
+</html>
