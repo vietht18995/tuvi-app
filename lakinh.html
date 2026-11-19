@@ -1089,9 +1089,9 @@
     }
 
     // =========================================================================
-    // 3. ENGINE VẼ VECTOR AUTOCAD 12 TẦNG (`renderLaKinhCAD`)
+    // 3. ENGINE VẼ VECTOR AUTOCAD 12 TẦNG (`renderLaKinhCAD`) — CHỐNG CHỒNG CHÉO TUYỆT ĐỐI
     // =========================================================================
-    function drawTextAtPolar(text, radius, deg, fontSize, color, fontWeight = "600", radialAlign = false) {
+    function drawTextAtPolar(text, radius, deg, fontSize, color, fontWeight = "600", radialAlign = false, maxWidth = null) {
       const rad = degToCanvasRad(deg);
       const x = Math.cos(rad) * radius;
       const y = Math.sin(rad) * radius;
@@ -1106,8 +1106,29 @@
       ctx.font = `${fontWeight} ${fontSize}px 'JetBrains Mono', 'Inter', sans-serif`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillText(text, 0, 0);
+      if (maxWidth && maxWidth > 0) {
+        ctx.fillText(text, 0, 0, maxWidth);
+      } else {
+        ctx.fillText(text, 0, 0);
+      }
       ctx.restore();
+    }
+
+    function arcSpanWidth(radius, spanDeg, paddingRatio = 0.84) {
+      return Math.max(4, radius * ((spanDeg * Math.PI) / 180) * paddingRatio);
+    }
+
+    function shortDuNienLabel(fullLabel) {
+      if (!fullLabel) return "P.VỊ";
+      if (fullLabel.includes("SINH KHÍ")) return "S.KHÍ";
+      if (fullLabel.includes("THIÊN Y")) return "T.Y";
+      if (fullLabel.includes("DIÊN NIÊN")) return "D.NIÊN";
+      if (fullLabel.includes("PHỤC VỊ")) return "P.VỊ";
+      if (fullLabel.includes("TUYỆT MỆNH")) return "T.MỆNH";
+      if (fullLabel.includes("NGŨ QUỶ")) return "N.QUỶ";
+      if (fullLabel.includes("LỤC SÁT")) return "L.SÁT";
+      if (fullLabel.includes("HỌA HẠI")) return "H.HẠI";
+      return "P.VỊ";
     }
 
     function drawTrigramSymbol(trigramBits, radius, deg, size, color) {
@@ -1208,24 +1229,24 @@
       ctx.translate(cx, cy);
       ctx.scale(state.zoom, state.zoom);
 
-      // Bán kính chuẩn của 12 Tầng Đồng Tâm (Tỉ lệ chuẩn với baseR = 500)
-      const scaleFactor = baseR / 500;
+      // Bán kính chuẩn của 12 Tầng Đồng Tâm (Tỉ lệ chuẩn không gian CAD 700 đơn vị — chống chồng chéo tuyệt đối)
+      const scaleFactor = baseR / 700;
       ctx.scale(scaleFactor, scaleFactor);
 
       const R = {
-        r0: 36,   // Tâm Thiên Trì
-        r1: 76,   // Tầng 1: Bát Quái Tiên/Hậu Thiên
-        r2: 118,  // Tầng 2: Địa Bàn Chính Châm 24 Sơn & Tam Nguyên Long
-        r3: 146,  // Tầng 3: Độ số ranh giới & Bát Sát / Hoàng Tuyền
-        r4: 176,  // Tầng 4: 12 Trường Sinh & 24 Thần Sát
-        r5: 256,  // Tầng 5: Bảng Tra Năm Sinh 1924-2026 & Bát Trạch Du Niên (Tầng lớn có vành xanh/vàng)
-        r6: 294,  // Tầng 6: 120 Phân Kim & Ô Trắng/Đen Vượng Tướng Cô Hư
-        r7: 326,  // Tầng 7: Nhân Bàn Trung Châm (-7.5°) & 28 Sao Nhị Thập Bát Tú
-        r8: 364,  // Tầng 8: Thiên Bàn Phùng Châm (+7.5°) & 24 Tiết Khí (Viền vàng đậm)
-        r9: 398,  // Tầng 9: Lời đoán Cát Hung Ứng Nghiệm Thực Chiến
-        r10: 444, // Tầng 10: Bàn Sao Huyền Không Phi Tinh (Ma trận 9 số)
-        r11: 478, // Tầng 11: 64 Quẻ Dịch Huyền Không Đại Quái (6 hào + tên quẻ)
-        r12: 500  // Tầng 12: Vòng 360 Độ Chuẩn & Viền Vàng Ngoài Cùng
+        r0: 44,   // Tâm Thiên Trì
+        r1: 102,  // Tầng 1: Bát Quái Tiên/Hậu Thiên + 3 Hào
+        r2: 168,  // Tầng 2: Phương vị + Tam Nguyên Long + Địa Bàn Chính Châm 24 Sơn
+        r3: 214,  // Tầng 3: Độ số ranh giới + Cửu Tinh + Bát Sát / Hoàng Tuyền
+        r4: 266,  // Tầng 4: 24 Thần Sát (2 dòng) & 12 Trường Sinh Thủy Pháp
+        r5: 400,  // Tầng 5: Bảng Tra Năm Sinh 1924-2026 & Bát Trạch Du Niên (5 cột $3^\circ$ tách hàng dọc chuẩn CAD)
+        r6: 454,  // Tầng 6: 120 Phân Kim & Ô Trắng/Đen Vượng Tướng Cô Hư (Ngũ hành + Can / Chi 2 dòng)
+        r7: 498,  // Tầng 7: Nhân Bàn Trung Châm (-7.5°) & 28 Sao Nhị Thập Bát Tú
+        r8: 548,  // Tầng 8: Thiên Bàn Phùng Châm (+7.5°) & 24 Tiết Khí (Viền vàng đậm)
+        r9: 586,  // Tầng 9: Lời đoán Cát Hung Ứng Nghiệm Thực Chiến (2 dòng gọn)
+        r10: 636, // Tầng 10: Bàn Sao Huyền Không Phi Tinh (Ma trận 9 số)
+        r11: 672, // Tầng 11: 64 Quẻ Dịch Huyền Không Đại Quái (6 hào + tên quẻ)
+        r12: 700  // Tầng 12: Vòng 360 Độ Chuẩn & Viền Vàng Ngoài Cùng
       };
 
       // 1. Vẽ các vòng tròn đồng tâm phân tầng
@@ -1235,11 +1256,20 @@
         ctx.arc(0, 0, rad, 0, Math.PI * 2);
         if (rad === R.r5 || rad === R.r8 || rad === R.r9 || rad === R.r12) {
           ctx.strokeStyle = "#ffe600"; // Đường viền Vàng đậm đặc trưng của bản vẽ LAKINH CHINH 4.dwg
-          ctx.lineWidth = rad === R.r12 ? 3.5 : 2.6;
+          ctx.lineWidth = rad === R.r12 ? 4.2 : 3.0;
         } else {
-          ctx.strokeStyle = "#94a3b8";
-          ctx.lineWidth = 0.9;
+          ctx.strokeStyle = "#64748b";
+          ctx.lineWidth = 1.0;
         }
+        ctx.stroke();
+      });
+
+      // Vẽ thêm đường chỉ phụ tinh tế ngăn cách giữa các sub-band bên trong Tầng 2, Tầng 3, Tầng 4, Tầng 5, Tầng 6
+      [R.r1 + 17, R.r2 + 15, R.r3 + 27, R.r4 + 98, R.r5 + 17].forEach((subR) => {
+        ctx.beginPath();
+        ctx.arc(0, 0, subR, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(148, 163, 184, 0.28)";
+        ctx.lineWidth = 0.65;
         ctx.stroke();
       });
 
@@ -1248,94 +1278,128 @@
         ctx.beginPath();
         ctx.arc(0, 0, rad, degToCanvasRad(337.5), degToCanvasRad(22.5));
         ctx.strokeStyle = "#3b82f6";
-        ctx.lineWidth = 3.2;
+        ctx.lineWidth = 4.0;
         ctx.stroke();
       });
 
-      // 2. Vẽ vạch chia 8 Quái (mỗi 45°) từ r0 -> r5
+      // 2. Vẽ vạch chia 8 Quái (mỗi 45°) từ r0 -> r10
       BAGUA_8.forEach((bg) => {
         const radStart = degToCanvasRad(bg.startDeg);
         ctx.beginPath();
         ctx.moveTo(Math.cos(radStart) * R.r0, Math.sin(radStart) * R.r0);
         ctx.lineTo(Math.cos(radStart) * R.r10, Math.sin(radStart) * R.r10);
         ctx.strokeStyle = "#ffe600";
-        ctx.lineWidth = 1.4;
+        ctx.lineWidth = 1.8;
         ctx.stroke();
 
-        // Tầng 1: Tên Quái Hậu Thiên, Tiên Thiên, Số Lạc Thư & Quẻ 3 Hào
-        drawTextAtPolar(`${bg.name} ${bg.num}`, (R.r0 + R.r1) * 0.47, bg.centerDeg, 8.5, "#f8fafc", "700");
-        drawTrigramSymbol(bg.trigram, (R.r0 + R.r1) * 0.62, bg.centerDeg, 10, "#ffe600");
-        drawTextAtPolar(`${bg.dir} • ${bg.elem}`, R.r1 + 8, bg.centerDeg, 6.8, bg.color, "700");
-        drawTextAtPolar(bg.batSat, R.r2 + 7, bg.centerDeg, 6.2, "#cbd5e1", "600");
+        // Tầng 1: Tên Quái Hậu Thiên, Số Lạc Thư & Quẻ 3 Hào
+        drawTextAtPolar(`${bg.name} ${bg.num}`, R.r0 + 22, bg.centerDeg, 10.5, "#f8fafc", "800", false, arcSpanWidth(R.r0 + 22, 42));
+        drawTrigramSymbol(bg.trigram, R.r0 + 44, bg.centerDeg, 13, "#ffe600");
+
+        // Sub-band trong cùng của Tầng 2 (R.r1 .. R.r1+17): Phương vị & Hành (cả cung 45° — hoàn toàn tách biệt với ĐỊA/THIÊN/NHÂN)
+        drawTextAtPolar(`${bg.dir} • ${bg.elem}`, R.r1 + 9, bg.centerDeg, 7.6, bg.color, "700", false, arcSpanWidth(R.r1 + 9, 40));
+
+        // Sub-band ngoài của Tầng 3 (R.r3 - 10): Khẩu quyết Bát Sát / Hoàng Tuyền (cả cung 45° — không đè lên độ số hay Cửu Tinh)
+        drawTextAtPolar(bg.batSat, R.r3 - 8, bg.centerDeg, 6.8, "#cbd5e1", "600", false, arcSpanWidth(R.r3 - 8, 40));
       });
 
-      // 3. Vẽ 24 Sơn Hướng (Tầng 2, 3, 4, 5, 9, 10)
+      // 3. Vẽ 24 Sơn Hướng (Tầng 2, 3, 4, 5, 6, 7, 8, 9, 10)
       MOUNTAINS_24.forEach((m, idx) => {
         const aStart = degToCanvasRad(m.start);
         ctx.beginPath();
-        ctx.moveTo(Math.cos(aStart) * R.r1, Math.sin(aStart) * R.r1);
+        ctx.moveTo(Math.cos(aStart) * (R.r1 + 17), Math.sin(aStart) * (R.r1 + 17));
         ctx.lineTo(Math.cos(aStart) * R.r7, Math.sin(aStart) * R.r7);
         ctx.strokeStyle = "rgba(203, 213, 225, 0.55)";
-        ctx.lineWidth = 0.85;
+        ctx.lineWidth = 0.9;
         ctx.stroke();
 
-        // Tầng 2: Tam Nguyên Long (ĐỊA / THIÊN / NHÂN) + Tên Sơn Lớn
+        // Tầng 2: Tam Nguyên Long (R.r1 + 26) + Tên 24 Sơn Lớn (R.r1 + 48)
         const dotSymbol = m.amDuong.startsWith("Dương") ? "○" : "●";
-        drawTextAtPolar(`${dotSymbol} ${m.nguyenLong}`, R.r1 + 18, m.center, 6.2, "#94a3b8", "600");
-        drawTextAtPolar(m.name, R.r1 + 31, m.center, 11.5, "#ffffff", "800");
+        drawTextAtPolar(`${dotSymbol} ${m.nguyenLong}`, R.r1 + 27, m.center, 6.2, "#94a3b8", "700", false, arcSpanWidth(R.r1 + 27, 13.5));
+        drawTextAtPolar(m.name, R.r1 + 49, m.center, 13.5, "#ffffff", "800", false, arcSpanWidth(R.r1 + 49, 13.5));
 
-        // Tầng 3: Độ số ranh giới (337.5, 352.5, 7.5...) & Cửu Tinh
-        drawTextAtPolar(String(m.start), R.r2 + 18, m.start, 6.2, "#cbd5e1", "600");
-        drawTextAtPolar(m.cuuTinh.toUpperCase(), R.r2 + 20, m.center, 5.8, "#94a3b8", "600");
+        // Tầng 3: Độ số ranh giới nằm ở dải trong (R.r2 + 8), Cửu Tinh nằm ở dải giữa (R.r2 + 24) — tách hẳn nhau!
+        drawTextAtPolar(String(m.start), R.r2 + 8, m.start, 6.2, "#fde047", "700", false, 24);
+        drawTextAtPolar(m.cuuTinh.toUpperCase(), R.r2 + 24, m.center, 6.2, "#94a3b8", "700", false, arcSpanWidth(R.r2 + 24, 13.5));
 
-        // Tầng 4: 12 Trường Sinh & 24 Thần Sát
-        drawTextAtPolar(m.thanSat, R.r3 + 10, m.center, 5.4, "#cbd5e1", "500");
-        drawTextAtPolar(m.truongSinh, R.r3 + 22, m.center, 6.8, "#ffe600", "700");
+        // Tầng 4: 24 Thần Sát tách làm 2 dòng gọn (R.r3 + 9 & R.r3 + 19) + 12 Trường Sinh (R.r3 + 39)
+        const tsParts = m.thanSat.split("•").map((s) => s.trim());
+        drawTextAtPolar(tsParts[0] || "", R.r3 + 9, m.center, 6.0, "#cbd5e1", "600", false, arcSpanWidth(R.r3 + 9, 13.5));
+        if (tsParts[1]) {
+          drawTextAtPolar(tsParts[1], R.r3 + 19, m.center, 5.8, "#94a3b8", "500", false, arcSpanWidth(R.r3 + 19, 13.5));
+        }
+        drawTextAtPolar(m.truongSinh, R.r3 + 39, m.center, 8.2, "#ffe600", "800", false, arcSpanWidth(R.r3 + 39, 13.5));
 
-        // Tầng 5: Bảng Tra Năm Sinh (1924-2026) & Du Niên Bát Trạch (Chia 5 cột nhỏ mỗi sơn như ảnh CAD)
+        // Tầng 5: Bảng Tra Năm Sinh (1924-2026) & Du Niên Bát Trạch — Xếp dọc gọn trong từng cột $3^\circ$ chuẩn LAKINH CHINH 4.dwg
         const bData = BIRTH_YEARS_BY_SON[idx];
+        const quaiNameOfSon = BAGUA_8[m.quaiIdx].name;
         if (bData) {
           bData.years.forEach((yrStr, yIdx) => {
             const subDeg = m.start + 1.5 + yIdx * 3.0;
             const subLineRad = degToCanvasRad(m.start + yIdx * 3.0);
             ctx.beginPath();
             ctx.moveTo(Math.cos(subLineRad) * R.r4, Math.sin(subLineRad) * R.r4);
-            ctx.lineTo(Math.cos(subLineRad) * R.r6, Math.sin(subLineRad) * R.r6);
-            ctx.strokeStyle = "rgba(148, 163, 184, 0.3)";
-            ctx.lineWidth = 0.5;
+            ctx.lineTo(Math.cos(subLineRad) * (R.r4 + 98), Math.sin(subLineRad) * (R.r4 + 98));
+            ctx.strokeStyle = "rgba(148, 163, 184, 0.28)";
+            ctx.lineWidth = 0.55;
             ctx.stroke();
 
-            const [yrNum, ...canChiParts] = yrStr.split(" ");
-            const canChi = canChiParts.join(" ");
-            const yrColor = yIdx % 3 === 0 ? "#22c55e" : yIdx % 3 === 1 ? "#ef4444" : "#f8fafc";
-            drawTextAtPolar(yrNum, R.r4 + 12, subDeg, 5.6, "#f8fafc", "700");
-            drawTextAtPolar(canChi.toUpperCase(), R.r4 + 26, subDeg, 5.3, yrColor, "700");
+            const parts = yrStr.split(" ");
+            const yrNum = parts[0] || "";
+            const canWord = (parts[1] || "").toUpperCase();
+            const chiWord = (parts[2] || "").toUpperCase();
+            const yrColor = yIdx % 3 === 0 ? "#4ade80" : yIdx % 3 === 1 ? "#f87171" : "#f8fafc";
+
+            const btNam = calculateOwnerBattrach(parseInt(yrNum, 10) || 1995, "Nam");
+            const btNu = calculateOwnerBattrach(parseInt(yrNum, 10) || 1995, "Nu");
+            const dnShort = shortDuNienLabel(btNam.duNienMatrix[quaiNameOfSon]);
+            const dnColor = (btNam.duNienMatrix[quaiNameOfSon] || "").includes("Cát") ? "#38bdf8" : "#fb923c";
+
+            // Mỗi hàng chỉ 1 từ ngắn (3-5 ký tự) & bị kẹp đúng độ rộng cột $3^\circ$ -> TUYỆT ĐỐI KHÔNG BAO GIỜ CHỒNG CHÉO!
+            drawTextAtPolar(yrNum, R.r4 + 11, subDeg, 5.2, "#f8fafc", "700", false, arcSpanWidth(R.r4 + 11, 2.75));
+            drawTextAtPolar(canWord, R.r4 + 25, subDeg, 5.0, yrColor, "700", false, arcSpanWidth(R.r4 + 25, 2.75));
+            drawTextAtPolar(chiWord, R.r4 + 38, subDeg, 5.0, yrColor, "700", false, arcSpanWidth(R.r4 + 38, 2.75));
+            drawTextAtPolar(btNam.name, R.r4 + 54, subDeg, 4.9, "#cbd5e1", "700", false, arcSpanWidth(R.r4 + 54, 2.75));
+            drawTextAtPolar(btNu.name, R.r4 + 69, subDeg, 4.9, "#f472b6", "600", false, arcSpanWidth(R.r4 + 69, 2.75));
+            drawTextAtPolar(dnShort, R.r4 + 85, subDeg, 4.7, dnColor, "700", false, arcSpanWidth(R.r4 + 85, 2.75));
           });
-          drawTextAtPolar(`NAM: ${bData.namQuai} • NỮ: ${bData.nuQuai}`, R.r4 + 46, m.center, 5.2, "#cbd5e1", "600");
-          drawTextAtPolar(bData.duNien, R.r4 + 60, m.center, 5.6, "#38bdf8", "700");
-          drawTextAtPolar(`${BAGUA_8[m.quaiIdx].dir} • ${BAGUA_8[m.quaiIdx].name}`, R.r4 + 73, m.center, 6.2, "#ffe600", "700");
+
+          // Vành tổng kết ngoài của Tầng 5 (dải R.r4+98 .. R.r5, rộng trọn 15° của Sơn)
+          drawTextAtPolar(bData.duNien, R.r4 + 109, m.center, 6.4, "#38bdf8", "700", false, arcSpanWidth(R.r4 + 109, 13.8));
+          drawTextAtPolar(`${BAGUA_8[m.quaiIdx].dir} • ${BAGUA_8[m.quaiIdx].name}`, R.r4 + 125, m.center, 7.6, "#ffe600", "800", false, arcSpanWidth(R.r4 + 125, 13.8));
         }
 
-        // Tầng 6: 120 Phân Kim & Ô Trắng/Đen Vượng Tướng Cô Hư (Giống ảnh CAD có các ô tô trắng đặc)
+        // Tầng 6: 120 Phân Kim & Ô Trắng/Đen Vượng Tướng Cô Hư — Tách Ngũ hành + Can + Chi thành 3 hàng dọc trong cột $3^\circ$
         for (let pk = 0; pk < 5; pk++) {
           const pkStart = m.start + pk * 3.0;
           const pkEnd = pkStart + 3.0;
           const pkMid = pkStart + 1.5;
           const pkInfo = getPhanKimByDeg(pkMid);
+          const pkLineRad = degToCanvasRad(pkStart);
+
+          ctx.beginPath();
+          ctx.moveTo(Math.cos(pkLineRad) * R.r5, Math.sin(pkLineRad) * R.r5);
+          ctx.lineTo(Math.cos(pkLineRad) * R.r6, Math.sin(pkLineRad) * R.r6);
+          ctx.strokeStyle = "rgba(148, 163, 184, 0.32)";
+          ctx.lineWidth = 0.55;
+          ctx.stroke();
 
           // Tô ô trắng đặc cho các phân kim Vượng/Tướng đắc cách như trong ảnh AutoCAD
           if (pkInfo.isVuongTuong && (idx + pk) % 2 === 0) {
             ctx.beginPath();
-            ctx.arc(0, 0, R.r5 + 14, degToCanvasRad(pkStart), degToCanvasRad(pkEnd));
-            ctx.arc(0, 0, R.r5 + 2, degToCanvasRad(pkEnd), degToCanvasRad(pkStart), true);
+            ctx.arc(0, 0, R.r5 + 17, degToCanvasRad(pkStart), degToCanvasRad(pkEnd));
+            ctx.arc(0, 0, R.r5 + 1.5, degToCanvasRad(pkEnd), degToCanvasRad(pkStart), true);
             ctx.closePath();
-            ctx.fillStyle = "rgba(248, 250, 252, 0.88)";
+            ctx.fillStyle = "rgba(248, 250, 252, 0.92)";
             ctx.fill();
-            drawTextAtPolar(pkInfo.napAm, R.r5 + 8, pkMid, 4.8, "#0b0e14", "800");
+            drawTextAtPolar(pkInfo.napAm, R.r5 + 9.5, pkMid, 5.4, "#0b0e14", "800", false, arcSpanWidth(R.r5 + 9.5, 2.7));
           } else {
-            drawTextAtPolar(pkInfo.napAm, R.r5 + 8, pkMid, 4.8, "#cbd5e1", "600");
+            drawTextAtPolar(pkInfo.napAm, R.r5 + 9.5, pkMid, 5.4, "#cbd5e1", "600", false, arcSpanWidth(R.r5 + 9.5, 2.7));
           }
-          drawTextAtPolar(pkInfo.code, R.r5 + 25, pkMid, 4.7, "#e2e8f0", "600");
+
+          const [pkCan, pkChi] = pkInfo.code.split(" ");
+          drawTextAtPolar(pkCan || "", R.r5 + 28, pkMid, 5.4, "#f8fafc", "700", false, arcSpanWidth(R.r5 + 28, 2.7));
+          drawTextAtPolar(pkChi || "", R.r5 + 42, pkMid, 5.4, "#94a3b8", "700", false, arcSpanWidth(R.r5 + 42, 2.7));
         }
 
         // Tầng 7: Nhân Bàn Trung Châm (-7.5°)
@@ -1344,9 +1408,9 @@
         ctx.moveTo(Math.cos(nhanStart) * R.r6, Math.sin(nhanStart) * R.r6);
         ctx.lineTo(Math.cos(nhanStart) * R.r7, Math.sin(nhanStart) * R.r7);
         ctx.strokeStyle = "rgba(203, 213, 225, 0.5)";
-        ctx.lineWidth = 0.7;
+        ctx.lineWidth = 0.8;
         ctx.stroke();
-        drawTextAtPolar(m.name, R.r6 + 11, m.center - 7.5, 8.2, "#e2e8f0", "700");
+        drawTextAtPolar(m.name, R.r6 + 14, m.center - 7.5, 10.2, "#e2e8f0", "800", false, arcSpanWidth(R.r6 + 14, 13.5));
 
         // Tầng 8: Thiên Bàn Phùng Châm (+7.5°) & 24 Tiết Khí (Giữa 2 đường chỉ vàng)
         const thienStart = degToCanvasRad(m.start + 7.5);
@@ -1354,13 +1418,19 @@
         ctx.moveTo(Math.cos(thienStart) * R.r7, Math.sin(thienStart) * R.r7);
         ctx.lineTo(Math.cos(thienStart) * R.r9, Math.sin(thienStart) * R.r9);
         ctx.strokeStyle = "#cbd5e1";
-        ctx.lineWidth = 0.85;
+        ctx.lineWidth = 0.9;
         ctx.stroke();
-        drawTextAtPolar(m.name, R.r7 + 13, m.center + 7.5, 9.0, "#ffe600", "800");
-        drawTextAtPolar(`${m.tietKhi} • TR.KHÍ`, R.r7 + 28, m.center + 7.5, 5.6, "#cbd5e1", "600");
+        drawTextAtPolar(m.name, R.r7 + 17, m.center + 7.5, 11.2, "#ffe600", "800", false, arcSpanWidth(R.r7 + 17, 13.5));
+        drawTextAtPolar(`${m.tietKhi} • TR.KHÍ`, R.r7 + 36, m.center + 7.5, 6.8, "#cbd5e1", "600", false, arcSpanWidth(R.r7 + 36, 13.5));
 
-        // Tầng 9: Lời Đoán Ứng Nghiệm Thực Chiến
-        drawTextAtPolar(m.omen.toUpperCase(), (R.r8 + R.r9) * 0.5, m.center, 5.5, "#e2e8f0", "600");
+        // Tầng 9: Lời Đoán Ứng Nghiệm Thực Chiến — Chia 2 dòng gọn trong ô 15°
+        const omenParts = m.omen.toUpperCase().split("•").map((s) => s.trim());
+        const omenLine1 = omenParts[0] || "";
+        const omenLine2 = omenParts.slice(1).join(" • ");
+        drawTextAtPolar(omenLine1, R.r8 + 12, m.center, 6.4, "#f8fafc", "700", false, arcSpanWidth(R.r8 + 12, 13.8));
+        if (omenLine2) {
+          drawTextAtPolar(omenLine2, R.r8 + 25, m.center, 5.8, "#cbd5e1", "500", false, arcSpanWidth(R.r8 + 25, 13.8));
+        }
 
         // Tầng 10: Bàn Sao Huyền Không Phi Tinh (Ma trận 3 hàng số 881 / 979 / 435 như ảnh CAD)
         const fsLine = degToCanvasRad(m.start);
@@ -1368,13 +1438,13 @@
         ctx.moveTo(Math.cos(fsLine) * R.r9, Math.sin(fsLine) * R.r9);
         ctx.lineTo(Math.cos(fsLine) * R.r10, Math.sin(fsLine) * R.r10);
         ctx.strokeStyle = "rgba(203, 213, 225, 0.55)";
-        ctx.lineWidth = 0.8;
+        ctx.lineWidth = 0.9;
         ctx.stroke();
 
-        [-4.2, 4.2].forEach((offsetDeg) => {
+        [-3.8, 3.8].forEach((offsetDeg) => {
           m.flyingStars.forEach((rowStr, rIdx) => {
-            const rPos = R.r9 + 12 + rIdx * 11;
-            drawTextAtPolar(rowStr, rPos, m.center + offsetDeg, 6.8, "#f8fafc", "700");
+            const rPos = R.r9 + 13 + rIdx * 12.5;
+            drawTextAtPolar(rowStr, rPos, m.center + offsetDeg, 8.2, "#f8fafc", "700", false, arcSpanWidth(rPos, 6.5));
           });
         });
       });
@@ -1382,7 +1452,7 @@
       // 4. Vẽ 28 Sao Nhị Thập Bát Tú ở vành ngoài Tầng 7
       STARS_28.forEach((starName, sIdx) => {
         const sDeg = (sIdx / 28) * 360;
-        drawTextAtPolar(starName, R.r6 + 24, sDeg + 6.4, 5.8, "#38bdf8", "700");
+        drawTextAtPolar(starName, R.r6 + 32, sDeg + 6.4, 7.2, "#38bdf8", "700", false, arcSpanWidth(R.r6 + 32, 11.5));
       });
 
       // 5. Vẽ Tầng 11: 64 Quẻ Dịch Huyền Không Đại Quái (6 hào + Quái vận + Tên quẻ)
@@ -1394,28 +1464,28 @@
         ctx.moveTo(Math.cos(hRad) * R.r10, Math.sin(hRad) * R.r10);
         ctx.lineTo(Math.cos(hRad) * R.r11, Math.sin(hRad) * R.r11);
         ctx.strokeStyle = "rgba(148, 163, 184, 0.45)";
-        ctx.lineWidth = 0.6;
+        ctx.lineWidth = 0.7;
         ctx.stroke();
 
         const hex = HEXAGRAMS_64[h];
-        drawHexagram6Symbol(h, R.r10 + 13, hMid, 11, "#f8fafc");
-        drawTextAtPolar(`${hex.code} ${hex.name}`, R.r10 + 27, hMid, 5.2, "#e2e8f0", "700");
+        drawHexagram6Symbol(h, R.r10 + 13, hMid, 12.5, "#f8fafc");
+        drawTextAtPolar(`${hex.code} ${hex.name}`, R.r10 + 28, hMid, 6.2, "#e2e8f0", "700", false, arcSpanWidth(R.r10 + 28, 5.1));
       }
 
       // 6. Vẽ Tầng 12: Vòng 360 Độ Chuẩn & Vạch Chia Từng Độ (0°..360°)
       for (let d = 0; d < 360; d++) {
         const dRad = degToCanvasRad(d);
         const isMajor5 = d % 5 === 0;
-        const innerTick = isMajor5 ? R.r11 : R.r12 - 7;
+        const innerTick = isMajor5 ? R.r11 : R.r12 - 9;
         ctx.beginPath();
         ctx.moveTo(Math.cos(dRad) * innerTick, Math.sin(dRad) * innerTick);
         ctx.lineTo(Math.cos(dRad) * R.r12, Math.sin(dRad) * R.r12);
         ctx.strokeStyle = isMajor5 ? "#ffe600" : "rgba(203, 213, 225, 0.55)";
-        ctx.lineWidth = isMajor5 ? 1.1 : 0.5;
+        ctx.lineWidth = isMajor5 ? 1.3 : 0.6;
         ctx.stroke();
 
         if (isMajor5) {
-          drawTextAtPolar(String(d), (R.r11 + R.r12) * 0.5, d + 1.4, 7.2, "#f8fafc", "700");
+          drawTextAtPolar(String(d), (R.r11 + R.r12) * 0.5, d + 1.4, 8.8, "#f8fafc", "700", false, 28);
         }
       }
 
