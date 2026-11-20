@@ -656,6 +656,19 @@ def inject_luu_tinh(chambers, analysis_year):
     viet_map = {1: 8, 2: 9, 3: 10, 4: 10, 5: 8, 6: 9, 7: 3, 8: 3, 9: 6, 10: 6}
     khoi_idx = khoi_map[can_idx]
     viet_idx = viet_map[can_idx]
+
+    # L.Văn Xương & L.Văn Khúc (theo Thiên Can năm xem - chuẩn Tử Vi Đẩu Số Toàn Thư)
+    # Giáp: Tỵ(6)/Dậu(10), Ất: Ngọ(7)/Thân(9), Bính-Mậu: Thân(9)/Ngọ(7),
+    # Đinh-Kỷ: Dậu(10)/Tỵ(6), Canh: Hợi(12)/Mão(4), Tân: Tý(1)/Dần(3),
+    # Nhâm: Dần(3)/Tý(1), Quý: Mão(4)/Hợi(12)
+    luu_van_xuong_map = {1: 6, 2: 7, 3: 9, 4: 10, 5: 9, 6: 10, 7: 12, 8: 1, 9: 3, 10: 4}
+    luu_van_khuc_map  = {1: 10, 2: 9, 3: 7, 4: 6, 5: 7, 6: 6, 7: 4, 8: 3, 9: 1, 10: 12}
+    luu_vx_idx = luu_van_xuong_map[can_idx]
+    luu_vk_idx = luu_van_khuc_map[can_idx]
+
+    # L.Kiếp Sát (theo Địa Chi Tam Hợp năm xem)
+    kiep_sat_map = {3: 12, 7: 12, 11: 12, 9: 6, 1: 6, 5: 6, 6: 3, 10: 3, 2: 3, 12: 9, 4: 9, 8: 9}
+    kiep_sat_idx = kiep_sat_map[chi_idx]
     
     def add_luu(target_cung, s_name, s_elem, is_hung=False):
         s_obj = {"name": s_name, "element": s_elem, "is_luu": True}
@@ -703,23 +716,23 @@ def inject_luu_tinh(chambers, analysis_year):
     add_luu(chambers[khoi_idx - 1], "Thiên Khôi", "Hỏa", is_hung=False)
     add_luu(chambers[viet_idx - 1], "Thiên Việt", "Hỏa", is_hung=False)
     
-    # 10. Add Lưu Tứ Hóa
+    # 12. Add Lưu Tứ Hóa (chỉ ghép vào sao bản mệnh, không ghép nhầm vào sao Lưu)
     hoas = TU_HOA_MAP.get(can_name, {})
     for hoa_type, star_name in hoas.items():
         found = False
         for c in chambers:
             for s in c["chinh_tinh"]:
-                if s["name"].lower() == star_name.lower():
+                if not s.get("is_luu") and s["name"].lower() == star_name.lower():
                     found = True
                     break
             if not found:
                 for s in c["cat_tinh"]:
-                    if s["name"].lower() == star_name.lower():
+                    if not s.get("is_luu") and s["name"].lower() == star_name.lower():
                         found = True
                         break
             if not found:
                 for s in c["hung_tinh"]:
-                    if s["name"].lower() == star_name.lower():
+                    if not s.get("is_luu") and s["name"].lower() == star_name.lower():
                         found = True
                         break
             if found:
@@ -727,6 +740,11 @@ def inject_luu_tinh(chambers, analysis_year):
                 elem_luu = "Mộc" if hoa_type in ["Lộc", "Quyền"] else ("Thủy" if hoa_type == "Kỵ" else "Kim")
                 add_luu(c, name_luu, elem_luu, is_hung=(hoa_type == "Kỵ"))
                 break
+
+    # 13. Add L.Văn Xương, L.Văn Khúc & L.Kiếp Sát
+    add_luu(chambers[luu_vx_idx - 1], "Văn Xương", "Kim", is_hung=False)
+    add_luu(chambers[luu_vk_idx - 1], "Văn Khúc", "Thủy", is_hung=False)
+    add_luu(chambers[kiep_sat_idx - 1], "Kiếp Sát", "Hỏa", is_hung=True)
 
 def calculate_tuvi(name, gender, solar_day, solar_month, solar_year, birth_hour, analysis_year=2026, birth_minute=0):
     hour_idx = hour_map.get(birth_hour, 8)
